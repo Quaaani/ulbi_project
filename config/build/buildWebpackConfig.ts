@@ -39,7 +39,7 @@ export function buildWepbackConfig(
     },
 
     // Резолверы
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
 
     // Трассировка стека
     devtool: isDev ? 'inline-source-map' : undefined,
