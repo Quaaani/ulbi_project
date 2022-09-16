@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    // Папка для сборки (не важна, тк есть Webpack)
+    "outDir": "./dist/",
+
+    // Запрещает использовать переменные без их типизации
+    "noImplicitAny": true,
+
+    // Модульная система
+    "module": "esnext",
+
+    // В какую версию код будет компилироваться (для поддержки бол-ва браузеров)
+    "target": "es5",
+
+    // Убирает необходимость импортировать React глобально
+    "jsx": "react-jsx",
+
+    // Компилятор будет обрабатывать .js файлы в том числе
+    "allowJs": true,
+
+    // Определяет какими будут импорты
+    "moduleResolution": "node",
+
+    // Синтетически позволяет делать стандартные импорты нативных библиотек node.js, которые используют common js (require)
+    "esModuleInterop": true,
+
+    // Позволяет использовать export default
+    "allowSyntheticDefaultImports": true
+  },
+  // Позволяет использовать классические импорты
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
