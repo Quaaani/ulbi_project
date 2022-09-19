@@ -5,22 +5,17 @@ import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { About } from 'pages/About';
 import { Main } from 'pages/Main';
 import './styles/index.scss';
+import { AppRouter } from './providers/router';
+import { Navbar } from 'widgets/Navbar';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
+      <Navbar />
+      <AppRouter />
       <button onClick={toggleTheme}>Theme Switch</button>
-      <Link to={'/'}>Main</Link>
-      <Link to={'/about'}>About</Link>
-
-      <Suspense fallback={<div>...Loading...</div>}>
-        <Routes>
-          <Route path={'/'} element={<Main />} />
-          <Route path={'/about'} element={<About />} />
-        </Routes>
-      </Suspense>
     </div>
   );
 };
