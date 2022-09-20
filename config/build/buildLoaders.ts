@@ -29,6 +29,23 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
+  // SVG Лоудер
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  };
+
+  // Files Лоудер
+  // Можно добавить расширения для шрифтов (woff2|woff)
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  };
+
   // TS Лоудер
   const typeScriptLoader = {
     test: /\.tsx?$/,
@@ -36,5 +53,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  return [typeScriptLoader, cssLoader];
+  return [typeScriptLoader, cssLoader, svgLoader, fileLoader];
 }

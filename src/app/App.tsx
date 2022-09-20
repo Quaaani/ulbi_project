@@ -6,16 +6,18 @@ import { About } from 'pages/About';
 import { Main } from 'pages/Main';
 import './styles/index.scss';
 import { AppRouter } from './providers/router';
-import { Navbar } from 'widgets/Navbar';
+import { Navbar, Sidebar } from 'widgets';
 
 const App = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
       <Navbar />
-      <AppRouter />
-      <button onClick={toggleTheme}>Theme Switch</button>
+      <div className="content">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };
