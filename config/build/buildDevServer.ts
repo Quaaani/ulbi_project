@@ -11,5 +11,8 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
 
     // Позволяет проксировать запросы через index page (корневую страницу)
     historyApiFallback: true,
+
+    // Позволяет обновлять приложение без обновления страницы
+    hot: true,
   }
 }

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
 import { AppLink } from 'shared/ui';
@@ -13,14 +14,16 @@ interface NavbarProps {
 // имеют именованный экспорт
 export const Navbar: FC<NavbarProps> = (props) => {
   const { className } = props;
-  
+
+  const { t } = useTranslation();
+
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
         <AppLink to={'/'} className={cls.mainLink}>
-          MAIN PAGE
+          {t('Home')}
         </AppLink>
-        <AppLink to={'/about'}>ABOUT PAGE</AppLink>
+        <AppLink to={'/about'}>{t('About us')}</AppLink>
       </div>
     </div>
   );

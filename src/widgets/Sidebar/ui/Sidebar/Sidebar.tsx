@@ -4,7 +4,7 @@ import { Button } from 'shared/ui';
 import cls from './Sidebar.module.scss';
 import ArrowRightIcon from 'shared/assets/icons/arrow-right.svg';
 import ArrowLeftIcon from 'shared/assets/icons/arrow-left.svg';
-import { ThemeSwitcher } from 'widgets';
+import { LanguageSwitcher, ThemeSwitcher } from 'widgets';
 
 interface SidebarProps {
   className?: string;
@@ -16,10 +16,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const onToggle = () => {
-    setIsCollapsed((prev) => {
-      console.log('xxx isCollapsed', prev);
-      return !prev;
-    });
+    setIsCollapsed((prev) => !prev);
   };
 
   return (
@@ -39,6 +36,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
+        <LanguageSwitcher className={cls.lastIcon} />
       </div>
     </div>
   );
