@@ -34,5 +34,7 @@ export function buildPlugins({
 
     // Похожий плагин для реакт компонентов
     isDev && new ReactRefreshWebpackPlugin(),
-  ];
+  ]
+  // Фильтруем массив плагинов, чтобы не попали false (prod сборки)
+  .filter(Boolean)
 }
