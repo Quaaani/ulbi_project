@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { classNames } from 'shared/lib/helpers/classNames/classNames';
@@ -20,10 +20,10 @@ export const Navbar: FC<NavbarProps> = (props) => {
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
-        <AppLink to={'/'} className={cls.mainLink}>
+        <AppLink to="/" className={cls.mainLink}>
           {t('Home')}
         </AppLink>
-        <AppLink to={'/about'}>{t('About us')}</AppLink>
+        <AppLink to="/about">{t('About us')}</AppLink>
       </div>
     </div>
   );

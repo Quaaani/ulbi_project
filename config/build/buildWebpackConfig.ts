@@ -6,7 +6,7 @@ import { buildResolvers } from './buildResolvers';
 import { BuildOptions } from './types/config';
 
 export function buildWepbackConfig(
-  options: BuildOptions
+  options: BuildOptions,
 ): webpack.Configuration {
   const { paths, mode, isDev } = options;
 

@@ -1,0 +1,74 @@
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: [
+    'react',
+    '@typescript-eslint',
+  ],
+  rules: {
+    // Табуляция
+    indent: [2, 2],
+
+    // Табуляция для JSX
+    'react/jsx-indent': [2, 2],
+
+    // Табуляция для пропсов
+    'react/jsx-indent-props': [2, 2],
+
+    // Использование абсолютных путей
+    'import/no-unresolved': 'off',
+
+    // Использование дефолтного экспорта
+    'import/prefer-default-export': 'off',
+
+    // Какие расширения можно не писать
+    'import/extensions': 'off',
+
+    // Разрешает импортировать devDependencies
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+
+    // Расширения файлов
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+
+    // Отсутствие дефолтного значения
+    'react/require-default-props': 'off',
+
+    // Необходимость импорта React
+    'react/react-in-jsx-scope': 'off',
+
+    // Использования spread для пропсов
+    'react/jsx-props-no-spreading': 'off',
+
+    // Ипользование Func Dec вместо Arrow Func
+    'react/function-component-definition': 'off',
+
+    // Неиспользованные переменные
+    'no-unused-vars': 'off',
+
+    // Использование одинаковых названия для переменных в разных обл видимости
+    'no-shadow': 'off',
+
+    // Использование ковычек для ключей объекта
+    'quote-props': ['error', 'as-needed'],
+
+    // Использование нижнего подчеркивания
+    'no-underscore-dangle': 'off',
+  },
+  globals: {
+    __IS_DEV__: true,
+  },
+};
