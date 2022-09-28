@@ -1,5 +1,10 @@
 {
   "i18next.i18nPaths": "/Users/Quani/Desktop/Ulbi Course/ulbi_project/public/locales,/Users/Quani/Desktop/Ulbi Course/ulbi_project/src/shared/config/i18n",
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
-  "i18n-ally.keystyle": "flat"
+  "i18n-ally.keystyle": "flat",
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss"],
 }

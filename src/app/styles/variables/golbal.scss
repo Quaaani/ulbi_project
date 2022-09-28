@@ -1,14 +1,12 @@
 :root {
-  --font-family-main: 'Nunito Sans', 'Times New Roman', Serif;
-
+  --font-family-main: "Nunito Sans", "Times New Roman", serif;
   --font-size-h: 24px;
   --font-line-h: 32px;
-  --font-h: var(--font-size-h) / var(--font-line-h) var(--font-family-main)
-
-  --font-size-s: 13px;
+  --font-h:
+    var(--font-size-h) / var(--font-line-h) var(--font-family-main)
+    --font-size-s: 13px;
   --font-line-s: 20px;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
-
   --font-size-l: 16px;
   --font-line-l: 24px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
@@ -26,5 +24,4 @@
 
   // Animations
   --default-duration: 0.3s;
-
 }

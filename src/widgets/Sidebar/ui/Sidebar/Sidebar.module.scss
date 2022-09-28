@@ -1,13 +1,11 @@
 .Sidebar {
-  height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
-  background: var(--inverted-bg-color);
-
+  position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-
-  position: relative;
+  width: var(--sidebar-width);
+  height: calc(100vh - var(--navbar-height));
+  background: var(--inverted-bg-color);
   transition: width var(--default-duration);
 }
 

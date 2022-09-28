@@ -1,13 +1,13 @@
-@import 'reset.scss';
-@import 'variables/golbal.scss';
-@import 'themes/light.scss';
-@import 'themes/dark.scss';
+@import "reset";
+@import "variables/golbal";
+@import "themes/light";
+@import "themes/dark";
 
 .app {
-  font: var(--font-l);
-  background: var(--bg-color);
-  color: var(--primary-color);
   min-height: 100vh;
+  font: var(--font-l);
+  color: var(--primary-color);
+  background: var(--bg-color);
 }
 
 .content {

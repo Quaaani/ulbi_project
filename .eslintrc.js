@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'plugin:i18next/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,6 +19,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'i18next',
   ],
   rules: {
     // Табуляция
@@ -67,7 +69,11 @@ module.exports = {
 
     // Использование нижнего подчеркивания
     'no-underscore-dangle': 'off',
+
+    // Плагин i18 будет работать только в tsx/jsx файлах
+    'i18next/no-literal-string': ['error', { markupOnly: true }],
   },
+  // Для объявления глобальных переменных
   globals: {
     __IS_DEV__: true,
   },
