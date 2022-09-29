@@ -1,5 +1,5 @@
-import { ResolveOptions } from 'webpack';
-import { BuildOptions } from './types/config';
+import { ResolveOptions } from 'webpack'
+import { BuildOptions } from './types/config'
 
 export function buildResolvers({ paths }: BuildOptions): ResolveOptions {
   return {
@@ -17,5 +17,5 @@ export function buildResolvers({ paths }: BuildOptions): ResolveOptions {
 
     // Alias (часто указывают с помощью @)
     alias: {},
-  };
+  }
 }

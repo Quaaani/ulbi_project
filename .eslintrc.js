@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -71,10 +72,16 @@ module.exports = {
     'no-underscore-dangle': 'off',
 
     // Плагин i18 будет работать только в tsx/jsx файлах
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+
+    // Максимальная длинна строки
+    'max-len': ['error', { code: 120, ignoreComments: true }],
+
+    // Использование точки с запятой
+    semi: ['error', 'never'],
   },
   // Для объявления глобальных переменных
   globals: {
     __IS_DEV__: true,
   },
-};
+}

@@ -1,12 +1,12 @@
-import { Suspense } from 'react';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import { Navbar, Sidebar } from 'widgets';
-import { useTheme } from './providers/ThemeProvider';
-import { AppRouter } from './providers/router';
-import './styles/index.scss';
+import { Suspense } from 'react'
+import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { Navbar, Sidebar } from 'widgets'
+import { useTheme } from './providers/ThemeProvider'
+import { AppRouter } from './providers/router'
+import './styles/index.scss'
 
 function App() {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
     <div className={classNames('app', {}, [theme])}>
@@ -18,7 +18,7 @@ function App() {
         </div>
       </Suspense>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

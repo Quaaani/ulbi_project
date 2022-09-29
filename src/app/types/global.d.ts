@@ -3,16 +3,16 @@ declare module '*.scss' {
   interface IClassNames {
     [className: string]: string;
   }
-  const classNames: IClassNames;
+  const classNames: IClassNames
   export = classNames;
 }
 
 // Декларация для .svg расширений
 declare module '*.svg' {
-  import React from 'react';
+  import React from 'react'
 
-  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
-  export default SVG;
+  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>
+  export default SVG
 }
 
 // Декларация для разных файлов
@@ -22,4 +22,4 @@ declare module '*.jpeg';
 declare module '*.gif';
 
 // Объявление глобальных переменных
-declare const __IS_DEV__: boolean;
+declare const __IS_DEV__: boolean

@@ -1,18 +1,18 @@
-import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import { FC } from 'react';
-import { classNames } from 'shared/lib/helpers/classNames/classNames';
-import LightThemeIcon from 'shared/assets/icons/light-theme.svg';
-import DarkThemeIcon from 'shared/assets/icons/dark-theme.svg';
-import { Button } from 'shared/ui';
-import cls from './ThemeSwitcher.module.scss';
+import { Theme, useTheme } from 'app/providers/ThemeProvider'
+import { FC } from 'react'
+import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import LightThemeIcon from 'shared/assets/icons/light-theme.svg'
+import DarkThemeIcon from 'shared/assets/icons/dark-theme.svg'
+import { Button } from 'shared/ui'
+import cls from './ThemeSwitcher.module.scss'
 
 interface ThemeSwitcherProps {
   className?: string;
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
-  const { className } = props;
-  const { theme, toggleTheme } = useTheme();
+  const { className } = props
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <Button
@@ -25,5 +25,5 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
         <LightThemeIcon className={cls.icon} />
       )}
     </Button>
-  );
-};
+  )
+}

@@ -1,6 +1,6 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import webpack from 'webpack';
-import { BuildOptions } from './types/config';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack'
+import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   // CSS и SCSS Лоудер
@@ -27,13 +27,13 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       },
       'sass-loader',
     ],
-  };
+  }
 
   // SVG Лоудер
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack'],
-  };
+  }
 
   // Files Лоудер
   // Можно добавить расширения для шрифтов (woff2|woff)
@@ -44,14 +44,14 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         loader: 'file-loader',
       },
     ],
-  };
+  }
 
   // TS Лоудер
   const typeScriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
-  };
+  }
 
   // Babel Лоудер
   const babelLoader = {
@@ -63,7 +63,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         presets: ['@babel/preset-env'],
       },
     },
-  };
+  }
 
   return [
     fileLoader,
@@ -71,5 +71,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     babelLoader,
     typeScriptLoader,
     cssLoader,
-  ];
+  ]
 }
