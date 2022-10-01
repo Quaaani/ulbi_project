@@ -1,18 +1,26 @@
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server'
+// import openBrowser from 'react-dev-utils/openBrowser'
 import { BuildOptions } from './types/config'
 
 export function buildDevServer(options: BuildOptions): DevServerConfiguration {
+  const { port } = options
+
   return {
     // # Порта для приложения
-    port: options.port,
-
-    // Автооткрытие в браузере нашего приложения
-    open: true,
+    port,
 
     // Позволяет проксировать запросы через index page (корневую страницу)
     historyApiFallback: true,
 
     // Позволяет обновлять приложение без обновления страницы
     hot: true,
+
+    // Автооткрытие в браузере нашего приложения
+    open: true,
+    // liveReload: false,
+
+    // onAfterSetupMiddleware: () => {
+    //   openBrowser(`https://localhost:${port}`)
+    // },
   }
 }

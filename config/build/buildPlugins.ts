@@ -4,10 +4,9 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BuildOptions } from './types/config'
 
-export function buildPlugins({
-  paths,
-  isDev,
-}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
+  const { paths, isDev } = options
+
   return [
     // Сборка HTML файла с подключением скрипта и доп. конфигами
     new HtmlWebpackPlugin({
@@ -19,7 +18,7 @@ export function buildPlugins({
     new webpack.ProgressPlugin(),
 
     // Плагин для хеширования CSS классов
-    new MiniCssExtractPlugin({
+    !isDev && new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
