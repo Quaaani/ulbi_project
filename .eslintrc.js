@@ -79,6 +79,9 @@ module.exports = {
 
     // Использование точки с запятой
     semi: ['error', 'never'],
+
+    // Использование console.log
+    'no-console': ['error', { allow: ['warn', 'error'] }],
   },
   // Для объявления глобальных переменных
   globals: {

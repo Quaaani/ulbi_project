@@ -1,5 +1,5 @@
 import type { Configuration as DevServerConfiguration } from 'webpack-dev-server'
-// import openBrowser from 'react-dev-utils/openBrowser'
+import openBrowser from 'react-dev-utils/openBrowser'
 import { BuildOptions } from './types/config'
 
 export function buildDevServer(options: BuildOptions): DevServerConfiguration {
@@ -17,10 +17,5 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
 
     // Автооткрытие в браузере нашего приложения
     open: true,
-    // liveReload: false,
-
-    // onAfterSetupMiddleware: () => {
-    //   openBrowser(`https://localhost:${port}`)
-    // },
   }
 }

@@ -2,5 +2,8 @@
   "Translate": "RU",
   "Home": "Home",
   "About us": "About us",
-  "page-not-found": "Page not found"
+  "page-not-found": "Page not found",
+  "some-error-was-found": "Some Error was found",
+  "reload-page": "Reload page",
+  "throw-error": "Throw Error"
 }

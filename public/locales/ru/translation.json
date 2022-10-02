@@ -2,5 +2,8 @@
   "Translate": "EN",
   "Home": "Главная",
   "About us": "О нас",
-  "page-not-found": "Страница не найдена"
+  "page-not-found": "Страница не найдена",
+  "some-error-was-found": "Обнаружена ошибка",
+  "reload-page": "Обновить страницу",
+  "throw-error": "Создать ошибку"
 }
