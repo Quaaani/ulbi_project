@@ -2,13 +2,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 import { BuildOptions } from './types/config'
 
 export function buildPlugins(
   options: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
-  const { paths, isDev } = options
+  const { paths, isDev, analyze } = options
 
   return (
     [
@@ -39,6 +40,9 @@ export function buildPlugins(
       // Похожий плагин для реакт компонентов
       // overlay: false - убирает отрисовку stack trace в окне браузера
       isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
+
+      // Анализ размера чанков
+      analyze && new BundleAnalyzerPlugin(),
     ]
       // Фильтруем массив плагинов, чтобы не попали false (prod сборки)
       .filter(Boolean)
