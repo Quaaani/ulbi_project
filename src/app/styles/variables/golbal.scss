@@ -1,6 +1,6 @@
 :root {
   // Font family
-  --font-family-main: "Nunito Sans", "Times New Roman", serif;
+  --font-family-main: 'Nunito Sans', 'Times New Roman', serif;
 
   // Font size Header
   --font-size-h: 24px;
@@ -30,4 +30,13 @@
 
   // Animations
   --default-duration: 0.3s;
+
+  // Colors
+  --main-blue: #0466c8;
+  --light-blue: #5e9ddc;
+  --main-gray: #293347;
+  --light-gray: #858ea1;
+  --white: #fff;
+  --green: #20bf6b;
+  --red: #f25252;
 }

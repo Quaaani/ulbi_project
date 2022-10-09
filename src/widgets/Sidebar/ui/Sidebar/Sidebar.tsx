@@ -1,13 +1,14 @@
 import { FC, useState } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from 'shared/lib/helpers'
 import { Button } from 'shared/ui'
 import ArrowRightIcon from 'shared/assets/icons/arrow-right.svg'
 import ArrowLeftIcon from 'shared/assets/icons/arrow-left.svg'
 import { LanguageSwitcher, ThemeSwitcher } from 'widgets'
+
 import cls from './Sidebar.module.scss'
 
 interface SidebarProps {
-  className?: string;
+  className?: string
 }
 
 export const Sidebar: FC<SidebarProps> = (props) => {
@@ -22,7 +23,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   return (
     <div
       className={classNames(
-        cls.Sidebar,
+        cls.sidebar,
         { [cls['is-collapsed']]: isCollapsed },
         [className],
       )}

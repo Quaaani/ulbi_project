@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'import'],
   rules: {
     // Табуляция
     indent: [2, 2],
@@ -85,9 +85,37 @@ module.exports = {
 
     // Использование console.log
     'no-console': ['error', { allow: ['warn', 'error'] }],
+
+    // Сортировка импортов
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
+      },
+    ],
   },
   // Для объявления глобальных переменных
   globals: {
     __IS_DEV__: true,
   },
+
+  // Позволяет переписать правила для определенных типов файла
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 }

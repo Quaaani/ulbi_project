@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from 'shared/lib/helpers'
 import { Button } from 'shared/ui'
 import TranslationIcon from 'shared/assets/icons/translation.svg'
+
 import cls from './LanguageSwitcher.module.scss'
 
 interface LanguageSwitcherProps {
-  className?: string;
+  className?: string
 }
 
 export const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
@@ -20,7 +21,7 @@ export const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
 
   return (
     <Button
-      className={classNames(cls.LanguageSwitcher, {}, [className])}
+      className={classNames(cls.languageSwitcher, {}, [className])}
       onClick={toggle}
     >
       <TranslationIcon className={cls.icon} />

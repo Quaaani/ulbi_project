@@ -1,13 +1,14 @@
-import { Theme, useTheme } from 'app/providers/ThemeProvider'
 import { FC } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { Theme, useTheme } from 'app/providers/ThemeProvider'
+import { Button } from 'shared/ui'
+import { classNames } from 'shared/lib/helpers'
 import LightThemeIcon from 'shared/assets/icons/light-theme.svg'
 import DarkThemeIcon from 'shared/assets/icons/dark-theme.svg'
-import { Button } from 'shared/ui'
+
 import cls from './ThemeSwitcher.module.scss'
 
 interface ThemeSwitcherProps {
-  className?: string;
+  className?: string
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
@@ -16,7 +17,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
 
   return (
     <Button
-      className={classNames(cls.ThemeSwitcher, {}, [className])}
+      className={classNames(cls.themeSwitcher, {}, [className])}
       onClick={toggleTheme}
     >
       {theme === Theme.LIGHT ? (

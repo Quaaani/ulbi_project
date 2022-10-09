@@ -1,7 +1,8 @@
 import { FC, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
+import { classNames } from 'shared/lib/helpers'
 import { Button } from 'shared/ui'
+
 import cls from './Error.module.scss'
 
 interface ErrorProps {
@@ -18,7 +19,7 @@ export const Error: FC<ErrorProps> = (props) => {
 
   return (
     <Suspense fallback="">
-      <div className={classNames(cls.Error, {}, [className])}>
+      <div className={classNames(cls.error, {}, [className])}>
         <p>{t('some-error-was-found')}</p>
         <Button onClick={reloadPage}>{t('reload-page')}</Button>
       </div>

@@ -1,10 +1,35 @@
-.Button {
+.button {
   cursor: pointer;
 }
 
 .clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   border: none;
-  padding: 0;
+  padding: 10px 16px;
   background-color: inherit;
+}
+
+.outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--main-blue);
+  border-radius: 3px;
+  padding: 10px 16px;
+  color: var(--main-blue);
+  background-color: (--white);
+}
+
+.solid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--main-blue);
+  border-radius: 3px;
+  padding: 10px 16px;
+  color: var(--white);
+  background-color: (--main-blue);
 }

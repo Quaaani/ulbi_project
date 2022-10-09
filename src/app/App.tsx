@@ -1,8 +1,10 @@
 import { Suspense, useEffect } from 'react'
-import { classNames } from 'shared/lib/helpers/classNames/classNames'
 import { Navbar, Sidebar } from 'widgets'
+import { classNames } from 'shared/lib/helpers'
+
 import { useTheme } from './providers/ThemeProvider'
 import { AppRouter } from './providers/router'
+
 import './styles/index.scss'
 
 function App() {
