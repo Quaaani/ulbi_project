@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,11 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     // Табуляция
     indent: [2, 2],
@@ -45,7 +42,10 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 
     // Расширения файлов
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+    ],
 
     // Отсутствие дефолтного значения
     'react/require-default-props': 'off',
@@ -72,7 +72,10 @@ module.exports = {
     'no-underscore-dangle': 'off',
 
     // Плагин i18 будет работать только в tsx/jsx файлах
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+    ],
 
     // Максимальная длинна строки
     'max-len': ['error', { code: 120, ignoreComments: true }],
