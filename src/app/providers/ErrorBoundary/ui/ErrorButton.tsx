@@ -1,8 +1,6 @@
-import {
-  FC, Suspense, useEffect, useState,
-} from 'react'
+import { FC, Suspense, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button } from 'shared/ui'
+import { Button, ThemeButton } from 'shared/ui'
 
 interface ErrorButtonProps {
   className?: string

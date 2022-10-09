@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { classNames } from 'shared/lib/helpers'
-import { Button } from 'shared/ui'
+import { Button, ThemeButton } from 'shared/ui'
 import ArrowRightIcon from 'shared/assets/icons/arrow-right.svg'
 import ArrowLeftIcon from 'shared/assets/icons/arrow-left.svg'
 import { LanguageSwitcher, ThemeSwitcher } from 'widgets'
@@ -28,7 +28,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         [className],
       )}
     >
-      <Button onClick={onToggle}>
+      <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
         {isCollapsed ? (
           <ArrowRightIcon className={cls.icon} />
         ) : (

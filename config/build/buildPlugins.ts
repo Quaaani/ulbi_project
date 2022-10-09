@@ -37,7 +37,8 @@ export function buildPlugins(
       isDev && new webpack.HotModuleReplacementPlugin(),
 
       // Похожий плагин для реакт компонентов
-      isDev && new ReactRefreshWebpackPlugin(),
+      // overlay: false - убирает отрисовку stack trace в окне браузера
+      isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
     ]
       // Фильтруем массив плагинов, чтобы не попали false (prod сборки)
       .filter(Boolean)

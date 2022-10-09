@@ -16,20 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--main-blue);
+  border: 1px solid var(--inverted-bg-color);
   border-radius: 3px;
   padding: 10px 16px;
-  color: var(--main-blue);
-  background-color: (--white);
-}
-
-.solid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--main-blue);
-  border-radius: 3px;
-  padding: 10px 16px;
-  color: var(--white);
-  background-color: (--main-blue);
+  color: var(--inverted-primary-color);
+  background-color: var(--inverted-bg-color);
 }
