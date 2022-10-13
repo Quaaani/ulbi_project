@@ -18,6 +18,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
     hot: true,
 
     // Автооткрытие в браузере нашего приложения
-    open: true,
+    // open: true,
   }
 }

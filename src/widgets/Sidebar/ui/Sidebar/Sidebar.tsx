@@ -22,13 +22,16 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
   return (
     <div
-      className={classNames(
-        cls.sidebar,
-        { [cls['is-collapsed']]: isCollapsed },
-        [className],
-      )}
+      data-testid="sidebar.test"
+      className={classNames(cls.sidebar, { [cls.isCollapsed]: isCollapsed }, [
+        className,
+      ])}
     >
-      <Button theme={ThemeButton.CLEAR} onClick={onToggle}>
+      <Button
+        data-testid="toggle.test"
+        theme={ThemeButton.CLEAR}
+        onClick={onToggle}
+      >
         {isCollapsed ? (
           <ArrowRightIcon className={cls.icon} />
         ) : (

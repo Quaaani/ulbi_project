@@ -9,7 +9,7 @@ import { BuildOptions } from './types/config'
 export function buildPlugins(
   options: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
-  const { paths, isDev, analyze } = options
+  const { paths, isDev, isAnalyze } = options
 
   return (
     [
@@ -42,9 +42,10 @@ export function buildPlugins(
       isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
 
       // Анализ размера чанков
-      analyze && new BundleAnalyzerPlugin(),
+      isAnalyze && new BundleAnalyzerPlugin(),
     ]
       // Фильтруем массив плагинов, чтобы не попали false (prod сборки)
       .filter(Boolean)
   )
 }
+

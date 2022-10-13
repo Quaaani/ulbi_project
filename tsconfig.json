@@ -40,5 +40,13 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+
+  "include": [
+    // Поддержка Jest тестов
+    "./config/jest/setupTests.ts",
+
+    // Поддержка абсолютных импортов
+    "./src/**/*.ts?x",
+  ]
 }
