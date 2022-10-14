@@ -1,4 +1,4 @@
-import path from "path"
+import path from 'path'
 
 export default {
   // All imported modules in your tests should be mocked automatically
@@ -39,7 +39,7 @@ export default {
     '\\.s?css$': 'identity-obj-proxy',
 
     // Поддержка SVG
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
 
   // The glob patterns Jest uses to detect test files

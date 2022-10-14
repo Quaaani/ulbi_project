@@ -47,6 +47,7 @@
     "./config/jest/setupTests.ts",
 
     // Поддержка абсолютных импортов
-    "./src/**/*.ts?x",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
   ]
 }

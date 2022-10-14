@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react'
+import { Suspense } from 'react'
 import { Navbar, Sidebar } from 'widgets'
 import { classNames } from 'shared/lib/helpers'
 
