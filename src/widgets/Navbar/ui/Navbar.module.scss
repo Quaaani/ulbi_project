@@ -1,16 +1,14 @@
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   padding: 20px;
   width: 100%;
   height: var(--navbar-height);
   background: var(--inverted-bg-color);
 }
 
-.links {
-  margin-left: auto;
-}
-
-.mainLink {
-  margin-right: 15px;
+.switchersContainer {
+  display: flex;
+  align-items: center;
 }

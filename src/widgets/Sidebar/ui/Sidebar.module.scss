@@ -14,16 +14,33 @@
 }
 
 .icon * {
-  fill: var(--inverted-primary-color);
+  stroke: var(--inverted-primary-color);
 }
 
-.switchers {
+.btnWrapper {
   position: absolute;
-  bottom: 20px;
+  right: -13px;
+  top: 32px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
 }
 
-.lastIcon {
-  margin-top: var(--default-margin);
+.btnBorder {
+  border: 1px solid var(--inverted-primary-color);
+}
+
+.linksContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  margin-left: 29px;
+}
+
+.linkWrapper {
+  padding-top: 10px;
 }

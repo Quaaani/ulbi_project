@@ -1,10 +1,1 @@
-<svg width="25.618px" height="25.618px" viewBox="-5 0 25.618 25.618" xmlns="http://www.w3.org/2000/svg">
-  <g id="Layer_77" data-name="Layer 77" transform="translate(-8.191 -3.191)">
-    <g id="Group_35" data-name="Group 35">
-      <rect id="Rectangle_38" data-name="Rectangle 38" width="18.141" height="3.947" rx="1.954" transform="translate(8.191 16.019) rotate(-45)" fill="#161615"/>
-    </g>
-    <g id="Group_36" data-name="Group 36">
-      <rect id="Rectangle_39" data-name="Rectangle 39" width="3.947" height="18.141" rx="1.954" transform="translate(8.191 15.981) rotate(-45)" fill="#161615"/>
-    </g>
-  </g>
-</svg>
+<svg width="20px" height="20px" viewBox="0 0 25 25" role="img" xmlns="http://www.w3.org/2000/svg" aria-labelledby="chevronLeftIconTitle" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" color="#000000"> <title id="chevronLeftIconTitle">Chevron Left</title> <polyline points="14 18 8 12 14 6 14 6"/> </svg>
