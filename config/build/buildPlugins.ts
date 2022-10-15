@@ -11,41 +11,41 @@ export function buildPlugins(
 ): webpack.WebpackPluginInstance[] {
   const { paths, isDev, isAnalyze } = options
 
-  return (
-    [
-      // Сборка HTML файла с подключением скрипта и доп. конфигами
-      new HtmlWebpackPlugin({
-        // Конфиг для использования нашего index.html в кач-ве шаблона
-        template: paths.html,
-      }),
+  const plugins = [
+    // Сборка HTML файла с подключением скрипта и доп. конфигами
+    new HtmlWebpackPlugin({
+      // Конфиг для использования нашего index.html в кач-ве шаблона
+      template: paths.html,
+    }),
 
-      // Таймер сборки
-      new webpack.ProgressPlugin(),
+    // Таймер сборки
+    new webpack.ProgressPlugin(),
 
-      // Плагин для хеширования CSS классов
-      !isDev &&
-        new MiniCssExtractPlugin({
-          filename: 'css/[name].[contenthash:8].css',
-          chunkFilename: 'css/[name].[contenthash:8].css',
-        }),
+    // Плагин для хеширования CSS классов
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
+    }),
 
-      // Плагин для глобальных переменных
-      new webpack.DefinePlugin({
-        __IS_DEV__: JSON.stringify(isDev),
-      }),
+    // Плагин для глобальных переменных
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev),
+    }),
+  ]
 
-      // Плагин для обновления приложения без обновления страницы
-      isDev && new webpack.HotModuleReplacementPlugin(),
+  if (isDev) {
+    // Плагин для обновления приложения без обновления страницы
+    plugins.push(new webpack.HotModuleReplacementPlugin())
 
-      // Похожий плагин для реакт компонентов
-      // overlay: false - убирает отрисовку stack trace в окне браузера
-      isDev && new ReactRefreshWebpackPlugin({ overlay: false }),
+    // Похожий плагин для реакт компонентов
+    // overlay: false - убирает отрисовку stack trace в окне браузера
+    plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }))
+  }
 
-      // Анализ размера чанков
-      isAnalyze && new BundleAnalyzerPlugin(),
-    ]
-      // Фильтруем массив плагинов, чтобы не попали false (prod сборки)
-      .filter(Boolean)
-  )
+  if (isAnalyze) {
+    // Анализ размера чанков
+    plugins.push(new BundleAnalyzerPlugin())
+  }
+
+  return plugins
 }
-
