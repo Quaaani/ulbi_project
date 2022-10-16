@@ -45,3 +45,31 @@ Outline.args = {
   children: 'Test',
   theme: ThemeButton.OUTLINE,
 }
+
+const CircleTemplate: ComponentStory<typeof Button> = (args) => (
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      height: '100vh',
+      backgroundColor: 'white',
+    }}
+  >
+    <div
+      style={{
+        width: '60px',
+        height: '60px',
+      }}  
+    >
+      <Button {...args} />
+    </div>
+  </div>
+)
+
+export const Circle = CircleTemplate.bind({})
+Circle.args = {
+  children: 'Test',
+  theme: ThemeButton.CIRCLE,
+}

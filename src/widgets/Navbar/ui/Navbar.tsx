@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/helpers'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
+import { Login } from 'widgets/Login'
 
 import cls from './Navbar.module.scss'
 
@@ -21,6 +22,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
       <div className={cls.switchersContainer}>
         <ThemeSwitcher />
         <LanguageSwitcher />
+        <Login />
       </div>
     </div>
   )

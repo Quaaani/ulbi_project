@@ -29,9 +29,10 @@
   --default-padding: 20px;
 
   // Animations
-  --default-duration: 0.3s;
+  --default-anim-duration: 0.3s;
 
   // Colors
+  --overlay: rgba(0 0 0 / 60%);
   --main-blue: #0466c8;
   --light-blue: #5e9ddc;
   --main-gray: #293347;
@@ -40,4 +41,9 @@
   --black: #000;
   --green: #20bf6b;
   --red: #f25252;
+
+  // z-Index
+  --modal-z-index: 10;
+  --dropdown-z-index: 20;
+  --tooltip-z-index: 30;
 }
