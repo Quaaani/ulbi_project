@@ -1,4 +1,3 @@
-import { Counter } from 'entities/Counter'
 import { useTranslation } from 'react-i18next'
 import { Text, TextSize } from 'shared/ui'
 
@@ -10,7 +9,6 @@ const About = () => {
   return (
     <div className={cls.about}>
       <Text size={TextSize.HEADER}>{t('About us')}</Text>
-      <Counter />
     </div>
   )
 }
