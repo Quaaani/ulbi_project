@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { FC, useCallback, useState } from 'react'
 import { classNames } from 'shared/lib/helpers'
-import { Button, Modal, ThemeButton } from 'shared/ui'
+import { Button, Modal, ButtonTheme } from 'shared/ui'
 import LoginIcon from 'shared/assets/icons/login.svg'
 import UserIcon from 'shared/assets/icons/user.svg'
 
@@ -26,7 +26,7 @@ export const Login: FC<LoginProps> = (props) => {
       <Button
         data-testid="login.test"
         className={classNames(cls.login, mods, [className])}
-        theme={ThemeButton.CLEAR}
+        theme={ButtonTheme.CLEAR}
         onClick={onToggleModal}
       >
         <LoginIcon className={cls.icon} />

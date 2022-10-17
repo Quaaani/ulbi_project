@@ -1,6 +1,6 @@
 import { FC, Suspense, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Button, ThemeButton } from 'shared/ui'
+import { Button, ButtonTheme } from 'shared/ui'
 
 interface ErrorButtonProps {
   className?: string
@@ -24,9 +24,7 @@ export const ErrorButton: FC<ErrorButtonProps> = (props) => {
 
   return (
     <Suspense fallback="">
-      <Button onClick={onThrowError}>
-        {t('throw-error')}
-      </Button>
+      <Button onClick={onThrowError}>{t('throw-error')}</Button>
     </Suspense>
   )
 }

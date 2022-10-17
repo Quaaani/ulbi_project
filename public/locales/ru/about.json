@@ -1,3 +1,8 @@
 {
-  "About us": "О нас"
+  "About us": "О нас",
+  "increment": "Увеличить",
+  "decrement": "Уменьшить",
+  "whatsup": "Йоу",
+  "about-you": "О тебе",
+  "value": "Значение"
 }

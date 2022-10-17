@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/helpers'
 
 import cls from './Button.module.scss'
 
-export enum ThemeButton {
+export enum ButtonTheme {
   CLEAR = 'clear',
   OUTLINE = 'outline',
   CIRCLE = 'circle',
@@ -11,7 +11,7 @@ export enum ThemeButton {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
-  theme?: ThemeButton
+  theme?: ButtonTheme
   inactive?: boolean
 }
 
@@ -19,13 +19,13 @@ export const Button: FC<ButtonProps> = (props) => {
   const {
     children,
     className,
-    theme = ThemeButton.OUTLINE,
+    theme = ButtonTheme.OUTLINE,
     inactive,
     ...restProps
   } = props
 
   const mods: Record<string, boolean> = {
-    [cls.inactive]: inactive
+    [cls.inactive]: inactive,
   }
 
   return (

@@ -133,6 +133,9 @@ module.exports = {
     // Для использования массива зависимостей в React Hooks
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+
+    // Запрещает переопределять значения у аргументов функции
+    'no-param-reassign': 'off',
   },
 
   // Для объявления глобальных переменных

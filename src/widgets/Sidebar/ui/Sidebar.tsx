@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import { classNames } from 'shared/lib/helpers'
-import { AppLink, Button, ThemeButton } from 'shared/ui'
+import { AppLink, Button, ButtonTheme } from 'shared/ui'
 import ArrowRightIcon from 'shared/assets/icons/arrow-right.svg'
 import ArrowLeftIcon from 'shared/assets/icons/arrow-left.svg'
 import HomeIcon from 'shared/assets/icons/home.svg'
@@ -35,7 +35,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         <Button
           data-testid="toggle.test"
           className={cls.btnBorder}
-          theme={ThemeButton.CIRCLE}
+          theme={ButtonTheme.CIRCLE}
           onClick={onToggle}
         >
           {isCollapsed ? (

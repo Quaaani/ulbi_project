@@ -1,0 +1,21 @@
+.counter {
+  // counter
+}
+
+.valueWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--inverted-bg-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btnsWrapper {
+  display: flex;
+  padding: 10px;
+}
+
+.lastBtn {
+  margin-left: 10px;
+}

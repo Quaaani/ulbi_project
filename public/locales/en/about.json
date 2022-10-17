@@ -1,3 +1,8 @@
 {
-  "About us": "About us"
+  "About us": "About us",
+  "increment": "Increment",
+  "decrement": "Decrement",
+  "whatsup": "Whatsup",
+  "about-you": "About you",
+  "value": "Value"
 }

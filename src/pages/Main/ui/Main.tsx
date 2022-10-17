@@ -1,6 +1,7 @@
 import { ErrorButton } from 'app/providers/ErrorBoundary'
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Text, TextSize } from 'shared/ui'
 
 import cls from './Main.module.scss'
 
@@ -9,7 +10,7 @@ function Main() {
 
   return (
     <div className={cls.main}>
-      {t('Main page')}
+      <Text size={TextSize.HEADER}>{t('Main page')}</Text>
       <ErrorButton />
     </div>
   )

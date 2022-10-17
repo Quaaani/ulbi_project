@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook'
 
-import { Button, ThemeButton } from './Button'
+import { Button, ButtonTheme } from './Button'
 
 export default {
   title: 'shared/Button',
@@ -37,13 +37,13 @@ DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
 export const Clear = Template.bind({})
 Clear.args = {
   children: 'Test',
-  theme: ThemeButton.CLEAR,
+  theme: ButtonTheme.CLEAR,
 }
 
 export const Outline = Template.bind({})
 Outline.args = {
   children: 'Test',
-  theme: ThemeButton.OUTLINE,
+  theme: ButtonTheme.OUTLINE,
 }
 
 const CircleTemplate: ComponentStory<typeof Button> = (args) => (
@@ -61,7 +61,7 @@ const CircleTemplate: ComponentStory<typeof Button> = (args) => (
       style={{
         width: '60px',
         height: '60px',
-      }}  
+      }}
     >
       <Button {...args} />
     </div>
@@ -71,5 +71,5 @@ const CircleTemplate: ComponentStory<typeof Button> = (args) => (
 export const Circle = CircleTemplate.bind({})
 Circle.args = {
   children: 'Test',
-  theme: ThemeButton.CIRCLE,
+  theme: ButtonTheme.CIRCLE,
 }
