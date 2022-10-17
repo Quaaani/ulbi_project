@@ -6,13 +6,14 @@ import {
   ThemeContext,
 } from '../lib/ThemeContext'
 
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
+const defaultTheme =
+  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT
 
 interface ThemeProviderProps {
   initialTheme?: Theme
 }
 
-const ThemeProvider: FC <ThemeProviderProps> = (props) => {
+const ThemeProvider: FC<ThemeProviderProps> = (props) => {
   const { children, initialTheme } = props
 
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme)
@@ -24,6 +25,9 @@ const ThemeProvider: FC <ThemeProviderProps> = (props) => {
     }),
     [theme],
   )
+
+  // Навешиваем глобальный класс сразу на body
+  document.body.className = theme
 
   return (
     <ThemeContext.Provider value={defaultProps}>
