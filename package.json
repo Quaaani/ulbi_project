@@ -21,10 +21,12 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
+    "test:ui:husky": "npx loki --requireReference --reactUri file:./storybook-static",
     "test:ui:ci": "brew install graphicsmagick && npx loki --requireReference update --reactUri file:./storybook-static",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-    "test:ui:report": "npm run test:ui:json & npm run test:ui:html"
+    "test:ui:report": "npm run test:ui:json & npm run test:ui:html",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -93,7 +95,8 @@
     "webpack": "^5.69.1",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.7.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
