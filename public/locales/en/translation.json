@@ -5,5 +5,8 @@
   "page-not-found": "Page not found",
   "some-error-was-found": "Some Error was found",
   "reload-page": "Reload page",
-  "throw-error": "Throw Error"
+  "throw-error": "Throw Error",
+  "sign-in": "Sign in",
+  "username": "Username",
+  "password": "Password"
 }

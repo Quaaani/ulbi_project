@@ -1,0 +1,67 @@
+.input {
+  position: relative;
+}
+
+::placeholder {
+  color: var(--border-default);
+  opacity: 1;
+}
+
+.placeholder {
+  position: absolute;
+  left: 10px;
+  top: -3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2px;
+  height: 7px;
+  font-size: 10px;
+  color: var(--border-default);
+  background: var(--bg-color);
+}
+
+.customInput {
+  outline: none;
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  padding: 2px 5px;
+  width: 100%;
+  height: 100%;
+  color: var(--primary-color);
+  background-color: inherit;
+
+  &:focus {
+    border: 2px solid var(--main-blue);
+  }
+}
+
+.customInputIsFilled {
+  border: 1px solid var(--border-hover);
+}
+
+.placeholderIsFilled {
+  color: var(--border-hover);
+}
+
+.placeholderIsFocused {
+  color: var(--main-blue);
+}
+
+.customInput:hover:not(:focus) {
+  border: 1px solid var(--border-hover);
+
+  .placeholder {
+    color: var(--border-hover);
+  }
+}
+
+.eyeBtn {
+  position: absolute;
+  right: -9px;
+  top: -3px;
+}
+
+.icon * {
+  stroke: var(--primary-color);
+}

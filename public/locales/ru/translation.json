@@ -5,5 +5,8 @@
   "page-not-found": "Страница не найдена",
   "some-error-was-found": "Обнаружена ошибка",
   "reload-page": "Обновить страницу",
-  "throw-error": "Создать ошибку"
+  "throw-error": "Создать ошибку",
+  "sign-in": "Войти",
+  "username": "Логин",
+  "password": "Пароль"
 }

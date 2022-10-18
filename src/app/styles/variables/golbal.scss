@@ -1,6 +1,6 @@
 :root {
   // Font family
-  --font-family-main: 'Nunito Sans', 'Times New Roman', serif;
+  --font-family-main: 'Nunito Sans', sans-serif;
 
   // Font size Header
   --font-size-h: 24px;
@@ -41,6 +41,10 @@
   --black: #000;
   --green: #20bf6b;
   --red: #f25252;
+
+  // Border Colors
+  --border-default: #afbacc;
+  --border-hover: #5c677d;
 
   // z-Index
   --modal-z-index: 10;

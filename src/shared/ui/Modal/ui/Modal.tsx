@@ -16,15 +16,18 @@ interface ModalProps {
   className?: string
   children?: ReactNode
   isOpen?: boolean
+  lazy?: boolean
   onClose?: () => void
 }
 
 const ANIMATION_DURATION = 300
 
 export const Modal: FC<ModalProps> = (props) => {
-  const { children, className, isOpen, onClose } = props
+  const { children, className, isOpen, lazy, onClose } = props
 
   const [isClosing, setIsClosing] = useState(false)
+  const [modalIsMounted, setModalIsMounted] = useState(false)
+
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
   const closeHandler = useCallback(() => {
@@ -52,6 +55,12 @@ export const Modal: FC<ModalProps> = (props) => {
 
   useEffect(() => {
     if (isOpen) {
+      setModalIsMounted(true)
+    }
+  }, [isOpen])
+
+  useEffect(() => {
+    if (isOpen) {
       window.addEventListener('keydown', onKeyDown)
     }
 
@@ -64,6 +73,10 @@ export const Modal: FC<ModalProps> = (props) => {
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
+  }
+
+  if (lazy && !modalIsMounted) {
+    return null
   }
 
   return (

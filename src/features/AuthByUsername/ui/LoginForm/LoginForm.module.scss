@@ -1,0 +1,16 @@
+.loginForm {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 50vh;
+}
+
+.inputWrapperLast {
+  margin-top: 10px;
+}
+
+.btnWrapper {
+  margin-top: 10px;
+  margin-left: auto;
+}

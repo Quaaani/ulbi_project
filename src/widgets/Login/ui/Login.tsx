@@ -1,9 +1,9 @@
-/* eslint-disable i18next/no-literal-string */
 import { FC, useCallback, useState } from 'react'
 import { classNames } from 'shared/lib/helpers'
 import { Button, Modal, ButtonTheme } from 'shared/ui'
 import LoginIcon from 'shared/assets/icons/login.svg'
 import UserIcon from 'shared/assets/icons/user.svg'
+import { LoginModal } from 'features/AuthByUsername'
 
 import cls from './Login.module.scss'
 
@@ -13,11 +13,15 @@ interface LoginProps {
 
 export const Login: FC<LoginProps> = (props) => {
   const { children, className } = props
-  const [loginModalIsVisible, setLoginModalIsVisible] = useState(false)
+  const [modalIsVisible, setModalIsVisible] = useState(false)
 
-  const onToggleModal = useCallback(() => {
-    setLoginModalIsVisible(!loginModalIsVisible)
-  }, [loginModalIsVisible])
+  const onCloseModal = useCallback(() => {
+    setModalIsVisible(false)
+  }, [])
+
+  const onOpenModal = useCallback(() => {
+    setModalIsVisible(true)
+  }, [])
 
   const mods: Record<string, boolean> = {}
 
@@ -27,17 +31,11 @@ export const Login: FC<LoginProps> = (props) => {
         data-testid="login.test"
         className={classNames(cls.login, mods, [className])}
         theme={ButtonTheme.CLEAR}
-        onClick={onToggleModal}
+        onClick={onOpenModal}
       >
         <LoginIcon className={cls.icon} />
       </Button>
-      <Modal isOpen={loginModalIsVisible} onClose={onToggleModal}>
-        Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor
-        sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem
-        ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit
-        amet.Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet.Lorem ipsum
-        dolor sit amet.Lorem ipsum dolor sit amet.
-      </Modal>
+      <LoginModal isOpen={modalIsVisible} onClose={onCloseModal} />
     </>
   )
 }
