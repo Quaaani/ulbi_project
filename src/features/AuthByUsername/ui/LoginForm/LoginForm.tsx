@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice'
@@ -38,6 +38,8 @@ export const LoginForm = memo((props: LoginFormProps) => {
     dispatch(loginByUsername({ username, password }))
   }, [dispatch, username, password])
 
+  const errorMessage = error ? t('wrong-login-data') : ''
+
   const mods: Record<string, boolean> = {}
 
   return (
@@ -50,13 +52,13 @@ export const LoginForm = memo((props: LoginFormProps) => {
         <Input
           autofocus
           placeholder={t('username')}
-          errorMessage={error}
+          errorMessage={errorMessage}
           value={username}
           onChange={onChangeUsername}
         />
         <Input
           placeholder={t('password')}
-          errorMessage={error}
+          errorMessage={errorMessage}
           value={password}
           className={cls.inputWrapperLast}
           onChange={onChangePassword}

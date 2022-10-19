@@ -9,4 +9,3 @@ describe('Modal Element Test', () => {
     expect(screen.getByTestId('modal.test')).toBeInTheDocument()
   })
 })
-

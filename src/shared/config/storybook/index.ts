@@ -1,3 +1,4 @@
-export * from './StyleDecorator'
-export * from './ThemeDecorator'
-export * from './RouterDecorator'
+export * from './decorators/StyleDecorator'
+export * from './decorators/ThemeDecorator'
+export * from './decorators/RouterDecorator'
+export * from './decorators/StoreDecorator'

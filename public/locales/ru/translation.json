@@ -11,5 +11,7 @@
   "password": "Пароль",
   "log-in": "Войти",
   "log-in-form": "Форма Авторизации",
-  "wrong-login-data": "Неверные данные"
+  "wrong-login-data": "Неверные данные",
+  "wrong-password": "Неверный пароль",
+  "wrong-username": "Неверный логин"
 }

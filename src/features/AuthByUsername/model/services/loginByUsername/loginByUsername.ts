@@ -1,12 +1,16 @@
 import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { User, userActions } from 'entities/User'
-import i18n from 'shared/config/i18n/i18n'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const'
 
 interface LoginByUsernameProps {
   username: string
   password: string
+}
+
+export enum LoginErrors {
+  INCORRECT_DATA = 'incorrectData',
+  INCORRECT_TYPE = 'incorrectType',
 }
 
 // createAsyncThunk принимает 2 generic:
@@ -37,7 +41,7 @@ export const loginByUsername = createAsyncThunk<
       return response.data
     } catch (error) {
       // у thunkAPI есть много методов, rejectWithValue - для обработки ошибок
-      return thunkAPI.rejectWithValue(i18n.t('wrong-login-data'))
+      return thunkAPI.rejectWithValue(LoginErrors.INCORRECT_DATA)
     }
   },
 )

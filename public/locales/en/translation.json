@@ -11,5 +11,7 @@
   "password": "Password",
   "log-in": "Log In",
   "log-in-form": "Log-in Form",
-  "wrong-login-data": "Wrong Login Data"
+  "wrong-login-data": "Wrong Login Data",
+  "wrong-password": "Wrong password",
+  "wrong-username": "Wrong username"
 }

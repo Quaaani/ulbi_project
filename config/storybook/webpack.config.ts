@@ -1,6 +1,6 @@
 import path from 'path'
 
-import { Configuration, RuleSetRule } from 'webpack'
+import { Configuration, DefinePlugin, RuleSetRule } from 'webpack'
 
 import { buildCssLoader, buildSvgLoader } from '../build/loaders'
 import { BuildPaths } from '../build/types/config'
@@ -38,6 +38,13 @@ export default ({ config }: { config: Configuration }) => {
 
   // Добавляем своюй SVG Loader
   config.module?.rules?.push(buildSvgLoader())
+
+  // Обхявляем глобальные перемены
+  config?.plugins?.push(
+    new DefinePlugin({
+      __IS_DEV__: true,
+    }),
+  )
 
   return config
 }

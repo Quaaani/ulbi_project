@@ -77,7 +77,7 @@ export const Input = memo((props: InputProps) => {
   const placeholderMods: Record<string, boolean> = {
     [cls.placeholderIsFocused]: inputIsFocused,
     [cls.placeholderIsFilled]: inputIsFilled,
-    [cls.placeholderError]: !!errorMessage
+    [cls.placeholderError]: !!errorMessage,
   }
   const customInputMods: Record<string, boolean> = {
     [cls.customInputIsFilled]: inputIsFilled,
@@ -108,9 +108,7 @@ export const Input = memo((props: InputProps) => {
         </div>
       )}
       {errorMessage && (
-        <div className={classNames(cls.errorMessage)}>
-          {errorMessage}
-        </div>
+        <div className={classNames(cls.errorMessage)}>{errorMessage}</div>
       )}
       {/* TODO: show/hide value for passwords by checking type="password" */}
       {/* <Button
