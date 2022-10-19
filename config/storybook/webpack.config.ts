@@ -15,7 +15,8 @@ export default ({ config }: { config: Configuration }) => {
   }
 
   // Определение абсолютных импортов
-  config.resolve?.modules?.push(paths.src)
+  config?.resolve?.modules?.unshift(paths.src)
+
 
   // Определение расширений
   config.resolve?.extensions?.push('.ts', '.tsx')

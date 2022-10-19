@@ -2,7 +2,7 @@ import { Suspense, useEffect } from 'react'
 import { Navbar, Sidebar } from 'widgets'
 import { classNames } from 'shared/lib/helpers'
 import { useDispatch } from 'react-redux'
-import { userActions } from 'fsd.entities/User'
+import { userActions } from 'entities/User'
 
 import { AppRouter } from './providers/router'
 

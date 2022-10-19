@@ -1,6 +1,6 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
-import { counterReducer } from 'fsd.entities/Counter'
-import { userReducer } from 'fsd.entities/User'
+import { counterReducer } from 'entities/Counter'
+import { userReducer } from 'entities/User'
 import { loginReducer } from 'features/AuthByUsername'
 
 import { StateSchema } from './StateSchema'
