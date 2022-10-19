@@ -9,5 +9,7 @@
   "sign-in": "Войти",
   "username": "Логин",
   "password": "Пароль",
-  "log-in": "Войти"
+  "log-in": "Войти",
+  "log-in-form": "Форма Авторизации",
+  "wrong-login-data": "Неверные данные"
 }

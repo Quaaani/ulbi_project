@@ -9,5 +9,7 @@
   "sign-in": "Sign in",
   "username": "Username",
   "password": "Password",
-  "log-in": "Log In"
+  "log-in": "Log In",
+  "log-in-form": "Log-in Form",
+  "wrong-login-data": "Wrong Login Data"
 }
