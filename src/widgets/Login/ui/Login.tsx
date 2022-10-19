@@ -5,7 +5,7 @@ import LoginIcon from 'shared/assets/icons/login.svg'
 import UserIcon from 'shared/assets/icons/user.svg'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, userActions } from 'entities/User'
+import { getUserAuthData, userActions } from 'fsd.entities/User'
 
 import cls from './Login.module.scss'
 

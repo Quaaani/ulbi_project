@@ -37,5 +37,5 @@ export const WithError = Template.bind({})
 WithError.args = {
   placeholder: 'Text',
   value: 'Text',
-  error: 'Error message',
+  errorMessage: 'Error message',
 }

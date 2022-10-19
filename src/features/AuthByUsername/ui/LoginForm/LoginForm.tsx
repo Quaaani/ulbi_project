@@ -41,6 +41,9 @@ export const LoginForm = memo((props: LoginFormProps) => {
   const errorMessage = error ? t('wrong-login-data') : ''
 
   const mods: Record<string, boolean> = {}
+  const formWrapperMods: Record<string, boolean> = {
+    [cls.formDisabled]: isLoading
+  }
 
   return (
     <div
@@ -48,7 +51,7 @@ export const LoginForm = memo((props: LoginFormProps) => {
       className={classNames(cls.loginForm, mods, [className])}
     >
       <Text size={TextSize.HEADER}>{t('log-in-form')}</Text>
-      <div className={cls.formWrapper}>
+      <div className={classNames(cls.formWrapper, formWrapperMods)}>
         <Input
           autofocus
           placeholder={t('username')}
@@ -64,7 +67,6 @@ export const LoginForm = memo((props: LoginFormProps) => {
           onChange={onChangePassword}
         />
         <Button
-          disabled={isLoading}
           className={cls.btnWrapper}
           onClick={onPressLogin}
         >
