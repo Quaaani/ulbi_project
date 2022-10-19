@@ -14,20 +14,7 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (
   args: Record<string, unknown>,
-) => (
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '100%',
-      height: '100vh',
-      backgroundColor: 'white',
-    }}
-  >
-    <Input {...args} />
-  </div>
-)
+) => <Input {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
@@ -44,4 +31,11 @@ export const Focused = Template.bind({})
 Focused.args = {
   placeholder: 'Text',
   value: 'Text',
+}
+
+export const WithError = Template.bind({})
+WithError.args = {
+  placeholder: 'Text',
+  value: 'Text',
+  error: 'Error message',
 }

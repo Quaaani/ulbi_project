@@ -30,7 +30,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
-  const closeHandler = useCallback(() => {
+  const close = useCallback(() => {
     if (onClose) {
       setIsClosing(true)
       timerRef.current = setTimeout(() => {
@@ -47,10 +47,10 @@ export const Modal: FC<ModalProps> = (props) => {
   const onKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        closeHandler()
+        close()
       }
     },
-    [closeHandler],
+    [close],
   )
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export const Modal: FC<ModalProps> = (props) => {
         data-testid="modal.test"
         className={classNames(cls.modal, mods, [className])}
       >
-        <div className={cls.overlay} onClick={closeHandler}>
+        <div className={cls.overlay} onClick={close}>
           <div className={cls.content} onClick={onContentClick}>
             {children}
           </div>

@@ -8,5 +8,6 @@
   "throw-error": "Создать ошибку",
   "sign-in": "Войти",
   "username": "Логин",
-  "password": "Пароль"
+  "password": "Пароль",
+  "log-in": "Войти"
 }

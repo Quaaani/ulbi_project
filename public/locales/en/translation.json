@@ -8,5 +8,6 @@
   "throw-error": "Throw Error",
   "sign-in": "Sign in",
   "username": "Username",
-  "password": "Password"
+  "password": "Password",
+  "log-in": "Log In"
 }

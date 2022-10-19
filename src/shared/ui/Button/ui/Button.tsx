@@ -12,7 +12,7 @@ export enum ButtonTheme {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   theme?: ButtonTheme
-  inactive?: boolean
+  disabled?: boolean
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -20,12 +20,12 @@ export const Button: FC<ButtonProps> = (props) => {
     children,
     className,
     theme = ButtonTheme.OUTLINE,
-    inactive,
+    disabled,
     ...restProps
   } = props
 
   const mods: Record<string, boolean> = {
-    [cls.inactive]: inactive,
+    [cls.inactive]: disabled,
   }
 
   return (

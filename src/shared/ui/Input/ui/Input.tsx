@@ -24,6 +24,7 @@ interface InputProps extends HTMLInputProps {
   className?: string
   value?: string
   autofocus?: boolean
+  errorMessage?: string
   onChange?: (value: string) => void
 }
 
@@ -35,6 +36,7 @@ export const Input = memo((props: InputProps) => {
     value,
     placeholder,
     autofocus,
+    errorMessage,
     onChange,
     ...restProps
   } = props
@@ -44,15 +46,15 @@ export const Input = memo((props: InputProps) => {
 
   const inputRef = useRef<HTMLInputElement>()
 
-  const onChangeHangler = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value)
   }
 
-  const onFocusHandler = () => {
+  const onFocus = () => {
     setInputIsFocused(true)
   }
 
-  const onBlurHandler = () => {
+  const onBlur = () => {
     setInputIsFocused(false)
   }
 
@@ -75,9 +77,12 @@ export const Input = memo((props: InputProps) => {
   const placeholderMods: Record<string, boolean> = {
     [cls.placeholderIsFocused]: inputIsFocused,
     [cls.placeholderIsFilled]: inputIsFilled,
+    [cls.placeholderError]: !!errorMessage
   }
   const customInputMods: Record<string, boolean> = {
     [cls.customInputIsFilled]: inputIsFilled,
+    [cls.customInputIsFocused]: inputIsFocused,
+    [cls.customInputError]: !!errorMessage,
   }
 
   return (
@@ -92,14 +97,19 @@ export const Input = memo((props: InputProps) => {
         placeholder={placeholder}
         value={value}
         className={classNames(cls.customInput, customInputMods)}
-        onChange={onChangeHangler}
-        onFocus={onFocusHandler}
-        onBlur={onBlurHandler}
+        onChange={onChangeInput}
+        onFocus={onFocus}
+        onBlur={onBlur}
         {...restProps}
       />
       {(inputIsFocused || inputIsFilled) && (
         <div className={classNames(cls.placeholder, placeholderMods)}>
           {placeholder}
+        </div>
+      )}
+      {errorMessage && (
+        <div className={classNames(cls.errorMessage)}>
+          {errorMessage}
         </div>
       )}
       {/* TODO: show/hide value for passwords by checking type="password" */}

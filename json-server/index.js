@@ -4,7 +4,7 @@ const path = require('path')
 const jsonServer = require('json-server')
 
 const dbPath = path.resolve(__dirname, 'db.json')
-const PORT = 3000
+const PORT = 8000
 
 const server = jsonServer.create()
 const router = jsonServer.router(dbPath)

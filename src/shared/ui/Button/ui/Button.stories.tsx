@@ -73,3 +73,10 @@ Circle.args = {
   children: 'Test',
   theme: ButtonTheme.CIRCLE,
 }
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  disabled: true,
+  children: 'Test',
+  theme: ButtonTheme.OUTLINE,
+}
