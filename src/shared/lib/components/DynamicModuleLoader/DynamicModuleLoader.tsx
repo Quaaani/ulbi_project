@@ -40,8 +40,10 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     return () => {
       if (removeAfterUnmount) {
         Object.entries(reducers).forEach(([name]: ReducersListEntry) => {
-          dispatch({ type: `@DESTROY ${name} reducer` })
           store.reducerManager.remove(name)
+
+          // Отлавливаем момент удаления очередного редюсера
+          dispatch({ type: `@DESTROY ${name} reducer` })
         })
       }
     }

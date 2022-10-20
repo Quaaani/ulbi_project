@@ -3,6 +3,7 @@ import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import CaseSensitivePathsPlugin from 'case-sensitive-paths-webpack-plugin'
 
 import { BuildOptions } from './types/config'
 
@@ -31,6 +32,9 @@ export function buildPlugins(
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
     }),
+
+    // Плагин для поддержки чувствительности к регистру в названии папок
+    new CaseSensitivePathsPlugin(),
   ]
 
   if (isDev) {
