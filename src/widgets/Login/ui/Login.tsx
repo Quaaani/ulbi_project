@@ -54,7 +54,9 @@ export const Login: FC<LoginProps> = (props) => {
       >
         <Icon className={cls.icon} />
       </Button>
-      <LoginModal isOpen={modalIsVisible} onClose={onCloseModal} />
+      {!authData && (
+        <LoginModal isOpen={modalIsVisible} onClose={onCloseModal} />
+      )}
     </>
   )
 }

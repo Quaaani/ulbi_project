@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { classNames } from 'shared/lib/helpers'
-import { Spinner } from 'shared/ui'
+import { Portal, Spinner } from 'shared/ui'
 
 import cls from './PageLoader.module.scss'
 
@@ -12,8 +12,10 @@ export const PageLoader: FC<PageLoaderProps> = (props) => {
   const { className } = props
 
   return (
-    <div className={classNames(cls.pageLoader, {}, [className])}>
-      <Spinner />
-    </div>
+    <Portal>
+      <div className={classNames(cls.pageLoader, {}, [className])}>
+        <Spinner className={cls.spinner} />
+      </div>
+    </Portal>
   )
 }

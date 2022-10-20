@@ -4,7 +4,7 @@ import {
   loginByUsername,
   LoginErrors,
 } from '../services/loginByUsername/loginByUsername'
-import { LoginSchema } from '../types/loginSchema'
+import { LoginSchema } from '../types/LoginSchema'
 
 const initialState: LoginSchema = {
   username: '',

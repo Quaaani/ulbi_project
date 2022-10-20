@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 
 import { LoginErrors } from '../../model/services/loginByUsername/loginByUsername'
 
-import { LoginForm } from './LoginForm'
+import LoginForm from './LoginForm'
 
 export default {
   title: 'features/LoginForm',

@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit'
 
-import { CounterSchema } from '../../types/counterSchema'
+import { CounterSchema } from '../../types/CounterSchema'
 import { getCounter } from '../getCounter/getCounter'
 
 // createSelector используется с помощью библиотеки reselect, которая используется внутри redux

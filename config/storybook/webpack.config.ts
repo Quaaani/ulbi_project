@@ -15,8 +15,8 @@ export default ({ config }: { config: Configuration }) => {
   }
 
   // Определение абсолютных импортов
+  // Важно передавать папку src первой в массив
   config?.resolve?.modules?.unshift(paths.src)
-
 
   // Определение расширений
   config.resolve?.extensions?.push('.ts', '.tsx')
