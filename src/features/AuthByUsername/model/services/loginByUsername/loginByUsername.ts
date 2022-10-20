@@ -13,6 +13,7 @@ export enum LoginErrors {
   INCORRECT_TYPE = 'incorrectType',
 }
 
+// 1й вызов Dispatch
 // createAsyncThunk принимает 2 generic:
 // 1 - то, что мы возвращаем
 // 2 - аргумент
@@ -36,8 +37,11 @@ export const loginByUsername = createAsyncThunk<
       }
 
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
+
+      // 2й вызов Dispatch
       thunkAPI.dispatch(userActions.setAuthData(response.data))
 
+      // 3й вызов Dispatch
       return response.data
     } catch (error) {
       // у thunkAPI есть много методов, rejectWithValue - для обработки ошибок
