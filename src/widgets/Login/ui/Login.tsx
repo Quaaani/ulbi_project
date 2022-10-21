@@ -1,8 +1,8 @@
-import { FC, useCallback, useEffect, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 import { classNames } from 'shared/lib/helpers'
-import { Button, Modal, ButtonTheme } from 'shared/ui'
+import { Button, ButtonTheme } from 'shared/ui'
 import LoginIcon from 'shared/assets/icons/login.svg'
-import UserIcon from 'shared/assets/icons/user.svg'
+import ExitIcon from 'shared/assets/icons/exit.svg'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserAuthData, userActions } from 'entities/User'
@@ -13,8 +13,8 @@ interface LoginProps {
   className?: string
 }
 
-export const Login: FC<LoginProps> = (props) => {
-  const { children, className } = props
+export const Login = memo((props: LoginProps) => {
+  const { className } = props
   const [modalIsVisible, setModalIsVisible] = useState(false)
 
   const authData = useSelector(getUserAuthData)
@@ -40,7 +40,7 @@ export const Login: FC<LoginProps> = (props) => {
 
   const onPressBtn = authData ? onLogout : onOpenModal
 
-  const Icon = authData ? UserIcon : LoginIcon
+  const Icon = authData ? ExitIcon : LoginIcon
 
   const mods: Record<string, boolean> = {}
 
@@ -59,4 +59,4 @@ export const Login: FC<LoginProps> = (props) => {
       )}
     </>
   )
-}
+})

@@ -37,3 +37,9 @@ export const createReduxStore = (
 
   return store
 }
+
+// С помощью ReturnType мы берем typeof от функции,
+// тем самым получая тип того, что эта функция должна вернуть (store)
+// Чтобы получить тип для dispatc, нужно указать его нативно 
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
+

@@ -13,25 +13,6 @@
   width: var(--sidebar-width-collapsed);
 }
 
-.icon * {
-  stroke: var(--inverted-primary-color);
-}
-
-.btnWrapper {
-  position: absolute;
-  right: -13px;
-  top: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-}
-
-.btnBorder {
-  border: 1px solid var(--inverted-primary-color);
-}
-
 .linksContainer {
   display: flex;
   flex: 1;
@@ -39,8 +20,4 @@
   align-items: start;
   justify-content: center;
   margin-left: 29px;
-}
-
-.linkWrapper {
-  padding-top: 10px;
 }

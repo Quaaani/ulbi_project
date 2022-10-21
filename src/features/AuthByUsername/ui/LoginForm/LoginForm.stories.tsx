@@ -48,7 +48,9 @@ Error.decorators = [
 ]
 
 export const Loading = Template.bind({})
-Loading.args = {}
+Loading.args = {
+  onSuccess: true,
+}
 Loading.decorators = [
   StoreDecorator({
     loginForm: {

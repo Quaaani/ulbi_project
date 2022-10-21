@@ -1,5 +1,4 @@
-import { FC } from 'react'
-import { useTranslation } from 'react-i18next'
+import { memo, useState } from 'react'
 import { classNames } from 'shared/lib/helpers'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
@@ -13,9 +12,10 @@ interface NavbarProps {
 
 // Компоненты, которые не нужно помещать в отдельные чанки через lazy load
 // имеют именованный экспорт
-export const Navbar: FC<NavbarProps> = (props) => {
+export const Navbar = memo((props: NavbarProps) => {
   const { className } = props
-  const { t } = useTranslation()
+
+  const [test, setTest] = useState(0)
 
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
@@ -26,4 +26,4 @@ export const Navbar: FC<NavbarProps> = (props) => {
       </div>
     </div>
   )
-}
+})

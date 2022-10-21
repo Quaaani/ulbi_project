@@ -3,10 +3,18 @@
   "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
   "users": [
     {
-      "id": "1",
-      "username": "admin",
-      "password": "123"
+      "id": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+      "username": "quani",
+      "password": "5750579"
     }
   ],
-  "profile": { "name": "hellpoooo" }
+  "profile": { 
+    "uid": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+    "firstName": "Jhon",
+    "lastName": "Doe",
+    "age": "27",
+    "countryIso": "KG",
+    "isAdmin": true,
+    "avatar": "https://i.kym-cdn.com/photos/images/newsfeed/000/302/073/d83.png"
+  }
 }

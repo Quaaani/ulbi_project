@@ -5,7 +5,7 @@ import { Login } from './Login'
 
 describe('Login Element Test', () => {
   test('Default Test', () => {
-    ComponentRender(<Login>Test</Login>)
+    ComponentRender(<Login />)
     expect(screen.getByTestId('login.test')).toBeInTheDocument()
   })
 })

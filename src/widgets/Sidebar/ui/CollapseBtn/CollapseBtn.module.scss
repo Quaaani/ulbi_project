@@ -1,0 +1,18 @@
+.icon * {
+  stroke: var(--inverted-primary-color);
+}
+
+.collapseBtn {
+  position: absolute;
+  right: -13px;
+  top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+}
+
+.btnBorder {
+  border: 1px solid var(--inverted-primary-color);
+}
