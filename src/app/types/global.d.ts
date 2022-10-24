@@ -23,3 +23,4 @@ declare module '*.gif';
 
 // Объявление глобальных переменных
 declare const __IS_DEV__: boolean
+declare const __API__: string

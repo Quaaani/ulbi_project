@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { ThunkConfig } from 'app/providers/StoreProvider'
 import { User, userActions } from 'entities/User'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const'
 
@@ -20,14 +20,15 @@ export enum LoginErrors {
 export const loginByUsername = createAsyncThunk<
   User,
   LoginByUsernameProps,
-  // rejectValue - типизация для ошибки, которая попадает в rejectWithValue
-  { rejectValue: string }
+  ThunkConfig<LoginErrors>
 >(
   'login/loginByUsername',
   async (requestData: LoginByUsernameProps, thunkAPI) => {
     const { username, password } = requestData
+    const { extra, dispatch, rejectWithValue } = thunkAPI
+
     try {
-      const response = await axios.post<User>('http://localhost:8000/login', {
+      const response = await extra.api.post<User>('/login', {
         username,
         password,
       })
@@ -39,13 +40,15 @@ export const loginByUsername = createAsyncThunk<
       localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
 
       // 2й вызов Dispatch
-      thunkAPI.dispatch(userActions.setAuthData(response.data))
+      dispatch(userActions.setAuthData(response.data))
+
+      extra.navigate('/about')
 
       // 3й вызов Dispatch
       return response.data
     } catch (error) {
       // у thunkAPI есть много методов, rejectWithValue - для обработки ошибок
-      return thunkAPI.rejectWithValue(LoginErrors.INCORRECT_DATA)
+      return rejectWithValue(LoginErrors.INCORRECT_DATA)
     }
   },
 )
