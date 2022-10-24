@@ -1,8 +1,9 @@
-import { profileReducer } from 'entities/Profile'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames } from 'shared/lib/helpers'
+import { useAppDispatch } from 'shared/lib/hooks'
 
 import cls from './Profile.module.scss'
 
@@ -15,8 +16,13 @@ export interface ProfileProps {
 }
 
 const Profile: FC<ProfileProps> = (props) => {
-  const { children, className } = props
+  const { className } = props
   const { t } = useTranslation('profile')
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProfileData())
+  }, [dispatch])
 
   const mods: Record<string, boolean> = {}
 
@@ -26,7 +32,7 @@ const Profile: FC<ProfileProps> = (props) => {
         data-testid="profile.test"
         className={classNames(cls.profile, mods, [className])}
       >
-        {t('profile-page')}
+        <ProfileCard />
       </div>
     </DynamicModuleLoader>
   )

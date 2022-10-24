@@ -1,0 +1,24 @@
+.profileCard {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
+  height: 100vh;
+}
+
+.cardWrapper {
+  border: 1px solid var(--inverted-bg-color);
+  padding: 10px;
+  width: 40vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  margin-top: 10px;
+}
