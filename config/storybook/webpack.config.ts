@@ -16,13 +16,13 @@ export default ({ config }: { config: Configuration }) => {
 
   // Определение абсолютных импортов
   // Важно передавать папку src первой в массив
-  config?.resolve?.modules?.unshift(paths.src)
+  config.resolve!.modules!.unshift(paths.src)
 
   // Определение расширений
-  config.resolve?.extensions?.push('.ts', '.tsx')
+  config.resolve!.extensions!.push('.ts', '.tsx')
 
   // Определение CSS/SCSS Modules
-  config.module?.rules?.push(buildCssLoader(true))
+  config.module!.rules!.push(buildCssLoader(true))
 
   // Переопределение обработки SVG
   // eslint-disable-next-line no-param-reassign
@@ -38,10 +38,10 @@ export default ({ config }: { config: Configuration }) => {
   )
 
   // Добавляем своюй SVG Loader
-  config.module?.rules?.push(buildSvgLoader())
+  config.module!.rules!.push(buildSvgLoader())
 
   // Объявляем глобальные перемены
-  config?.plugins?.push(
+  config.plugins!.push(
     new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
       __API__: JSON.stringify('')
