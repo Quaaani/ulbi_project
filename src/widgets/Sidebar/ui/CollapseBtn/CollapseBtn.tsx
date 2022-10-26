@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Button, ButtonTheme } from 'shared/ui'
 import ArrowRightIcon from 'shared/assets/icons/arrow-right.svg'
 import ArrowLeftIcon from 'shared/assets/icons/arrow-left.svg'
@@ -15,7 +15,7 @@ export interface CollapseBtnProps {
 export const CollapseBtn = memo((props: CollapseBtnProps) => {
   const { className, isCollapsed, onToggle } = props
 
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
 
   return (
     <div

@@ -2,7 +2,7 @@ import { FC, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch } from 'shared/lib/hooks'
 
 import cls from './Profile.module.scss'
@@ -24,7 +24,7 @@ const Profile: FC<ProfileProps> = (props) => {
     dispatch(fetchProfileData())
   }, [dispatch])
 
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>

@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { AppLink, AppLinkTheme } from './AppLink'
+import { AppLink, AppLinkProps, AppLinkTheme } from './AppLink'
 
 export default {
   title: 'shared/AppLink',
@@ -15,7 +15,7 @@ export default {
   },
 } as ComponentMeta<typeof AppLink>
 
-const Template: ComponentStory<typeof AppLink> = (args) => (
+const Template: ComponentStory<typeof AppLink> = (args: AppLinkProps) => (
   <div
     style={{
       display: 'flex',

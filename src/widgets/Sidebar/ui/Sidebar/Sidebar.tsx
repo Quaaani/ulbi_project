@@ -1,5 +1,5 @@
 import { memo, useCallback, useState } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 
 import { SidebarItemsList } from '../../model/items'
 import { CollapseBtn } from '../CollapseBtn/CollapseBtn'
@@ -20,7 +20,7 @@ export const Sidebar = memo((props: SidebarProps) => {
     setIsCollapsed((prev) => !prev)
   }, [])
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.isCollapsed]: isCollapsed,
   }
 

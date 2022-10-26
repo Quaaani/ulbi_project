@@ -12,7 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Spinner>
 
-const Template: ComponentStory<typeof Spinner> = (args) => (
+const Template: ComponentStory<typeof Spinner> = () => (
   <div
     style={{
       display: 'flex',
@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof Spinner> = (args) => (
       backgroundColor: 'white',
     }}
   >
-    <Spinner {...args} />
+    <Spinner />
   </div>
 )
 

@@ -1,5 +1,5 @@
 import { FC, Suspense } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Modal } from 'shared/ui'
 import { PageLoader } from 'widgets'
 
@@ -15,7 +15,7 @@ interface LoginModalProps {
 
 export const LoginModal: FC<LoginModalProps> = (props) => {
   const { children, className, isOpen, onClose } = props
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
 
   return (
     <Modal

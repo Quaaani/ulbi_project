@@ -12,9 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Main>
 
-const Template: ComponentStory<typeof Main> = (
-  args: Record<string, unknown>,
-) => <Main {...args} />
+const Template: ComponentStory<typeof Main> = () => <Main />
 
 export const Default = Template.bind({})
 Default.args = {}

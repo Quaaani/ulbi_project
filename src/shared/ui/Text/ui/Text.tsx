@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Text.module.scss'
 
@@ -9,14 +9,14 @@ export enum TextSize {
   HEADER = 'header',
 }
 
-interface TextProps {
+export interface TextProps {
   className?: string
   size?: TextSize
 }
 
 export const Text: FC<TextProps> = (props) => {
   const { children, className, size = TextSize.SMALL, ...restProps } = props
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
 
   return (
     <div

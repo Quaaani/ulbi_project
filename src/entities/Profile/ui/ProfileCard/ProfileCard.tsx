@@ -6,7 +6,7 @@ import {
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Button, Input, Text, TextSize } from 'shared/ui'
 
 import cls from './ProfileCard.module.scss'
@@ -23,7 +23,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
 
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
   return (
     <div
       data-testid="profilecard.test"

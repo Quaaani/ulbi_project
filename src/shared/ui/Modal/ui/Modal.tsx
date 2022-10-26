@@ -7,12 +7,12 @@ import {
   useRef,
   useState,
 } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Portal } from 'shared/ui/Portal/Portal'
 
 import cls from './Modal.module.scss'
 
-interface ModalProps {
+export interface ModalProps {
   className?: string
   children?: ReactNode
   isOpen?: boolean
@@ -70,7 +70,7 @@ export const Modal: FC<ModalProps> = (props) => {
     }
   }, [isOpen, onKeyDown])
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   }

@@ -12,9 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof NotFound>
 
-const Template: ComponentStory<typeof NotFound> = (args) => (
-  <NotFound {...args} />
-)
+const Template: ComponentStory<typeof NotFound> = () => <NotFound />
 
 export const Default = Template.bind({})
 Default.args = {}

@@ -1,5 +1,5 @@
 import { memo, useCallback, useEffect, useState } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Button, ButtonTheme } from 'shared/ui'
 import LoginIcon from 'shared/assets/icons/login.svg'
 import ExitIcon from 'shared/assets/icons/exit.svg'
@@ -42,7 +42,7 @@ export const Login = memo((props: LoginProps) => {
 
   const Icon = authData ? ExitIcon : LoginIcon
 
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
 
   return (
     <>

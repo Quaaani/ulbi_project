@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 
 import { LoginErrors } from '../../model/services/loginByUsername/loginByUsername'
 
-import LoginForm from './LoginForm'
+import LoginForm, { LoginFormProps } from './LoginForm'
 
 export default {
   title: 'features/LoginForm',
@@ -14,9 +14,9 @@ export default {
   },
 } as ComponentMeta<typeof LoginForm>
 
-const Template: ComponentStory<typeof LoginForm> = (
-  args: Record<string, unknown>,
-) => <LoginForm {...args} />
+const Template: ComponentStory<typeof LoginForm> = (args: LoginFormProps) => (
+  <LoginForm {...args} />
+)
 
 export const Default = Template.bind({})
 Default.args = {}
@@ -49,7 +49,7 @@ Error.decorators = [
 
 export const Loading = Template.bind({})
 Loading.args = {
-  onSuccess: true,
+  onSuccess: () => undefined,
 }
 Loading.decorators = [
   StoreDecorator({

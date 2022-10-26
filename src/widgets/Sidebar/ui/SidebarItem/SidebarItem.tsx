@@ -1,5 +1,4 @@
-import { FC, memo } from 'react'
-import { RoutePath } from 'shared/router'
+import { memo } from 'react'
 import { AppLink } from 'shared/ui'
 
 import { SidebarItemType } from '../../model/items'
@@ -15,11 +14,10 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
   const { item, isCollapsed } = props
   const { icon: Icon } = item
 
-  const mods: Record<string, boolean> = {}
-
   return (
     <AppLink to={item.path} className={cls.linkWrapper}>
       <Icon className={cls.icon} />
     </AppLink>
   )
 })
+

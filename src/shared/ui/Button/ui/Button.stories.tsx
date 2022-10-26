@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook'
 
-import { Button, ButtonTheme } from './Button'
+import { Button, ButtonProps, ButtonTheme } from './Button'
 
 export default {
   title: 'shared/Button',
@@ -12,7 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = (args) => (
+const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
   <div
     style={{
       display: 'flex',

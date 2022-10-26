@@ -6,7 +6,7 @@ import {
   useEffect,
   useRef,
 } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Button, ButtonTheme } from 'shared/ui/Button'
 
 import EyeIcon from '../../../assets/icons/eye.svg'
@@ -20,7 +20,7 @@ type HTMLInputProps = Omit<
   'value' | 'onChange'
 >
 
-interface InputProps extends HTMLInputProps {
+export interface InputProps extends HTMLInputProps {
   className?: string
   value?: string
   autofocus?: boolean
@@ -44,7 +44,7 @@ export const Input = memo((props: InputProps) => {
   const [inputIsFocused, setInputIsFocused] = useState(false)
   const [inputIsFilled, setInputIsFilled] = useState(false)
 
-  const inputRef = useRef<HTMLInputElement>()
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const onChangeInput = (event: ChangeEvent<HTMLInputElement>) => {
     onChange?.(event.target.value)
@@ -73,13 +73,13 @@ export const Input = memo((props: InputProps) => {
     }
   }, [value, autofocus])
 
-  const mods: Record<string, boolean> = {}
-  const placeholderMods: Record<string, boolean> = {
+  const mods: Mods = {}
+  const placeholderMods: Mods = {
     [cls.placeholderIsFocused]: inputIsFocused,
     [cls.placeholderIsFilled]: inputIsFilled,
     [cls.placeholderError]: !!errorMessage,
   }
-  const customInputMods: Record<string, boolean> = {
+  const customInputMods: Mods = {
     [cls.customInputIsFilled]: inputIsFilled,
     [cls.customInputIsFocused]: inputIsFocused,
     [cls.customInputError]: !!errorMessage,

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { Text, TextSize } from './Text'
+import { Text, TextProps, TextSize } from './Text'
 
 export default {
   title: 'shared/Text',
@@ -12,9 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof Text>
 
-const Template: ComponentStory<typeof Text> = (
-  args: Record<string, unknown>,
-) => (
+const Template: ComponentStory<typeof Text> = (args: TextProps) => (
   <div
     style={{
       display: 'flex',

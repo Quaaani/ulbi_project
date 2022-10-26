@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Button, Input, Text, TextSize } from 'shared/ui'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { useAppDispatch } from 'shared/lib/hooks'
@@ -53,14 +53,14 @@ const LoginForm = memo((props: LoginFormProps) => {
   const onPressLogin = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }))
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess()
+      onSuccess?.()
     }
   }, [dispatch, username, password, onSuccess])
 
   const errorMessage = error ? t('wrong-login-data') : ''
 
-  const mods: Record<string, boolean> = {}
-  const formWrapperMods: Record<string, boolean> = {
+  const mods: Mods = {}
+  const formWrapperMods: Mods = {
     [cls.formDisabled]: !!isLoading,
   }
 

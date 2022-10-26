@@ -24,3 +24,8 @@ declare module '*.gif';
 // Объявление глобальных переменных
 declare const __IS_DEV__: boolean
 declare const __API__: string
+
+// Кастомный DeepPartial
+type DeepPartial<T> = T extends object ? {
+  [P in keyof T]?: DeepPartial<T[P]>;
+} : T
