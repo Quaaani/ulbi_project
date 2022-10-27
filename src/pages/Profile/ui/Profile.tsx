@@ -1,11 +1,22 @@
-import { FC, useEffect } from 'react'
+import {
+  fetchProfileData,
+  profileActions,
+  profileReducer,
+} from 'entities/Profile'
+import {
+  getProfileFormData,
+  getProfileError,
+  getProfileIsLoading,
+  getProfileReadonly,
+} from 'entities/Profile/model/selectors/ProfileSelectors'
+import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile'
+import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
-import { classNames, Mods } from 'shared/lib/helpers'
+import { Mods } from 'shared/lib/helpers'
 import { useAppDispatch } from 'shared/lib/hooks'
 
-import cls from './Profile.module.scss'
+import { ProfileForm } from './ProfileForm'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -20,6 +31,33 @@ const Profile: FC<ProfileProps> = (props) => {
   const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
 
+  const formData = useSelector(getProfileFormData)
+  const readonly = useSelector(getProfileReadonly)
+  const isLoading = useSelector(getProfileIsLoading)
+  const error = useSelector(getProfileError)
+
+  const onEdit = useCallback(() => {
+    dispatch(profileActions.setReadonly(false))
+  }, [dispatch])
+
+  const onCancel = useCallback(() => {
+    dispatch(profileActions.cancelEdit())
+  }, [dispatch])
+
+  const onChangeFirstname = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ firstName: value || '' }))
+    },
+    [dispatch],
+  )
+
+  const onChangeLastname = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ lastName: value || '' }))
+    },
+    [dispatch],
+  )
+
   useEffect(() => {
     dispatch(fetchProfileData())
   }, [dispatch])
@@ -28,7 +66,16 @@ const Profile: FC<ProfileProps> = (props) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <ProfileCard />
+      <ProfileForm
+        formData={formData}
+        isLoading={isLoading}
+        error={error}
+        readonly={readonly}
+        onEdit={onEdit}
+        onCancel={onCancel}
+        onChangeFirstname={onChangeFirstname}
+        onChangeLastname={onChangeLastname}
+      />
     </DynamicModuleLoader>
   )
 }

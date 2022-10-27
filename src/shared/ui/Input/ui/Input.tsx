@@ -17,7 +17,7 @@ import cls from './Input.module.scss'
 // Omit забирает из указанного типа все пропсы, но исключает те, которые мы укажем 2 аргументом
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange'
+  'value' | 'onChange' | 'readOnly'
 >
 
 export interface InputProps extends HTMLInputProps {
@@ -25,6 +25,7 @@ export interface InputProps extends HTMLInputProps {
   value?: string
   autofocus?: boolean
   errorMessage?: string
+  readonly?: boolean
   onChange?: (value: string) => void
 }
 
@@ -37,6 +38,7 @@ export const Input = memo((props: InputProps) => {
     placeholder,
     autofocus,
     errorMessage,
+    readonly,
     onChange,
     ...restProps
   } = props
@@ -83,6 +85,7 @@ export const Input = memo((props: InputProps) => {
     [cls.customInputIsFilled]: inputIsFilled,
     [cls.customInputIsFocused]: inputIsFocused,
     [cls.customInputError]: !!errorMessage,
+    [cls.readonly]: readonly,
   }
 
   return (
@@ -100,6 +103,7 @@ export const Input = memo((props: InputProps) => {
         onChange={onChangeInput}
         onFocus={onFocus}
         onBlur={onBlur}
+        readOnly={readonly}
         {...restProps}
       />
       {(inputIsFocused || inputIsFilled) && (

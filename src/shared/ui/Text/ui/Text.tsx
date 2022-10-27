@@ -10,16 +10,23 @@ export enum TextSize {
   HEADER = 'header',
 }
 
+export enum TextType {
+  ERROR = 'error'
+}
+
 export interface TextProps {
   className?: string
   title?: string | number
   size?: TextSize
+  type?: TextType
 }
 
 export const Text = memo((props: TextProps) => {
-  const { className, title, size = TextSize.SMALL, ...restProps } = props
+  const { className, title, size = TextSize.SMALL, type, ...restProps } = props
 
-  const mods: Mods = {}
+  const mods: Mods = {
+    [cls.error]: type === TextType.ERROR,
+  }
   return (
     <div
       data-testid="text.test"

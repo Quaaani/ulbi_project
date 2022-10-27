@@ -5,6 +5,11 @@
   font: var(--font-s);
 }
 
+.readonly {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 ::placeholder {
   font-size: 13px;
   opacity: 1;

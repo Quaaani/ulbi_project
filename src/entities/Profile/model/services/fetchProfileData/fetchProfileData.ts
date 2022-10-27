@@ -3,15 +3,14 @@ import { ThunkConfig } from 'app/providers/StoreProvider'
 
 import { Profile } from '../../types/profileSchema'
 
-export enum ProfileErrors {
-  NOT_FOUND = 'notFound',
-  FORBIDDEN = 'forbidden',
+export enum ProfileError {
+  FORBIDDEN = 'You don`t have permission to access',
 }
 
 export const fetchProfileData = createAsyncThunk<
   Profile,
   void,
-  ThunkConfig<ProfileErrors>
+  ThunkConfig<ProfileError>
 >('profile/fetchProfileData', async (_, thunkAPI) => {
   const { extra, rejectWithValue } = thunkAPI
 
@@ -20,6 +19,6 @@ export const fetchProfileData = createAsyncThunk<
 
     return response.data
   } catch (error) {
-    return rejectWithValue(ProfileErrors.NOT_FOUND)
+    return rejectWithValue(ProfileError.FORBIDDEN)
   }
 })

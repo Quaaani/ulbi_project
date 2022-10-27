@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import {
   fetchProfileData,
-  ProfileErrors,
+  ProfileError,
 } from '../services/fetchProfileData/fetchProfileData'
 import { Profile, ProfileSchema } from '../types/profileSchema'
 
@@ -16,7 +16,21 @@ const initialState: ProfileSchema = {
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {},
+  reducers: {
+    setReadonly: (state, action: PayloadAction<boolean>) => {
+      state.readonly = action.payload
+    },
+    updateProfile: (state, action: PayloadAction<Profile>) => {
+      state.formData = {
+        ...state.formData,
+        ...action.payload,
+      }
+    },
+    cancelEdit: (state) => {
+      state.readonly = true
+      state.formData = state.data
+    },
+  },
   // Дополнительное поля для изменения state
   extraReducers: (builder) => {
     builder
@@ -29,11 +43,12 @@ export const profileSlice = createSlice({
         (state, action: PayloadAction<Profile>) => {
           state.isLoading = false
           state.data = action.payload
+          state.formData = action.payload
         },
       )
       .addCase(fetchProfileData.rejected, (state, action) => {
         state.isLoading = false
-        state.error = ProfileErrors.NOT_FOUND
+        state.error = ProfileError.FORBIDDEN
       })
   },
 })
