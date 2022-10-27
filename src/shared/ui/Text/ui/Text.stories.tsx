@@ -10,6 +10,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  args: {
+    title: 'Storybook',
+  },
 } as ComponentMeta<typeof Text>
 
 const Template: ComponentStory<typeof Text> = (args: TextProps) => (
@@ -28,24 +31,23 @@ const Template: ComponentStory<typeof Text> = (args: TextProps) => (
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  children: 'Test',
-}
+Default.args = {}
 
 export const DefaultDark = Template.bind({})
-DefaultDark.args = {
-  children: 'Test',
-}
+DefaultDark.args = {}
 DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const Medium = Template.bind({})
+Medium.args = {
+  size: TextSize.MEDIUM,
+}
 
 export const Large = Template.bind({})
 Large.args = {
-  children: 'Test',
   size: TextSize.LARGE,
 }
 
 export const Header = Template.bind({})
 Header.args = {
-  children: 'Test',
   size: TextSize.HEADER,
 }

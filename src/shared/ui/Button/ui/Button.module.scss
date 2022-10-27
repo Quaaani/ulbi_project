@@ -1,5 +1,26 @@
 .button {
+  max-height: 30px;
   cursor: pointer;
+}
+
+.button:hover {
+  scale: 1.05;
+}
+
+.icon * {
+  stroke: var(--bg-color);
+}
+
+.iconClear * {
+  stroke: var(--primary-color);
+}
+
+.iconInverted * {
+  stroke: var(--inverted-bg-color);
+}
+
+.titleWrapper {
+  margin-left: 5px;
 }
 
 .clear {
@@ -8,7 +29,7 @@
   justify-content: center;
   outline: none;
   border: none;
-  padding: 10px 16px;
+  padding: 3px 10px;
   background-color: inherit;
 }
 
@@ -18,9 +39,20 @@
   justify-content: center;
   border: 1px solid var(--inverted-bg-color);
   border-radius: 3px;
-  padding: 10px 16px;
+  padding: 3px 10px;
   color: var(--inverted-primary-color);
   background-color: var(--inverted-bg-color);
+}
+
+.inverted {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--inverted-bg-color);
+  border-radius: 3px;
+  padding: 3px 10px;
+  color: var(--primary-color);
+  background-color: transparent;
 }
 
 .circle {

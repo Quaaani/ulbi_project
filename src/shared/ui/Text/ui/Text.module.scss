@@ -1,9 +1,13 @@
 .text {
-  color: var(--primary-color);
+  // text
 }
 
 .small {
   font: var(--font-s);
+}
+
+.medium {
+  font: var(--font-m);
 }
 
 .large {

@@ -25,22 +25,25 @@ export const Counter: FC<CounterProps> = (props) => {
   return (
     <div data-testid="counter.test">
       <div className={cls.valueWrapper}>
-        <Text size={TextSize.LARGE}>{t('value')}:</Text>
-        <Text size={TextSize.LARGE} data-testid="counterValue.test">
-          {counterValue}
-        </Text>
+        <Text title={t('value')} size={TextSize.LARGE} />
+        <Text
+          data-testid="counterValue.test"
+          title={counterValue}
+          size={TextSize.LARGE}
+        />
       </div>
       <div className={cls.btnsWrapper}>
-        <Button data-testid="incrementBtn.test" onClick={increment}>
-          {t('increment')}
-        </Button>
+        <Button
+          data-testid="incrementBtn.test"
+          title={t('increment')}
+          onClick={increment}
+        />
         <Button
           data-testid="decrementBtn.test"
           className={cls.lastBtn}
+          title={t('decrement')}
           onClick={decrement}
-        >
-          {t('decrement')}
-        </Button>
+        />
       </div>
     </div>
   )

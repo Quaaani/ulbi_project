@@ -21,7 +21,7 @@ export const Error: FC<ErrorProps> = (props) => {
     <Suspense fallback="">
       <div className={classNames(cls.error, {}, [className])}>
         <p>{t('some-error-was-found')}</p>
-        <Button onClick={reloadPage}>{t('reload-page')}</Button>
+        <Button title={t('reload-page')} onClick={reloadPage} />
       </div>
     </Suspense>
   )

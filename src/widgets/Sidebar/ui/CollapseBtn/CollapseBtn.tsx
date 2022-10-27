@@ -15,8 +15,9 @@ export interface CollapseBtnProps {
 export const CollapseBtn = memo((props: CollapseBtnProps) => {
   const { className, isCollapsed, onToggle } = props
 
-  const mods: Mods = {}
+  const Icon = isCollapsed ? ArrowRightIcon : ArrowLeftIcon
 
+  const mods: Mods = {}
   return (
     <div
       data-testid="collapseBtn.test"
@@ -25,15 +26,10 @@ export const CollapseBtn = memo((props: CollapseBtnProps) => {
       <Button
         data-testid="toggle.test"
         className={cls.btnBorder}
+        icon={Icon}
         theme={ButtonTheme.CIRCLE}
         onClick={onToggle}
-      >
-        {isCollapsed ? (
-          <ArrowRightIcon className={cls.icon} />
-        ) : (
-          <ArrowLeftIcon className={cls.icon} />
-        )}
-      </Button>
+      />
     </div>
   )
 })

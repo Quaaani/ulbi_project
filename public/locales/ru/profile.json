@@ -1,7 +1,8 @@
 {
   "profile-page": "Личный кабинет",
-  "profile-data": "Данные Пользователя",
-  "edit": "Редактировать",
+  "profile-data": "Ваши данные",
+  "edit": "Изменить",
   "your-first-name": "Ваше имя",
-  "your-lastname": "Ваша фамилия"
+  "your-lastname": "Ваша фамилия",
+  "save": "Сохранить"
 }

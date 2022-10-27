@@ -9,7 +9,7 @@ function Main() {
 
   return (
     <div className={cls.main}>
-      <Text size={TextSize.HEADER}>{t('Main page')}</Text>
+      <Text title={t('Main page')} size={TextSize.HEADER} />
       <ErrorButton />
     </div>
   )

@@ -1,7 +1,8 @@
 {
   "profile-page": "Profile Page",
-  "profile-data": "Profile Data",
+  "profile-data": "Your Data",
   "edit": "Edit",
   "your-first-name": "Your name",
-  "your-lastname": "Your lastname"
+  "your-lastname": "Your lastname",
+  "save": "Save"
 }

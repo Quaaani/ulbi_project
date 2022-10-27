@@ -2,20 +2,25 @@
   // Font family
   --font-family-main: 'Nunito Sans', sans-serif;
 
-  // Font size Header
-  --font-size-h: 24px;
-  --font-line-h: 32px;
-  --font-h: var(--font-size-h) / var(--font-line-h) var(--font-family-main);
-
   // Font size Small
   --font-size-s: 13px;
   --font-line-s: 20px;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
 
+  // Font size Medium
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+
   // Font size Large
-  --font-size-l: 16px;
-  --font-line-l: 24px;
+  --font-size-l: 18px;
+  --font-line-l: 28px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+  // Font size Header
+  --font-size-h: 24px;
+  --font-line-h: 32px;
+  --font-h: var(--font-size-h) / var(--font-line-h) var(--font-family-main);
 
   // Font size Notifications
   --font-size-n: 8px;

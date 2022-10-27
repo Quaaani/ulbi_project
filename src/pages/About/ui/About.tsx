@@ -8,7 +8,7 @@ const About = () => {
 
   return (
     <div className={cls.about}>
-      <Text size={TextSize.HEADER}>{t('About us')}</Text>
+      <Text title={t('About us')} size={TextSize.HEADER} />
     </div>
   )
 }

@@ -22,10 +22,10 @@ export const LanguageSwitcher = memo((props: LanguageSwitcherProps) => {
   return (
     <Button
       className={classNames(cls.languageSwitcher, {}, [className])}
+      icon={TranslationIcon}
+      iconStyle={cls.icon}
       theme={ButtonTheme.CLEAR}
       onClick={toggle}
-    >
-      <TranslationIcon className={cls.icon} />
-    </Button>
+    />
   )
 })

@@ -4,12 +4,12 @@ import { Button, ButtonTheme } from './Button'
 
 describe('Button Element Test', () => {
   test('Default Test', () => {
-    render(<Button>Test</Button>)
-    expect(screen.getByText('Test')).toBeInTheDocument()
+    render(<Button title="Test" />)
+    expect(screen.getByTestId('button.test')).toBeInTheDocument()
   })
 
   test('Adding ClassName Test', () => {
-    render(<Button theme={ButtonTheme.CLEAR}>Test</Button>)
-    expect(screen.getByText('Test')).toHaveClass('clear')
+    render(<Button title="Test" theme={ButtonTheme.CLEAR} />)
+    expect(screen.getByTestId('button.test')).toHaveClass('clear')
   })
 })

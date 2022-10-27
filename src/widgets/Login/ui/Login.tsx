@@ -49,11 +49,11 @@ export const Login = memo((props: LoginProps) => {
       <Button
         data-testid="login.test"
         className={classNames(cls.login, mods, [className])}
+        icon={Icon}
+        iconStyle={cls.icon}
         theme={ButtonTheme.CLEAR}
         onClick={onPressBtn}
-      >
-        <Icon className={cls.icon} />
-      </Button>
+      />
       {!authData && (
         <LoginModal isOpen={modalIsVisible} onClose={onCloseModal} />
       )}

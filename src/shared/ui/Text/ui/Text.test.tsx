@@ -5,7 +5,7 @@ import { Text } from './Text'
 
 describe('Text Element Test', () => {
   test('Default Test', () => {
-    ComponentRender(<Text>Test</Text>)
+    ComponentRender(<Text title="Test" />)
     expect(screen.getByTestId('text.test')).toBeInTheDocument()
   })
 })

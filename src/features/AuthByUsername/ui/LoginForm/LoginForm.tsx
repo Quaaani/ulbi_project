@@ -70,7 +70,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         data-testid="loginform.test"
         className={classNames(cls.loginForm, mods, [className])}
       >
-        <Text size={TextSize.HEADER}>{t('log-in-form')}</Text>
+        <Text title={t('log-in-form')} size={TextSize.HEADER} />
         <div className={classNames(cls.formWrapper, formWrapperMods)}>
           <Input
             autofocus
@@ -86,9 +86,11 @@ const LoginForm = memo((props: LoginFormProps) => {
             className={cls.inputWrapperLast}
             onChange={onChangePassword}
           />
-          <Button className={cls.btnWrapper} onClick={onPressLogin}>
-            {t('log-in')}
-          </Button>
+          <Button
+            className={cls.btnWrapper}
+            title={t('log-in')}
+            onClick={onPressLogin}
+          />
         </div>
       </div>
     </DynamicModuleLoader>

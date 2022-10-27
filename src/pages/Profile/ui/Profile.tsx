@@ -28,12 +28,7 @@ const Profile: FC<ProfileProps> = (props) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <div
-        data-testid="profile.test"
-        className={classNames(cls.profile, mods, [className])}
-      >
-        <ProfileCard />
-      </div>
+      <ProfileCard />
     </DynamicModuleLoader>
   )
 }
