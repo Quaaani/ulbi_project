@@ -13,5 +13,7 @@
   "log-in-form": "Форма Авторизации",
   "wrong-login-data": "Неверные данные",
   "wrong-password": "Неверный пароль",
-  "wrong-username": "Неверный логин"
+  "wrong-username": "Неверный логин",
+  "must-be-a-number": "Введите числовое значение",
+  "you-don-t-have-permission-to-access": "Вам сюда нельзя"
 }

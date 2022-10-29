@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { profileFormFieldErrorMessages } from 'shared/const'
 
 import {
   fetchProfileData,
   ProfileError,
 } from '../services/fetchProfileData/fetchProfileData'
+import { updateProfileData } from '../services/updateProfileData/updateProfileData'
 import { Profile, ProfileSchema } from '../types/profileSchema'
 
 const initialState: ProfileSchema = {
@@ -30,10 +32,23 @@ export const profileSlice = createSlice({
       state.readonly = true
       state.formData = state.data
     },
+    setAgeError: (state) => {
+      state.formFieldErrors = {
+        ...state.formFieldErrors,
+        age: profileFormFieldErrorMessages.age,
+      }
+    },
+    clearAgeError: (state) => {
+      state.formFieldErrors = {
+        ...state.formFieldErrors,
+        age: '',
+      }
+    },
   },
   // Дополнительное поля для изменения state
   extraReducers: (builder) => {
     builder
+      // fetchProfileData
       .addCase(fetchProfileData.pending, (state, action) => {
         state.error = undefined
         state.isLoading = true
@@ -47,6 +62,24 @@ export const profileSlice = createSlice({
         },
       )
       .addCase(fetchProfileData.rejected, (state, action) => {
+        state.isLoading = false
+        state.error = ProfileError.FORBIDDEN
+      })
+
+      // updateProfileData
+      .addCase(updateProfileData.pending, (state, action) => {
+        state.error = undefined
+        state.isLoading = true
+      })
+      .addCase(
+        updateProfileData.fulfilled,
+        (state, action: PayloadAction<Profile>) => {
+          state.isLoading = false
+          state.data = action.payload
+          state.formData = action.payload
+        },
+      )
+      .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false
         state.error = ProfileError.FORBIDDEN
       })

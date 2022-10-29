@@ -22,7 +22,7 @@ type HTMLInputProps = Omit<
 
 export interface InputProps extends HTMLInputProps {
   className?: string
-  value?: string
+  value?: string | number
   autofocus?: boolean
   errorMessage?: string
   readonly?: boolean
@@ -92,7 +92,6 @@ export const Input = memo((props: InputProps) => {
     <div
       data-testid="input.test"
       className={classNames(cls.input, mods, [className])}
-      {...restProps}
     >
       <input
         ref={inputRef}

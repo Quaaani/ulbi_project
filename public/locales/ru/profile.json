@@ -4,5 +4,8 @@
   "edit": "Изменить",
   "your-first-name": "Ваше имя",
   "your-lastname": "Ваша фамилия",
-  "save": "Сохранить"
+  "save": "Сохранить",
+  "your-age": "Ваш возраст",
+  "your-country": "Страна",
+  "currency": "Валюта"
 }

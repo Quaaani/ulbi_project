@@ -4,5 +4,8 @@
   "edit": "Edit",
   "your-first-name": "Your name",
   "your-lastname": "Your lastname",
-  "save": "Save"
+  "save": "Save",
+  "your-age": "Your age",
+  "your-country": "Country",
+  "currency": "Currency"
 }

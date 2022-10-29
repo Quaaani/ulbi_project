@@ -10,4 +10,8 @@ export const getProfileReadonly = (state: StateSchema) =>
 
 export const getProfileData = (state: StateSchema) => state.profile?.data
 
-export const getProfileFormData = (state: StateSchema) => state.profile?.formData
+export const getProfileFormData = (state: StateSchema) =>
+  state.profile?.formData
+
+export const getProfileFormFieldError = (state: StateSchema) =>
+  state.profile?.formFieldErrors

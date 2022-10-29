@@ -13,5 +13,7 @@
   "log-in-form": "Log-in Form",
   "wrong-login-data": "Wrong Login Data",
   "wrong-password": "Wrong password",
-  "wrong-username": "Wrong username"
+  "wrong-username": "Wrong username",
+  "must-be-a-number": "Must be a number",
+  "you-don-t-have-permission-to-access": "You don`t have permission to access"
 }

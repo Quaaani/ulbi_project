@@ -1,6 +1,18 @@
 {
-  "posts": [{ "id": "1", "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
   "users": [
     {
       "id": "e6882431-311d-4f41-b0dd-38c03ef71af7",
@@ -8,13 +20,19 @@
       "password": "5750579"
     }
   ],
-  "profile": { 
+  "profile": {
     "uid": "e6882431-311d-4f41-b0dd-38c03ef71af7",
-    "firstName": "Jhon",
+    "firstName": "Igrobek",
     "lastName": "Doe",
-    "age": "27",
+    "age": "42",
     "countryIso": "KG",
+    "currencyIso": "KGS",
     "isAdmin": true,
     "avatar": "https://i.kym-cdn.com/photos/images/newsfeed/000/302/073/d83.png"
+  },
+  "countries": {
+    "KG": "Kyrgyzstan",
+    "KZ": "Kazakhstan",
+    "RU": "Russia"
   }
 }
