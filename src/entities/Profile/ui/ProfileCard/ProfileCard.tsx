@@ -19,6 +19,7 @@ export interface ProfileCardProps {
   onChangeAge?: (value: string) => void
   onChangeCountry?: (value: string) => void
   onChangeCurrency?: (value: string) => void
+  onChangeAvatar?: (value: string) => void
 }
 
 export const ProfileCard = memo((props: ProfileCardProps) => {
@@ -32,6 +33,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     onChangeAge,
     onChangeCountry,
     onChangeCurrency,
+    onChangeAvatar
   } = props
   const { t } = useTranslation('profile')
 
@@ -72,6 +74,12 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           value={formData?.currencyIso}
           placeholder={t('currency')}
           onChange={onChangeCurrency}
+        />
+        <Input
+          readonly={readonly}
+          value={formData?.avatar}
+          placeholder={t('avatar')}
+          onChange={onChangeAvatar}
         />
       </div>
     </div>

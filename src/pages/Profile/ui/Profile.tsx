@@ -96,6 +96,12 @@ const Profile: FC<ProfileProps> = (props) => {
     [dispatch],
   )
 
+  const onChangeAvatar = useCallback((
+    value: string
+  ) => {
+    dispatch(profileActions.updateProfile({ avatar: value }))
+  }, [dispatch])
+
   useEffect(() => {
     dispatch(fetchProfileData())
   }, [dispatch])
@@ -118,6 +124,7 @@ const Profile: FC<ProfileProps> = (props) => {
         onChangeAge={onChangeAge}
         onChangeCountry={onChangeCountry}
         onChangeCurrency={onChangeCurrency}
+        onChangeAvatar={onChangeAvatar}
       />
     </DynamicModuleLoader>
   )

@@ -7,7 +7,15 @@ import {
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/helpers'
-import { FormBlock, Spinner, Text, TextSize, TextType } from 'shared/ui'
+import {
+  Avatar,
+  AvatarSize,
+  FormBlock,
+  Spinner,
+  Text,
+  TextSize,
+  TextType,
+} from 'shared/ui'
 
 import { ProfileFormHeader } from '../../ProfileFormHeader'
 
@@ -28,6 +36,7 @@ export interface ProfileFormProps {
   onChangeAge?: (value: string) => void
   onChangeCountry?: (value: string) => void
   onChangeCurrency?: (value: string) => void
+  onChangeAvatar?: (value: string) => void
 }
 
 export const ProfileForm = memo((props: ProfileFormProps) => {
@@ -46,6 +55,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
     onChangeAge,
     onChangeCountry,
     onChangeCurrency,
+    onChangeAvatar,
   } = props
   const { t } = useTranslation('profile')
 
@@ -88,6 +98,15 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
     >
       <FormBlock>
         <div className={cls.cardWrapper}>
+          {formData?.avatar ? (
+            <div className={cls.avatarWrapper}>
+              <Avatar
+                src={formData.avatar}
+                alt={t('avatar')}
+                size={AvatarSize.LARGE}
+              />
+            </div>
+          ) : null}
           <ProfileFormHeader
             readonly={readonly}
             formFieldErrors={formFieldErrors}
@@ -104,6 +123,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
             onChangeAge={onChangeAge}
             onChangeCountry={onChangeCountry}
             onChangeCurrency={onChangeCurrency}
+            onChangeAvatar={onChangeAvatar}
           />
         </div>
       </FormBlock>
