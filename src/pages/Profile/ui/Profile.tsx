@@ -1,21 +1,22 @@
+import { Country } from 'entities/Country'
+import { Currency } from 'entities/Currency'
 import {
   fetchProfileData,
   profileActions,
   profileReducer,
-  updateProfileData
+  updateProfileData,
 } from 'entities/Profile'
 import {
-  getProfileError, getProfileFormData, getProfileFormFieldError, getProfileIsLoading,
-  getProfileReadonly
+  getProfileError,
+  getProfileFormData,
+  getProfileFormFieldError,
+  getProfileIsLoading,
+  getProfileReadonly,
 } from 'entities/Profile/model/selectors/ProfileSelectors'
 import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import {
-  Country,
-  Currency,
-  onlyNumbersRegExp
-} from 'shared/const'
+import { onlyNumbersRegExp } from 'shared/const'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { Mods } from 'shared/lib/helpers'
 import { useAppDispatch } from 'shared/lib/hooks'
@@ -81,33 +82,33 @@ const Profile: FC<ProfileProps> = (props) => {
   )
 
   const onChangeCountry = useCallback(
-    (value: string) => {
+    (value: Country) => {
       // TODO: Add validation
-      dispatch(profileActions.updateProfile({ countryIso: value as Country }))
+      dispatch(profileActions.updateProfile({ countryIso: value }))
     },
     [dispatch],
   )
 
   const onChangeCurrency = useCallback(
-    (value: string) => {
+    (value: Currency) => {
       // TODO: Add validation
-      dispatch(profileActions.updateProfile({ currencyIso: value as Currency }))
+      dispatch(profileActions.updateProfile({ currencyIso: value }))
     },
     [dispatch],
   )
 
-  const onChangeAvatar = useCallback((
-    value: string
-  ) => {
-    dispatch(profileActions.updateProfile({ avatar: value }))
-  }, [dispatch])
+  const onChangeAvatar = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfile({ avatar: value }))
+    },
+    [dispatch],
+  )
 
   useEffect(() => {
     dispatch(fetchProfileData())
   }, [dispatch])
 
   const mods: Mods = {}
-
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
       <ProfileForm
@@ -131,6 +132,3 @@ const Profile: FC<ProfileProps> = (props) => {
 }
 
 export default Profile
-function updateProfile(): any {
-  throw new Error('Function not implemented.')
-}

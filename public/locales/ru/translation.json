@@ -15,5 +15,7 @@
   "wrong-password": "Неверный пароль",
   "wrong-username": "Неверный логин",
   "must-be-a-number": "Введите числовое значение",
-  "you-don-t-have-permission-to-access": "Вам сюда нельзя"
+  "you-don-t-have-permission-to-access": "Вам сюда нельзя",
+  "select-currency": "Выберите валюту",
+  "select-country": "Выберите страну"
 }

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import CancelIcon from 'shared/assets/icons/cancel.svg'
 import EditIcon from 'shared/assets/icons/edit.svg'
 import SaveIcon from 'shared/assets/icons/save.svg'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import { Button, ButtonTheme, Text, TextSize } from 'shared/ui'
 
 import cls from './ProfileFormHeader.module.scss'
@@ -37,7 +37,7 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
     }
   }, [formFieldErrors, formFieldHasErrors])
 
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
   return (
     <div
       data-testid="profileformheader.test"

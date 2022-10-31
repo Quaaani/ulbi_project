@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './FormBlock.module.scss'
 
@@ -10,7 +10,7 @@ export interface FormBlockProps {
 export const FormBlock: FC<FormBlockProps> = (props) => {
   const { children, className } = props
 
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
   return (
     <div
       data-testid="formblock.test"

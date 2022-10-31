@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/helpers'
+import { Text, TextSize } from 'shared/ui'
 
 import cls from './NotFound.module.scss'
 
@@ -14,7 +15,7 @@ export const NotFound: FC<NotFoundProps> = (props) => {
 
   return (
     <div className={classNames(cls.notFound, {}, [className])}>
-      {t('page-not-found')}
+      <Text title={t('page-not-found')} size={TextSize.HEADER} />
     </div>
   )
 }

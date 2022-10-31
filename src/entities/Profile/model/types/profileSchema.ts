@@ -1,4 +1,5 @@
-import { Country, Currency } from 'shared/const'
+import { Country } from 'entities/Country'
+import { Currency } from 'entities/Currency'
 
 import { ProfileError } from '../services/fetchProfileData/fetchProfileData'
 

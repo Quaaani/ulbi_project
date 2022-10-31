@@ -1,7 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
-import { Country, Currency } from 'shared/const'
+import { Country } from 'entities/Country'
+import { Currency } from 'entities/Currency'
 
 import Profile, { ProfileProps } from './Profile'
 
@@ -13,7 +14,9 @@ export default {
   },
 } as ComponentMeta<typeof Profile>
 
-const Template: ComponentStory<typeof Profile> = (args: ProfileProps) => <Profile {...args}/>
+const Template: ComponentStory<typeof Profile> = (args: ProfileProps) => (
+  <Profile {...args} />
+)
 
 const mockData = {
   profile: {

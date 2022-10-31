@@ -1,3 +1,5 @@
+import { CountrySelect, Country } from 'entities/Country'
+import { CurrencySelect, Currency } from 'entities/Currency'
 import {
   Profile,
   ProfileFormFieldErrors,
@@ -17,8 +19,8 @@ export interface ProfileCardProps {
   onChangeFirstname?: (value: string) => void
   onChangeLastname?: (value: string) => void
   onChangeAge?: (value: string) => void
-  onChangeCountry?: (value: string) => void
-  onChangeCurrency?: (value: string) => void
+  onChangeCountry?: (value: Country) => void
+  onChangeCurrency?: (value: Currency) => void
   onChangeAvatar?: (value: string) => void
 }
 
@@ -33,7 +35,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     onChangeAge,
     onChangeCountry,
     onChangeCurrency,
-    onChangeAvatar
+    onChangeAvatar,
   } = props
   const { t } = useTranslation('profile')
 
@@ -65,21 +67,19 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         />
         <Input
           readonly={readonly}
-          value={formData?.countryIso}
-          placeholder={t('your-country')}
-          onChange={onChangeCountry}
-        />
-        <Input
-          readonly={readonly}
-          value={formData?.currencyIso}
-          placeholder={t('currency')}
-          onChange={onChangeCurrency}
-        />
-        <Input
-          readonly={readonly}
           value={formData?.avatar}
           placeholder={t('avatar')}
           onChange={onChangeAvatar}
+        />
+        <CurrencySelect
+          readonly={readonly}
+          value={formData?.currencyIso}
+          onChange={onChangeCurrency}
+        />
+        <CountrySelect
+          readonly={readonly}
+          value={formData?.countryIso}
+          onChange={onChangeCountry}
         />
       </div>
     </div>

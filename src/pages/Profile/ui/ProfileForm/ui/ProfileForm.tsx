@@ -1,3 +1,5 @@
+import { Country } from 'entities/Country'
+import { Currency } from 'entities/Currency'
 import {
   Profile,
   ProfileCard,
@@ -6,7 +8,7 @@ import {
 } from 'entities/Profile'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 import {
   Avatar,
   AvatarSize,
@@ -34,8 +36,8 @@ export interface ProfileFormProps {
   onChangeFirstname?: (value: string) => void
   onChangeLastname?: (value: string) => void
   onChangeAge?: (value: string) => void
-  onChangeCountry?: (value: string) => void
-  onChangeCurrency?: (value: string) => void
+  onChangeCountry?: (value: Country) => void
+  onChangeCurrency?: (value: Currency) => void
   onChangeAvatar?: (value: string) => void
 }
 
@@ -59,7 +61,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
   } = props
   const { t } = useTranslation('profile')
 
-  const mods: Record<string, boolean> = {}
+  const mods: Mods = {}
 
   if (isLoading) {
     return (

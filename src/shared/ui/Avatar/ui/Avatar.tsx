@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/helpers'
+import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Avatar.module.scss'
 
@@ -20,7 +20,7 @@ export const Avatar = memo((props: AvatarProps) => {
   const { className, src, alt, size = AvatarSize.SMALL, ...restProps } = props
   const { t } = useTranslation()
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.small]: size === AvatarSize.SMALL,
     [cls.large]: size === AvatarSize.LARGE,
   }

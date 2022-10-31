@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react'
+import { memo, useCallback, useState, useMemo } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 
 import { SidebarItemsList } from '../../model/items'
@@ -20,25 +20,28 @@ export const Sidebar = memo((props: SidebarProps) => {
     setIsCollapsed((prev) => !prev)
   }, [])
 
+  const itemsList = useMemo(
+    () =>
+      SidebarItemsList.map((linkItem) => (
+        <SidebarItem
+          key={linkItem.path}
+          item={linkItem}
+          isCollapsed={isCollapsed}
+        />
+      )),
+    [isCollapsed],
+  )
+
   const mods: Mods = {
     [cls.isCollapsed]: isCollapsed,
   }
-
   return (
     <div
       data-testid="sidebar.test"
       className={classNames(cls.sidebar, mods, [className])}
     >
       <CollapseBtn isCollapsed={isCollapsed} onToggle={onToggle} />
-      <div className={cls.linksContainer}>
-        {SidebarItemsList.map((linkItem) => (
-          <SidebarItem
-            key={linkItem.path}
-            item={linkItem}
-            isCollapsed={isCollapsed}
-          />
-        ))}
-      </div>
+      <div className={cls.linksContainer}>{itemsList}</div>
     </div>
   )
 })
