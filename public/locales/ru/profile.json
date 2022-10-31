@@ -8,5 +8,9 @@
   "your-age": "Ваш возраст",
   "your-country": "Страна",
   "currency": "Валюта",
-  "avatar": "Аватар"
+  "avatar": "Аватар",
+  "no-user-data": "Пользователь не найден",
+  "incorrect-user-data": "Поле должно быть заполнено",
+  "incorrect-user-age": "Поле должно содержать цифровое значение",
+  "server-error": "Ошибка сервера"
 }

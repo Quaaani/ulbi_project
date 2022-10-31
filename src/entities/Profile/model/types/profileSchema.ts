@@ -3,6 +3,13 @@ import { Currency } from 'entities/Currency'
 
 import { ProfileError } from '../services/fetchProfileData/fetchProfileData'
 
+export enum ProfileFormFieldErrorCodes {
+  NO_USER_DATA = 'NO_USER_DATA',
+  INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
+  INCORRECT_USER_AGE = 'INCORRECT_USER_AGE',
+  SERVER_ERROR = 'SERVER_ERROR',
+}
+
 export interface Profile {
   uid?: string
   firstName?: string
@@ -21,8 +28,9 @@ export interface ProfileFormFieldErrors {
 export interface ProfileSchema {
   data?: Profile
   formData?: Profile
-  formFieldErrors?: ProfileFormFieldErrors
   isLoading: boolean
   readonly: boolean
   error?: ProfileError
+  formFieldErrors?: ProfileFormFieldErrors
+  formFieldErrorCodes?: ProfileFormFieldErrorCodes[]
 }

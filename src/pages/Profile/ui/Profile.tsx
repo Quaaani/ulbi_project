@@ -3,6 +3,7 @@ import { Currency } from 'entities/Currency'
 import {
   fetchProfileData,
   profileActions,
+  ProfileFormFieldErrorCodes,
   profileReducer,
   updateProfileData,
 } from 'entities/Profile'
@@ -10,6 +11,7 @@ import {
   getProfileError,
   getProfileFormData,
   getProfileFormFieldError,
+  getProfileFormFieldErrorCodes,
   getProfileIsLoading,
   getProfileReadonly,
 } from 'entities/Profile/model/selectors/ProfileSelectors'
@@ -41,6 +43,14 @@ const Profile: FC<ProfileProps> = (props) => {
   const isLoading = useSelector(getProfileIsLoading)
   const error = useSelector(getProfileError)
   const formFieldErrors = useSelector(getProfileFormFieldError)
+  const formFieldErrorCodes = useSelector(getProfileFormFieldErrorCodes)
+
+  const formFieldErrorCodeMessages: Record<ProfileFormFieldErrorCodes, string> = {
+    [ProfileFormFieldErrorCodes.NO_USER_DATA]: t('no-user-data'),
+    [ProfileFormFieldErrorCodes.INCORRECT_USER_DATA]: t('incorrect-user-data'),
+    [ProfileFormFieldErrorCodes.INCORRECT_USER_AGE]: t('incorrect-user-age'),
+    [ProfileFormFieldErrorCodes.SERVER_ERROR]: t('server-error'),
+  }
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false))
@@ -117,6 +127,8 @@ const Profile: FC<ProfileProps> = (props) => {
         error={error}
         readonly={readonly}
         formFieldErrors={formFieldErrors}
+        formFieldErrorCodes={formFieldErrorCodes}
+        formFieldErrorCodeMessages={formFieldErrorCodeMessages}
         onEdit={onEdit}
         onSave={onSave}
         onCancel={onCancel}

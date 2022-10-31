@@ -27,10 +27,12 @@ export const profileSlice = createSlice({
         ...state.formData,
         ...action.payload,
       }
+      state.formFieldErrorCodes = undefined
     },
     cancelEdit: (state) => {
       state.readonly = true
       state.formData = state.data
+      state.formFieldErrorCodes = undefined
     },
     setAgeError: (state) => {
       state.formFieldErrors = {
@@ -68,7 +70,7 @@ export const profileSlice = createSlice({
 
       // updateProfileData
       .addCase(updateProfileData.pending, (state, action) => {
-        state.error = undefined
+        state.formFieldErrorCodes = undefined
         state.isLoading = true
       })
       .addCase(
@@ -78,11 +80,12 @@ export const profileSlice = createSlice({
           state.data = action.payload
           state.formData = action.payload
           state.readonly = true
+          state.formFieldErrorCodes = undefined
         },
       )
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false
-        state.error = ProfileError.FORBIDDEN
+        state.formFieldErrorCodes = action.payload
       })
   },
 })

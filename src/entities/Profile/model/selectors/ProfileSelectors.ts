@@ -15,3 +15,6 @@ export const getProfileFormData = (state: StateSchema) =>
 
 export const getProfileFormFieldError = (state: StateSchema) =>
   state.profile?.formFieldErrors
+
+export const getProfileFormFieldErrorCodes = (state: StateSchema) =>
+  state.profile?.formFieldErrorCodes

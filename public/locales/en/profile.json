@@ -8,5 +8,9 @@
   "your-age": "Your age",
   "your-country": "Country",
   "currency": "Currency",
-  "avatar": "Avatar"
+  "avatar": "Avatar",
+  "no-user-data": "No user data",
+  "incorrect-user-data": "Field must be filled",
+  "incorrect-user-age": "Field must be a numeric value",
+  "server-error": "Server error"
 }

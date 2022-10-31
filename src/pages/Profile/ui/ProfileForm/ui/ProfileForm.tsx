@@ -4,6 +4,7 @@ import {
   Profile,
   ProfileCard,
   ProfileError,
+  ProfileFormFieldErrorCodes,
   ProfileFormFieldErrors,
 } from 'entities/Profile'
 import { memo } from 'react'
@@ -30,6 +31,8 @@ export interface ProfileFormProps {
   error?: ProfileError
   readonly?: boolean
   formFieldErrors?: ProfileFormFieldErrors
+  formFieldErrorCodes?: ProfileFormFieldErrorCodes[]
+  formFieldErrorCodeMessages?: Record<ProfileFormFieldErrorCodes, string>
   onEdit?: () => void
   onSave?: () => void
   onCancel?: () => void
@@ -49,6 +52,8 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
     error,
     readonly,
     formFieldErrors,
+    formFieldErrorCodes,
+    formFieldErrorCodeMessages,
     onEdit,
     onSave,
     onCancel,
@@ -120,6 +125,8 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
             formData={formData}
             readonly={readonly}
             formFieldErrors={formFieldErrors}
+            formFieldErrorCodes={formFieldErrorCodes}
+            formFieldErrorCodeMessages={formFieldErrorCodeMessages}
             onChangeFirstname={onChangeFirstname}
             onChangeLastname={onChangeLastname}
             onChangeAge={onChangeAge}
