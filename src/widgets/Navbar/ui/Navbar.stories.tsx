@@ -19,9 +19,12 @@ Default.args = {}
 Default.decorators = [StoreDecorator({})]
 
 export const DefaultDark = Template.bind({})
-Default.args = {}
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
-DefaultDark.decorators = [StoreDecorator({})]
+DefaultDark.args = {}
+DefaultDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+
+export const DefaultGreen = Template.bind({})
+DefaultGreen.args = {}
+DefaultGreen.decorators = [ThemeDecorator(Theme.GREEN), StoreDecorator({})]
 
 export const Authorized = Template.bind({})
 Authorized.args = {}

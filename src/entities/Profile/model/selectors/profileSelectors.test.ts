@@ -13,7 +13,7 @@ import {
   getProfileFormData,
   getProfileFormFieldError,
   getProfileFormFieldErrorCodes,
-} from './profileSelectors'
+} from './ProfileSelectors'
 
 const mockData = {
   uid: '2a8337d8-8b44-48be-8518-abe45e18df9d',

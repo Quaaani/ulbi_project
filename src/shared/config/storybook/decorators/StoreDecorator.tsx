@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import { ReducersMapObject } from '@reduxjs/toolkit'
 import { Story } from '@storybook/react'
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider'

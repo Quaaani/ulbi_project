@@ -14,7 +14,7 @@ import {
   getProfileFormFieldErrorCodes,
   getProfileIsLoading,
   getProfileReadonly,
-} from 'entities/Profile/model/selectors/profileSelectors'
+} from 'entities/Profile/model/selectors/ProfileSelectors'
 import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'

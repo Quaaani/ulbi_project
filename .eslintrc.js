@@ -22,7 +22,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'i18next', 'import', 'react-hooks'],
   rules: {
     // Табуляция
-    indent: [2, 2],
+    // indent: [2, 2],
 
     // Табуляция для JSX
     'react/jsx-indent': [2, 2],
