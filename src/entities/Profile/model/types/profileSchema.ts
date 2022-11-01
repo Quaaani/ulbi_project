@@ -3,7 +3,7 @@ import { Currency } from 'entities/Currency'
 
 import { ProfileError } from '../services/fetchProfileData/fetchProfileData'
 
-export enum ProfileFormFieldErrorCodes {
+export enum ProfileFormFieldErrorCode {
   NO_USER_DATA = 'NO_USER_DATA',
   INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
   INCORRECT_USER_AGE = 'INCORRECT_USER_AGE',
@@ -32,5 +32,5 @@ export interface ProfileSchema {
   readonly: boolean
   error?: ProfileError
   formFieldErrors?: ProfileFormFieldErrors
-  formFieldErrorCodes?: ProfileFormFieldErrorCodes[]
+  formFieldErrorCodes?: ProfileFormFieldErrorCode[]
 }

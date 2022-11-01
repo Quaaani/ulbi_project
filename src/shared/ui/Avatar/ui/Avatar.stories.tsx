@@ -2,7 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import StorybookExamplePhoto from './storybookExamplePhoto.jpeg'
+import MockAvatar from '../../../assets/tests/mockAvatar.jpeg'
+
 import { Avatar, AvatarProps, AvatarSize } from './Avatar'
 
 export default {
@@ -12,7 +13,7 @@ export default {
     backgroundColor: { control: 'color' },
   },
   args: {
-    src: StorybookExamplePhoto,
+    src: MockAvatar,
     alt: 'Storybook',
   },
 } as ComponentMeta<typeof Avatar>

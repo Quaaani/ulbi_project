@@ -9,7 +9,7 @@ import { BuildOptions } from './types/config'
 export function buildPlugins(
   options: BuildOptions,
 ): webpack.WebpackPluginInstance[] {
-  const { paths, isDev, isAnalyze , apiUrl} = options
+  const { paths, isDev, isAnalyze , apiUrl, project} = options
 
   const plugins = [
     // Сборка HTML файла с подключением скрипта и доп. конфигами
@@ -30,7 +30,8 @@ export function buildPlugins(
     // Плагин для глобальных переменных
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
-      __API__: JSON.stringify(apiUrl)
+      __API__: JSON.stringify(apiUrl),
+      __PROJECT__: JSON.stringify(project),
     }),
   ]
 

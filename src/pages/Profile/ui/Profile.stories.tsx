@@ -3,6 +3,7 @@ import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
+import MockAvatar from 'shared/assets/tests/mockAvatar.jpeg'
 
 import Profile, { ProfileProps } from './Profile'
 
@@ -21,14 +22,14 @@ const Template: ComponentStory<typeof Profile> = (args: ProfileProps) => (
 const mockData = {
   profile: {
     formData: {
-      firstName: 'Story',
-      lastName: 'Book',
+      uid: '2a8337d8-8b44-48be-8518-abe45e18df9d',
+      firstName: 'Igorbek',
+      lastName: 'Maratov',
       age: '42',
       countryIso: Country.KG,
-      currencyIso: Currency.KGS,
+      currensyIso: Currency.KZT,
+      avatar: MockAvatar,
     },
-    isLoading: false,
-    readonly: false,
   },
 }
 

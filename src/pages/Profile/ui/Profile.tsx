@@ -3,7 +3,7 @@ import { Currency } from 'entities/Currency'
 import {
   fetchProfileData,
   profileActions,
-  ProfileFormFieldErrorCodes,
+  ProfileFormFieldErrorCode,
   profileReducer,
   updateProfileData,
 } from 'entities/Profile'
@@ -14,7 +14,7 @@ import {
   getProfileFormFieldErrorCodes,
   getProfileIsLoading,
   getProfileReadonly,
-} from 'entities/Profile/model/selectors/ProfileSelectors'
+} from 'entities/Profile/model/selectors/profileSelectors'
 import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -45,12 +45,19 @@ const Profile: FC<ProfileProps> = (props) => {
   const formFieldErrors = useSelector(getProfileFormFieldError)
   const formFieldErrorCodes = useSelector(getProfileFormFieldErrorCodes)
 
-  const formFieldErrorCodeMessages: Record<ProfileFormFieldErrorCodes, string> = {
-    [ProfileFormFieldErrorCodes.NO_USER_DATA]: t('no-user-data'),
-    [ProfileFormFieldErrorCodes.INCORRECT_USER_DATA]: t('incorrect-user-data'),
-    [ProfileFormFieldErrorCodes.INCORRECT_USER_AGE]: t('incorrect-user-age'),
-    [ProfileFormFieldErrorCodes.SERVER_ERROR]: t('server-error'),
-  }
+  const formFieldErrorCodeMessages: Record<ProfileFormFieldErrorCode, string> =
+    {
+      [ProfileFormFieldErrorCode.NO_USER_DATA]: t('no-user-data'),
+      [ProfileFormFieldErrorCode.INCORRECT_USER_DATA]: t('incorrect-user-data'),
+      [ProfileFormFieldErrorCode.INCORRECT_USER_AGE]: t('incorrect-user-age'),
+      [ProfileFormFieldErrorCode.SERVER_ERROR]: t('server-error'),
+    }
+
+  useEffect(() => {
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData())
+    }
+  }, [dispatch])
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false))
@@ -113,10 +120,6 @@ const Profile: FC<ProfileProps> = (props) => {
     },
     [dispatch],
   )
-
-  useEffect(() => {
-    dispatch(fetchProfileData())
-  }, [dispatch])
 
   const mods: Mods = {}
   return (

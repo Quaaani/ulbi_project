@@ -4,7 +4,7 @@ import {
   Profile,
   ProfileCard,
   ProfileError,
-  ProfileFormFieldErrorCodes,
+  ProfileFormFieldErrorCode,
   ProfileFormFieldErrors,
 } from 'entities/Profile'
 import { memo } from 'react'
@@ -31,8 +31,8 @@ export interface ProfileFormProps {
   error?: ProfileError
   readonly?: boolean
   formFieldErrors?: ProfileFormFieldErrors
-  formFieldErrorCodes?: ProfileFormFieldErrorCodes[]
-  formFieldErrorCodeMessages?: Record<ProfileFormFieldErrorCodes, string>
+  formFieldErrorCodes?: ProfileFormFieldErrorCode[]
+  formFieldErrorCodeMessages?: Record<ProfileFormFieldErrorCode, string>
   onEdit?: () => void
   onSave?: () => void
   onCancel?: () => void

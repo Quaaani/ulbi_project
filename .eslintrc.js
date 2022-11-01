@@ -145,6 +145,7 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
   },
 
   // Позволяет переписать правила для определенных типов файла

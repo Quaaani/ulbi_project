@@ -1,24 +1,20 @@
-import { Profile, ProfileFormFieldErrorCodes } from '../../types/profileSchema'
+import { Profile, ProfileFormFieldErrorCode } from '../../types/profileSchema'
 
 export const validateProfileData = (profile?: Profile) => {
   if (!profile) {
-    return [ProfileFormFieldErrorCodes.NO_USER_DATA]
+    return [ProfileFormFieldErrorCode.NO_USER_DATA]
   }
-  
-  const {
-    firstName,
-    lastName,
-    age,
-  } = profile
 
-  const errors: ProfileFormFieldErrorCodes[] = []
+  const { firstName, lastName, age } = profile
+
+  const errors: ProfileFormFieldErrorCode[] = []
 
   if (!firstName || !lastName) {
-    errors.push(ProfileFormFieldErrorCodes.INCORRECT_USER_DATA)
+    errors.push(ProfileFormFieldErrorCode.INCORRECT_USER_DATA)
   }
 
   if (!age) {
-    errors.push(ProfileFormFieldErrorCodes.INCORRECT_USER_AGE)
+    errors.push(ProfileFormFieldErrorCode.INCORRECT_USER_AGE)
   }
 
   return errors
@@ -26,23 +22,19 @@ export const validateProfileData = (profile?: Profile) => {
 
 export const validateProfileDataTest = (profile?: Profile) => {
   if (!profile) {
-    return [ProfileFormFieldErrorCodes.NO_USER_DATA]
+    return [ProfileFormFieldErrorCode.NO_USER_DATA]
   }
-  
-  const {
-    firstName,
-    lastName,
-    age,
-  } = profile
 
-  const errors: ProfileFormFieldErrorCodes[] = []
+  const { firstName, lastName, age } = profile
+
+  const errors: ProfileFormFieldErrorCode[] = []
 
   if (!firstName || !lastName) {
-    errors.push(ProfileFormFieldErrorCodes.INCORRECT_USER_DATA)
+    errors.push(ProfileFormFieldErrorCode.INCORRECT_USER_DATA)
   }
 
   if (!age) {
-    errors.push(ProfileFormFieldErrorCodes.INCORRECT_USER_AGE)
+    errors.push(ProfileFormFieldErrorCode.INCORRECT_USER_AGE)
   }
 
   return errors

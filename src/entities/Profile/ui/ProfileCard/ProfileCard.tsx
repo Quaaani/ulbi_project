@@ -2,7 +2,7 @@ import { CountrySelect, Country } from 'entities/Country'
 import { CurrencySelect, Currency } from 'entities/Currency'
 import {
   Profile,
-  ProfileFormFieldErrorCodes,
+  ProfileFormFieldErrorCode,
   ProfileFormFieldErrors,
 } from 'entities/Profile/model/types/profileSchema'
 import { memo } from 'react'
@@ -17,8 +17,8 @@ export interface ProfileCardProps {
   formData?: Profile
   readonly?: boolean
   formFieldErrors?: ProfileFormFieldErrors
-  formFieldErrorCodes?: ProfileFormFieldErrorCodes[]
-  formFieldErrorCodeMessages?: Record<ProfileFormFieldErrorCodes, string>
+  formFieldErrorCodes?: ProfileFormFieldErrorCode[]
+  formFieldErrorCodeMessages?: Record<ProfileFormFieldErrorCode, string>
   onChangeFirstname?: (value: string) => void
   onChangeLastname?: (value: string) => void
   onChangeAge?: (value: string) => void
@@ -42,6 +42,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     onChangeCurrency,
     onChangeAvatar,
   } = props
+
   const { t } = useTranslation('profile')
 
   const mods: Mods = {}

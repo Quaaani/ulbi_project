@@ -14,6 +14,7 @@ export interface BuildOptions {
   port: number
   isAnalyze: boolean
   apiUrl: string
+  project: 'frontend' | 'storybook' | 'jest'
 }
 
 // Типизация для переменных из окружения
