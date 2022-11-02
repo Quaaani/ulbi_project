@@ -42,7 +42,7 @@ DefaultGreen.decorators = [
 
 export const NoAuth = Template.bind({})
 NoAuth.args = {}
-DefaultDark.decorators = [
+NoAuth.decorators = [
   StoreDecorator({
     user: {},
   }),
