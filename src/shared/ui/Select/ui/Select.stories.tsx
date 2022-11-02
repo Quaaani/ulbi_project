@@ -10,6 +10,26 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  args: {
+    options: [
+      {
+        value: 'First value',
+        content: 'First value',
+      },
+      {
+        value: 'Second value',
+        content: 'Second value',
+      },
+      {
+        value: 'Third value',
+        content: 'Third value',
+      },
+      {
+        value: 'Fourth value',
+        content: 'Fourth value',
+      },
+    ]
+  }
 } as ComponentMeta<typeof Select>
 
 const Template: ComponentStory<typeof Select> = (args: SelectProps) => (

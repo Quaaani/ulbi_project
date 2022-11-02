@@ -31,6 +31,15 @@ DefaultDark.decorators = [
   }),
 ]
 
+export const DefaultGreen = Template.bind({})
+Default.args = {}
+DefaultGreen.decorators = [
+  ThemeDecorator(Theme.GREEN),
+  StoreDecorator({
+    user: { authData: {} },
+  }),
+]
+
 export const NoAuth = Template.bind({})
 NoAuth.args = {}
 DefaultDark.decorators = [
