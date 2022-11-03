@@ -2,7 +2,7 @@ import { Main, About, Profile, NotFound } from 'pages'
 import { RouteProps } from 'react-router-dom'
 import { RoutePath } from 'shared/router'
 
-type AppRoutesProps = RouteProps & {
+export type AppRoutesProps = RouteProps & {
   authOnly?: boolean
 }
 

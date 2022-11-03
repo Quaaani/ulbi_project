@@ -1,6 +1,5 @@
-import { getUserAuthData } from 'entities/User'
 import { memo } from 'react'
-import { useSelector } from 'react-redux'
+import { useUserAuthData } from 'shared/lib/hooks'
 import { AppLink } from 'shared/ui'
 
 import { SidebarItemType } from '../../model/items'
@@ -16,7 +15,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
   const { item, isCollapsed } = props
   const { icon: Icon } = item
 
-  const isAuth = useSelector(getUserAuthData)
+  const isAuth = useUserAuthData()
 
   if (item.authOnly && !isAuth) {
     return null
@@ -28,4 +27,3 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
     </AppLink>
   )
 })
-

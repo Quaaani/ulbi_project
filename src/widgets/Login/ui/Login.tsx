@@ -1,11 +1,12 @@
+import { userActions } from 'entities/User'
+import { LoginModal } from 'features/AuthByUsername'
 import { memo, useCallback, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import ExitIcon from 'shared/assets/icons/exit.svg'
+import LoginIcon from 'shared/assets/icons/login.svg'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { Button, ButtonTheme } from 'shared/ui'
-import LoginIcon from 'shared/assets/icons/login.svg'
-import ExitIcon from 'shared/assets/icons/exit.svg'
-import { LoginModal } from 'features/AuthByUsername'
-import { useDispatch, useSelector } from 'react-redux'
-import { getUserAuthData, userActions } from 'entities/User'
+import { useUserAuthData } from 'shared/lib/hooks'
 
 import cls from './Login.module.scss'
 
@@ -17,7 +18,7 @@ export const Login = memo((props: LoginProps) => {
   const { className } = props
   const [modalIsVisible, setModalIsVisible] = useState(false)
 
-  const authData = useSelector(getUserAuthData)
+  const authData = useUserAuthData()
   const dispatch = useDispatch()
 
   const onCloseModal = useCallback(() => {

@@ -18,6 +18,9 @@ export const userSlice = createSlice({
       if (user) {
         state.authData = JSON.parse(user)
       }
+
+      // Переводим флаг в true после успешной авторизации
+      state._inited = true
     },
     logout: (state) => {
       state.authData = undefined
