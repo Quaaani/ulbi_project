@@ -52,7 +52,7 @@
       "import { <FTName>, <FTName>Props } from './<FTName>'",
       "",
       "export default {",
-      "  title: 'unsorted/<FTName>',",
+      "  title: 'shared/<FTName>',",
       "  component: <FTName>,",
       "  argTypes: {",
       "    backgroundColor: { control: 'color' },",
@@ -99,11 +99,81 @@
       "  })",
       "})",
       ""
-    ]
+    ],
+    "Create Public API (page)": [
+      "export { <FTName>Async as <FTName> } from './ui/<FTName>/<FTName>.async'"
+    ],
+    "Create React FC + memo (page)": [
+      "import { memo } from 'react'",
+      "import { useTranslation } from 'react-i18next'",
+      "import { classNames, Mods } from 'shared/lib/helpers'",
+      "",
+      "import cls from './<FTName>.module.scss'",
+      "",
+      "export interface <FTName>Props {}",
+      "",
+      "export const <FTName> = (props: <FTName>Props) => {",
+      "  const { t } = useTranslation('<FTName | camelcase>')",
+      "",
+      "  const mods: Mods = {}",
+      "  return (",
+      "    <div ",
+      "      className={classNames(cls.<FTName | camelcase>, mods)}",
+      "    >",
+      "      <FTName>",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "export default memo(<FTName>)",
+      "",
+    ],
+    "Create Storybook (page)": [
+      "import { ComponentStory, ComponentMeta } from '@storybook/react'",
+      "import { ThemeDecorator } from 'shared/config/storybook'",
+      "import { Theme } from 'app/providers/ThemeProvider'",
+      "",
+      "import <FTName>, { <FTName>Props } from './<FTName>'",
+      "",
+      "export default {",
+      "  title: 'pages/<FTName>',",
+      "  component: <FTName>,",
+      "  argTypes: {",
+      "    backgroundColor: { control: 'color' },",
+      "  },",
+      "} as ComponentMeta<typeof <FTName>>",
+      "",
+      "const Template: ComponentStory<typeof <FTName>> = (args: <FTName>Props) => (",
+      "  <<FTName> {...args} />",
+      ")",
+      "",
+      "export const Default = Template.bind({})",
+      "Default.args = {}",
+      "",
+      "export const DefaultDark = Template.bind({})",
+      "DefaultDark.args = {}",
+      "DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]",
+      "",
+      "export const DefaultGreen = Template.bind({})",
+      "DefaultGreen.args = {}",
+      "DefaultGreen.decorators = [ThemeDecorator(Theme.GREEN)]",
+      "",
+    ],
+    "Create Async Page": [
+    "  import { lazy } from 'react'",
+    "",
+    "  export const <FTName>Async = lazy(",
+    "   () => new Promise((resolve) => {",
+    "     // @ts-ignore",
+    "     // Искусственная задержка",
+    "     setTimeout(() => resolve(import('./<FTName>')), 1500)",
+    "   }),",
+    "  )",
+    ],
   },
   "folderTemplates.structures": [
     {
-      "name": "My Custom Template",
+      "name": "Create shared Component",
       "customVariables": [],
       "omitParentDirectory": true,
       "structure": [
@@ -126,6 +196,33 @@
         {
           "fileName": "<FTName>/ui/<FTName>.test.tsx",
           "template": "Create Component Jest Test",
+        },
+      ]
+    },
+    {
+      "name": "Create page Component",
+      "customVariables": [],
+      "omitParentDirectory": true,
+      "structure": [
+        {
+          "fileName": "<FTName>/index.ts",
+          "template": "Create Public API (page)",
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>/<FTName>.tsx",
+          "template": "Create React FC + memo (page)"
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>/<FTName>.async.tsx",
+          "template": "Create Async Page",
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>/<FTName>.module.scss",
+          "template": "Create React Module SCSS"
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>/<FTName>.stories.tsx",
+          "template": "Create Storybook (page)",
         },
       ]
     }

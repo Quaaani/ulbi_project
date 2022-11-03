@@ -28,6 +28,9 @@ export function buildWepbackConfig(
 
       // Автоудаление ненужных файлов
       clean: true,
+
+      // Путь откуда webpack читает сборку
+      publicPath: '/'
     },
 
     // Плагины
