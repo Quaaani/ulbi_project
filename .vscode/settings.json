@@ -173,7 +173,7 @@
   },
   "folderTemplates.structures": [
     {
-      "name": "Create shared Component",
+      "name": "Create Shared Component",
       "customVariables": [],
       "omitParentDirectory": true,
       "structure": [
@@ -200,7 +200,34 @@
       ]
     },
     {
-      "name": "Create page Component",
+      "name": "Create Entities Component",
+      "customVariables": [],
+      "omitParentDirectory": true,
+      "structure": [
+        {
+          "fileName": "<FTName>/index.ts",
+          "template": "Create Public API",
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>.tsx",
+          "template": "Create React FC + memo"
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>.module.scss",
+          "template": "Create React Module SCSS"
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>.stories.tsx",
+          "template": "Create Storybook",
+        },
+        {
+          "fileName": "<FTName>/ui/<FTName>.test.tsx",
+          "template": "Create Component Jest Test",
+        },
+      ]
+    },
+    {
+      "name": "Create Page Component",
       "customVariables": [],
       "omitParentDirectory": true,
       "structure": [

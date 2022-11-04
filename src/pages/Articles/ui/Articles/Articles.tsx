@@ -14,7 +14,7 @@ export const Articles = (props: ArticlesProps) => {
     <div 
       className={classNames(cls.articles, mods)}
     >
-      Articles
+      {t('articles')}
     </div>
   )
 }

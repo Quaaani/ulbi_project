@@ -12,7 +12,7 @@ export const ArticleDetails = (props: ArticleDetailsProps) => {
   const mods: Mods = {}
   return (
     <div className={classNames(cls.articleDetails, mods)}>
-      ArticleDetails
+      {t('article-details')}
     </div>
   )
 }
