@@ -11,7 +11,7 @@ import cls from './Counter.module.scss'
 interface CounterProps {}
 
 export const Counter: FC<CounterProps> = (props) => {
-  const { t } = useTranslation('about')
+  const { t } = useTranslation('aboutPage')
   const dispatch = useDispatch()
   const counterValue = useSelector(getCounterValue)
 

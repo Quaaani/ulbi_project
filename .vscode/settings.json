@@ -12,6 +12,8 @@
       "export * from './ui/<FTName>'"
     ],
     "Create React FC + memo": [
+      "// TODO: Delete disable",
+      "/* eslint-disable i18next/no-literal-string */",
       "import { memo } from 'react'",
       "import { useTranslation } from 'react-i18next'",
       "import { classNames, Mods } from 'shared/lib/helpers'",
@@ -24,12 +26,12 @@
       "",
       "export const <FTName> = memo((props: <FTName>Props) => {",
       "  const { className } = props",
-      "  const { t } = useTranslation()",
+      "  const { t } = useTranslation(<TranslationName>)",
       "",
       "  const mods: Mods = {}",
       "  return (",
       "    <div ",
-      "      data-testid='<FTName | lowercase>.test'",
+      "      data-testid='<FTName | camelcase>.test'",
       "      className={classNames(cls.<FTName | camelcase>, mods, [className])}",
       "    >",
       "      <FTName>",
@@ -52,7 +54,7 @@
       "import { <FTName>, <FTName>Props } from './<FTName>'",
       "",
       "export default {",
-      "  title: 'shared/<FTName>',",
+      "  title: '<SliceName>/<FTName>',",
       "  component: <FTName>,",
       "  argTypes: {",
       "    backgroundColor: { control: 'color' },",
@@ -95,7 +97,7 @@
       "describe('<FTName> Component Test', () => {",
       "  test('Default Test', () => {",
       "    ComponentRender(<<FTName> />)",
-      "    expect(screen.getByTestId('<FTName | lowercase>.test')).toBeInTheDocument()",
+      "    expect(screen.getByTestId('<FTName | camelcase>.test')).toBeInTheDocument()",
       "  })",
       "})",
       ""
@@ -104,6 +106,8 @@
       "export { <FTName>Async as <FTName> } from './ui/<FTName>/<FTName>.async'"
     ],
     "Create React FC + memo (page)": [
+      "// TODO: Delete disable",
+      "/* eslint-disable i18next/no-literal-string */",
       "import { memo } from 'react'",
       "import { useTranslation } from 'react-i18next'",
       "import { classNames, Mods } from 'shared/lib/helpers'",
@@ -173,8 +177,10 @@
   },
   "folderTemplates.structures": [
     {
-      "name": "Create Shared Component",
-      "customVariables": [],
+      "name": "Create Default Component Structure",
+      "customVariables": [
+        "SliceName", "TranslationName"
+      ],
       "omitParentDirectory": true,
       "structure": [
         {
@@ -200,34 +206,7 @@
       ]
     },
     {
-      "name": "Create Entities Component",
-      "customVariables": [],
-      "omitParentDirectory": true,
-      "structure": [
-        {
-          "fileName": "<FTName>/index.ts",
-          "template": "Create Public API",
-        },
-        {
-          "fileName": "<FTName>/ui/<FTName>.tsx",
-          "template": "Create React FC + memo"
-        },
-        {
-          "fileName": "<FTName>/ui/<FTName>.module.scss",
-          "template": "Create React Module SCSS"
-        },
-        {
-          "fileName": "<FTName>/ui/<FTName>.stories.tsx",
-          "template": "Create Storybook",
-        },
-        {
-          "fileName": "<FTName>/ui/<FTName>.test.tsx",
-          "template": "Create Component Jest Test",
-        },
-      ]
-    },
-    {
-      "name": "Create Page Component",
+      "name": "Create Page Component Structure",
       "customVariables": [],
       "omitParentDirectory": true,
       "structure": [

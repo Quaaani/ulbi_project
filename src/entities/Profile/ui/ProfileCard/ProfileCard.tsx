@@ -1,14 +1,15 @@
 import { CountrySelect, Country } from 'entities/Country'
 import { CurrencySelect, Currency } from 'entities/Currency'
-import {
-  Profile,
-  ProfileFormFieldErrorCode,
-  ProfileFormFieldErrors,
-} from 'entities/Profile/model/types/profileSchema'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { Input } from 'shared/ui'
+
+import {
+  Profile,
+  ProfileFormFieldErrorCode,
+  ProfileFormFieldErrors,
+} from '../../model/types/profileSchema'
 
 import cls from './ProfileCard.module.scss'
 
@@ -43,7 +44,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     onChangeAvatar,
   } = props
 
-  const { t } = useTranslation('profile')
+  const { t } = useTranslation('profilePage')
 
   const mods: Mods = {}
   return (

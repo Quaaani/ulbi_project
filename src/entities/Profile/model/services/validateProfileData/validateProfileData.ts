@@ -1,4 +1,7 @@
-import { Profile, ProfileFormFieldErrorCode } from '../../types/profileSchema'
+import {
+  Profile,
+  ProfileFormFieldErrorCode,
+} from '../../types/profileSchema'
 
 export const validateProfileData = (profile?: Profile) => {
   if (!profile) {

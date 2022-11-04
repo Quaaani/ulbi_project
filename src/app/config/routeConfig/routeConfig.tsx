@@ -1,4 +1,11 @@
-import { Main, About, Profile, NotFound, ArticleDetails, Articles } from 'pages'
+import {
+  MainPage,
+  AboutPage,
+  ProfilePage,
+  NotFoundPage,
+  ArticleDetailsPage,
+  ArticlesPage,
+} from 'pages'
 import { RouteProps } from 'react-router-dom'
 import { RoutePath } from 'shared/router'
 
@@ -9,29 +16,29 @@ export type AppRoutesProps = RouteProps & {
 export const routeConfig: AppRoutesProps[] = [
   {
     path: RoutePath.main,
-    element: <Main />,
+    element: <MainPage />,
   },
   {
     path: RoutePath.about,
-    element: <About />,
+    element: <AboutPage />,
   },
   {
     path: RoutePath.profile,
-    element: <Profile />,
+    element: <ProfilePage />,
     authOnly: true,
   },
   {
     path: RoutePath.not_found,
-    element: <NotFound />,
+    element: <NotFoundPage />,
   },
   {
     path: RoutePath.articles,
-    element: <Articles />,
+    element: <ArticlesPage />,
     authOnly: true,
   },
   {
     path: RoutePath.article_details,
-    element: <ArticleDetails />,
+    element: <ArticleDetailsPage />,
     authOnly: true,
   },
 ]
