@@ -5,7 +5,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import ArticlesPage, { ArticlesProps } from './ArticlesPage'
 
 export default {
-  title: 'unsorted/ArticlesPage',
+  title: 'pages/ArticlesPage',
   component: ArticlesPage,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -1,4 +1,6 @@
 {
   "article-details": "Article Details",
-  "article-details-entities": "Article Details Entities"
+  "article-details-entities": "Article Details Entities",
+  "article-was-not-found": "Article was not found",
+  "error-fetching-this-article": "Error fetching this Article"
 }

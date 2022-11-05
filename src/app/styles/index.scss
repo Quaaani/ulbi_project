@@ -18,7 +18,9 @@ body {
   display: flex;
 }
 
-.page-wrapper {
+.pageWrapper {
   flex: 1;
+  overflow-y: auto;
   padding: var(--default-padding);
+  height: calc(100vh - var(--navbar-height));
 }

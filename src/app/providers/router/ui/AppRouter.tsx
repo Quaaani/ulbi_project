@@ -10,7 +10,7 @@ const AppRouter = () => {
   const isAuth = useUserAuthData()
 
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-    const element = <div className="page-wrapper">{route.element}</div>
+    const element = <div className="pageWrapper">{route.element}</div>
 
     return (
       <Route
