@@ -13,7 +13,17 @@ export default {
 } as ComponentMeta<typeof Skeleton>
 
 const Template: ComponentStory<typeof Skeleton> = (args: SkeletonProps) => (
-  <Skeleton {...args} />
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      height: '100vh',
+    }}
+  >
+    <Skeleton {...args} />
+  </div>
 )
 
 export const Default = Template.bind({})

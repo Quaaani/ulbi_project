@@ -24,7 +24,6 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <Button {...args} />
@@ -100,7 +99,6 @@ DisabledWithIcon.args = {
 //       justifyContent: 'center',
 //       width: '100%',
 //       height: '100vh',
-//       backgroundColor: 'white',
 //     }}
 //   >
 //     <div

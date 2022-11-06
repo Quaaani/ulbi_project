@@ -7,7 +7,17 @@ import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch } from 'shared/lib/hooks'
-import { Text, TextType, TextSize, Skeleton } from 'shared/ui'
+import {
+  Text,
+  TextType,
+  TextSize,
+  Skeleton,
+  Avatar,
+  AvatarSize,
+  Icon,
+} from 'shared/ui'
+import EyeIcon from 'shared/assets/icons/eye.svg'
+import CalendarIcon from 'shared/assets/icons/calendar.svg'
 
 import {
   getArticleDetailsData,
@@ -44,13 +54,18 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <div>
-        <Skeleton className={cls.avatarWrapper} width={200} height={200} borderRadius="50%" />
-        <Skeleton className={cls.titleWrapper} width={300} height={32} />
-        <Skeleton className={cls.skeletonWrapper} width={600} height={24} />
-        <Skeleton className={cls.skeletonWrapper} width="100%" height={200} />
-        <Skeleton className={cls.skeletonWrapper} width="100%" height={200} />
-      </div>
+      <>
+        <Skeleton
+          className={cls.avatar}
+          width={200}
+          height={200}
+          borderRadius="50%"
+        />
+        <Skeleton className={cls.title} width={300} height={32} />
+        <Skeleton className={cls.skeleton} width={600} height={24} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
+      </>
     )
   } else if (error) {
     content = (
@@ -61,7 +76,41 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       />
     )
   } else {
-    content = <div>{t('article-details-entities')}</div>
+    content = (
+      <>
+        <div className={cls.avatarWrapper}>
+          <Avatar
+            className={cls.avatar}
+            size={AvatarSize.LARGE}
+            src={articleDetailsData?.img}
+            alt="ArticleDetailsLogo"
+          />
+        </div>
+        <div className={cls.titleWrapper}>
+          <Text
+            className={cls.title}
+            title={articleDetailsData?.title}
+            size={TextSize.HEADER}
+          />
+        </div>
+        <Text
+          className={cls.skeleton}
+          title={articleDetailsData?.subtitle}
+          size={TextSize.LARGE}
+        />
+        <div className={cls.articleInfoWrapper}>
+          <Icon icon={EyeIcon} />
+          <Text className={cls.titleText} title={articleDetailsData?.views} />
+        </div>
+        <div className={cls.articleInfoWrapper}>
+          <Icon icon={CalendarIcon} />
+          <Text
+            className={cls.titleText}
+            title={articleDetailsData?.createdAt}
+          />
+        </div>
+      </>
+    )
   }
 
   const mods: Mods = {}

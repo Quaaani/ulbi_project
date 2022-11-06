@@ -20,7 +20,6 @@ const Template: ComponentStory<typeof FormBlock> = (args: FormBlockProps) => (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <FormBlock {...args} />

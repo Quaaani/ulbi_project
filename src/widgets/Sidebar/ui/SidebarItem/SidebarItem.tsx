@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { useUserAuthData } from 'shared/lib/hooks'
-import { AppLink } from 'shared/ui'
+import { AppLink, Icon, IconColor } from 'shared/ui'
 
 import { SidebarItemType } from '../../model/items'
 
@@ -13,7 +13,7 @@ export interface SidebarItemProps {
 
 export const SidebarItem = memo((props: SidebarItemProps) => {
   const { item, isCollapsed } = props
-  const { icon: Icon } = item
+  const { icon } = item
 
   const isAuth = useUserAuthData()
 
@@ -23,7 +23,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
 
   return (
     <AppLink to={item.path} className={cls.linkWrapper}>
-      <Icon className={cls.icon} />
+      <Icon icon={icon} color={IconColor.INVERTED} />
     </AppLink>
   )
 })

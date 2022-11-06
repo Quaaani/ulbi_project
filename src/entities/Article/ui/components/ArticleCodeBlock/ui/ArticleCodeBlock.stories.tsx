@@ -20,7 +20,6 @@ const Template: ComponentStory<typeof ArticleCodeBlock> = (args: ArticleCodeBloc
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <ArticleCodeBlock {...args} />

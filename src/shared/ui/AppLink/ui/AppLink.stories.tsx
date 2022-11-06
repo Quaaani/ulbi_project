@@ -23,7 +23,6 @@ const Template: ComponentStory<typeof AppLink> = (args: AppLinkProps) => (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <AppLink {...args} />

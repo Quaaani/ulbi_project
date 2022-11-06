@@ -40,7 +40,6 @@ const Template: ComponentStory<typeof Select> = (args: SelectProps) => (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <Select {...args} />

@@ -24,7 +24,6 @@ const Template: ComponentStory<typeof ProfileCard> = (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <ProfileCard {...args} />

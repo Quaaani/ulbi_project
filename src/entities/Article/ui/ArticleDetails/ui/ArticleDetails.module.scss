@@ -2,14 +2,35 @@
   height: '100%';
 }
 
-.avatarWrapper {
+.avatar {
   margin: 0 auto;
 }
 
-.titleWrapper {
+.title {
   margin-top: 20px;
 }
 
-.skeletonWrapper {
+.skeleton {
   margin-top: 15px;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.articleInfoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.titleText {
+  margin-left: 5px;
 }

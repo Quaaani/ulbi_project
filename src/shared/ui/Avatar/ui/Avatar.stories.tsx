@@ -26,7 +26,6 @@ const Template: ComponentStory<typeof Avatar> = (args: AvatarProps) => (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <Avatar {...args} />

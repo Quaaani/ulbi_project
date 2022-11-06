@@ -26,7 +26,6 @@ const Template: ComponentStory<typeof ProfileForm> = (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <ProfileForm {...args} />

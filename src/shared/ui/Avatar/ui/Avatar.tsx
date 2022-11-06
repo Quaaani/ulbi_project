@@ -11,7 +11,7 @@ export enum AvatarSize {
 
 export interface AvatarProps {
   className?: string
-  src: string
+  src?: string
   alt: string
   size?: AvatarSize
 }

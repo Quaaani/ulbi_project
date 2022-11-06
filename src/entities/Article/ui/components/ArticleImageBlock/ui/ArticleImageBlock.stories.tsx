@@ -22,7 +22,6 @@ const Template: ComponentStory<typeof ArticleImageBlock> = (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <ArticleImageBlock {...args} />

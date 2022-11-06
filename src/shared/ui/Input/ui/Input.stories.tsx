@@ -13,7 +13,17 @@ export default {
 } as ComponentMeta<typeof Input>
 
 const Template: ComponentStory<typeof Input> = (args: InputProps) => (
-  <Input {...args} />
+  <div
+    style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%',
+      height: '100vh',
+    }}
+  >
+    <Input {...args} />
+  </div>
 )
 
 export const Default = Template.bind({})

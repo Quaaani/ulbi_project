@@ -37,7 +37,7 @@ export const Button = memo((props: ButtonProps) => {
   }
   const iconMods: Mods = {
     [cls.iconClear]: theme === ButtonTheme.CLEAR,
-    [cls.iconInverted]: theme === ButtonTheme.INVERTED
+    [cls.iconInverted]: theme === ButtonTheme.INVERTED,
   }
   const mods: Mods = {
     [cls.inactive]: disabled,
@@ -49,7 +49,9 @@ export const Button = memo((props: ButtonProps) => {
       className={classNames(cls.button, mods, [className, cls[theme]])}
       {...restProps}
     >
-      {Icon ? <Icon className={classNames(cls.icon, iconMods, [iconStyle])} /> : null}
+      {Icon ? (
+        <Icon className={classNames(cls.icon, iconMods, [iconStyle])} />
+      ) : null}
       {title ? (
         <div className={classNames('', titleMods)}>
           <Text title={title} size={TextSize.LARGE} />

@@ -23,7 +23,6 @@ const Template: ComponentStory<typeof Text> = (args: TextProps) => (
       justifyContent: 'center',
       width: '100%',
       height: '100vh',
-      backgroundColor: 'white',
     }}
   >
     <Text {...args} />
