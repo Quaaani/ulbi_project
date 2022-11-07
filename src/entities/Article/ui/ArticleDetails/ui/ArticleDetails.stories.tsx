@@ -104,9 +104,7 @@ const mockData: Article = {
 
 const Template: ComponentStory<typeof ArticleDetails> = (
   args: ArticleDetailsProps,
-) => (
-  <ArticleDetails {...args} />
-)
+) => <ArticleDetails {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}
@@ -140,9 +138,9 @@ DefaultGreen.decorators = [
   }),
 ]
 
-export const Loading = Template.bind({})
-Loading.args = {}
-Loading.decorators = [
+export const IsLoading = Template.bind({})
+IsLoading.args = {}
+IsLoading.decorators = [
   StoreDecorator({
     articleDetails: {
       isLoading: true,
@@ -150,12 +148,12 @@ Loading.decorators = [
   }),
 ]
 
-export const Error = Template.bind({})
-Error.args = {}
-Loading.decorators = [
+export const WithError = Template.bind({})
+WithError.args = {}
+WithError.decorators = [
   StoreDecorator({
     articleDetails: {
-      error: 'Error',
+      error: 'error',
     },
   }),
 ]

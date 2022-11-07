@@ -92,15 +92,6 @@ const mockData: Article = {
   ],
 }
 
-// export const getArticleDetailsIsLoading = (state: StateSchema) =>
-//   state.articleDetails?.isLoading
-
-// export const getArticleDetailsError = (state: StateSchema) =>
-//   state.articleDetails?.error
-
-// export const getArticleDetailsData = (state: StateSchema) =>
-//   state.articleDetails?.data
-
 describe('getArticleDetailsError Selector Test', () => {
   test('Default Test', () => {
     const state: DeepPartial<StateSchema> = {
@@ -108,6 +99,40 @@ describe('getArticleDetailsError Selector Test', () => {
         error: 'Error',
       },
     }
-    expect(getArticleDetailsError(state as StateSchema)).toEqual('')
+    expect(getArticleDetailsError(state as StateSchema)).toEqual('Error')
+  })
+  test('Error Test', () => {
+    const state: DeepPartial<StateSchema> = {}
+    expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined)
+  })
+})
+
+describe('getArticleDetailsIsLoading Selector Test', () => {
+  test('Default Test', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        isLoading: true,
+      },
+    }
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true)
+  })
+  test('Error Test', () => {
+    const state: DeepPartial<StateSchema> = {}
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(undefined)
+  })
+})
+
+describe('getArticleDetailsData Selector Test', () => {
+  test('Default Test', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        data: mockData,
+      },
+    }
+    expect(getArticleDetailsData(state as StateSchema)).toEqual(mockData)
+  })
+  test('Error Test', () => {
+    const state: DeepPartial<StateSchema> = {}
+    expect(getArticleDetailsData(state as StateSchema)).toEqual(undefined)
   })
 })
