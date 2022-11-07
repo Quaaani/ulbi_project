@@ -1,21 +1,12 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
-import { Theme } from 'app/providers/ThemeProvider'
-import { Article } from 'entities/Article'
+import { StateSchema } from 'app/providers/StoreProvider'
+
+import { Article, ArticleBlockType, ArticleType } from '../types/articleSchema'
+
 import {
-  ArticleType,
-  ArticleBlockType,
-} from 'entities/Article/model/types/articleSchema'
-
-import ArticleDetailsPage, { ArticleDetailsProps } from './ArticleDetailsPage'
-
-export default {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-} as ComponentMeta<typeof ArticleDetailsPage>
+  getArticleDetailsError,
+  getArticleDetailsIsLoading,
+  getArticleDetailsData,
+} from './articleDetailsSelectors'
 
 const mockData: Article = {
   id: 'b515cfc8-e9a8-4f30-9a38-786deeb7cd47',
@@ -101,38 +92,22 @@ const mockData: Article = {
   ],
 }
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (
-  args: ArticleDetailsProps,
-) => <ArticleDetailsPage {...args} />
+// export const getArticleDetailsIsLoading = (state: StateSchema) =>
+//   state.articleDetails?.isLoading
 
-export const Default = Template.bind({})
-Default.args = {}
-Default.decorators = [
-  StoreDecorator({
-    articleDetails: {
-      data: mockData,
-    },
-  }),
-]
+// export const getArticleDetailsError = (state: StateSchema) =>
+//   state.articleDetails?.error
 
-export const DefaultDark = Template.bind({})
-DefaultDark.args = {}
-DefaultDark.decorators = [
-  ThemeDecorator(Theme.DARK),
-  StoreDecorator({
-    articleDetails: {
-      data: mockData,
-    },
-  }),
-]
+// export const getArticleDetailsData = (state: StateSchema) =>
+//   state.articleDetails?.data
 
-export const DefaultGreen = Template.bind({})
-DefaultGreen.args = {}
-DefaultGreen.decorators = [
-  ThemeDecorator(Theme.GREEN),
-  StoreDecorator({
-    articleDetails: {
-      data: mockData,
-    },
-  }),
-]
+describe('getArticleDetailsError Selector Test', () => {
+  test('Default Test', () => {
+    const state: DeepPartial<StateSchema> = {
+      articleDetails: {
+        error: 'Error',
+      },
+    }
+    expect(getArticleDetailsError(state as StateSchema)).toEqual('')
+  })
+})

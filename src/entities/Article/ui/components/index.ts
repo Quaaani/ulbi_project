@@ -1,3 +1,3 @@
-export * from './ArticleCodeBlock'
-export * from './ArticleTextBlock'
-export * from './ArticleImageBlock'
+export * from './ArticleCodeBlockComponent'
+export * from './ArticleImageBlockComponent'
+export * from './ArticleTextBlockComponent'

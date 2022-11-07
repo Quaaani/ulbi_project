@@ -1,7 +1,5 @@
-// TODO: Delete disable
-/* eslint-disable i18next/no-literal-string */
 import { fetchArticleById } from 'entities/Article/model/services'
-import { memo, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
@@ -25,6 +23,15 @@ import {
   getArticleDetailsIsLoading,
 } from '../../../model/selectors/articleDetailsSelectors'
 import { articleDetailsReducer } from '../../../model/slice/articleDetailsSlice'
+import {
+  ArticleBlock,
+  ArticleBlockType,
+} from '../../../model/types/articleSchema'
+import {
+  ArticleCodeBlockComponent,
+  ArticleImageBlockComponent,
+  ArticleTextBlockComponent,
+} from '../../components'
 
 import cls from './ArticleDetails.module.scss'
 
@@ -47,8 +54,25 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const articleDetailsData = useSelector(getArticleDetailsData)
 
   useEffect(() => {
-    dispatch(fetchArticleById(articleId))
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(articleId))
+    }
   }, [dispatch, articleId])
+
+  const renderBlock = useCallback((block: ArticleBlock) => {
+    switch (block.type) {
+      case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />
+      case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />
+      case ArticleBlockType.IMAGE:
+        return (
+          <ArticleImageBlockComponent key={block.id} className={cls.block} block={block} />
+        )
+      default:
+        return null
+    }
+  }, [])
 
   let content
 
@@ -109,6 +133,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             title={articleDetailsData?.createdAt}
           />
         </div>
+        {articleDetailsData?.blocks.map(renderBlock)}
       </>
     )
   }

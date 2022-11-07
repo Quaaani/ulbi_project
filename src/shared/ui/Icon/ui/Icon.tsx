@@ -21,10 +21,5 @@ export const Icon = memo((props: IconProps) => {
     [cls.primary]: color === IconColor.PRIMARY,
     [cls.inverted]: color === IconColor.INVERTED,
   }
-  return (
-    <Icon
-      data-testid="icon.test"
-      className={classNames(cls.icon, mods, [className])}
-    />
-  )
+  return <Icon className={classNames(cls.icon, mods, [className])} />
 })

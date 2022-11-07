@@ -2,17 +2,20 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { ArticleCodeBlock, ArticleCodeBlockProps } from './ArticleCodeBlock'
+import { Code, CodeProps } from './Code'
 
 export default {
-  title: 'entities/ArticleCodeBlock',
-  component: ArticleCodeBlock,
+  title: 'shared/Code',
+  component: Code,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleCodeBlock>
+  args: {
+    codeValue: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+  },
+} as ComponentMeta<typeof Code>
 
-const Template: ComponentStory<typeof ArticleCodeBlock> = (args: ArticleCodeBlockProps) => (
+const Template: ComponentStory<typeof Code> = (args: CodeProps) => (
   <div
     style={{
       display: 'flex',
@@ -22,7 +25,7 @@ const Template: ComponentStory<typeof ArticleCodeBlock> = (args: ArticleCodeBloc
       height: '100vh',
     }}
   >
-    <ArticleCodeBlock {...args} />
+    <Code {...args} />
   </div>
 )
 
