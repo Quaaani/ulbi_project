@@ -230,6 +230,31 @@
           "template": "Create Storybook (page)",
         },
       ]
-    }
+    },
+    {
+      "name": "Create Only Component Files",
+      "customVariables": [
+        "SliceName", "TranslationName"
+      ],
+      "omitParentDirectory": true,
+      "structure": [
+        {
+          "fileName": "<FTName>/<FTName>.tsx",
+          "template": "Create React FC + memo"
+        },
+        {
+          "fileName": "<FTName>/<FTName>.module.scss",
+          "template": "Create React Module SCSS"
+        },
+        {
+          "fileName": "<FTName>/<FTName>.stories.tsx",
+          "template": "Create Storybook",
+        },
+        {
+          "fileName": "<FTName>/<FTName>.test.tsx",
+          "template": "Create Component Jest Test",
+        },
+      ]
+    },
   ]
 }

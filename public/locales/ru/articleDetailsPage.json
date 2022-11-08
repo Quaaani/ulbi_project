@@ -2,5 +2,6 @@
   "article-details": "Подробнее о статье",
   "article-details-entities": "Детали о статье",
   "article-was-not-found": "Статья не найдена",
-  "error-fetching-this-article": "Ошибка при загрузке статьи"
+  "error-fetching-this-article": "Ошибка при загрузке статьи",
+  "Comments": "Комментарии"
 }
