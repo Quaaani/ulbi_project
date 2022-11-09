@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { useAppDispatch } from 'shared/lib/hooks'
+import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
 import {
   Text,
   TextType,
@@ -53,11 +53,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const error = useSelector(getArticleDetailsError)
   const articleDetailsData = useSelector(getArticleDetailsData)
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(articleId))
-    }
-  }, [dispatch, articleId])
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(articleId))
+  })
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {

@@ -1,12 +1,10 @@
-import {
-  MainPage,
-  AboutPage,
-  ProfilePage,
-  NotFoundPage,
-  ArticleDetailsPage,
-  ArticlesPage,
-} from 'pages'
 import { RouteProps } from 'react-router-dom'
+import { AboutPage } from 'pages/AboutPage'
+import { ArticleDetailsPage } from 'pages/ArticleDetailsPage'
+import { ArticlesPage } from 'pages/ArticlesPage'
+import { MainPage } from 'pages/MainPage'
+import { NotFoundPage } from 'pages/NotFoundPage'
+import { ProfilePage } from 'pages/ProfilePage'
 import { RoutePath } from 'shared/router'
 
 export type AppRoutesProps = RouteProps & {

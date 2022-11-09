@@ -21,7 +21,7 @@ import { useSelector } from 'react-redux'
 import { onlyNumbersRegExp } from 'shared/const'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { Mods } from 'shared/lib/helpers'
-import { useAppDispatch } from 'shared/lib/hooks'
+import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
 
 import { ProfileForm } from '../../components'
 
@@ -53,11 +53,9 @@ const ProfilePage: FC<ProfileProps> = (props) => {
       [ProfileFormFieldErrorCode.SERVER_ERROR]: t('server-error'),
     }
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData())
-    }
-  }, [dispatch])
+  useInitialEffect(() => {
+    dispatch(fetchProfileData())
+  })
 
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly(false))

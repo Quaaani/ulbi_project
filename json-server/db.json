@@ -94,34 +94,34 @@
   "comments": [
     {
       "id": "6b125e2c-bde2-4747-bd95-b53182de8f55",
-      "text": "some comment",
-      "articleId": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
+      "text": "Sheeeeeeesh",
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a"
     },
     {
       "id": "5cf697f4-ae6c-4fd9-a704-e197551a56cb",
-      "text": "some comment 2",
-      "articleId": "2fccd683-6a1b-42f1-8643-4b6626a80c6b",
+      "text": "Анекдот про Наташу Ростову",
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
       "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7"
     },
     {
       "id": "a3378e14-ff72-4e80-ba99-36413a002485",
-      "text": "some comment 3",
-      "articleId": "32fc16cb-c737-415c-8c39-a43d51fe65e9",
+      "text": "Sup monkeys",
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
       "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7"
     }
   ],
   "users": [
     {
       "id": "e6882431-311d-4f41-b0dd-38c03ef71af7",
-      "username": "quani",
+      "username": "Antonbek",
       "password": "5750579",
       "role": "ADMIN",
       "avatar": "https://ih1.redbubble.net/image.1382109690.8812/st,small,507x507-pad,600x600,f8f8f8.jpg"
     },
     {
       "id": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "username": "quani",
+      "username": "Igorbek",
       "password": "5750579",
       "role": "USER",
       "avatar": "http://www.paullee.com/misc/FacebookAvatars/facebook-avatars/91E.jpg"

@@ -1,6 +1,0 @@
-export * from './NotFoundPage'
-export * from './MainPage'
-export * from './AboutPage'
-export * from './ProfilePage'
-export * from './ArticlesPage'
-export * from './ArticleDetailsPage'

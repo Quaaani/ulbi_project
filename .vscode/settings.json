@@ -173,6 +173,55 @@
     "   }),",
     "  )",
     ],
+    "Create Redux Selector": [
+      "import { StateSchema } from 'app/providers/StoreProvider'",
+      "",
+      "export const get<EntityName | pascalcase> = (state: StateSchema) => state?.",
+      ""
+      ],
+    "Create Redux Slice": [
+      "import { createSlice, PayloadAction } from '@reduxjs/toolkit'",
+      "",
+      "import { <EntityName | pascalcase>, <EntityName | pascalcase>Schema } from '../types/<EntityName>Schema'",
+      "",
+      "const initialState: <EntityName | pascalcase>Schema = {",
+      "  isLoading: false,",
+      "  error: undefined",
+      "}",
+      "",
+      "export const <EntityName>Slice = createSlice({",
+      "  name: '<EntityName>Slice',",
+      "  initialState,",
+      "  reducers: {},",
+      "  extraReducers: (builder) => {",
+      "    builder",
+      "      .addCase(SERVICE_NAME.pending, (state, action) => {",
+      "        state.error = undefined",
+      "        state.isLoading = true",
+      "      })",
+      "      .addCase(SERVICE_NAME.fulfilled, (state, action: PayloadAction<<EntityName | pascalcase>>) => {",
+      "        state.isLoading = false",
+      "      })",
+      "      .addCase(SERVICE_NAME.rejected, (state, action) => {",
+      "        state.isLoading = false",
+      "        state.error = action.payload",
+      "      })",
+      "  },",
+      "})",
+      "",
+      "export const { actions: <EntityName>Actions } = <EntityName>Slice",
+      "export const { reducer: <EntityName>Reducer } = <EntityName>Slice",
+      ""
+    ],
+    "Create Redux Type": [
+      "export interface <EntityName | pascalcase> {}",
+      "",
+      "export interface <EntityName | pascalcase>Schema {",
+      "  isLoading?: boolean",
+      "  error?: string",
+      "}",
+      ""
+    ]
   },
   "folderTemplates.structures": [
     {
@@ -253,6 +302,30 @@
         {
           "fileName": "<FTName>/<FTName>.test.tsx",
           "template": "Create Component Jest Test",
+        },
+      ]
+    },
+    {
+      "name": "Create Model Folder Template",
+      "omitParentDirectory": true,
+      "customVariables": [
+        "EntityName"
+      ],
+      "structure": [
+        {
+          "fileName": "<FTName>/selectors/<EntityName>Selectors.ts",
+          "template": "Create Redux Selector"
+        },
+        {
+          "fileName": "<FTName>/services/index.ts",
+        },
+        {
+          "fileName": "<FTName>/slice/<EntityName>Slice.ts",
+          "template": "Create Redux Slice"
+        },
+        {
+          "fileName": "<FTName>/types/<EntityName>Schema.ts",
+          "template": "Create Redux Type"
         },
       ]
     },
