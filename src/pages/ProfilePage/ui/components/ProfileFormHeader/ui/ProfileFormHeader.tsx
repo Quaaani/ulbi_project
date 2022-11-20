@@ -1,6 +1,9 @@
 import { ProfileFormFieldErrors } from 'entities/Profile'
+import { getProfileData } from 'entities/Profile/model/selectors/ProfileSelectors'
+import { getUserAuthData } from 'entities/User'
 import { memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import CancelIcon from 'shared/assets/icons/cancel.svg'
 import EditIcon from 'shared/assets/icons/edit.svg'
 import SaveIcon from 'shared/assets/icons/save.svg'
@@ -22,6 +25,10 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
   const { className, readonly, formFieldErrors, onEdit, onSave, onCancel } =
     props
   const { t } = useTranslation('profilePage')
+
+  const authData = useSelector(getUserAuthData)
+  const profileData = useSelector(getProfileData)
+  const canEdit = authData?.id === profileData?.id
 
   const [formFieldHasErrors, setFormFieldHasErrors] = useState(false)
 
@@ -45,31 +52,33 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
       className={classNames(cls.profileFormHeader, mods, [className])}
     >
       <Text title={t('profile-data')} size={TextSize.HEADER} />
-      <div className={cls.btnsWrapper}>
-        {readonly ? (
-          <Button
-            title={t('edit')}
-            icon={EditIcon}
-            theme={ButtonTheme.INVERTED}
-            onClick={onEdit}
-          />
-        ) : (
-          <>
+      {canEdit ? (
+        <div className={cls.btnsWrapper}>
+          {readonly ? (
             <Button
-              disabled={formFieldHasErrors}
-              title={t('save')}
-              icon={SaveIcon}
+              title={t('edit')}
+              icon={EditIcon}
               theme={ButtonTheme.INVERTED}
-              onClick={onSave}
+              onClick={onEdit}
             />
-            <Button
-              className={cls.btnLast}
-              icon={CancelIcon}
-              onClick={onCancel}
-            />
-          </>
-        )}
-      </div>
+          ) : (
+            <>
+              <Button
+                disabled={formFieldHasErrors}
+                title={t('save')}
+                icon={SaveIcon}
+                theme={ButtonTheme.INVERTED}
+                onClick={onSave}
+              />
+              <Button
+                className={cls.btnLast}
+                icon={CancelIcon}
+                onClick={onCancel}
+              />
+            </>
+          )}
+        </div>
+      ) : null}
     </div>
   )
 })

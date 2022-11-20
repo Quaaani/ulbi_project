@@ -14,7 +14,9 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS697md4hWAeEQKRseCn0oBkuQ6jAsrpuDsg&usqp=CAU",
       "views": 1042,
       "createdAt": "04.11.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -109,6 +111,30 @@
       "text": "Sup monkeys",
       "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
       "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7"
+    },
+    {
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
+      "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
+      "text": "Привет!",
+      "id": "FSASnA8"
+    },
+    {
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
+      "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+      "text": "Салам",
+      "id": "JQQd-bL"
+    },
+    {
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
+      "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+      "text": "Hello",
+      "id": "hUVKATQ"
+    },
+    {
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
+      "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+      "text": "Как вы тут пацаны",
+      "id": "s48QK3Y"
     }
   ],
   "users": [
@@ -132,7 +158,7 @@
       "id": "e6882431-311d-4f41-b0dd-38c03ef71af7",
       "firstName": "Antonbek",
       "lastName": "Stecenkovich",
-      "age": "27",
+      "age": "15",
       "countryIso": "Kazakhstan",
       "currencyIso": "USD",
       "isAdmin": true,

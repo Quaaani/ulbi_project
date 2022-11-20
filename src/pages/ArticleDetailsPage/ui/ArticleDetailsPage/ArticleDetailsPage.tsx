@@ -1,7 +1,9 @@
 import { ArticleDetails } from 'entities/Article'
 import { CommentList } from 'entities/Comment'
+import { AddCommentForm } from 'features/AddCommentForm'
 import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services'
-import { memo } from 'react'
+import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -32,6 +34,13 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
   const comments = useSelector(getArticleDetailsComments.selectAll)
   const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading)
 
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text))
+    },
+    [dispatch],
+  )
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(articleId))
   })
@@ -48,6 +57,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
               title={t('Comments')}
               size={TextSize.HEADER}
             />
+            <AddCommentForm onSendComment={onSendComment} />
             <CommentList isLoading={commentsIsLoading} comments={comments} />
           </>
         ) : (

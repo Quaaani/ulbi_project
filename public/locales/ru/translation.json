@@ -18,5 +18,7 @@
   "you-don-t-have-permission-to-access": "Вам сюда нельзя",
   "select-currency": "Выберите валюту",
   "select-country": "Выберите страну",
-  "no-comments": "Нет комментариев"
+  "no-comments": "Нет комментариев",
+  "add-comment": "Добавить комментарий",
+  "send": "Отправить"
 }
