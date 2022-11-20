@@ -1,7 +1,9 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { generatePath } from 'react-router-dom'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Avatar, Skeleton, Text, TextSize } from 'shared/ui'
+import { RoutePath } from 'shared/router'
+import { AppLink, AppLinkTheme, Avatar, Skeleton, Text, TextSize } from 'shared/ui'
 
 import { Comment } from '../../../model/types/commentSchema'
 
@@ -16,6 +18,7 @@ export interface CommentCardProps {
 export const CommentCard = memo((props: CommentCardProps) => {
   const { className, isLoading, comment } = props
   const { t } = useTranslation()
+  const path = generatePath(RoutePath.profile, { profileId: comment.user.id })
 
   const mods: Mods = {}
   return (
@@ -33,7 +36,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
         </>
       ) : (
         <>
-          <div className={cls.header}>
+          <AppLink to={path} theme={AppLinkTheme.SECONDARY} className={cls.header}>
             {comment.user.avatar ? (
               <Avatar src={comment.user.avatar} alt={comment.user.username} />
             ) : null}
@@ -42,7 +45,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
               title={comment.user.username}
               size={TextSize.LARGE}
             />
-          </div>
+          </AppLink>
           <Text
             className={cls.text}
             title={comment.text}

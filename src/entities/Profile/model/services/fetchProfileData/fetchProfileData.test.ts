@@ -6,7 +6,7 @@ import { fetchProfileData, ProfileError } from './fetchProfileData'
 
 describe('fetchProfileData Async Test', () => {
   const mockData = {
-    uid: '2a8337d8-8b44-48be-8518-abe45e18df9d',
+    id: '2a8337d8-8b44-48be-8518-abe45e18df9d',
     firstName: 'Igorbek',
     lastName: 'Maratov',
     age: '42',
@@ -17,7 +17,7 @@ describe('fetchProfileData Async Test', () => {
   test('Success GET Request Test', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData)
     thunk.api.get.mockReturnValue(Promise.resolve({ data: mockData }))
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('2a8337d8-8b44-48be-8518-abe45e18df9d')
 
     expect(thunk.api.get).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('fulfilled')
@@ -26,7 +26,7 @@ describe('fetchProfileData Async Test', () => {
   test('Error GET Request Test', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData)
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }))
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('2a8337d8-8b44-48be-8518-abe45e18df9d')
 
     expect(thunk.api.get).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('rejected')

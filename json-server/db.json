@@ -127,16 +127,28 @@
       "avatar": "http://www.paullee.com/misc/FacebookAvatars/facebook-avatars/91E.jpg"
     }
   ],
-  "profile": {
-    "uid": "e6882431-311d-4f41-b0dd-38c03ef71af7",
-    "firstName": "Igrobek",
-    "lastName": "Doe",
-    "age": "42",
-    "countryIso": "Kyrgyzstan",
-    "currencyIso": "EUR",
-    "isAdmin": true,
-    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSunNKz5JEU8ugdijp5u12CR2yEtAgqeEQ4Tr7r7qv6pN7_Jt-AcXWch2ePPWS2EJ0aWx8&usqp=CAU"
-  },
+  "profile": [
+    {
+      "id": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+      "firstName": "Antonbek",
+      "lastName": "Stecenkovich",
+      "age": "27",
+      "countryIso": "Kazakhstan",
+      "currencyIso": "USD",
+      "isAdmin": true,
+      "avatar": "https://ih1.redbubble.net/image.1382109690.8812/st,small,507x507-pad,600x600,f8f8f8.jpg"
+    },
+    {
+      "id": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
+      "firstName": "Igrobek",
+      "lastName": "Solyanovich",
+      "age": "42",
+      "countryIso": "Kyrgyzstan",
+      "currencyIso": "EUR",
+      "isAdmin": false,
+      "avatar": "http://www.paullee.com/misc/FacebookAvatars/facebook-avatars/91E.jpg"
+    }
+  ],
   "countries": {
     "KG": "Kyrgyzstan",
     "KZ": "Kazakhstan",

@@ -18,6 +18,7 @@ import {
 import { FC, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { onlyNumbersRegExp } from 'shared/const'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { Mods } from 'shared/lib/helpers'
@@ -36,6 +37,7 @@ export interface ProfileProps {
 const ProfilePage: FC<ProfileProps> = (props) => {
   const { className } = props
   const { t } = useTranslation('profilePage')
+  const { profileId } = useParams<{ profileId: string }>()
   const dispatch = useAppDispatch()
 
   const formData = useSelector(getProfileFormData)
@@ -54,7 +56,9 @@ const ProfilePage: FC<ProfileProps> = (props) => {
     }
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData())
+    if (profileId) {
+      dispatch(fetchProfileData(profileId))
+    }
   })
 
   const onEdit = useCallback(() => {

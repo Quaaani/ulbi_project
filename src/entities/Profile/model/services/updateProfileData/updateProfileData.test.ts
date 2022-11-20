@@ -8,7 +8,7 @@ import { updateProfileData } from './updateProfileData'
 
 describe('updateProfileData Async Test', () => {
   const mockData = {
-    uid: '2a8337d8-8b44-48be-8518-abe45e18df9d',
+    id: '2a8337d8-8b44-48be-8518-abe45e18df9d',
     firstName: 'Igorbek',
     lastName: 'Maratov',
     age: '42',
@@ -44,12 +44,14 @@ describe('updateProfileData Async Test', () => {
   test('Error PUT Validate Test', async () => {
     const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
-        formData: {...mockData, firstName: '', lastName: ''},
+        formData: { ...mockData, firstName: '', lastName: '' },
       },
     })
     const result = await thunk.callThunk()
 
     expect(result.meta.requestStatus).toBe('rejected')
-    expect(result.payload).toEqual([ProfileFormFieldErrorCode.INCORRECT_USER_DATA])
+    expect(result.payload).toEqual([
+      ProfileFormFieldErrorCode.INCORRECT_USER_DATA,
+    ])
   })
 })

@@ -11,7 +11,7 @@ export enum ProfileFormFieldErrorCode {
 }
 
 export interface Profile {
-  uid?: string
+  id?: string
   firstName?: string
   lastName?: string
   age?: string
