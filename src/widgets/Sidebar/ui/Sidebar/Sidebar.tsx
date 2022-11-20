@@ -1,7 +1,8 @@
-import { memo, useCallback, useState, useMemo } from 'react'
+import { memo, useCallback, useMemo, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
 
-import { SidebarItemsList } from '../../model/items'
+import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { CollapseBtn } from '../CollapseBtn/CollapseBtn'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 
@@ -15,6 +16,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   const { className } = props
 
   const [isCollapsed, setIsCollapsed] = useState(true)
+  const sidebarItemList = useSelector(getSidebarItems)
 
   const onToggle = useCallback(() => {
     setIsCollapsed((prev) => !prev)
@@ -22,14 +24,14 @@ export const Sidebar = memo((props: SidebarProps) => {
 
   const itemsList = useMemo(
     () =>
-      SidebarItemsList.map((linkItem) => (
+      sidebarItemList.map((linkItem) => (
         <SidebarItem
           key={linkItem.path}
           item={linkItem}
           isCollapsed={isCollapsed}
         />
       )),
-    [isCollapsed],
+    [isCollapsed, sidebarItemList],
   )
 
   const mods: Mods = {

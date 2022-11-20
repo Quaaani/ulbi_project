@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { useUserAuthData } from 'shared/lib/hooks'
 import { AppLink, Icon, IconColor } from 'shared/ui'
 
-import { SidebarItemType } from '../../model/items'
+import { SidebarItemType } from '../../model/types/sidebarSchema'
 
 import cls from './SidebarItem.module.scss'
 

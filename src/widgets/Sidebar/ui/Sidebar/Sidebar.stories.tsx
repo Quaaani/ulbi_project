@@ -18,16 +18,24 @@ export const Default = Template.bind({})
 Default.args = {}
 Default.decorators = [
   StoreDecorator({
-    user: { authData: {} },
+    user: {
+      authData: {
+        id: 'b290b1b5-2816-4c07-b69d-60c381e7ff76',
+      },
+    },
   }),
 ]
 
 export const DefaultDark = Template.bind({})
-Default.args = {}
+DefaultDark.args = {}
 DefaultDark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
-    user: { authData: {} },
+    user: {
+      authData: {
+        id: 'b290b1b5-2816-4c07-b69d-60c381e7ff76',
+      },
+    },
   }),
 ]
 
@@ -36,14 +44,14 @@ Default.args = {}
 DefaultGreen.decorators = [
   ThemeDecorator(Theme.GREEN),
   StoreDecorator({
-    user: { authData: {} },
+    user: {
+      authData: {
+        id: 'b290b1b5-2816-4c07-b69d-60c381e7ff76',
+      },
+    },
   }),
 ]
 
 export const NoAuth = Template.bind({})
 NoAuth.args = {}
-NoAuth.decorators = [
-  StoreDecorator({
-    user: {},
-  }),
-]
+NoAuth.decorators = [StoreDecorator({})]
