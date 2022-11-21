@@ -1,17 +1,19 @@
 import { ArticleDetails } from 'entities/Article'
 import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/AddCommentForm'
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services'
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { Text, TextType, TextSize } from 'shared/ui'
+import { Text, TextType, TextSize, Button } from 'shared/ui'
+import BackIcon from 'shared/assets/icons/back.svg'
+import { RoutePath } from 'shared/router'
 
+import { addCommentForArticle } from '../../../ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
+import { fetchCommentsByArticleId } from '../../../ArticleDetailsPage/model/services'
 import { getArticleDetailsCommentsIsLoading } from '../../model/selectors'
 import {
   articleDetailsCommentsReducer,
@@ -30,6 +32,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
   const { t } = useTranslation('articleDetailsPage')
   const { articleId } = useParams<{ articleId: string }>()
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
 
   const comments = useSelector(getArticleDetailsComments.selectAll)
   const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading)
@@ -41,6 +44,10 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
     [dispatch],
   )
 
+  const onPressBackToArticlesList = useCallback(() => {
+    navigate(RoutePath.articles)
+  }, [navigate])
+
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(articleId))
   })
@@ -49,6 +56,12 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
       <div className={classNames(cls.articleDetailsPage, mods)}>
+        <Button
+          className={cls.backBtn}
+          title={t('back-to-articles-list')}
+          icon={BackIcon}
+          onClick={onPressBackToArticlesList}
+        />
         {articleId ? (
           <>
             <ArticleDetails articleId={articleId} />

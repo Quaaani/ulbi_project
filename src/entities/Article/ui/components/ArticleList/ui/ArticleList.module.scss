@@ -1,4 +1,26 @@
 .articleList {
+  // articleList
+}
+
+.TILE {
   display: flex;
   flex-wrap: wrap;
+
+  .card {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 30vh;
+    max-height: 40vh;
+  }
+}
+
+.LIST {
+  display: flex;
+  flex-direction: column;
+
+  .card {
+    margin-top: 30px;
+    width: 100%;
+    height: 60vh;
+  }
 }

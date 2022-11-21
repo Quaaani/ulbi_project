@@ -1,3 +1,5 @@
+import { User } from '../../../User'
+
 export enum ArticleBlockType {
   CODE = 'CODE',
   TEXT = 'TEXT',
@@ -39,6 +41,7 @@ export enum ArticleType {
 
 export interface Article {
   id: string
+  user: User
   title: string
   subtitle: string
   img: string
@@ -50,5 +53,5 @@ export interface Article {
 
 export enum ArticleView {
   LIST = 'LIST',
-  TILE = 'TILE'
+  TILE = 'TILE',
 }

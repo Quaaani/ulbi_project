@@ -9,6 +9,7 @@
   "articles": [
     {
       "id": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
+      "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
       "title": "JavaScript News",
       "subtitle": "Latest new features in JS 2022",
       "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",

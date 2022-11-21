@@ -10,6 +10,12 @@ export interface ArticlesProps {}
 
 const mockData = {
   id: 'b515cfc8-e9a8-4f30-9a38-786deeb7cd47',
+  user: {
+    id: 'e6882431-311d-4f41-b0dd-38c03ef71af7',
+    username: 'Antonbek',
+    avatar:
+      'https://ih1.redbubble.net/image.1382109690.8812/st,small,507x507-pad,600x600,f8f8f8.jpg',
+  },
   title:
     'JavaScript News JavaScript News JavaScript News JavaScript News JavaScript News',
   subtitle: 'Latest new features in JS 2022',

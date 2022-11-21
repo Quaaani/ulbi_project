@@ -92,7 +92,7 @@ module.exports = {
     'max-len': [
       'error',
       {
-        code: 120,
+        code: 150,
         ignoreComments: true,
       },
     ],
@@ -139,6 +139,9 @@ module.exports = {
 
     // Запрещает использовать глобальные типы/переменные
     'no-undef': 'off',
+
+    // Запрещает использовать index в качестве key
+    'react/no-array-index-key': 'off',
   },
 
   // Для объявления глобальных переменных

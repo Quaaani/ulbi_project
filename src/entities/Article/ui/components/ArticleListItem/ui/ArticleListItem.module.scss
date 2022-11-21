@@ -1,6 +1,91 @@
-.articleListItem {
-  margin-top: 30px;
-  margin-left: 30px;
+.LIST {
+  transition: 0.2s;
+  cursor: pointer;
+
+  .cardInner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .userInfoWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .username {
+    margin-left: 10px;
+  }
+
+  .date {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: var(--bg-color);
+  }
+
+  .img {
+    margin-top: 16px;
+    border-radius: 5px;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .textWrapper {
+    overflow-y: hidden;
+    margin-top: 16px;
+    height: 140px;
+    text-overflow: ellipsis;
+  }
+
+  .infoWrapper {
+    margin-top: 16px;
+  }
+
+  .types {
+    overflow: hidden;
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .viewsWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    margin-left: 5px;
+  }
+
+  .title {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.01);
+  }
 }
 
 .TILE {
@@ -9,12 +94,12 @@
 
   .cardInner {
     position: relative;
-    overflow: hidden;
   }
 
   .img {
     border-radius: 5px;
     width: 100%;
+    object-fit: cover;
   }
 
   .date {
@@ -67,6 +152,6 @@
   }
 }
 
-.LIST {
-  // list
+.skeletonTitle {
+  margin-top: 10px;
 }

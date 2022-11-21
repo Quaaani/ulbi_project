@@ -3,5 +3,6 @@
   "article-details-entities": "Детали о статье",
   "article-was-not-found": "Статья не найдена",
   "error-fetching-this-article": "Ошибка при загрузке статьи",
-  "Comments": "Комментарии"
+  "Comments": "Комментарии",
+  "back-to-articles-list": "Назад к списку Статей"
 }
