@@ -9,7 +9,7 @@
   "stylelint.validate": ["css", "scss"],
   "folderTemplates.fileTemplates": {
     "Create Public API": [
-      "export * from './ui/<FTName>'"
+      "export { <FTName> } from './ui/<FTName>'"
     ],
     "Create React FC + memo": [
       "// TODO: Delete disable",
@@ -26,7 +26,7 @@
       "",
       "export const <FTName> = memo((props: <FTName>Props) => {",
       "  const { className } = props",
-      "  const { t } = useTranslation(<TranslationName>)",
+      "  const { t } = useTranslation('<TranslationName>')",
       "",
       "  const mods: Mods = {}",
       "  return (",
