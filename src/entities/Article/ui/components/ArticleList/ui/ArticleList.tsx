@@ -36,24 +36,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
   )
 
   const mods: Mods = {}
-
-  if (isLoading) {
-    return (
-      <div
-        data-testid="articleList.test"
-        className={classNames(cls.articleList, mods, [className, cls[view]])}
-      >
-        {getSkeletons(view)}
-      </div>
-    )
-  }
-
   return (
     <div
       data-testid="articleList.test"
       className={classNames(cls.articleList, mods, [className, cls[view]])}
     >
       {articles.length ? articles.map(renderArticle) : null}
+      {isLoading ? getSkeletons(view) : null}
     </div>
   )
 })

@@ -1,16 +1,15 @@
 import { AppRoutesProps, routeConfig } from 'app/config'
 import { memo, Suspense, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { useUserAuthData } from 'shared/lib/hooks'
 import { PageLoader } from 'widgets'
 
 import { RequireAuth } from './RequireAuth'
 
 const AppRouter = () => {
-  const isAuth = useUserAuthData()
-
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-    const element = <div className="pageWrapper">{route.element}</div>
+    const element = (
+      <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
+    )
 
     return (
       <Route

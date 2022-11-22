@@ -5,17 +5,16 @@ import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
+import { Page } from 'shared/ui'
 
 import {
-  getArticlesPageError,
-  getArticlesPageIsLoading,
-  getArticlesPageView,
+  getArticlesPageIsLoading, getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { fetchArticlesList } from '../../model/services'
+import { fetchArticlesList, fetchNextArticlesPage } from '../../model/services'
 import {
   articlesPageActions,
   articlesPageReducer,
-  getArticles,
+  getArticles
 } from '../../model/slice/articlesPageSlice'
 
 import cls from './ArticlesPage.module.scss'
@@ -33,11 +32,14 @@ export const ArticlesPage = (props: ArticlesProps) => {
   const articles = useSelector(getArticles.selectAll)
   const view = useSelector(getArticlesPageView)
   const isLoading = useSelector(getArticlesPageIsLoading)
-  const error = useSelector(getArticlesPageError)
 
   useInitialEffect(() => {
-    dispatch(fetchArticlesList())
     dispatch(articlesPageActions.initState())
+    dispatch(
+      fetchArticlesList({
+        page: 1,
+      }),
+    )
   })
 
   const onToggleArticlesView = useCallback(
@@ -47,17 +49,24 @@ export const ArticlesPage = (props: ArticlesProps) => {
     [dispatch],
   )
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage())
+  }, [dispatch])
+
   const mods: Mods = {}
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <div className={classNames(cls.articlesPage, mods)}>
+      <Page
+        className={classNames(cls.articlesPage, mods)}
+        onScrollEnd={onLoadNextPart}
+      >
         <ArticleViewSelector
           className={cls.toggleViewBtns}
           view={view}
           onToggleArticlesView={onToggleArticlesView}
         />
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

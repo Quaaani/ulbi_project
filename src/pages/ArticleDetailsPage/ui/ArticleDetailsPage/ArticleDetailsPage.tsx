@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { Text, TextType, TextSize, Button } from 'shared/ui'
+import { Text, TextType, TextSize, Button, Page } from 'shared/ui'
 import BackIcon from 'shared/assets/icons/back.svg'
 import { RoutePath } from 'shared/router'
 
@@ -55,7 +55,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
   const mods: Mods = {}
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <div className={classNames(cls.articleDetailsPage, mods)}>
+      <Page className={classNames(cls.articleDetailsPage, mods)}>
         <Button
           className={cls.backBtn}
           title={t('back-to-articles-list')}
@@ -80,7 +80,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
             size={TextSize.HEADER}
           />
         )}
-      </div>
+      </Page>
     </DynamicModuleLoader>
   )
 }

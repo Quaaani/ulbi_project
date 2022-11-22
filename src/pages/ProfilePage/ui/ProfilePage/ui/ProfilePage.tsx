@@ -23,6 +23,7 @@ import { onlyNumbersRegExp } from 'shared/const'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
+import { Page } from 'shared/ui'
 
 import { ProfileForm } from '../../components'
 
@@ -126,24 +127,26 @@ const ProfilePage: FC<ProfileProps> = (props) => {
   const mods: Mods = {}
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <ProfileForm
-        formData={formData}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        formFieldErrors={formFieldErrors}
-        formFieldErrorCodes={formFieldErrorCodes}
-        formFieldErrorCodeMessages={formFieldErrorCodeMessages}
-        onEdit={onEdit}
-        onSave={onSave}
-        onCancel={onCancel}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCountry={onChangeCountry}
-        onChangeCurrency={onChangeCurrency}
-        onChangeAvatar={onChangeAvatar}
-      />
+      <Page>
+        <ProfileForm
+          formData={formData}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          formFieldErrors={formFieldErrors}
+          formFieldErrorCodes={formFieldErrorCodes}
+          formFieldErrorCodeMessages={formFieldErrorCodeMessages}
+          onEdit={onEdit}
+          onSave={onSave}
+          onCancel={onCancel}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCountry={onChangeCountry}
+          onChangeCurrency={onChangeCurrency}
+          onChangeAvatar={onChangeAvatar}
+        />
+      </Page>
     </DynamicModuleLoader>
   )
 }

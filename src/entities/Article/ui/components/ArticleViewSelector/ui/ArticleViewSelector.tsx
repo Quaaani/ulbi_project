@@ -28,10 +28,7 @@ const viewTypes = [
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
   const { className, view, onToggleArticlesView } = props
 
-  const onClick = useCallback(
-    (newView: ArticleView) => () => onToggleArticlesView(newView),
-    [onToggleArticlesView],
-  )
+  const onClick = (newView: ArticleView) => () => onToggleArticlesView(newView)
 
   const mods: Mods = {}
   return (
@@ -42,7 +39,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
       {viewTypes.map((viewType) => (
         <Button
           className={classNames('', {
-            [cls.selected]: viewType.view === view
+            [cls.selected]: viewType.view === view,
           })}
           icon={viewType.icon}
           theme={ButtonTheme.CLEAR}
