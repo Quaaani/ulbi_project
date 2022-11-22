@@ -1,4 +1,7 @@
 .LIST {
+  overflow: hidden;
+  transition: 0.2s;
+
   .cardInner {
     position: relative;
     display: flex;
@@ -34,14 +37,14 @@
   .img {
     margin-top: 16px;
     border-radius: 5px;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
   }
 
   .textWrapper {
     overflow-y: hidden;
     margin-top: 16px;
-    height: 140px;
+    height: 160px;
     text-overflow: ellipsis;
   }
 

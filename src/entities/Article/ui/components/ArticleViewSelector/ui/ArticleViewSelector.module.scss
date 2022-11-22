@@ -1,0 +1,8 @@
+.articleViewSelector {
+  display: flex;
+  width: 100px;
+}
+
+.selected * {
+  stroke: var(--selected-icon-inverted);
+}
