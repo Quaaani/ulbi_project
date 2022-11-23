@@ -28,6 +28,7 @@ export const articlesPageSlice = createSlice({
     view: ArticleView.TILE,
     page: 1,
     hasMore: true,
+    _inited: false,
   }),
   reducers: {
     initState: (state) => {
@@ -36,6 +37,7 @@ export const articlesPageSlice = createSlice({
       ) as ArticleView
       state.view = view
       state.limit = view === ArticleView.TILE ? 6 : 3
+      state._inited = true
     },
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload

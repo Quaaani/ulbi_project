@@ -8,13 +8,14 @@ import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
 import { Page } from 'shared/ui'
 
 import {
-  getArticlesPageIsLoading, getArticlesPageView
+  getArticlesPageIsLoading,
+  getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors'
-import { fetchArticlesList, fetchNextArticlesPage } from '../../model/services'
+import { fetchNextArticlesPage, initArticlesPage } from '../../model/services'
 import {
   articlesPageActions,
   articlesPageReducer,
-  getArticles
+  getArticles,
 } from '../../model/slice/articlesPageSlice'
 
 import cls from './ArticlesPage.module.scss'
@@ -34,12 +35,7 @@ export const ArticlesPage = (props: ArticlesProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading)
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState())
-    dispatch(
-      fetchArticlesList({
-        page: 1,
-      }),
-    )
+    dispatch(initArticlesPage())
   })
 
   const onToggleArticlesView = useCallback(
@@ -55,7 +51,7 @@ export const ArticlesPage = (props: ArticlesProps) => {
 
   const mods: Mods = {}
   return (
-    <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
+    <DynamicModuleLoader removeAfterUnmount={false} reducers={reducers}>
       <Page
         className={classNames(cls.articlesPage, mods)}
         onScrollEnd={onLoadNextPart}

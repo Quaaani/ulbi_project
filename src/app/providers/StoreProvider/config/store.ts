@@ -17,7 +17,6 @@ import { StateSchema, ThunkExtraArg } from './StateSchema'
 export const createReduxStore = (
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void,
 ) => {
   // Корневой reducer хранит только те reducers, которые являются обязательными
   const rootReducers: ReducersMapObject<StateSchema> = {
@@ -30,7 +29,6 @@ export const createReduxStore = (
 
   const extraArgument: ThunkExtraArg = {
     api: $api,
-    navigate,
   }
 
   const store = configureStore({
@@ -43,7 +41,7 @@ export const createReduxStore = (
     // Инициализация Store для Storybook и Jest
     preloadedState: initialState,
 
-    // Добавляем instance axios и navigate как extra аргументы
+    // Добавляем instance axios как extra аргументы
     middleware: (getDefaultMiddlware) =>
       getDefaultMiddlware({
         thunk: {
