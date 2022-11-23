@@ -23,7 +23,7 @@ import { onlyNumbersRegExp } from 'shared/const'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { Page } from 'shared/ui'
+import { Page } from 'widgets'
 
 import { ProfileForm } from '../../components'
 

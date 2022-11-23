@@ -2,11 +2,11 @@ import {
   CombinedState,
   configureStore,
   Reducer,
-  ReducersMapObject,
+  ReducersMapObject
 } from '@reduxjs/toolkit'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
-import { NavigateOptions, To } from 'react-router-dom'
+import { scrollRestorationReducer } from 'features/ScrollRestoration'
 import { $api } from 'shared/api'
 
 import { createReducerManager } from './reducerManager'
@@ -23,6 +23,7 @@ export const createReduxStore = (
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    scrollRestoration: scrollRestorationReducer,
   }
 
   const reducerManager = createReducerManager(rootReducers)

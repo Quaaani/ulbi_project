@@ -15,10 +15,12 @@ import { LoginSchema } from 'features/AuthByUsername'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { ScrollRestorationSchema } from 'features/ScrollRestoration'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+  scrollRestoration: ScrollRestorationSchema
 
   // Необязательным делаем для асинхронных редюсеров
   // Которые подгружаются только в нужное время, а не всегда

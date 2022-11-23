@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { Page } from 'shared/ui'
+import { Page } from 'widgets'
 
 import {
   getArticlesPageIsLoading,

@@ -7,12 +7,11 @@ import { useAppDispatch } from 'shared/lib/hooks'
 import { Button, FormBlock, Input } from 'shared/ui'
 
 import {
-  getAddCommentFormError,
-  getAddCommentFormText,
+  getAddCommentFormText
 } from '../model/selectors/addCommentFormSelectors'
 import {
   addCommentFormActions,
-  addCommentFormReducer,
+  addCommentFormReducer
 } from '../model/slice/addCommentFormSlice'
 
 import cls from './AddCommentForm.module.scss'
@@ -32,7 +31,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
   const dispatch = useAppDispatch()
 
   const text = useSelector(getAddCommentFormText)
-  const error = useSelector(getAddCommentFormError)
 
   const onChangeCommentText = useCallback(
     (value: string) => {
