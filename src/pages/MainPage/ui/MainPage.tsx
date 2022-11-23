@@ -11,7 +11,7 @@ function MainPage() {
   return (
     <Page className={cls.mainPage}>
       <Text title={t('Main page')} size={TextSize.HEADER} />
-      <ErrorButton />
+      {/* <ErrorButton /> */}
     </Page>
   )
 }
