@@ -4,7 +4,7 @@ import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Select.module.scss'
 
-export interface SelectOption<T extends string> {
+export interface SelectOption<T> {
   value: T
   content: string
 }
