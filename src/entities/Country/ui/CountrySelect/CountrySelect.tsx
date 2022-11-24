@@ -10,7 +10,7 @@ export interface CountrySelectProps {
   onChange?: (value: Country) => void
 }
 
-const options: SelectOption[] = [
+const options: SelectOption<Country>[] = [
   { value: Country.BEL, content: Country.BEL },
   { value: Country.KG, content: Country.KG },
   { value: Country.KZ, content: Country.KZ },

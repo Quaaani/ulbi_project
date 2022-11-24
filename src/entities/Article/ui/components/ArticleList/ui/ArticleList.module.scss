@@ -5,10 +5,9 @@
 .TILE {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
 
   .card {
-    margin-top: 30px;
-    margin-left: 30px;
     width: 30vh;
     max-height: 40vh;
   }

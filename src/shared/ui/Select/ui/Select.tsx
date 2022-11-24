@@ -1,24 +1,24 @@
-import { ChangeEvent, memo, useCallback, useMemo } from 'react'
+import { ChangeEvent, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Select.module.scss'
 
-export interface SelectOption {
-  value: string
+export interface SelectOption<T extends string> {
+  value: T
   content: string
 }
 
-export interface SelectProps {
+export interface SelectProps<T extends string> {
   className?: string
-  options: SelectOption[]
+  options: SelectOption<T>[]
   label?: string
-  value?: string
+  value?: T
   readonly?: boolean
-  onChange?: (value: string) => void
+  onChange?: (value: T) => void
 }
 
-export const Select = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const { className, label, options, value, readonly, onChange } = props
   const { t } = useTranslation()
 
@@ -32,7 +32,7 @@ export const Select = memo((props: SelectProps) => {
 
   const onChangeHandler = useCallback(
     (event: ChangeEvent<HTMLSelectElement>) => {
-      onChange?.(event.target.value)
+      onChange?.(event.target.value as T)
     },
     [onChange],
   )
@@ -55,4 +55,4 @@ export const Select = memo((props: SelectProps) => {
       </select>
     </div>
   )
-})
+}

@@ -1,4 +1,4 @@
-import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article'
+import { ArticleList } from 'entities/Article'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -13,10 +13,10 @@ import {
 } from '../../model/selectors/articlesPageSelectors'
 import { fetchNextArticlesPage, initArticlesPage } from '../../model/services'
 import {
-  articlesPageActions,
   articlesPageReducer,
   getArticles,
 } from '../../model/slice/articlesPageSlice'
+import { ArticlesPageFilters } from '../ArticlesPageFilters'
 
 import cls from './ArticlesPage.module.scss'
 
@@ -38,13 +38,6 @@ export const ArticlesPage = (props: ArticlesProps) => {
     dispatch(initArticlesPage())
   })
 
-  const onToggleArticlesView = useCallback(
-    (view: ArticleView) => {
-      dispatch(articlesPageActions.setView(view))
-    },
-    [dispatch],
-  )
-
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage())
   }, [dispatch])
@@ -56,12 +49,13 @@ export const ArticlesPage = (props: ArticlesProps) => {
         className={classNames(cls.articlesPage, mods)}
         onScrollEnd={onLoadNextPart}
       >
-        <ArticleViewSelector
-          className={cls.toggleViewBtns}
+        <ArticlesPageFilters />
+        <ArticleList
+          className={cls.list}
+          isLoading={isLoading}
           view={view}
-          onToggleArticlesView={onToggleArticlesView}
+          articles={articles}
         />
-        <ArticleList isLoading={isLoading} view={view} articles={articles} />
       </Page>
     </DynamicModuleLoader>
   )

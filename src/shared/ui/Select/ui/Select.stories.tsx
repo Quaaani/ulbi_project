@@ -28,11 +28,11 @@ export default {
         value: 'Fourth value',
         content: 'Fourth value',
       },
-    ]
-  }
+    ],
+  },
 } as ComponentMeta<typeof Select>
 
-const Template: ComponentStory<typeof Select> = (args: SelectProps) => (
+const Template: ComponentStory<typeof Select> = (args: SelectProps<string>) => (
   <div
     style={{
       display: 'flex',

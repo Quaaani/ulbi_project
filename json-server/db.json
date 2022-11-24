@@ -263,10 +263,10 @@
       "id": "1ab56634-83af-4d7f-88c7-b725043d53c9",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
       "title": "GoLang News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png",
-      "views": 1245,
-      "createdAt": "13.05.2022",
+      "subtitle": "Latest new features in GO 2022",
+      "img": "https://eternaldev.com/static/bd050a890f2d9f5e9819d6253be0797c/d786d/o6aczwfv_400x400.png",
+      "views": 524,
+      "createdAt": "18.10.2019",
       "type": ["IT"],
       "blocks": [
         {
@@ -327,10 +327,10 @@
       "id": "60effc45-c538-40a5-8c96-ffd910780f5e",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
       "title": "Kotlin News",
-      "subtitle": "Latest new features in TS 2022",
+      "subtitle": "Latest new features in Kotlin 2022",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-      "views": 3321,
-      "createdAt": "13.05.2022",
+      "views": 6321,
+      "createdAt": "01.01.2018",
       "type": ["IT"],
       "blocks": [
         {
@@ -391,10 +391,10 @@
       "id": "5001d89a-fc51-431e-9926-ef924efa64b5",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
       "title": "Python News",
-      "subtitle": "Latest new features in TS 2022",
+      "subtitle": "Latest new features in Python 2022",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/640px-Python_logo_01.svg.png",
-      "views": 3124,
-      "createdAt": "13.05.2022",
+      "views": 5032,
+      "createdAt": "22.09.2021",
       "type": ["IT"],
       "blocks": [
         {
@@ -455,10 +455,10 @@
       "id": "5001d89a-fc51-431e-9926-ef924efa64b5",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
       "title": "C++ News",
-      "subtitle": "Latest new features in TS 2022",
+      "subtitle": "Latest new features in C++ 2022",
       "img": "https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png",
-      "views": 3124,
-      "createdAt": "13.05.2022",
+      "views": 7241,
+      "createdAt": "05.05.2021",
       "type": ["IT"],
       "blocks": [
         {
@@ -518,11 +518,11 @@
     {
       "id": "fbed3d5c-4a18-4eb6-a00a-99dad849e9c2",
       "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
-      "title": "JavaScript News",
-      "subtitle": "Latest new features in JS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-      "views": 1042,
-      "createdAt": "04.11.2022",
+      "title": "HTML News",
+      "subtitle": "Latest new features in HTML 2022",
+      "img": "https://catalin.red/dist/uploads/2011/01/css3-html5-logo-initial.png",
+      "views": 7741,
+      "createdAt": "08.12.2018",
       "type": ["IT"],
       "blocks": [
         {
@@ -602,11 +602,11 @@
     {
       "id": "92662806e-42fb-444a-b61c-a9753c1335ad",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "TypeScript News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://miro.medium.com/max/816/1*mn6bOs7s6Qbao15PMNRyOA.png",
-      "views": 2355,
-      "createdAt": "13.05.2022",
+      "title": "CSS News",
+      "subtitle": "Latest new features in CSS 2022",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png",
+      "views": 6127,
+      "createdAt": "10.12.2016",
       "type": ["IT"],
       "blocks": [
         {
@@ -686,11 +686,11 @@
     {
       "id": "033547d1-c3c2-48eb-993f-2316ee15a3bd",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "Swift News",
-      "subtitle": "Latest new features in Swift IOS 2022",
-      "img": "https://developer.apple.com/swift/images/swift-og.png",
-      "views": 1993,
-      "createdAt": "01.02.2022",
+      "title": "Java News",
+      "subtitle": "Latest new features in Java 2022",
+      "img": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/39/Java_logo.svg/800px-Java_logo.svg.png",
+      "views": 3302,
+      "createdAt": "15.12.2015",
       "type": ["IT"],
       "blocks": [
         {
@@ -770,11 +770,11 @@
     {
       "id": "94c66232-1b80-4c59-a407-791863915a3c",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "GoLang News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png",
-      "views": 1245,
-      "createdAt": "13.05.2022",
+      "title": "Ruby News",
+      "subtitle": "Latest new features in Ruby 2022",
+      "img": "https://w7.pngwing.com/pngs/980/847/png-transparent-ruby-on-rails-logo-programming-language-rubygems-ruby-angle-design-ruby.png",
+      "views": 893,
+      "createdAt": "13.11.2022",
       "type": ["IT"],
       "blocks": [
         {
@@ -834,11 +834,11 @@
     {
       "id": "cf56727e-8d16-4496-b8b6-bb00372fa8e5",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "Kotlin News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-      "views": 3321,
-      "createdAt": "13.05.2022",
+      "title": "Dart News",
+      "subtitle": "Latest new features in Dart 2022",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Dart_logo.png",
+      "views": 1994,
+      "createdAt": "05.11.2021",
       "type": ["IT"],
       "blocks": [
         {
@@ -898,11 +898,11 @@
     {
       "id": "0c338854-96a6-4288-badc-4a10de6dfa70",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "Python News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/640px-Python_logo_01.svg.png",
-      "views": 3124,
-      "createdAt": "13.05.2022",
+      "title": "Scala News",
+      "subtitle": "Latest new features in Scala 2022",
+      "img": "https://toppng.com/uploads/preview/scala-logo-11609375562niqu3xnys6.png",
+      "views": 521,
+      "createdAt": "22.03.2019",
       "type": ["IT"],
       "blocks": [
         {
@@ -962,11 +962,11 @@
     {
       "id": "e1a8d5fc-8f3c-409a-b866-f650d588b326",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "C++ News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png",
-      "views": 3124,
-      "createdAt": "13.05.2022",
+      "title": "React News",
+      "subtitle": "Latest new features in React 2022",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+      "views": 9942,
+      "createdAt": "12.10.2022",
       "type": ["IT"],
       "blocks": [
         {
@@ -1026,11 +1026,11 @@
     {
       "id": "2ff60bd0-d805-4023-b2d0-b527a628dbfc",
       "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
-      "title": "JavaScript News",
-      "subtitle": "Latest new features in JS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-      "views": 1042,
-      "createdAt": "04.11.2022",
+      "title": "Angular News",
+      "subtitle": "Latest new features in Angular 2022",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
+      "views": 4011,
+      "createdAt": "01.05.2019",
       "type": ["IT"],
       "blocks": [
         {
@@ -1110,11 +1110,11 @@
     {
       "id": "3a418ee3-5f86-4418-a376-7b2fd5f26131",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "TypeScript News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://miro.medium.com/max/816/1*mn6bOs7s6Qbao15PMNRyOA.png",
-      "views": 2355,
-      "createdAt": "13.05.2022",
+      "title": "NextJS News",
+      "subtitle": "Latest new features in NextJS 2022",
+      "img": "https://www.rlogical.com/wp-content/uploads/2021/08/Rlogical-Blog-Images-thumbnail.png",
+      "views": 3302,
+      "createdAt": "27.11.2022",
       "type": ["IT"],
       "blocks": [
         {
@@ -1194,11 +1194,11 @@
     {
       "id": "be61dc3a-0c98-483c-8e0d-563524190541",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "Swift News",
-      "subtitle": "Latest new features in Swift IOS 2022",
-      "img": "https://developer.apple.com/swift/images/swift-og.png",
-      "views": 1993,
-      "createdAt": "01.02.2022",
+      "title": "React-Native News",
+      "subtitle": "Latest new features in React-Native 2022",
+      "img": "https://toppng.com/uploads/preview/react-native-svg-transformer-allows-you-import-svg-aperture-science-innovators-logo-11562851994zqcpwozsvy.png",
+      "views": 2017,
+      "createdAt": "11.05.2022",
       "type": ["IT"],
       "blocks": [
         {
@@ -1278,11 +1278,11 @@
     {
       "id": "60b69146-1c41-4920-83c8-bbc62dc65fb3",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "GoLang News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Go_Logo_Blue.svg/1200px-Go_Logo_Blue.svg.png",
-      "views": 1245,
-      "createdAt": "13.05.2022",
+      "title": "Vue News",
+      "subtitle": "Latest new features in Vue 2022",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png",
+      "views": 2009,
+      "createdAt": "11.09.2022",
       "type": ["IT"],
       "blocks": [
         {
@@ -1342,11 +1342,11 @@
     {
       "id": "c478e4c57-4846-4c62-a4e6-f0818abc56f5",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "Kotlin News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
-      "views": 3321,
-      "createdAt": "13.05.2022",
+      "title": "NodeJS News",
+      "subtitle": "Latest new features in NodeJS 2022",
+      "img": "https://ih1.redbubble.net/image.1637717834.1604/pp,840x830-pad,1000x1000,f8f8f8.u1.jpg",
+      "views": 1992,
+      "createdAt": "29.03.2019",
       "type": ["IT"],
       "blocks": [
         {
@@ -1406,11 +1406,11 @@
     {
       "id": "947d8738-c3af-42f9-9f67-428c0b22debe",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "Python News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/640px-Python_logo_01.svg.png",
-      "views": 3124,
-      "createdAt": "13.05.2022",
+      "title": "Express News",
+      "subtitle": "Latest new features in Express 2022",
+      "img": "https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo.png",
+      "views": 5324,
+      "createdAt": "19.12.2020",
       "type": ["IT"],
       "blocks": [
         {
@@ -1470,11 +1470,11 @@
     {
       "id": "80f72226-257a-4072-897d-e5acbf2a8b09",
       "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
-      "title": "C++ News",
-      "subtitle": "Latest new features in TS 2022",
-      "img": "https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png",
-      "views": 3124,
-      "createdAt": "13.05.2022",
+      "title": "SQL News",
+      "subtitle": "Latest new features in SQL 2022",
+      "img": "https://w7.pngwing.com/pngs/170/924/png-transparent-microsoft-sql-server-microsoft-azure-sql-database-microsoft-text-logo-microsoft-azure.png",
+      "views": 6671,
+      "createdAt": "03.09.2019",
       "type": ["IT"],
       "blocks": [
         {
