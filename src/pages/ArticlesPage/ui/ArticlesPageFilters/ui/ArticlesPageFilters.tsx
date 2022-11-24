@@ -1,22 +1,28 @@
 import {
   ArticleSortField,
+  ArticleType,
   ArticleView,
   ArticleViewSelector,
 } from 'entities/Article'
-import { ArticleSortSelector } from 'entities/Article/ui/components'
-import { fetchArticlesList } from 'pages/ArticlesPage/model/services'
-import { memo, useCallback } from 'react'
+import {
+  ArticleSortSelector,
+  ArticleTypeTabs,
+} from 'entities/Article/ui/components'
+import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useDebounce } from 'shared/lib/hooks'
 import { SortOrder } from 'shared/types'
-import { Input } from 'shared/ui'
+import { Input, Tabs } from 'shared/ui'
+import { TabItem } from 'shared/ui/Tabs/ui/Tabs'
 
+import { fetchArticlesList } from '../../../model/services'
 import {
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
+  getArticlesPageType,
   getArticlesPageView,
 } from '../../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../../model/slice/articlesPageSlice'
@@ -36,6 +42,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const sort = useSelector(getArticlesPageSort)
   const order = useSelector(getArticlesPageOrder)
   const search = useSelector(getArticlesPageSearch)
+  const type = useSelector(getArticlesPageType)
 
   const fetchData = useCallback(() => {
     dispatch(fetchArticlesList({ replace: true }))
@@ -77,6 +84,15 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     [dispatch, debouncedFetchData],
   )
 
+  const onChangeType = useCallback(
+    (tab: TabItem<ArticleType>) => {
+      dispatch(articlesPageActions.setType(tab.value))
+      dispatch(articlesPageActions.setPage(1))
+      fetchData()
+    },
+    [dispatch, fetchData],
+  )
+
   const mods: Mods = {}
   return (
     <div
@@ -102,6 +118,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         value={search}
         onChange={onChangeSearch}
       />
+      <ArticleTypeTabs value={type} onChange={onChangeType} />
     </div>
   )
 })

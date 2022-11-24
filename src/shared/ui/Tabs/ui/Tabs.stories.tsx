@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
+import { action } from '@storybook/addon-actions'
 
 import { Tabs, TabsProps } from './Tabs'
 
@@ -10,9 +11,27 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  args: {
+    tabs: [
+      {
+        value: 'Value 1',
+        content: <div>Hello 1</div>,
+      },
+      {
+        value: 'Value 2',
+        content: <div>Hello 2</div>,
+      },
+      {
+        value: 'Value 3',
+        content: <div>Hello 3</div>,
+      },
+    ],
+    value: 'Value 2',
+    onTabClick: action('onTabClick'),
+  },
 } as ComponentMeta<typeof Tabs>
 
-const Template: ComponentStory<typeof Tabs> = (args: TabsProps) => (
+const Template: ComponentStory<typeof Tabs> = (args: TabsProps<string>) => (
   <div
     style={{
       display: 'flex',

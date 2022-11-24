@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
+import { Text, TextSize, TextType } from 'shared/ui'
 
 import { Article, ArticleView } from '../../../../model/types/articleSchema'
 import { ArticleListItem } from '../../ArticleListItem'
@@ -34,6 +35,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
       article={article}
     />
   )
+
+  if (!isLoading && !articles.length) {
+    return (
+      <Text
+        title={t('articles-was-not-found')}
+        size={TextSize.LARGE}
+        type={TextType.ERROR}
+      />
+    )
+  }
 
   const mods: Mods = {}
   return (

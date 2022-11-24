@@ -8,5 +8,10 @@
   "descending": "убыванию",
   "date": "дате",
   "title": "названию",
-  "views": "просмотрам"
+  "views": "просмотрам",
+  "it": "АйТи",
+  "all": "Все",
+  "science": "Наука",
+  "economics": "Экономика",
+  "articles-was-not-found": "Статьи не найдены"
 }

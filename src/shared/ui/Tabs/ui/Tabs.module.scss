@@ -2,3 +2,12 @@
   display: flex;
   gap: 8px;
 }
+
+.card {
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}

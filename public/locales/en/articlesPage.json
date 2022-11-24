@@ -8,5 +8,10 @@
   "descending": "descending",
   "date": "date",
   "title": "title",
-  "views": "views"
+  "views": "views",
+  "it": "IT",
+  "all": "All",
+  "science": "Science",
+  "economics": "Economics",
+  "articles-was-not-found": "Articles was not found"
 }

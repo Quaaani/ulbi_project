@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { ReactNode, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Card } from '../..'
+import { Card, CardTheme } from '../..'
 import { classNames, Mods } from '../../../lib/helpers'
 
 import cls from './Tabs.module.scss'
@@ -22,6 +22,13 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
   const { className, tabs, value, onTabClick } = props
   const { t } = useTranslation('')
 
+  const onClickHandle = useCallback(
+    (tab: TabItem<T>) => () => {
+      onTabClick(tab)
+    },
+    [onTabClick],
+  )
+
   const mods: Mods = {}
   return (
     <div
@@ -30,9 +37,11 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
     >
       {tabs.map((tab) => (
         <Card
-          renderContent={() => {
-            ;<div>{tab.content}</div>
-          }}
+          key={tab.value}
+          className={cls.card}
+          theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
+          renderContent={() => <div>{tab.content}</div>}
+          onClick={onClickHandle(tab)}
         />
       ))}
     </div>
