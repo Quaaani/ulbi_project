@@ -51,13 +51,6 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     [t],
   )
 
-  const changeSortHandler = useCallback(
-    (newSort: string) => {
-      onChangeSort(newSort as ArticleSortField)
-    },
-    [onChangeSort],
-  )
-
   const mods: Mods = {}
   return (
     <div

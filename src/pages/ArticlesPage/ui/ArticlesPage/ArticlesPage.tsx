@@ -2,6 +2,7 @@ import { ArticleList } from 'entities/Article'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useSearchParams } from 'react-router-dom'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
@@ -33,9 +34,10 @@ export const ArticlesPage = (props: ArticlesProps) => {
   const articles = useSelector(getArticles.selectAll)
   const view = useSelector(getArticlesPageView)
   const isLoading = useSelector(getArticlesPageIsLoading)
+  const [searchParams] = useSearchParams()
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage())
+    dispatch(initArticlesPage(searchParams))
   })
 
   const onLoadNextPart = useCallback(() => {

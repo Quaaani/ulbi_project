@@ -4,16 +4,18 @@ import {
   ArticleViewSelector,
 } from 'entities/Article'
 import { ArticleSortSelector } from 'entities/Article/ui/components'
+import { fetchArticlesList } from 'pages/ArticlesPage/model/services'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { useAppDispatch } from 'shared/lib/hooks'
+import { useAppDispatch, useDebounce } from 'shared/lib/hooks'
 import { SortOrder } from 'shared/types'
 import { Input } from 'shared/ui'
 
 import {
   getArticlesPageOrder,
+  getArticlesPageSearch,
   getArticlesPageSort,
   getArticlesPageView,
 } from '../../../model/selectors/articlesPageSelectors'
@@ -33,6 +35,13 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const view = useSelector(getArticlesPageView)
   const sort = useSelector(getArticlesPageSort)
   const order = useSelector(getArticlesPageOrder)
+  const search = useSelector(getArticlesPageSearch)
+
+  const fetchData = useCallback(() => {
+    dispatch(fetchArticlesList({ replace: true }))
+  }, [dispatch])
+
+  const debouncedFetchData = useDebounce(fetchData, 500)
 
   const onToggleArticlesView = useCallback(
     (view: ArticleView) => {
@@ -44,15 +53,28 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   const onChangeSort = useCallback(
     (newSort: ArticleSortField) => {
       dispatch(articlesPageActions.setSort(newSort))
+      dispatch(articlesPageActions.setPage(1))
+      fetchData()
     },
-    [dispatch],
+    [dispatch, fetchData],
   )
 
   const onChangeOrder = useCallback(
     (newOrder: SortOrder) => {
       dispatch(articlesPageActions.setOrder(newOrder))
+      dispatch(articlesPageActions.setPage(1))
+      fetchData()
     },
-    [dispatch],
+    [dispatch, fetchData],
+  )
+
+  const onChangeSearch = useCallback(
+    (search: string) => {
+      dispatch(articlesPageActions.setSearch(search))
+      dispatch(articlesPageActions.setPage(1))
+      debouncedFetchData()
+    },
+    [dispatch, debouncedFetchData],
   )
 
   const mods: Mods = {}
@@ -74,7 +96,12 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
           onToggleArticlesView={onToggleArticlesView}
         />
       </div>
-      <Input className={cls.search} placeholder={t('search')} />
+      <Input
+        className={cls.search}
+        placeholder={t('search')}
+        value={search}
+        onChange={onChangeSearch}
+      />
     </div>
   )
 })

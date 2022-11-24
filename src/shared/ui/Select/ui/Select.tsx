@@ -25,7 +25,7 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
   const optionsList = useMemo(
     () =>
       options.map((option) => (
-        <option key={option.value}>{option.content}</option>
+        <option key={option.value} value={option.value}>{option.content}</option>
       )),
     [options],
   )
