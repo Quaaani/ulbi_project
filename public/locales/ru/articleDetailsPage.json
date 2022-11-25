@@ -4,5 +4,6 @@
   "article-was-not-found": "Статья не найдена",
   "error-fetching-this-article": "Ошибка при загрузке статьи",
   "Comments": "Комментарии",
-  "back-to-articles-list": "Назад к списку Статей"
+  "back-to-articles-list": "Назад к списку Статей",
+  "recommendations": "Рекомендуем"
 }

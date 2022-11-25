@@ -1,21 +1,14 @@
-import {
-  AnyAction,
-  CombinedState,
-  EnhancedStore,
-  Reducer,
-  ReducersMapObject,
-} from '@reduxjs/toolkit'
+import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
-import { NavigateOptions, To } from 'react-router-dom'
 import { ArticleDetailsSchema } from 'entities/Article'
 import { CounterSchema } from 'entities/Counter'
 import { ProfileSchema } from 'entities/Profile'
 import { UserSchema } from 'entities/User'
-import { LoginSchema } from 'features/AuthByUsername'
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
-import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { LoginSchema } from 'features/AuthByUsername'
 import { ScrollRestorationSchema } from 'features/ScrollRestoration'
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage'
+import { ArticlesPageSchema } from 'pages/ArticlesPage'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -27,9 +20,9 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
   addCommentForm?: AddCommentFormSchema
   articlesPage?: ArticlesPageSchema
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 // Тип для хранения ключе наших reducers

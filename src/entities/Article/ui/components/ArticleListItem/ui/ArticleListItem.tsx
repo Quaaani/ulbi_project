@@ -1,6 +1,7 @@
-import { memo, useCallback } from 'react'
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
+  AppLink,
   Avatar,
   Button,
   ButtonTheme,
@@ -28,19 +29,15 @@ export interface ArticleListItemProps {
   className?: string
   view: ArticleView
   article: Article
+  target?: HTMLAttributeAnchorTarget
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, view, article } = props
+  const { className, view, article, target } = props
   const { t } = useTranslation('articlesPage')
-  const navigate = useNavigate()
   const articlePath = generatePath(RoutePath.article_details, {
     articleId: article.id,
   })
-
-  const onOpenArticle = useCallback(() => {
-    navigate(articlePath)
-  }, [articlePath, navigate])
 
   const textBlock = article.blocks.find(
     (block) => block.type === ArticleBlockType.TEXT,
@@ -66,12 +63,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
   const mods: Mods = {}
   return view === ArticleView.TILE ? (
-    <div
+    <AppLink
       data-testid="articleListItem.test"
       className={classNames(cls.articleListItemTileView, mods, [
         className,
         cls[view],
       ])}
+      to={articlePath}
+      target={target}
     >
       <Card
         renderContent={() => (
@@ -85,9 +84,8 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             {title}
           </div>
         )}
-        onClick={onOpenArticle}
       />
-    </div>
+    </AppLink>
   ) : (
     <div
       data-testid="articleListItem.test"
@@ -117,11 +115,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
               ) : null}
             </div>
             <div className={cls.footer}>
-              <Button
-                title={t('read-more')}
-                theme={ButtonTheme.INVERTED}
-                onClick={onOpenArticle}
-              />
+              <AppLink to={articlePath} target={target}>
+                <Button title={t('read-more')} theme={ButtonTheme.INVERTED} />
+              </AppLink>
               {views}
             </div>
           </div>

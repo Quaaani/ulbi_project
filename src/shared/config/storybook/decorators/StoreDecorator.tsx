@@ -4,7 +4,7 @@ import { articleDetailsReducer } from 'entities/Article'
 import { profileReducer } from 'entities/Profile'
 import { addCommentFormReducer } from 'features/AddCommentForm'
 import { loginReducer } from 'features/AuthByUsername'
-import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage'
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage'
 import { ReducersList } from 'shared/lib/components'
 
 const defaultAsyncReducers: ReducersList = {
@@ -12,17 +12,13 @@ const defaultAsyncReducers: ReducersList = {
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
 }
 
-export const StoreDecorator =
-  (initialState: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
-  (StoryComponent: Story) =>
-    (
-      <StoreProvider
-        initialState={initialState}
-        asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
-      >
-        <StoryComponent />
-      </StoreProvider>
-    )
+export const StoreDecorator = (initialState: DeepPartial<StateSchema>, asyncReducers?: ReducersList) => (StoryComponent: Story) =>
+  (
+    <StoreProvider initialState={initialState} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
+      <StoryComponent />
+    </StoreProvider>
+  )
+
