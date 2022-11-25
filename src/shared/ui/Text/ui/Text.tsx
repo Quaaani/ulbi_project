@@ -11,7 +11,12 @@ export enum TextSize {
 }
 
 export enum TextType {
-  ERROR = 'error'
+  ERROR = 'error',
+}
+
+export enum TextColor {
+  STANDART = 'standart',
+  INVERTED = 'inverted',
 }
 
 export interface TextProps {
@@ -19,10 +24,11 @@ export interface TextProps {
   title?: string | number
   size?: TextSize
   type?: TextType
+  color?: TextColor
 }
 
 export const Text = memo((props: TextProps) => {
-  const { className, title, size = TextSize.SMALL, type, ...restProps } = props
+  const { className, title, size = TextSize.SMALL, type, color = TextColor.STANDART, ...restProps } = props
 
   const mods: Mods = {
     [cls.error]: type === TextType.ERROR,
@@ -30,7 +36,7 @@ export const Text = memo((props: TextProps) => {
   return (
     <div
       data-testid="text.test"
-      className={classNames(cls.text, mods, [className, cls[size]])}
+      className={classNames(cls.text, mods, [className, cls[size], cls[color]])}
       {...restProps}
     >
       {title}

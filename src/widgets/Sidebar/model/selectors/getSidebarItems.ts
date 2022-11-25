@@ -5,6 +5,7 @@ import MainIcon from 'shared/assets/icons/main.svg'
 import AboutIcon from 'shared/assets/icons/info.svg'
 import ProfileIcon from 'shared/assets/icons/profile.svg'
 import ArticleIcon from 'shared/assets/icons/article.svg'
+import FeatherIcon from 'shared/assets/icons/feather.svg'
 import { generatePath } from 'react-router-dom'
 
 import { SidebarItemType } from '../types/sidebarSchema'
@@ -35,6 +36,11 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
       {
         path: RoutePath.articles,
         icon: ArticleIcon,
+        authOnly: true,
+      },
+      {
+        path: RoutePath.article_create,
+        icon: FeatherIcon,
         authOnly: true,
       },
     )

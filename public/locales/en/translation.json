@@ -20,5 +20,7 @@
   "select-country": "Select country",
   "no-comments": "No comments",
   "add-comment": "Add comment",
-  "send": "Send"
+  "send": "Send",
+  "ulbi-course-app": "Ulbi Course App",
+  "create-new-article": "Create new Article"
 }

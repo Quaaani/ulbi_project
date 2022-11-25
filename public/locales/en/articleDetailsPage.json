@@ -5,5 +5,7 @@
   "error-fetching-this-article": "Error fetching this Article",
   "Comments": "Comments",
   "back-to-articles-list": "Back to Articles List",
-  "recommendations": "Recommendations"
+  "recommendations": "Recommendations",
+  "edit-0": "Edit",
+  "error": "Error"
 }
