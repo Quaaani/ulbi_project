@@ -1,24 +1,14 @@
-import {
-  InputHTMLAttributes,
-  memo,
-  ChangeEvent,
-  useState,
-  useEffect,
-  useRef,
-} from 'react'
+import { InputHTMLAttributes, memo, ChangeEvent, useState, useEffect, useRef } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Button, ButtonTheme } from 'shared/ui/Button'
 
+import { Button, ButtonTheme } from '../..'
 import EyeIcon from '../../../assets/icons/eye.svg'
 import EyeClosedIcon from '../../../assets/icons/eye-closed.svg'
 
 import cls from './Input.module.scss'
 
 // Omit забирает из указанного типа все пропсы, но исключает те, которые мы укажем 2 аргументом
-type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange' | 'readOnly'
->
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 export interface InputProps extends HTMLInputProps {
   className?: string
@@ -89,10 +79,7 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-    <div
-      data-testid="input.test"
-      className={classNames(cls.input, mods, [className])}
-    >
+    <div data-testid="input.test" className={classNames(cls.input, mods, [className])}>
       <input
         ref={inputRef}
         type={type}
@@ -106,13 +93,9 @@ export const Input = memo((props: InputProps) => {
         {...restProps}
       />
       {(inputIsFocused || inputIsFilled) && (
-        <div className={classNames(cls.placeholder, placeholderMods)}>
-          {placeholder}
-        </div>
+        <div className={classNames(cls.placeholder, placeholderMods)}>{placeholder}</div>
       )}
-      {errorMessage && (
-        <div className={classNames(cls.errorMessage)}>{errorMessage}</div>
-      )}
+      {errorMessage && <div className={classNames(cls.errorMessage)}>{errorMessage}</div>}
       {/* TODO: show/hide value for passwords by checking type="password" */}
       {/* <Button
         theme={ButtonTheme.CLEAR}

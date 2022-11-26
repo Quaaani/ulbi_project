@@ -1,14 +1,7 @@
-import {
-  FC,
-  MouseEvent,
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react'
+import { FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Portal } from 'shared/ui/Portal/Portal'
+
+import { Portal } from '../..'
 
 import cls from './Modal.module.scss'
 
@@ -56,7 +49,7 @@ export const Modal: FC<ModalProps> = (props) => {
   useEffect(() => {
     if (isOpen) {
       setModalIsMounted(true)
-    } 
+    }
   }, [isOpen])
 
   useEffect(() => {
@@ -81,10 +74,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div
-        data-testid="modal.test"
-        className={classNames(cls.modal, mods, [className])}
-      >
+      <div data-testid="modal.test" className={classNames(cls.modal, mods, [className])}>
         <div className={cls.overlay} onClick={close}>
           <div className={cls.content} onClick={onContentClick}>
             {children}

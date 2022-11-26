@@ -1,9 +1,10 @@
-import { ArticleSortField } from 'entities/Article/model/types/articleSchema'
-import { memo, useCallback, useMemo } from 'react'
+import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { SortOrder } from 'shared/types'
 import { Select, SelectOption } from 'shared/ui'
+
+import { ArticleSortField } from '../../../../model/types/articleSchema'
 
 import cls from './ArticleSortSelector.module.scss'
 
@@ -53,22 +54,9 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
 
   const mods: Mods = {}
   return (
-    <div
-      data-testid="articleSortSelector.test"
-      className={classNames(cls.articleSortSelector, mods, [className])}
-    >
-      <Select<ArticleSortField>
-        label={t('sort-by')}
-        options={sortFieldOptions}
-        value={sort}
-        onChange={onChangeSort}
-      />
-      <Select<SortOrder>
-        label={t('by')}
-        options={orderOptions}
-        value={order}
-        onChange={onChangeOrder}
-      />
+    <div data-testid="articleSortSelector.test" className={classNames(cls.articleSortSelector, mods, [className])}>
+      <Select<ArticleSortField> label={t('sort-by')} options={sortFieldOptions} value={sort} onChange={onChangeSort} />
+      <Select<SortOrder> label={t('by')} options={orderOptions} value={order} onChange={onChangeOrder} />
     </div>
   )
 })

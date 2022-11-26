@@ -19,7 +19,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'import', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'import', 'react-hooks', 'fsd-import'],
   rules: {
     // Табуляция
     // indent: [2, 2],
@@ -113,16 +113,7 @@ module.exports = {
       'error',
       {
         'newlines-between': 'always',
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          'parent',
-          'sibling',
-          'index',
-          'object',
-          'type',
-        ],
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
       },
     ],
 
@@ -142,6 +133,10 @@ module.exports = {
 
     // Запрещает использовать index в качестве key
     'react/no-array-index-key': 'off',
+
+    // quani-fsd Custom Eslint Plugin
+    // Проверка путей в рамках одного слайса в FSD
+    'fsd-import/fsd-relative-path': 'error',
   },
 
   // Для объявления глобальных переменных
