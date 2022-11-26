@@ -15,7 +15,7 @@ import {
   getProfileIsLoading,
   getProfileReadonly,
 } from 'entities/Profile/model/selectors/ProfileSelectors'
-import { FC, useCallback, useEffect } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -35,7 +35,7 @@ export interface ProfileProps {
   className?: string
 }
 
-const ProfilePage: FC<ProfileProps> = (props) => {
+const ProfilePage = (props: ProfileProps) => {
   const { className } = props
   const { t } = useTranslation('profilePage')
   const { profileId } = useParams<{ profileId: string }>()
@@ -48,13 +48,12 @@ const ProfilePage: FC<ProfileProps> = (props) => {
   const formFieldErrors = useSelector(getProfileFormFieldError)
   const formFieldErrorCodes = useSelector(getProfileFormFieldErrorCodes)
 
-  const formFieldErrorCodeMessages: Record<ProfileFormFieldErrorCode, string> =
-    {
-      [ProfileFormFieldErrorCode.NO_USER_DATA]: t('no-user-data'),
-      [ProfileFormFieldErrorCode.INCORRECT_USER_DATA]: t('incorrect-user-data'),
-      [ProfileFormFieldErrorCode.INCORRECT_USER_AGE]: t('incorrect-user-age'),
-      [ProfileFormFieldErrorCode.SERVER_ERROR]: t('server-error'),
-    }
+  const formFieldErrorCodeMessages: Record<ProfileFormFieldErrorCode, string> = {
+    [ProfileFormFieldErrorCode.NO_USER_DATA]: t('no-user-data'),
+    [ProfileFormFieldErrorCode.INCORRECT_USER_DATA]: t('incorrect-user-data'),
+    [ProfileFormFieldErrorCode.INCORRECT_USER_AGE]: t('incorrect-user-age'),
+    [ProfileFormFieldErrorCode.SERVER_ERROR]: t('server-error'),
+  }
 
   useInitialEffect(() => {
     if (profileId) {
@@ -151,4 +150,4 @@ const ProfilePage: FC<ProfileProps> = (props) => {
   )
 }
 
-export default ProfilePage
+export default memo(ProfilePage)

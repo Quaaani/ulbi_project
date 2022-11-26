@@ -5,6 +5,10 @@ export interface BuildPaths {
   build: string
   html: string
   src: string
+
+  // Дополнительные пути для сборки
+  locales: string
+  buildLocales: string
 }
 
 export interface BuildOptions {

@@ -20,8 +20,7 @@ export const Navbar = memo((props: NavbarProps) => {
 
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
-      <Text title={t('ulbi-course-app')} size={TextSize.HEADER} 
-        color={TextColor.INVERTED} />
+      <Text title={t('ulbi-course-app')} size={TextSize.HEADER} color={TextColor.INVERTED} />
       <div className={cls.switchersContainer}>
         <ThemeSwitcher />
         <LanguageSwitcher />

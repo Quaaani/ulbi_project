@@ -1,15 +1,14 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 import { BuildOptions } from './types/config'
 
-export function buildPlugins(
-  options: BuildOptions,
-): webpack.WebpackPluginInstance[] {
-  const { paths, isDev, isAnalyze , apiUrl, project} = options
+export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
+  const { paths, isDev, isAnalyze, apiUrl, project } = options
 
   const plugins = [
     // Сборка HTML файла с подключением скрипта и доп. конфигами
@@ -32,6 +31,11 @@ export function buildPlugins(
       __IS_DEV__: JSON.stringify(isDev),
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
+    }),
+
+    // Плагин для копирования доп сущностей
+    new CopyPlugin({
+      patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
   ]
 
