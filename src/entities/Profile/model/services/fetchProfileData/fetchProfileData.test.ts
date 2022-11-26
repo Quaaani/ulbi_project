@@ -1,6 +1,6 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
-import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk'
+import { TestAsyncThunk } from 'shared/lib/helpers/tests/testAsyncThunk'
 
 import { fetchProfileData, ProfileError } from './fetchProfileData'
 

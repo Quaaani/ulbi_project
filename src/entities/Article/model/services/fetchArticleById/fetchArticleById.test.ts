@@ -1,10 +1,6 @@
-import { TestAsyncThunk } from 'shared/lib/helpers/tests/TestAsyncThunk'
+import { TestAsyncThunk } from 'shared/lib/helpers/tests/testAsyncThunk'
 
-import {
-  Article,
-  ArticleBlockType,
-  ArticleType,
-} from '../../types/articleSchema'
+import { Article, ArticleBlockType, ArticleType } from '../../types/articleSchema'
 
 import { fetchArticleById } from './fetchArticleById'
 
