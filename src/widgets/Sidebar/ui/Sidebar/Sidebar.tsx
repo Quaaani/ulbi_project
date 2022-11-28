@@ -1,6 +1,7 @@
 import { memo, useCallback, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
+import { HStack, VStack } from 'shared/ui'
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { CollapseBtn } from '../CollapseBtn/CollapseBtn'
@@ -24,13 +25,7 @@ export const Sidebar = memo((props: SidebarProps) => {
 
   const itemsList = useMemo(
     () =>
-      sidebarItemList.map((linkItem) => (
-        <SidebarItem
-          key={linkItem.path}
-          item={linkItem}
-          isCollapsed={isCollapsed}
-        />
-      )),
+      sidebarItemList.map((linkItem) => <SidebarItem key={linkItem.path} item={linkItem} isCollapsed={isCollapsed} />),
     [isCollapsed, sidebarItemList],
   )
 
@@ -38,12 +33,16 @@ export const Sidebar = memo((props: SidebarProps) => {
     [cls.isCollapsed]: isCollapsed,
   }
   return (
-    <div
+    <HStack
       data-testid="sidebar.test"
       className={classNames(cls.sidebar, mods, [className])}
+      justify="center"
+      align="start"
     >
       <CollapseBtn isCollapsed={isCollapsed} onToggle={onToggle} />
-      <div className={cls.linksContainer}>{itemsList}</div>
-    </div>
+      <VStack className={cls.linksContainer} align="start" justify="center">
+        {itemsList}
+      </VStack>
+    </HStack>
   )
 })

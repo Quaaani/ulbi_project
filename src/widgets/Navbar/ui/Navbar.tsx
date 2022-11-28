@@ -1,7 +1,7 @@
-import { memo, useState } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/helpers'
-import { Text, TextColor, TextSize } from 'shared/ui'
+import { HStack, Text, TextColor, TextSize } from 'shared/ui'
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
 import { Login } from 'widgets/Login'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
@@ -19,13 +19,13 @@ export const Navbar = memo((props: NavbarProps) => {
   const { t } = useTranslation()
 
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
+    <HStack className={classNames(cls.navbar, {}, [className])} justify="between">
       <Text title={t('ulbi-course-app')} size={TextSize.HEADER} color={TextColor.INVERTED} />
-      <div className={cls.switchersContainer}>
+      <HStack>
         <ThemeSwitcher />
         <LanguageSwitcher />
         <Login />
-      </div>
-    </div>
+      </HStack>
+    </HStack>
   )
 })

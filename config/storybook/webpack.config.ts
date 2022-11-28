@@ -12,6 +12,10 @@ export default ({ config }: { config: Configuration }) => {
     html: '',
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
+
+    // Дополнительные пути для сборки
+    locales: '',
+    buildLocales: '',
   }
 
   // Определение абсолютных импортов
@@ -26,16 +30,14 @@ export default ({ config }: { config: Configuration }) => {
 
   // Переопределение обработки SVG
   // eslint-disable-next-line no-param-reassign
-  config.module!.rules = config.module?.rules?.map(
-    (rule: RuleSetRule | '...') => {
-      if (rule !== '...') {
-        if (/svg/.test(rule.test as string)) {
-          return { ...rule, exclude: /\.svg$/i }
-        }
+  config.module!.rules = config.module?.rules?.map((rule: RuleSetRule | '...') => {
+    if (rule !== '...') {
+      if (/svg/.test(rule.test as string)) {
+        return { ...rule, exclude: /\.svg$/i }
       }
-      return rule
-    },
-  )
+    }
+    return rule
+  })
 
   // Добавляем своюй SVG Loader
   config.module!.rules!.push(buildSvgLoader())
