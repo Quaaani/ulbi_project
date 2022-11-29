@@ -8,6 +8,14 @@ li {
   list-style-type: none;
 }
 
+button {
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
 input,
 button,
 textarea,

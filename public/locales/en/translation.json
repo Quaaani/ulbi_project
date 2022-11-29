@@ -22,5 +22,7 @@
   "add-comment": "Add comment",
   "send": "Send",
   "ulbi-course-app": "Ulbi Course App",
-  "create-new-article": "Create new Article"
+  "create-new-article": "Create new Article",
+  "exit": "Exit",
+  "profile": "Profile"
 }

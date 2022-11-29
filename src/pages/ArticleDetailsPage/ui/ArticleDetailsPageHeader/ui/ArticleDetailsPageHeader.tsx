@@ -25,7 +25,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   const canEdit = useSelector(getCanEditArticle)
 
   const editPath = generatePath(RoutePath.article_edit, {
-    articleId: article?.id ? article.id : '',
+    articleId: article?.id || '',
   })
 
   const onPressBackToArticlesList = useCallback(() => {

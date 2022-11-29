@@ -2,11 +2,13 @@ import { userActions } from 'entities/User'
 import { LoginModal } from 'features/AuthByUsername'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import ExitIcon from 'shared/assets/icons/exit.svg'
-import LoginIcon from 'shared/assets/icons/login.svg'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Button, ButtonTheme } from 'shared/ui'
+import { Avatar, Button, ButtonTheme, Dropdown } from 'shared/ui'
 import { useUserAuthData } from 'shared/lib/hooks'
+import { useTranslation } from 'react-i18next'
+import LoginIcon from 'shared/assets/icons/login.svg'
+import { generatePath } from 'react-router-dom'
+import { RoutePath } from 'shared/router'
 
 import cls from './Login.module.scss'
 
@@ -16,10 +18,15 @@ interface LoginProps {
 
 export const Login = memo((props: LoginProps) => {
   const { className } = props
+  const { t } = useTranslation()
   const [modalIsVisible, setModalIsVisible] = useState(false)
 
   const authData = useUserAuthData()
   const dispatch = useDispatch()
+
+  const profilePath = generatePath(RoutePath.profile, {
+    profileId: authData?.id || '',
+  })
 
   const onCloseModal = useCallback(() => {
     setModalIsVisible(false)
@@ -39,25 +46,40 @@ export const Login = memo((props: LoginProps) => {
     }
   }, [authData])
 
-  const onPressBtn = authData ? onLogout : onOpenModal
-
-  const Icon = authData ? ExitIcon : LoginIcon
-
   const mods: Mods = {}
 
+  if (!authData) {
+    return (
+      <>
+        <Button
+          data-testid="login.test"
+          className={classNames(cls.logout, mods, [className])}
+          icon={LoginIcon}
+          iconStyle={cls.icon}
+          theme={ButtonTheme.CLEAR}
+          onClick={onOpenModal}
+        />
+        {!authData && <LoginModal isOpen={modalIsVisible} onClose={onCloseModal} />}
+      </>
+    )
+  }
+
   return (
-    <>
-      <Button
-        data-testid="login.test"
-        className={classNames(cls.login, mods, [className])}
-        icon={Icon}
-        iconStyle={cls.icon}
-        theme={ButtonTheme.CLEAR}
-        onClick={onPressBtn}
-      />
-      {!authData && (
-        <LoginModal isOpen={modalIsVisible} onClose={onCloseModal} />
-      )}
-    </>
+    <Dropdown
+      data-testid="login.test"
+      className={classNames(cls.login)}
+      direction="bottom-left"
+      trigger={<Avatar alt={authData?.username || 'avatar'} src={authData?.avatar} />}
+      items={[
+        {
+          content: t('profile'),
+          href: profilePath,
+        },
+        {
+          content: t('exit'),
+          onClick: onLogout,
+        },
+      ]}
+    />
   )
 })

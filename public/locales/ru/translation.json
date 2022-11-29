@@ -21,5 +21,7 @@
   "no-comments": "Нет комментариев",
   "add-comment": "Добавить комментарий",
   "send": "Отправить",
-  "create-new-article": "Написать статью"
+  "create-new-article": "Написать статью",
+  "exit": "Выйти",
+  "profile": "Профиль"
 }

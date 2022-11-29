@@ -1,16 +1,15 @@
-import { Fragment, memo, ReactNode, useState } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
+import { Fragment, memo, ReactNode } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
+import { DropdownDirection } from 'shared/types'
 
-import { Icon, Text, TextSize, HStack } from '../..'
-import OkCircleIcon from '../../../assets/icons/ok-circle.svg'
-import NotAllowedIcon from '../../../assets/icons/not-allowed.svg'
+import { HStack, Icon, Text, TextSize } from '../..'
 import ChevronDownIcon from '../../../assets/icons/chevron-down.svg'
 import ChevronUpIcon from '../../../assets/icons/chevron-up.svg'
+import NotAllowedIcon from '../../../assets/icons/not-allowed.svg'
+import OkCircleIcon from '../../../assets/icons/ok-circle.svg'
 
 import cls from './ListBox.module.scss'
-
-type DropdownDirection = 'top' | 'bottom'
 
 export interface ListBoxItem {
   value: string
@@ -30,9 +29,9 @@ export interface ListBoxProps {
 }
 
 export const ListBox = memo((props: ListBoxProps) => {
-  const { className, label, items, value, defaultValue, readonly, direction = 'bottom', onChange } = props
+  const { className, label, items, value, defaultValue, readonly, direction = 'bottom-right', onChange } = props
 
-  const DropdownIcon = direction === 'bottom' ? ChevronDownIcon : ChevronUpIcon
+  const DropdownIcon = direction.includes('bottom') ? ChevronDownIcon : ChevronUpIcon
 
   const mods: Mods = {
     [cls.readonly]: readonly,

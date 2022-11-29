@@ -15,7 +15,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
       "views": 1042,
       "createdAt": "04.11.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -99,7 +101,9 @@
       "img": "https://miro.medium.com/max/816/1*mn6bOs7s6Qbao15PMNRyOA.png",
       "views": 2355,
       "createdAt": "13.05.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -183,7 +187,9 @@
       "img": "https://developer.apple.com/swift/images/swift-og.png",
       "views": 1993,
       "createdAt": "01.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -267,7 +273,9 @@
       "img": "https://eternaldev.com/static/bd050a890f2d9f5e9819d6253be0797c/d786d/o6aczwfv_400x400.png",
       "views": 524,
       "createdAt": "18.10.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -331,7 +339,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Kotlin_Icon.svg/2048px-Kotlin_Icon.svg.png",
       "views": 6321,
       "createdAt": "01.01.2018",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -395,7 +405,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Python_logo_01.svg/640px-Python_logo_01.svg.png",
       "views": 5032,
       "createdAt": "22.09.2021",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -459,7 +471,9 @@
       "img": "https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png",
       "views": 7241,
       "createdAt": "05.05.2021",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -523,7 +537,9 @@
       "img": "https://catalin.red/dist/uploads/2011/01/css3-html5-logo-initial.png",
       "views": 7741,
       "createdAt": "08.12.2018",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -607,7 +623,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png",
       "views": 6127,
       "createdAt": "10.12.2016",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -691,7 +709,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/ru/thumb/3/39/Java_logo.svg/800px-Java_logo.svg.png",
       "views": 3302,
       "createdAt": "15.12.2015",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -775,7 +795,9 @@
       "img": "https://w7.pngwing.com/pngs/980/847/png-transparent-ruby-on-rails-logo-programming-language-rubygems-ruby-angle-design-ruby.png",
       "views": 893,
       "createdAt": "13.11.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -839,7 +861,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Dart_logo.png",
       "views": 1994,
       "createdAt": "05.11.2021",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -903,7 +927,9 @@
       "img": "https://toppng.com/uploads/preview/scala-logo-11609375562niqu3xnys6.png",
       "views": 521,
       "createdAt": "22.03.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -967,7 +993,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
       "views": 9942,
       "createdAt": "12.10.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1031,7 +1059,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png",
       "views": 4011,
       "createdAt": "01.05.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1115,7 +1145,9 @@
       "img": "https://www.rlogical.com/wp-content/uploads/2021/08/Rlogical-Blog-Images-thumbnail.png",
       "views": 3302,
       "createdAt": "27.11.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1199,7 +1231,9 @@
       "img": "https://toppng.com/uploads/preview/react-native-svg-transformer-allows-you-import-svg-aperture-science-innovators-logo-11562851994zqcpwozsvy.png",
       "views": 2017,
       "createdAt": "11.05.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1283,7 +1317,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png",
       "views": 2009,
       "createdAt": "11.09.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1347,7 +1383,9 @@
       "img": "https://ih1.redbubble.net/image.1637717834.1604/pp,840x830-pad,1000x1000,f8f8f8.u1.jpg",
       "views": 1992,
       "createdAt": "29.03.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1411,7 +1449,9 @@
       "img": "https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo.png",
       "views": 5324,
       "createdAt": "19.12.2020",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1475,7 +1515,9 @@
       "img": "https://w7.pngwing.com/pngs/170/924/png-transparent-microsoft-sql-server-microsoft-azure-sql-database-microsoft-text-logo-microsoft-azure.png",
       "views": 6671,
       "createdAt": "03.09.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "2c1981be-2b0b-4c1c-8e31-010c878fea87",
@@ -1658,8 +1700,8 @@
       "firstName": "Antonbek",
       "lastName": "Stecenkovich",
       "age": "15",
-      "countryIso": "Kazakhstan",
-      "currencyIso": "USD",
+      "countryIso": "Russia",
+      "currencyIso": "RUB",
       "isAdmin": true,
       "avatar": "https://ih1.redbubble.net/image.1382109690.8812/st,small,507x507-pad,600x600,f8f8f8.jpg"
     },
