@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Select, SelectOption } from 'shared/ui'
+import { ListBox, Select, SelectOption } from 'shared/ui'
 
 import { Country } from '../../model'
 
@@ -27,13 +27,14 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     },
     [onChange],
   )
+
   return (
-    <Select
-      data-testid="countryselect.test"
-      readonly={readonly}
+    <ListBox
       label={t('select-country')}
-      options={options}
       value={value}
+      defaultValue={t('select-country')}
+      items={options}
+      readonly={readonly}
       onChange={onChangeHandler}
     />
   )

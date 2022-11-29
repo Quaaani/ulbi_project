@@ -3,13 +3,9 @@ import { CurrencySelect, Currency } from 'entities/Currency'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Input } from 'shared/ui'
+import { Input, VStack } from 'shared/ui'
 
-import {
-  Profile,
-  ProfileFormFieldErrorCode,
-  ProfileFormFieldErrors,
-} from '../../model/types/profileSchema'
+import { Profile, ProfileFormFieldErrorCode, ProfileFormFieldErrors } from '../../model/types/profileSchema'
 
 import cls from './ProfileCard.module.scss'
 
@@ -48,47 +44,34 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   const mods: Mods = {}
   return (
-    <div
-      data-testid="profilecard.test"
-      className={classNames(cls.profileCard, mods, [className])}
-    >
-      <div className={cls.content}>
+    <div data-testid="profilecard.test" className={classNames(cls.profileCard, mods, [className])}>
+      <VStack max className={cls.content} gap="8">
         <Input
+          max
           readonly={readonly}
           value={formData?.firstName}
           placeholder={t('your-first-name')}
           onChange={onChangeFirstname}
         />
         <Input
+          max
           readonly={readonly}
           value={formData?.lastName}
           placeholder={t('your-lastname')}
           onChange={onChangeLastname}
         />
         <Input
+          max
           readonly={readonly}
           value={formData?.age}
           errorMessage={formFieldErrors?.age}
           placeholder={t('your-age')}
           onChange={onChangeAge}
         />
-        <Input
-          readonly={readonly}
-          value={formData?.avatar}
-          placeholder={t('avatar')}
-          onChange={onChangeAvatar}
-        />
-        <CurrencySelect
-          readonly={readonly}
-          value={formData?.currencyIso}
-          onChange={onChangeCurrency}
-        />
-        <CountrySelect
-          readonly={readonly}
-          value={formData?.countryIso}
-          onChange={onChangeCountry}
-        />
-      </div>
+        <Input max readonly={readonly} value={formData?.avatar} placeholder={t('avatar')} onChange={onChangeAvatar} />
+        <CurrencySelect readonly={readonly} value={formData?.currencyIso} onChange={onChangeCurrency} />
+        <CountrySelect readonly={readonly} value={formData?.countryIso} onChange={onChangeCountry} />
+      </VStack>
     </div>
   )
 })

@@ -8,7 +8,7 @@ import EyeClosedIcon from '../../../assets/icons/eye-closed.svg'
 import cls from './Input.module.scss'
 
 // Omit забирает из указанного типа все пропсы, но исключает те, которые мы укажем 2 аргументом
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly' | 'max'>
 
 export interface InputProps extends HTMLInputProps {
   className?: string
@@ -16,6 +16,7 @@ export interface InputProps extends HTMLInputProps {
   autofocus?: boolean
   errorMessage?: string
   readonly?: boolean
+  max?: boolean
   onChange?: (value: string) => void
 }
 
@@ -29,6 +30,7 @@ export const Input = memo((props: InputProps) => {
     autofocus,
     errorMessage,
     readonly,
+    max,
     onChange,
     ...restProps
   } = props
@@ -65,7 +67,9 @@ export const Input = memo((props: InputProps) => {
     }
   }, [value, autofocus])
 
-  const mods: Mods = {}
+  const mods: Mods = {
+    [cls.max]: max,
+  }
   const placeholderMods: Mods = {
     [cls.placeholderIsFocused]: inputIsFocused,
     [cls.placeholderIsFilled]: inputIsFilled,
