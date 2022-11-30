@@ -7,7 +7,7 @@ import {
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { scrollRestorationReducer } from 'features/ScrollRestoration'
-import { $api } from 'shared/api'
+import { $api, rtkApi } from 'shared/api'
 
 import { createReducerManager } from './reducerManager'
 import { StateSchema, ThunkExtraArg } from './StateSchema'
@@ -24,6 +24,7 @@ export const createReduxStore = (
     counter: counterReducer,
     user: userReducer,
     scrollRestoration: scrollRestorationReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   }
 
   const reducerManager = createReducerManager(rootReducers)
@@ -48,7 +49,7 @@ export const createReduxStore = (
         thunk: {
           extraArgument,
         },
-      }),
+      }).concat(rtkApi.middleware),
   })
 
   // TODO: Create key reducerManager in store

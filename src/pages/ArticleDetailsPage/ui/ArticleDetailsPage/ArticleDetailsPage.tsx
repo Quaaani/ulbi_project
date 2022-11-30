@@ -1,6 +1,7 @@
 import { ArticleDetails, ArticleList } from 'entities/Article'
 import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/AddCommentForm'
+import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -33,9 +34,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
   const dispatch = useAppDispatch()
 
   const comments = useSelector(getArticleDetailsComments.selectAll)
-  const recommendations = useSelector(getArticleDetailsRecommendations.selectAll)
   const commentsIsLoading = useSelector(getArticleDetailsCommentsIsLoading)
-  const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationsIsLoading)
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -46,7 +45,6 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(articleId))
-    dispatch(fetchRecommendations())
   })
 
   const mods: Mods = {}
@@ -57,8 +55,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
         {articleId ? (
           <>
             <ArticleDetails articleId={articleId} />
-            <Text className={cls.commentTitle} title={t('recommendations')} size={TextSize.HEADER} />
-            <ArticleList articles={recommendations} isLoading={recommendationsIsLoading} target="_blank" />
+            <ArticleRecommendationsList />
             <Text className={cls.commentTitle} title={t('Comments')} size={TextSize.HEADER} />
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList isLoading={commentsIsLoading} comments={comments} />

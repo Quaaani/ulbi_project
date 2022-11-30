@@ -134,6 +134,9 @@ module.exports = {
     // Запрещает использовать index в качестве key
     'react/no-array-index-key': 'off',
 
+    // Перенос на новую строку всех аргументов
+    // 'function-call-argument-newline': ["error", "always"],
+
     // quani-fsd Custom Eslint Plugin
     // Проверка путей в рамках одного слайса в FSD
     'fsd-import/fsd-relative-path': 'error',
