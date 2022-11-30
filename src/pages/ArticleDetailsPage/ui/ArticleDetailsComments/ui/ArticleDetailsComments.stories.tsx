@@ -2,18 +2,18 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { ArticleRecommendationsList, ArticleRecommendationsListProps } from './ArticleRecommendationsList'
+import { ArticleDetailsComments, ArticleDetailsCommentsProps } from './ArticleDetailsComments'
 
 export default {
-  title: 'features/ArticleRecommendationsList',
-  component: ArticleRecommendationsList,
+  title: 'pages/ArticleDetailsComments',
+  component: ArticleDetailsComments,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof ArticleRecommendationsList>
+} as ComponentMeta<typeof ArticleDetailsComments>
 
-const Template: ComponentStory<typeof ArticleRecommendationsList> = (args: ArticleRecommendationsListProps) => (
+const Template: ComponentStory<typeof ArticleDetailsComments> = (args: ArticleDetailsCommentsProps) => (
   <div
     style={{
       display: 'flex',
@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof ArticleRecommendationsList> = (args: Artic
       height: '100vh',
     }}
   >
-    <ArticleRecommendationsList {...args} />
+    <ArticleDetailsComments {...args} />
   </div>
 )
 

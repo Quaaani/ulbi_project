@@ -2,18 +2,18 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { ArticleRecommendationsList, ArticleRecommendationsListProps } from './ArticleRecommendationsList'
+import { ArticleInfiniteList, ArticleInfiniteListProps } from './ArticleInfiniteList'
 
 export default {
-  title: 'features/ArticleRecommendationsList',
-  component: ArticleRecommendationsList,
+  title: 'pages/ArticleInfiniteList',
+  component: ArticleInfiniteList,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof ArticleRecommendationsList>
+  decorators: [StoreDecorator({})]
+} as ComponentMeta<typeof ArticleInfiniteList>
 
-const Template: ComponentStory<typeof ArticleRecommendationsList> = (args: ArticleRecommendationsListProps) => (
+const Template: ComponentStory<typeof ArticleInfiniteList> = (args: ArticleInfiniteListProps) => (
   <div
     style={{
       display: 'flex',
@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof ArticleRecommendationsList> = (args: Artic
       height: '100vh',
     }}
   >
-    <ArticleRecommendationsList {...args} />
+    <ArticleInfiniteList {...args} />
   </div>
 )
 

@@ -13,5 +13,6 @@
   "all": "Все",
   "science": "Наука",
   "economics": "Экономика",
-  "articles-was-not-found": "Статьи не найдены"
+  "articles-was-not-found": "Статьи не найдены",
+  "failed-to-fetch-articles": "Ошибка при загрузке статей"
 }

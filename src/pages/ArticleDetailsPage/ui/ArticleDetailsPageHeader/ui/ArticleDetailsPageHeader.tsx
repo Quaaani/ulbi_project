@@ -7,7 +7,7 @@ import BackIcon from 'shared/assets/icons/back.svg'
 import EditIcon from 'shared/assets/icons/edit.svg'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { RoutePath } from 'shared/router'
-import { Button } from 'shared/ui'
+import { Button, VStack } from 'shared/ui'
 
 import { getCanEditArticle } from '../../../model/selectors/articleSelector'
 
@@ -38,19 +38,15 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
 
   const mods: Mods = {}
   return (
-    <div
+    <VStack
+      max
       data-testid="articleDetailsPageHeader.test"
       className={classNames(cls.articleDetailsPageHeader, mods, [className])}
+      gap="16"
+      align="end"
     >
-      <Button
-        className={cls.backBtn}
-        title={t('back-to-articles-list')}
-        icon={BackIcon}
-        onClick={onPressBackToArticlesList}
-      />
-      {canEdit ? (
-        <Button className={cls.editBtn} title={t('edit-0')} icon={EditIcon} onClick={onPressEditArticle} />
-      ) : null}
-    </div>
+      <Button title={t('back-to-articles-list')} icon={BackIcon} onClick={onPressBackToArticlesList} />
+      {canEdit ? <Button title={t('edit-0')} icon={EditIcon} onClick={onPressEditArticle} /> : null}
+    </VStack>
   )
 })

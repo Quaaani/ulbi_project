@@ -13,5 +13,6 @@
   "all": "All",
   "science": "Science",
   "economics": "Economics",
-  "articles-was-not-found": "Articles was not found"
+  "articles-was-not-found": "Articles was not found",
+  "failed-to-fetch-articles": "Failed to fetch Articles"
 }
