@@ -23,5 +23,6 @@
   "send": "Отправить",
   "create-new-article": "Написать статью",
   "exit": "Выйти",
-  "profile": "Профиль"
+  "profile": "Профиль",
+  "admin-panel": "Админка"
 }

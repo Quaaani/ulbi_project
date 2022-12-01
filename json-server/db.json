@@ -1683,15 +1683,22 @@
       "id": "e6882431-311d-4f41-b0dd-38c03ef71af7",
       "username": "Antonbek",
       "password": "5750579",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://ih1.redbubble.net/image.1382109690.8812/st,small,507x507-pad,600x600,f8f8f8.jpg"
     },
     {
       "id": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
       "username": "Igorbek",
       "password": "5750579",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "http://www.paullee.com/misc/FacebookAvatars/facebook-avatars/91E.jpg"
+    },
+    {
+      "id": "63b24a0c-f3b6-4928-a73f-d7f959084bfd",
+      "username": "Omarbek",
+      "password": "5750579",
+      "roles": ["MANAGER"],
+      "avatar": "https://global.discourse-cdn.com/business5/uploads/vrchat/optimized/2X/8/8b69c99796e45ade46980016a1a8bbb877e6b8ba_2_666x500.jpeg"
     }
   ],
   "profile": [
@@ -1714,6 +1721,16 @@
       "currencyIso": "EUR",
       "isAdmin": false,
       "avatar": "http://www.paullee.com/misc/FacebookAvatars/facebook-avatars/91E.jpg"
+    },
+    {
+      "id": "63b24a0c-f3b6-4928-a73f-d7f959084bfd",
+      "firstName": "Omarbek",
+      "lastName": "Devitovich",
+      "age": "56",
+      "countryIso": "Kyrgyzstan",
+      "currencyIso": "EUR",
+      "isAdmin": false,
+      "avatar": "https://global.discourse-cdn.com/business5/uploads/vrchat/optimized/2X/8/8b69c99796e45ade46980016a1a8bbb877e6b8ba_2_666x500.jpeg"
     }
   ],
   "countries": {

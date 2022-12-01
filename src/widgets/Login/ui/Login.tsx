@@ -1,7 +1,7 @@
-import { userActions } from 'entities/User'
+import { isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { LoginModal } from 'features/AuthByUsername'
 import { memo, useCallback, useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { Avatar, Button, ButtonTheme, Dropdown } from 'shared/ui'
 import { useUserAuthData } from 'shared/lib/hooks'
@@ -22,6 +22,8 @@ export const Login = memo((props: LoginProps) => {
   const [modalIsVisible, setModalIsVisible] = useState(false)
 
   const authData = useUserAuthData()
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserManager)
   const dispatch = useDispatch()
 
   const profilePath = generatePath(RoutePath.profile, {
@@ -45,6 +47,8 @@ export const Login = memo((props: LoginProps) => {
       setModalIsVisible(false)
     }
   }, [authData])
+
+  const isAdminPanelAvailable = isAdmin || isManager
 
   const mods: Mods = {}
 
@@ -71,6 +75,10 @@ export const Login = memo((props: LoginProps) => {
       direction="bottom-left"
       trigger={<Avatar alt={authData?.username || 'avatar'} src={authData?.avatar} />}
       items={[
+        ...(isAdminPanelAvailable ? [{
+          content: t('admin-panel'),
+          href: RoutePath.admin_panel
+        }] : []),
         {
           content: t('profile'),
           href: profilePath,

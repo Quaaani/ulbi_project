@@ -90,6 +90,7 @@
     ],
     "Create Component Jest Test": [
       "import { screen } from '@testing-library/react'",
+      "import userEvent from '@testing-library/user-event'",
       "import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'",
       "",
       "import { <FTName> } from './<FTName>'",
