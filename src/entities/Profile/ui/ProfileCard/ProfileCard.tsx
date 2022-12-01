@@ -44,10 +44,11 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
   const mods: Mods = {}
   return (
-    <div data-testid="profilecard.test" className={classNames(cls.profileCard, mods, [className])}>
+    <div data-testid="ProfileCard" className={classNames(cls.profileCard, mods, [className])}>
       <VStack max className={cls.content} gap="8">
         <Input
           max
+          data-testid='ProfileCard.InputFirstName'
           readonly={readonly}
           value={formData?.firstName}
           placeholder={t('your-first-name')}
@@ -55,6 +56,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         />
         <Input
           max
+          data-testid='ProfileCard.InputLastName'
           readonly={readonly}
           value={formData?.lastName}
           placeholder={t('your-lastname')}
@@ -62,6 +64,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         />
         <Input
           max
+          data-testid='ProfileCard.InputAge'
           readonly={readonly}
           value={formData?.age}
           errorMessage={formFieldErrors?.age}

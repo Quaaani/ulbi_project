@@ -71,7 +71,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
   if (isLoading) {
     return (
       <div
-        data-testid="profileform.test"
+        data-testid='ProfileForm.Loading'
         className={classNames(cls.profileForm, mods, [className])}
       >
         <FormBlock>
@@ -86,7 +86,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
   if (error) {
     return (
       <div
-        data-testid="profileform.test"
+        data-testid='ProfileForm.Error'
         className={classNames(cls.profileForm, mods, [className])}
       >
         <FormBlock>
@@ -100,7 +100,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
 
   return (
     <div
-      data-testid="profileform.test"
+      data-testid='ProfileForm'
       className={classNames(cls.profileForm, mods, [className])}
     >
       <FormBlock>

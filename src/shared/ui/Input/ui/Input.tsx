@@ -99,7 +99,7 @@ export const Input = memo((props: InputProps) => {
       {(inputIsFocused || inputIsFilled) && (
         <div className={classNames(cls.placeholder, placeholderMods)}>{placeholder}</div>
       )}
-      {errorMessage && <div className={classNames(cls.errorMessage)}>{errorMessage}</div>}
+      {errorMessage && <div data-testid='Input.Error' className={classNames(cls.errorMessage)}>{errorMessage}</div>}
       {/* TODO: show/hide value for passwords by checking type="password" */}
       {/* <Button
         theme={ButtonTheme.CLEAR}

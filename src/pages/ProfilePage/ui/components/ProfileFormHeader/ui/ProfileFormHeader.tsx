@@ -48,7 +48,7 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
   const mods: Mods = {}
   return (
     <div
-      data-testid="profileformheader.test"
+      data-testid="ProfileFormHeader"
       className={classNames(cls.profileFormHeader, mods, [className])}
     >
       <Text title={t('profile-data')} size={TextSize.HEADER} />
@@ -56,6 +56,7 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
         <div className={cls.btnsWrapper}>
           {readonly ? (
             <Button
+              data-testid="ProfileFormHeader.EditBtn"
               title={t('edit')}
               icon={EditIcon}
               theme={ButtonTheme.INVERTED}
@@ -64,6 +65,7 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
           ) : (
             <>
               <Button
+                data-testid="ProfileFormHeader.SaveBtn"
                 disabled={formFieldHasErrors}
                 title={t('save')}
                 icon={SaveIcon}
@@ -71,6 +73,7 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
                 onClick={onSave}
               />
               <Button
+                data-testid="ProfileFormHeader.CancelBtn"
                 className={cls.btnLast}
                 icon={CancelIcon}
                 onClick={onCancel}
