@@ -1,4 +1,4 @@
-import { FC, Suspense } from 'react'
+import { FC, ReactNode, Suspense } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { Modal } from 'shared/ui'
 import { PageLoader } from 'widgets'
@@ -14,17 +14,11 @@ interface LoginModalProps {
 }
 
 export const LoginModal: FC<LoginModalProps> = (props) => {
-  const { children, className, isOpen, onClose } = props
+  const { className, isOpen, onClose } = props
   const mods: Mods = {}
 
   return (
-    <Modal
-      lazy
-      data-testid="loginmodal.test"
-      isOpen={isOpen}
-      onClose={onClose}
-      className={classNames(cls.loginmodal, mods, [className])}
-    >
+    <Modal lazy data-testid="loginmodal.test" isOpen={isOpen} onClose={onClose} className={classNames(cls.loginmodal, mods, [className])}>
       <Suspense fallback={<PageLoader />}>
         <LoginFormAsync onSuccess={onClose} />
       </Suspense>

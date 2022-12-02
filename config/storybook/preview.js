@@ -1,10 +1,6 @@
 import { addDecorator } from '@storybook/react'
 
-import {
-  RouterDecorator,
-  StyleDecorator,
-  ThemeDecorator,
-} from '../../src/shared/config/storybook'
+import { RouterDecorator, StyleDecorator, SuspenseDecorator, ThemeDecorator } from '../../src/shared/config/storybook'
 import { Theme } from '../../src/app/providers/ThemeProvider'
 
 export const parameters = {
@@ -25,3 +21,6 @@ addDecorator(ThemeDecorator(Theme.LIGHT))
 
 // Router DOM Decorator
 addDecorator(RouterDecorator)
+
+// Suspense Decorator
+addDecorator(SuspenseDecorator)
