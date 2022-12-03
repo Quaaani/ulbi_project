@@ -1,12 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { profileFormFieldErrorMessages } from 'shared/const'
 
-import {
-  fetchProfileData,
-  ProfileError,
-} from '../services/fetchProfileData/fetchProfileData'
+import { fetchProfileData, ProfileError } from '../services/fetchProfileData/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { Profile, ProfileSchema } from '../types/profileSchema'
+
+import type { Profile, ProfileSchema } from '../types/profileSchema'
 
 const initialState: ProfileSchema = {
   data: undefined,
@@ -15,7 +13,7 @@ const initialState: ProfileSchema = {
   error: undefined,
 }
 
-export const profileSlice = createSlice({
+const profileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
@@ -55,14 +53,11 @@ export const profileSlice = createSlice({
         state.error = undefined
         state.isLoading = true
       })
-      .addCase(
-        fetchProfileData.fulfilled,
-        (state, action: PayloadAction<Profile>) => {
-          state.isLoading = false
-          state.data = action.payload
-          state.formData = action.payload
-        },
-      )
+      .addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
+        state.isLoading = false
+        state.data = action.payload
+        state.formData = action.payload
+      })
       .addCase(fetchProfileData.rejected, (state, action) => {
         state.isLoading = false
         state.error = ProfileError.FORBIDDEN
@@ -73,16 +68,13 @@ export const profileSlice = createSlice({
         state.formFieldErrorCodes = undefined
         state.isLoading = true
       })
-      .addCase(
-        updateProfileData.fulfilled,
-        (state, action: PayloadAction<Profile>) => {
-          state.isLoading = false
-          state.data = action.payload
-          state.formData = action.payload
-          state.readonly = true
-          state.formFieldErrorCodes = undefined
-        },
-      )
+      .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
+        state.isLoading = false
+        state.data = action.payload
+        state.formData = action.payload
+        state.readonly = true
+        state.formFieldErrorCodes = undefined
+      })
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false
         state.formFieldErrorCodes = action.payload
@@ -90,5 +82,4 @@ export const profileSlice = createSlice({
   },
 })
 
-export const { actions: profileActions } = profileSlice
-export const { reducer: profileReducer } = profileSlice
+export const { actions: profileActions, reducer: profileReducer } = profileSlice

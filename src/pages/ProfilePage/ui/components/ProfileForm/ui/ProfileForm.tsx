@@ -1,28 +1,19 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
-import {
-  Profile,
-  ProfileCard,
-  ProfileError,
-  ProfileFormFieldErrorCode,
-  ProfileFormFieldErrors,
-} from 'entities/Profile'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
-import {
-  Avatar,
-  AvatarSize,
-  FormBlock,
-  Spinner,
-  Text,
-  TextSize,
-  TextType,
-} from 'shared/ui'
+import { Avatar, AvatarSize } from 'shared/ui/Avatar'
+import { FormBlock } from 'shared/ui/FormBlock'
+import { Spinner } from 'shared/ui/Spinner'
+import { Text, TextSize, TextType } from 'shared/ui/Text'
+import { ProfileCard, ProfileError, ProfileFormFieldErrorCode } from 'entities/Profile'
 
 import { ProfileFormHeader } from '../../ProfileFormHeader'
 
 import cls from './ProfileForm.module.scss'
+
+import type { Profile, ProfileFormFieldErrors } from 'entities/Profile'
 
 export interface ProfileFormProps {
   className?: string
@@ -70,10 +61,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
 
   if (isLoading) {
     return (
-      <div
-        data-testid='ProfileForm.Loading'
-        className={classNames(cls.profileForm, mods, [className])}
-      >
+      <div data-testid="ProfileForm.Loading" className={classNames(cls.profileForm, mods, [className])}>
         <FormBlock>
           <div className={cls.contentWrapper}>
             <Spinner />
@@ -85,10 +73,7 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
 
   if (error) {
     return (
-      <div
-        data-testid='ProfileForm.Error'
-        className={classNames(cls.profileForm, mods, [className])}
-      >
+      <div data-testid="ProfileForm.Error" className={classNames(cls.profileForm, mods, [className])}>
         <FormBlock>
           <div className={cls.contentWrapper}>
             <Text title={error} size={TextSize.HEADER} type={TextType.ERROR} />
@@ -99,28 +84,15 @@ export const ProfileForm = memo((props: ProfileFormProps) => {
   }
 
   return (
-    <div
-      data-testid='ProfileForm'
-      className={classNames(cls.profileForm, mods, [className])}
-    >
+    <div data-testid="ProfileForm" className={classNames(cls.profileForm, mods, [className])}>
       <FormBlock>
         <div className={cls.cardWrapper}>
           {formData?.avatar ? (
             <div className={cls.avatarWrapper}>
-              <Avatar
-                src={formData.avatar}
-                alt={t('avatar')}
-                size={AvatarSize.LARGE}
-              />
+              <Avatar src={formData.avatar} alt={t('avatar')} size={AvatarSize.LARGE} />
             </div>
           ) : null}
-          <ProfileFormHeader
-            readonly={readonly}
-            formFieldErrors={formFieldErrors}
-            onEdit={onEdit}
-            onSave={onSave}
-            onCancel={onCancel}
-          />
+          <ProfileFormHeader readonly={readonly} formFieldErrors={formFieldErrors} onEdit={onEdit} onSave={onSave} onCancel={onCancel} />
           <ProfileCard
             formData={formData}
             readonly={readonly}

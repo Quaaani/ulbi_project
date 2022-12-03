@@ -3,11 +3,14 @@ import { CurrencySelect, Currency } from 'entities/Currency'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Input, VStack } from 'shared/ui'
+import { Input } from 'shared/ui/Input'
+import { VStack } from 'shared/ui/Stack'
 
-import { Profile, ProfileFormFieldErrorCode, ProfileFormFieldErrors } from '../../model/types/profileSchema'
+import { ProfileFormFieldErrorCode } from '../../model/consts/consts'
 
 import cls from './ProfileCard.module.scss'
+
+import type { Profile, ProfileFormFieldErrors } from '../../model/types/profileSchema'
 
 export interface ProfileCardProps {
   className?: string
@@ -48,7 +51,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
       <VStack max className={cls.content} gap="8">
         <Input
           max
-          data-testid='ProfileCard.InputFirstName'
+          data-testid="ProfileCard.InputFirstName"
           readonly={readonly}
           value={formData?.firstName}
           placeholder={t('your-first-name')}
@@ -56,7 +59,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         />
         <Input
           max
-          data-testid='ProfileCard.InputLastName'
+          data-testid="ProfileCard.InputLastName"
           readonly={readonly}
           value={formData?.lastName}
           placeholder={t('your-lastname')}
@@ -64,7 +67,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         />
         <Input
           max
-          data-testid='ProfileCard.InputAge'
+          data-testid="ProfileCard.InputAge"
           readonly={readonly}
           value={formData?.age}
           errorMessage={formFieldErrors?.age}

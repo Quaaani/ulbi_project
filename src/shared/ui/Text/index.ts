@@ -1,1 +1,1 @@
-export * from './ui/Text'
+export { Text, TextSize, TextType, TextColor } from './ui/Text'

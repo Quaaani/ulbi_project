@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { classNames } from 'shared/lib/helpers'
-import { Portal, Spinner } from 'shared/ui'
+import { Portal } from 'shared/ui/Portal'
+import { Spinner } from 'shared/ui/Spinner'
 
 import cls from './PageLoader.module.scss'
 

@@ -3,11 +3,12 @@ import { Fragment, memo, ReactNode } from 'react'
 import { classNames } from 'shared/lib/helpers'
 import { DropdownDirection } from 'shared/types'
 
-import { Text, TextSize, AppLink } from '../..'
+import { Text, TextSize } from '../../Text'
+import { AppLink } from '../../AppLink'
 
 import cls from './Dropdown.module.scss'
 
-export interface DropdownItem {
+interface DropdownItem {
   content: string
   disabled?: boolean
   onClick?: () => void

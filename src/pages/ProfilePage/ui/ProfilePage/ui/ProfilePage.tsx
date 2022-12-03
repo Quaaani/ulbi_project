@@ -1,12 +1,6 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
-import {
-  fetchProfileData,
-  profileActions,
-  ProfileFormFieldErrorCode,
-  profileReducer,
-  updateProfileData,
-} from 'entities/Profile'
+import { fetchProfileData, profileActions, ProfileFormFieldErrorCode, profileReducer, updateProfileData } from 'entities/Profile'
 import {
   getProfileError,
   getProfileFormData,
@@ -23,7 +17,7 @@ import { onlyNumbersRegExp } from 'shared/const'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { Page } from 'widgets'
+import { Page } from 'widgets/Page'
 
 import { ProfileForm } from '../../components'
 

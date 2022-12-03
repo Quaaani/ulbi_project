@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch } from 'shared/lib/hooks'
-import { Text, TextType } from 'shared/ui'
+import { Text, TextType } from 'shared/ui/Text'
 
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../../model/selectors/articlesPageSelectors'
 import { getArticles } from '../../../model/slice/articlesPageSlice'

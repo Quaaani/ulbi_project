@@ -1,1 +1,1 @@
-export * from './ui/Code'
+export { Code } from './ui/Code'

@@ -2,7 +2,7 @@ import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import { TestAsyncThunk } from 'shared/lib/helpers/tests/testAsyncThunk'
 
-import { ProfileFormFieldErrorCode } from '../../types/profileSchema'
+import { ProfileFormFieldErrorCode } from '../../consts/consts'
 
 import { updateProfileData } from './updateProfileData'
 
@@ -50,8 +50,6 @@ describe('updateProfileData Async Test', () => {
     const result = await thunk.callThunk()
 
     expect(result.meta.requestStatus).toBe('rejected')
-    expect(result.payload).toEqual([
-      ProfileFormFieldErrorCode.INCORRECT_USER_DATA,
-    ])
+    expect(result.payload).toEqual([ProfileFormFieldErrorCode.INCORRECT_USER_DATA])
   })
 })

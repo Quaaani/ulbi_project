@@ -1,1 +1,1 @@
-export * from './ui/FormBlock'
+export { FormBlock } from './ui/FormBlock'

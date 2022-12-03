@@ -1,7 +1,5 @@
-import {
-  Profile,
-  ProfileFormFieldErrorCode,
-} from '../../types/profileSchema'
+import { ProfileFormFieldErrorCode } from '../../consts/consts'
+import { Profile } from '../../types/profileSchema'
 
 export const validateProfileData = (profile?: Profile) => {
   if (!profile) {

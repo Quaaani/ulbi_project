@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Text, TextSize, TextType } from 'shared/ui'
+import { Text, TextSize, TextType } from 'shared/ui/Text'
 
 import { Article, ArticleView } from '../../../model/types/articleSchema'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'

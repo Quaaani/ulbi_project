@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Code } from 'shared/ui'
+import { Code } from 'shared/ui/Code'
 
 import { ArticleCodeBlock } from '../../../model/types/articleSchema'
 

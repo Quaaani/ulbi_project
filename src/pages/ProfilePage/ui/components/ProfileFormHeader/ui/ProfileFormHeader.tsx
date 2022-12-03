@@ -1,4 +1,3 @@
-import { ProfileFormFieldErrors } from 'entities/Profile'
 import { getProfileData } from 'entities/Profile/model/selectors/ProfileSelectors'
 import { getUserAuthData } from 'entities/User'
 import { memo, useEffect, useState } from 'react'
@@ -8,9 +7,12 @@ import CancelIcon from 'shared/assets/icons/cancel.svg'
 import EditIcon from 'shared/assets/icons/edit.svg'
 import SaveIcon from 'shared/assets/icons/save.svg'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Button, ButtonTheme, Text, TextSize } from 'shared/ui'
+import { Button, ButtonTheme } from 'shared/ui/Button'
+import { Text, TextSize } from 'shared/ui/Text'
 
 import cls from './ProfileFormHeader.module.scss'
+
+import type { ProfileFormFieldErrors } from 'entities/Profile'
 
 export interface ProfileFormHeaderProps {
   className?: string
@@ -22,8 +24,7 @@ export interface ProfileFormHeaderProps {
 }
 
 export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
-  const { className, readonly, formFieldErrors, onEdit, onSave, onCancel } =
-    props
+  const { className, readonly, formFieldErrors, onEdit, onSave, onCancel } = props
   const { t } = useTranslation('profilePage')
 
   const authData = useSelector(getUserAuthData)
@@ -34,8 +35,7 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
 
   useEffect(() => {
     if (formFieldErrors) {
-      const formFieldErrorsValues =
-        Object.values(formFieldErrors).filter(Boolean)
+      const formFieldErrorsValues = Object.values(formFieldErrors).filter(Boolean)
 
       if (formFieldErrorsValues.length) {
         setFormFieldHasErrors(true)
@@ -47,21 +47,12 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
 
   const mods: Mods = {}
   return (
-    <div
-      data-testid="ProfileFormHeader"
-      className={classNames(cls.profileFormHeader, mods, [className])}
-    >
+    <div data-testid="ProfileFormHeader" className={classNames(cls.profileFormHeader, mods, [className])}>
       <Text title={t('profile-data')} size={TextSize.HEADER} />
       {canEdit ? (
         <div className={cls.btnsWrapper}>
           {readonly ? (
-            <Button
-              data-testid="ProfileFormHeader.EditBtn"
-              title={t('edit')}
-              icon={EditIcon}
-              theme={ButtonTheme.INVERTED}
-              onClick={onEdit}
-            />
+            <Button data-testid="ProfileFormHeader.EditBtn" title={t('edit')} icon={EditIcon} theme={ButtonTheme.INVERTED} onClick={onEdit} />
           ) : (
             <>
               <Button
@@ -72,12 +63,7 @@ export const ProfileFormHeader = memo((props: ProfileFormHeaderProps) => {
                 theme={ButtonTheme.INVERTED}
                 onClick={onSave}
               />
-              <Button
-                data-testid="ProfileFormHeader.CancelBtn"
-                className={cls.btnLast}
-                icon={CancelIcon}
-                onClick={onCancel}
-              />
+              <Button data-testid="ProfileFormHeader.CancelBtn" className={cls.btnLast} icon={CancelIcon} onClick={onCancel} />
             </>
           )}
         </div>

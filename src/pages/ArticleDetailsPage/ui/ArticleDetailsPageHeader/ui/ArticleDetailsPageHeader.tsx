@@ -7,7 +7,8 @@ import BackIcon from 'shared/assets/icons/back.svg'
 import EditIcon from 'shared/assets/icons/edit.svg'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { RoutePath } from 'shared/router'
-import { Button, VStack } from 'shared/ui'
+import { Button } from 'shared/ui/Button'
+import { VStack } from 'shared/ui/Stack'
 
 import { getCanEditArticle } from '../../../model/selectors/articleSelector'
 

@@ -1,6 +1,6 @@
 import { memo, SVGProps, VFC } from 'react'
 import { Theme, useTheme } from 'app/providers/ThemeProvider'
-import { Button, ButtonTheme } from 'shared/ui'
+import { Button, ButtonTheme } from 'shared/ui/Button'
 import { classNames } from 'shared/lib/helpers'
 import LightThemeIcon from 'shared/assets/icons/light-theme.svg'
 import DarkThemeIcon from 'shared/assets/icons/dark-theme.svg'

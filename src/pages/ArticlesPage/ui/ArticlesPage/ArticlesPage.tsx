@@ -4,10 +4,11 @@ import { useSearchParams } from 'react-router-dom'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { VStack } from 'shared/ui'
-import { Page } from 'widgets'
+import { VStack } from 'shared/ui/Stack'
+import { Page } from 'widgets/Page'
 
-import { fetchNextArticlesPage, initArticlesPage } from '../../model/services'
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
 import { ArticleInfiniteList } from '../ArticleInfiniteList'
 import { ArticlesPageFilters } from '../ArticlesPageFilters'
@@ -38,7 +39,7 @@ export const ArticlesPage = (props: ArticlesProps) => {
   return (
     <DynamicModuleLoader removeAfterUnmount={false} reducers={reducers}>
       <Page className={classNames(cls.articlesPage, mods)} onScrollEnd={onLoadNextPart}>
-        <VStack max gap='16'>
+        <VStack max gap="16">
           <ArticlesPageFilters />
           <ArticleInfiniteList />
         </VStack>

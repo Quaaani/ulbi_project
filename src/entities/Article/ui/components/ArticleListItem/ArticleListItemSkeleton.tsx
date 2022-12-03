@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Card, Skeleton } from 'shared/ui'
+import { Skeleton } from 'shared/ui/Skeleton'
+import { Card } from 'shared/ui/Card'
 
 import { ArticleView } from '../../../model/types/articleSchema'
 

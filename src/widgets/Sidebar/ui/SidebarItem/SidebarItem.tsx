@@ -1,12 +1,13 @@
 import { memo } from 'react'
 import { useUserAuthData } from 'shared/lib/hooks'
-import { AppLink, Icon, IconColor } from 'shared/ui'
+import { AppLink } from 'shared/ui/AppLink'
+import { Icon, IconColor } from 'shared/ui/Icon'
 
 import { SidebarItemType } from '../../model/types/sidebarSchema'
 
 import cls from './SidebarItem.module.scss'
 
-export interface SidebarItemProps {
+interface SidebarItemProps {
   item: SidebarItemType
   isCollapsed: boolean
 }

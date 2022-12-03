@@ -1,4 +1,4 @@
-import { memo, VFC } from 'react'
+import { FC, memo } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Icon.module.scss'
@@ -10,7 +10,7 @@ export enum IconColor {
 
 export interface IconProps {
   className?: string
-  icon: VFC<React.SVGProps<SVGSVGElement>>
+  icon: FC<React.SVGProps<SVGSVGElement>>
   color?: IconColor
 }
 

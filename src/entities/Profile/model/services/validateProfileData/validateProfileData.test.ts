@@ -1,7 +1,7 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
-import { ProfileFormFieldErrorCode } from '../../types/profileSchema'
+import { ProfileFormFieldErrorCode } from '../../consts/consts'
 
 import { validateProfileData } from './validateProfileData'
 
@@ -37,10 +37,7 @@ describe('validateProfileData Test', () => {
   test('Without all Test', async () => {
     const result = validateProfileData({})
 
-    expect(result).toEqual([
-      ProfileFormFieldErrorCode.INCORRECT_USER_DATA,
-      ProfileFormFieldErrorCode.INCORRECT_USER_AGE,
-    ])
+    expect(result).toEqual([ProfileFormFieldErrorCode.INCORRECT_USER_DATA, ProfileFormFieldErrorCode.INCORRECT_USER_AGE])
   })
   test('No Data Test', async () => {
     const result = validateProfileData()

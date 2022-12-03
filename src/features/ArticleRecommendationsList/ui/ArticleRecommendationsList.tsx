@@ -2,7 +2,8 @@ import { ArticleList } from 'entities/Article'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Text, TextSize, VStack } from 'shared/ui'
+import { VStack } from 'shared/ui/Stack'
+import { Text, TextSize } from 'shared/ui/Text'
 
 import { useArticleRecommendationsList } from '../api/articleRecommendationsApi'
 

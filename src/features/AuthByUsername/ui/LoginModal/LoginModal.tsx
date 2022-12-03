@@ -1,7 +1,7 @@
-import { FC, ReactNode, Suspense } from 'react'
+import { FC, Suspense } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Modal } from 'shared/ui'
-import { PageLoader } from 'widgets'
+import { Modal } from 'shared/ui/Modal'
+import { PageLoader } from 'widgets/PageLoader'
 
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
 

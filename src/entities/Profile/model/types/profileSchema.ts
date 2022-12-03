@@ -1,14 +1,8 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
+import { ProfileFormFieldErrorCode } from '../consts/consts'
 import { ProfileError } from '../services/fetchProfileData/fetchProfileData'
-
-export enum ProfileFormFieldErrorCode {
-  NO_USER_DATA = 'NO_USER_DATA',
-  INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
-  INCORRECT_USER_AGE = 'INCORRECT_USER_AGE',
-  SERVER_ERROR = 'SERVER_ERROR',
-}
 
 export interface Profile {
   id?: string

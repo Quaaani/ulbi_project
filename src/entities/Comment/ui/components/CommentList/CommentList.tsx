@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Text } from 'shared/ui'
+import { Text } from 'shared/ui/Text'
 
 import { Comment } from '../../../model/types/commentSchema'
 import { CommentCard } from '../CommentCard/CommentCard'
@@ -20,10 +20,7 @@ export const CommentList = memo((props: CommentListProps) => {
 
   const mods: Mods = {}
   return (
-    <div
-      data-testid="commentList.test"
-      className={classNames(cls.commentList, mods, [className])}
-    >
+    <div data-testid="commentList.test" className={classNames(cls.commentList, mods, [className])}>
       {comments?.length ? (
         comments.map((comment) => <CommentCard key={comment.id} className={cls.comment} isLoading={isLoading} comment={comment} />)
       ) : (

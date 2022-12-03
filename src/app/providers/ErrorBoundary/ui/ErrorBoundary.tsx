@@ -1,5 +1,5 @@
 import React, { ErrorInfo, ReactNode } from 'react'
-import { Error } from 'widgets'
+import { Error } from 'widgets/Error'
 
 interface ErrorBoundaryProps {
   // ReactNode - любой реакт компонент

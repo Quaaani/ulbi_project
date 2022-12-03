@@ -1,1 +1,1 @@
-export * from './ui/Avatar'
+export { Avatar, AvatarSize } from './ui/Avatar'

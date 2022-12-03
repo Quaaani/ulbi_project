@@ -1,11 +1,11 @@
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entities/Article'
-import { ProfileSchema } from 'entities/Profile'
 import { UserSchema } from 'entities/User'
-import { LoginSchema } from 'features/AuthByUsername'
 import { rtkApi } from 'shared/api'
 
+import type { LoginSchema } from 'features/AuthByUsername'
+import type { ProfileSchema } from 'entities/Profile'
 import type { CounterSchema } from 'entities/Counter'
 import type { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage'
 import type { AddCommentFormSchema } from 'features/AddCommentForm'

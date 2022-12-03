@@ -1,7 +1,6 @@
 import { InputHTMLAttributes, memo, ChangeEvent, useState, useEffect, useRef } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 
-import { Button, ButtonTheme } from '../..'
 import EyeIcon from '../../../assets/icons/eye.svg'
 import EyeClosedIcon from '../../../assets/icons/eye-closed.svg'
 
@@ -21,19 +20,7 @@ export interface InputProps extends HTMLInputProps {
 }
 
 export const Input = memo((props: InputProps) => {
-  const {
-    children,
-    className,
-    type = 'text',
-    value,
-    placeholder,
-    autofocus,
-    errorMessage,
-    readonly,
-    max,
-    onChange,
-    ...restProps
-  } = props
+  const { children, className, type = 'text', value, placeholder, autofocus, errorMessage, readonly, max, onChange, ...restProps } = props
 
   const [inputIsFocused, setInputIsFocused] = useState(false)
   const [inputIsFilled, setInputIsFilled] = useState(false)
@@ -96,10 +83,12 @@ export const Input = memo((props: InputProps) => {
         readOnly={readonly}
         {...restProps}
       />
-      {(inputIsFocused || inputIsFilled) && (
-        <div className={classNames(cls.placeholder, placeholderMods)}>{placeholder}</div>
+      {(inputIsFocused || inputIsFilled) && <div className={classNames(cls.placeholder, placeholderMods)}>{placeholder}</div>}
+      {errorMessage && (
+        <div data-testid="Input.Error" className={classNames(cls.errorMessage)}>
+          {errorMessage}
+        </div>
       )}
-      {errorMessage && <div data-testid='Input.Error' className={classNames(cls.errorMessage)}>{errorMessage}</div>}
       {/* TODO: show/hide value for passwords by checking type="password" */}
       {/* <Button
         theme={ButtonTheme.CLEAR}

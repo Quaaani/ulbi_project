@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Text, TextSize } from 'shared/ui'
+import { Text, TextSize } from 'shared/ui/Text'
 
 import { ArticleTextBlock } from '../../../model/types/articleSchema'
 

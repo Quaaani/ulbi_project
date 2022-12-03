@@ -1,7 +1,7 @@
 import { ReactNode, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Card, CardTheme } from '../..'
+import { Card, CardTheme } from '../../Card'
 import { classNames, Mods } from '../../../lib/helpers'
 
 import cls from './Tabs.module.scss'
@@ -31,10 +31,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
 
   const mods: Mods = {}
   return (
-    <div
-      data-testid="tabs.test"
-      className={classNames(cls.tabs, mods, [className])}
-    >
+    <div data-testid="tabs.test" className={classNames(cls.tabs, mods, [className])}>
       {tabs.map((tab) => (
         <Card
           key={tab.value}

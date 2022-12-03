@@ -1,8 +1,8 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
-import { ProfileError } from '../services'
-import { ProfileFormFieldErrorCode } from '../types/profileSchema'
+import { ProfileError } from '../services/fetchProfileData/fetchProfileData'
+import { ProfileFormFieldErrorCode } from '../consts/consts'
 
 import {
   getProfileError,

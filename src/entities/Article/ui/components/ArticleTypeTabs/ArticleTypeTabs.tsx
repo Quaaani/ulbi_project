@@ -1,11 +1,13 @@
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { TabItem, Tabs } from 'shared/ui/Tabs/ui/Tabs'
+import { Tabs } from 'shared/ui/Tabs'
 
 import { ArticleType } from '../../../model/types/articleSchema'
 
 import cls from './ArticleTypeTabs.module.scss'
+
+import type { TabItem } from 'shared/ui/Tabs'
 
 interface ArticleTypeTabsProps {
   className?: string

@@ -1,7 +1,7 @@
 import { ErrorButton } from 'app/providers/ErrorBoundary'
 import { useTranslation } from 'react-i18next'
-import { Text, TextSize } from 'shared/ui'
-import { Page } from 'widgets'
+import { Text, TextSize } from 'shared/ui/Text'
+import { Page } from 'widgets/Page'
 
 import cls from './MainPage.module.scss'
 

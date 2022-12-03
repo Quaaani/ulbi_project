@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/helpers'
-import { Text, TextSize } from 'shared/ui'
-import { Page } from 'widgets'
+import { Text, TextSize } from 'shared/ui/Text'
+import { Page } from 'widgets/Page'
 
 import cls from './NotFoundPage.module.scss'
 

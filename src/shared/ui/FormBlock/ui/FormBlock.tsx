@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './FormBlock.module.scss'

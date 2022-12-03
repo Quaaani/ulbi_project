@@ -3,7 +3,9 @@ import { Fragment, memo, ReactNode } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { DropdownDirection } from 'shared/types'
 
-import { HStack, Icon, Text, TextSize } from '../..'
+import { Text, TextSize } from '../../Text'
+import { HStack } from '../../Stack'
+import { Icon } from '../../Icon'
 import ChevronDownIcon from '../../../assets/icons/chevron-down.svg'
 import ChevronUpIcon from '../../../assets/icons/chevron-up.svg'
 import NotAllowedIcon from '../../../assets/icons/not-allowed.svg'
@@ -11,7 +13,7 @@ import OkCircleIcon from '../../../assets/icons/ok-circle.svg'
 
 import cls from './ListBox.module.scss'
 
-export interface ListBoxItem {
+interface ListBoxItem {
   value: string
   content: ReactNode
   disabled?: boolean
@@ -39,13 +41,7 @@ export const ListBox = memo((props: ListBoxProps) => {
   return (
     <HStack gap="16">
       {label ? <Text title={label} size={TextSize.LARGE} /> : null}
-      <HListBox
-        as="div"
-        disabled={readonly}
-        className={classNames(cls.listBox, mods, [className])}
-        value={value}
-        onChange={onChange}
-      >
+      <HListBox as="div" disabled={readonly} className={classNames(cls.listBox, mods, [className])} value={value} onChange={onChange}>
         <HListBox.Button disabled={readonly} className={cls.trigger}>
           <HStack justify="between" gap="32">
             <Text title={value ?? defaultValue} size={TextSize.LARGE} />

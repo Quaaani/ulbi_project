@@ -3,7 +3,7 @@ import { Article, ArticleSortField, ArticleType, ArticleView } from 'entities/Ar
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const'
 import { SortOrder } from 'shared/types'
 
-import { fetchArticlesList } from '../services'
+import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
 
 import type { StateSchema } from 'app/providers/StoreProvider'
 import type { ArticlesPageSchema } from '../types/articlesPageSchema'

@@ -2,18 +2,15 @@ import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { Button, Input, Text, TextSize } from 'shared/ui'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { useAppDispatch } from 'shared/lib/hooks'
+import { Text, TextSize } from 'shared/ui/Text'
+import { Input } from 'shared/ui/Input'
+import { Button } from 'shared/ui/Button'
 
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
-import {
-  getLoginError,
-  getLoginIsLoading,
-  getLoginPassword,
-  getLoginUsername,
-} from '../../model/selectors'
+import { getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername } from '../../model/selectors/authByUsernameSelectors'
 
 import cls from './LoginForm.module.scss'
 
@@ -66,19 +63,10 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-      <div
-        data-testid="loginform.test"
-        className={classNames(cls.loginForm, mods, [className])}
-      >
+      <div data-testid="loginform.test" className={classNames(cls.loginForm, mods, [className])}>
         <Text title={t('log-in-form')} size={TextSize.HEADER} />
         <div className={classNames(cls.formWrapper, formWrapperMods)}>
-          <Input
-            autofocus
-            placeholder={t('username')}
-            errorMessage={errorMessage}
-            value={username}
-            onChange={onChangeUsername}
-          />
+          <Input autofocus placeholder={t('username')} errorMessage={errorMessage} value={username} onChange={onChangeUsername} />
           <Input
             placeholder={t('password')}
             errorMessage={errorMessage}
@@ -86,11 +74,7 @@ const LoginForm = memo((props: LoginFormProps) => {
             className={cls.inputWrapperLast}
             onChange={onChangePassword}
           />
-          <Button
-            className={cls.btnWrapper}
-            title={t('log-in')}
-            onClick={onPressLogin}
-          />
+          <Button className={cls.btnWrapper} title={t('log-in')} onClick={onPressLogin} />
         </div>
       </div>
     </DynamicModuleLoader>

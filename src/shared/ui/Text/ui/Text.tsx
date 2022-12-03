@@ -34,11 +34,7 @@ export const Text = memo((props: TextProps) => {
     [cls.error]: type === TextType.ERROR,
   }
   return (
-    <div
-      data-testid="text.test"
-      className={classNames(cls.text, mods, [className, cls[size], cls[color]])}
-      {...restProps}
-    >
+    <div data-testid="text.test" className={classNames(cls.text, mods, [className, cls[size], cls[color]])} {...restProps}>
       {title}
     </div>
   )

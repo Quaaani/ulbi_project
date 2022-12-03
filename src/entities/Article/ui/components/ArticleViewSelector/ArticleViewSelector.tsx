@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 import TileIcon from 'shared/assets/icons/tile.svg'
 import ListIcon from 'shared/assets/icons/list.svg'
-import { Button, ButtonTheme } from 'shared/ui'
+import { Button, ButtonTheme } from 'shared/ui/Button'
 
 import { ArticleView } from '../../../model/types/articleSchema'
 

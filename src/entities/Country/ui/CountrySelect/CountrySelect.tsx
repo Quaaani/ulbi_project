@@ -1,8 +1,10 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ListBox, SelectOption } from 'shared/ui'
+import { ListBox } from 'shared/ui/ListBox'
 
 import { Country } from '../../model/consts/consts'
+
+import type { SelectOption } from 'shared/ui/Select'
 
 export interface CountrySelectProps {
   readonly?: boolean

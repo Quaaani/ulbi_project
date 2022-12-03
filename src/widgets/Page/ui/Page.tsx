@@ -9,7 +9,7 @@ import cls from './Page.module.scss'
 
 import type { StateSchema } from 'app/providers/StoreProvider'
 
-export interface PageProps {
+interface PageProps {
   className?: string
   children: ReactNode
   onScrollEnd?: () => void

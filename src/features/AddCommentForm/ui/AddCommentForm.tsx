@@ -4,15 +4,12 @@ import { useSelector } from 'react-redux'
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch } from 'shared/lib/hooks'
-import { Button, FormBlock, Input } from 'shared/ui'
+import { Button } from 'shared/ui/Button'
+import { FormBlock } from 'shared/ui/FormBlock'
+import { Input } from 'shared/ui/Input'
 
-import {
-  getAddCommentFormText
-} from '../model/selectors/addCommentFormSelectors'
-import {
-  addCommentFormActions,
-  addCommentFormReducer
-} from '../model/slice/addCommentFormSlice'
+import { getAddCommentFormText } from '../model/selectors/addCommentFormSelectors'
+import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice'
 
 import cls from './AddCommentForm.module.scss'
 
@@ -47,15 +44,8 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
   const mods: Mods = {}
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={reducers}>
-      <FormBlock
-        data-testid="addCommentForm.test"
-        className={classNames(cls.addCommentForm, mods, [className])}
-      >
-        <Input
-          placeholder={t('add-comment')}
-          value={text}
-          onChange={onChangeCommentText}
-        />
+      <FormBlock data-testid="addCommentForm.test" className={classNames(cls.addCommentForm, mods, [className])}>
+        <Input placeholder={t('add-comment')} value={text} onChange={onChangeCommentText} />
         <Button title={t('send')} onClick={onSendHandler} />
       </FormBlock>
     </DynamicModuleLoader>

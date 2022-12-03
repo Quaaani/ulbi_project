@@ -2,13 +2,12 @@ import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import { profileFormFieldErrorMessages } from 'shared/const'
 
-import { updateProfileData } from '../services'
-import {
-  ProfileFormFieldErrorCode,
-  ProfileSchema,
-} from '../types/profileSchema'
+import { updateProfileData } from '../services/updateProfileData/updateProfileData'
+import { ProfileFormFieldErrorCode } from '../consts/consts'
 
 import { profileActions, profileReducer } from './profileSlice'
+
+import type { ProfileSchema } from '../types/profileSchema'
 
 describe('profileSlice Reducers Test', () => {
   const mockData = {
@@ -22,9 +21,7 @@ describe('profileSlice Reducers Test', () => {
 
   test('setReadonly Test', () => {
     const state: DeepPartial<ProfileSchema> = { readonly: false }
-    expect(
-      profileReducer(state as ProfileSchema, profileActions.setReadonly(true)),
-    ).toEqual({ readonly: true })
+    expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(true))).toEqual({ readonly: true })
   })
   test('updateProfile Test', () => {
     const state: DeepPartial<ProfileSchema> = { formData: mockData }
@@ -42,9 +39,7 @@ describe('profileSlice Reducers Test', () => {
   })
   test('cancelEdit Test', () => {
     const state: DeepPartial<ProfileSchema> = { formFieldErrorCodes: [] }
-    expect(
-      profileReducer(state as ProfileSchema, profileActions.cancelEdit()),
-    ).toEqual({
+    expect(profileReducer(state as ProfileSchema, profileActions.cancelEdit())).toEqual({
       formFieldErrorCodes: undefined,
       formData: undefined,
       readonly: true,
@@ -52,17 +47,15 @@ describe('profileSlice Reducers Test', () => {
   })
   test('setAgeError Test', () => {
     const state: DeepPartial<ProfileSchema> = { formFieldErrors: { age: '' } }
-    expect(
-      profileReducer(state as ProfileSchema, profileActions.setAgeError()),
-    ).toEqual({ formFieldErrors: { age: profileFormFieldErrorMessages.age } })
+    expect(profileReducer(state as ProfileSchema, profileActions.setAgeError())).toEqual({
+      formFieldErrors: { age: profileFormFieldErrorMessages.age },
+    })
   })
   test('clearAgeError Test', () => {
     const state: DeepPartial<ProfileSchema> = {
       formFieldErrors: { age: profileFormFieldErrorMessages.age },
     }
-    expect(
-      profileReducer(state as ProfileSchema, profileActions.clearAgeError()),
-    ).toEqual({ formFieldErrors: { age: '' } })
+    expect(profileReducer(state as ProfileSchema, profileActions.clearAgeError())).toEqual({ formFieldErrors: { age: '' } })
   })
 })
 
@@ -83,18 +76,11 @@ describe('profileSlice Extra Reducers Test', () => {
 
   test('updateProfileData Pending Test', () => {
     const state: DeepPartial<ProfileSchema> = mockMiscData
-    expect(
-      profileReducer(state as ProfileSchema, updateProfileData.pending),
-    ).toEqual({ isLoading: true, formFieldErrorCodes: undefined })
+    expect(profileReducer(state as ProfileSchema, updateProfileData.pending)).toEqual({ isLoading: true, formFieldErrorCodes: undefined })
   })
   test('updateProfileData Fulfilled Test', () => {
     const state: DeepPartial<ProfileSchema> = mockMiscData
-    expect(
-      profileReducer(
-        state as ProfileSchema,
-        updateProfileData.fulfilled(mockData, ''),
-      ),
-    ).toEqual({
+    expect(profileReducer(state as ProfileSchema, updateProfileData.fulfilled(mockData, ''))).toEqual({
       isLoading: false,
       formFieldErrorCodes: undefined,
       readonly: true,

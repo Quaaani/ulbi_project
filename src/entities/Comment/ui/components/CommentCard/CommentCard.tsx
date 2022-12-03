@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { generatePath } from 'react-router-dom'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { RoutePath } from 'shared/router'
-import { AppLink, AppLinkTheme, Avatar, Skeleton, Text, TextSize } from 'shared/ui'
+import { Text, TextSize } from 'shared/ui/Text'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink'
+import { Avatar } from 'shared/ui/Avatar'
+import { Skeleton } from 'shared/ui/Skeleton'
 
 import { Comment } from '../../../model/types/commentSchema'
 
@@ -22,10 +25,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   const mods: Mods = {}
   return (
-    <div
-      data-testid="commentCard.test"
-      className={classNames(cls.commentCard, mods, [className])}
-    >
+    <div data-testid="commentCard.test" className={classNames(cls.commentCard, mods, [className])}>
       {isLoading ? (
         <>
           <div className={cls.header}>
@@ -37,20 +37,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
       ) : (
         <>
           <AppLink to={path} theme={AppLinkTheme.SECONDARY} className={cls.header}>
-            {comment.user.avatar ? (
-              <Avatar src={comment.user.avatar} alt={comment.user.username} />
-            ) : null}
-            <Text
-              className={cls.username}
-              title={comment.user.username}
-              size={TextSize.LARGE}
-            />
+            {comment.user.avatar ? <Avatar src={comment.user.avatar} alt={comment.user.username} /> : null}
+            <Text className={cls.username} title={comment.user.username} size={TextSize.LARGE} />
           </AppLink>
-          <Text
-            className={cls.text}
-            title={comment.text}
-            size={TextSize.MEDIUM}
-          />
+          <Text className={cls.text} title={comment.text} size={TextSize.MEDIUM} />
         </>
       )}
     </div>

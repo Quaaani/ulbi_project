@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, memo, VFC } from 'react'
+import { ButtonHTMLAttributes, FC, memo } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 
 import { Text, TextSize } from '../../Text'
@@ -16,7 +16,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   theme?: ButtonTheme
   title?: string
-  icon?: VFC<React.SVGProps<SVGSVGElement>>
+  icon?: FC<React.SVGProps<SVGSVGElement>>
   iconStyle?: string
   disabled?: boolean
 }
@@ -38,12 +38,7 @@ export const Button = memo((props: ButtonProps) => {
     [cls.inactive]: disabled,
   }
   return (
-    <button
-      data-testid="button.test"
-      type="button"
-      className={classNames(cls.button, mods, [className, cls[theme]])}
-      {...restProps}
-    >
+    <button data-testid="button.test" type="button" className={classNames(cls.button, mods, [className, cls[theme]])} {...restProps}>
       {Icon ? <Icon className={classNames(cls.icon, iconMods, [iconStyle])} /> : null}
       {title ? (
         <div className={classNames('', titleMods)}>
