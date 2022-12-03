@@ -2,11 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import {
-  Article,
-  ArticleBlockType,
-  ArticleType,
-} from '../../../model/types/articleSchema'
+import { Article, ArticleBlockType, ArticleType } from '../../../model/types/articleSchema'
 
 import { ArticleDetails, ArticleDetailsProps } from './ArticleDetails'
 
@@ -107,9 +103,7 @@ const mockData: Article = {
   ],
 }
 
-const Template: ComponentStory<typeof ArticleDetails> = (
-  args: ArticleDetailsProps,
-) => <ArticleDetails {...args} />
+const Template: ComponentStory<typeof ArticleDetails> = (args: ArticleDetailsProps) => <ArticleDetails {...args} />
 
 export const Default = Template.bind({})
 Default.args = {}

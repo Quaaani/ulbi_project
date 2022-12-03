@@ -173,7 +173,7 @@
     "",
     ],
     "Create Redux Selector": [
-      "import { StateSchema } from 'app/providers/StoreProvider'",
+      "import type { StateSchema } from 'app/providers/StoreProvider'",
       "",
       "export const get<EntityName | pascalcase> = (state: StateSchema) => state?.",
       ""
@@ -188,7 +188,7 @@
       "  error: undefined",
       "}",
       "",
-      "export const <EntityName>Slice = createSlice({",
+      "const <EntityName>Slice = createSlice({",
       "  name: '<EntityName>Slice',",
       "  initialState,",
       "  reducers: {},",
@@ -208,8 +208,7 @@
       "  },",
       "})",
       "",
-      "export const { actions: <EntityName>Actions } = <EntityName>Slice",
-      "export const { reducer: <EntityName>Reducer } = <EntityName>Slice",
+      "export const { actions: <EntityName>Actions, reducer: <EntityName>Reducer } = <EntityName>Slice",
       ""
     ],
     "Create Redux Type": [

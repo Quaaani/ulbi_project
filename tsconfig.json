@@ -36,7 +36,10 @@
     "esModuleInterop": true,
 
     // Позволяет использовать export default
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+
+    // Выносим типы/интерфейсы в изолированные модули для упрощенной компиляции TS в JS
+    "isolatedModules": true,
   },
   // Позволяет использовать классические импорты
   "ts-node": {

@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-
 import { getLoginIsLoading } from './getLoginIsLoading'
+
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getLoginIsLoading Selector Test', () => {
   test('Default Test', () => {

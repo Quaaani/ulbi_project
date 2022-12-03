@@ -1,2 +1,3 @@
-export * from './ui/CurrencySelect/CurrencySelect'
-export * from './model'
+export { CurrencySelect } from './ui/CurrencySelect/CurrencySelect'
+
+export { Currency } from './model/consts/consts'

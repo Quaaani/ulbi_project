@@ -1,1 +1,1 @@
-export * from './fetchArticleById/fetchArticleById'
+export { fetchArticleById } from './fetchArticleById/fetchArticleById'

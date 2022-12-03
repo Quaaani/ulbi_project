@@ -1,3 +1,3 @@
-export * from './buildCssLoader'
-export * from './buildSvgLoader'
-export * from './buildBabelLoader'
+export { buildCssLoader } from './buildCssLoader'
+export { buildSvgLoader } from './buildSvgLoader'
+export { buildBabelLoader } from './buildBabelLoader'

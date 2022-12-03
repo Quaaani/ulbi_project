@@ -1,39 +1,39 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { ThunkConfig } from 'app/providers/StoreProvider'
 import { getArticleDetailsData } from 'entities/Article'
 import { getUserAuthData } from 'entities/User'
 
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId'
 
-export const addCommentForArticle = createAsyncThunk<
-  Comment,
-  string,
-  ThunkConfig<string>
->('articleDetails/addCommentForArticle', async (text, thunkAPI) => {
-  const { extra, dispatch, rejectWithValue, getState } = thunkAPI
+import type { ThunkConfig } from 'app/providers/StoreProvider'
 
-  const userData = getUserAuthData(getState())
-  const articleData = getArticleDetailsData(getState())
+export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
+  'articleDetails/addCommentForArticle',
+  async (text, thunkAPI) => {
+    const { extra, dispatch, rejectWithValue, getState } = thunkAPI
 
-  if (!userData || !text || !articleData) {
-    return rejectWithValue('addCommentForArticle Error: No Data')
-  }
+    const userData = getUserAuthData(getState())
+    const articleData = getArticleDetailsData(getState())
 
-  try {
-    const response = await extra.api.post<Comment>('/comments', {
-      articleId: articleData.id,
-      userId: userData.id,
-      text,
-    })
-
-    if (!response.data) {
-      throw new Error()
+    if (!userData || !text || !articleData) {
+      return rejectWithValue('addCommentForArticle Error: No Data')
     }
 
-    dispatch(fetchCommentsByArticleId(articleData.id))
+    try {
+      const response = await extra.api.post<Comment>('/comments', {
+        articleId: articleData.id,
+        userId: userData.id,
+        text,
+      })
 
-    return response.data
-  } catch (error) {
-    return rejectWithValue('Error addCommentForArticle')
-  }
-})
+      if (!response.data) {
+        throw new Error()
+      }
+
+      dispatch(fetchCommentsByArticleId(articleData.id))
+
+      return response.data
+    } catch (error) {
+      return rejectWithValue('Error addCommentForArticle')
+    }
+  },
+)

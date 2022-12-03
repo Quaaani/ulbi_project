@@ -1,27 +1,13 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import {
-  AppLink,
-  Avatar,
-  Button,
-  ButtonTheme,
-  Card,
-  Icon,
-  Text,
-  TextSize,
-} from 'shared/ui'
+import { AppLink, Avatar, Button, ButtonTheme, Card, Icon, Text, TextSize } from 'shared/ui'
 import { classNames, Mods } from 'shared/lib/helpers'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import { generatePath, useNavigate } from 'react-router-dom'
 import { RoutePath } from 'shared/router'
 
-import {
-  Article,
-  ArticleBlockType,
-  ArticleTextBlock,
-  ArticleView,
-} from '../../../../model/types/articleSchema'
-import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent'
+import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../../model/types/articleSchema'
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 
 import cls from './ArticleListItem.module.scss'
 
@@ -39,20 +25,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     articleId: article.id,
   })
 
-  const textBlock = article.blocks.find(
-    (block) => block.type === ArticleBlockType.TEXT,
-  ) as ArticleTextBlock
+  const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
 
-  const types = (
-    <Text
-      className={cls.types}
-      title={article.type.join(', ')}
-      size={TextSize.LARGE}
-    />
-  )
-  const title = (
-    <Text className={cls.title} title={article.title} size={TextSize.HEADER} />
-  )
+  const types = <Text className={cls.types} title={article.type.join(', ')} size={TextSize.LARGE} />
+  const title = <Text className={cls.title} title={article.title} size={TextSize.HEADER} />
   const date = <Text className={cls.date} title={article.createdAt} />
   const views = (
     <div className={cls.viewsWrapper}>
@@ -65,10 +41,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   return view === ArticleView.TILE ? (
     <AppLink
       data-testid="articleListItem.test"
-      className={classNames(cls.articleListItemTileView, mods, [
-        className,
-        cls[view],
-      ])}
+      className={classNames(cls.articleListItemTileView, mods, [className, cls[view]])}
       to={articlePath}
       target={target}
     >
@@ -87,13 +60,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       />
     </AppLink>
   ) : (
-    <div
-      data-testid="articleListItem.test"
-      className={classNames(cls.articleListItemListView, mods, [
-        className,
-        cls[view],
-      ])}
-    >
+    <div data-testid="articleListItem.test" className={classNames(cls.articleListItemListView, mods, [className, cls[view]])}>
       <Card
         renderContent={() => (
           <div className={cls.cardInner}>
@@ -109,11 +76,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
               {types}
             </div>
             <img className={cls.img} src={article.img} alt={article.title} />
-            <div className={cls.textWrapper}>
-              {textBlock ? (
-                <ArticleTextBlockComponent block={textBlock} />
-              ) : null}
-            </div>
+            <div className={cls.textWrapper}>{textBlock ? <ArticleTextBlockComponent block={textBlock} /> : null}</div>
             <div className={cls.footer}>
               <AppLink to={articlePath} target={target}>
                 <Button title={t('read-more')} theme={ButtonTheme.INVERTED} />

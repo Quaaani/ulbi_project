@@ -8,11 +8,7 @@ import { classNames, Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
 import { Avatar, AvatarSize, Icon, Skeleton, Text, TextSize, TextType } from 'shared/ui'
 
-import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsIsLoading,
-} from '../../../model/selectors/articleDetailsSelectors'
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../../model/selectors/articleDetailsSelectors'
 import { fetchArticleById } from '../../../model/services'
 import { articleDetailsReducer } from '../../../model/slice/articleDetailsSlice'
 import { ArticleBlock, ArticleBlockType } from '../../../model/types/articleSchema'
@@ -73,12 +69,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     content = (
       <>
         <div className={cls.avatarWrapper}>
-          <Avatar
-            className={cls.avatar}
-            size={AvatarSize.LARGE}
-            src={articleDetailsData?.img}
-            alt="ArticleDetailsLogo"
-          />
+          <Avatar className={cls.avatar} size={AvatarSize.LARGE} src={articleDetailsData?.img} alt="ArticleDetailsLogo" />
         </div>
         <div className={cls.titleWrapper}>
           <Text className={cls.title} title={articleDetailsData?.title} size={TextSize.HEADER} />

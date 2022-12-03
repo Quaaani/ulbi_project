@@ -4,11 +4,11 @@ import { classNames, Mods } from 'shared/lib/helpers'
 import { SortOrder } from 'shared/types'
 import { Select, SelectOption } from 'shared/ui'
 
-import { ArticleSortField } from '../../../../model/types/articleSchema'
+import { ArticleSortField } from '../../../model/types/articleSchema'
 
 import cls from './ArticleSortSelector.module.scss'
 
-export interface ArticleSortSelectorProps {
+interface ArticleSortSelectorProps {
   className?: string
   sort: ArticleSortField
   order: SortOrder

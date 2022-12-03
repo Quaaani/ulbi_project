@@ -1,8 +1,8 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-
 import { LoginErrors } from '../../services/loginByUsername/loginByUsername'
 
 import { getLoginState } from './getLoginState'
+
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getLoginState Selector Test', () => {
   test('Default Test', () => {

@@ -4,11 +4,11 @@ import TileIcon from 'shared/assets/icons/tile.svg'
 import ListIcon from 'shared/assets/icons/list.svg'
 import { Button, ButtonTheme } from 'shared/ui'
 
-import { ArticleView } from '../../../../model/types/articleSchema'
+import { ArticleView } from '../../../model/types/articleSchema'
 
 import cls from './ArticleViewSelector.module.scss'
 
-export interface ArticleViewSelectorProps {
+interface ArticleViewSelectorProps {
   className?: string
   view: ArticleView
   onToggleArticlesView: (view: ArticleView) => void
@@ -32,10 +32,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
 
   const mods: Mods = {}
   return (
-    <div
-      data-testid="articleViewSelector.test"
-      className={classNames(cls.articleViewSelector, mods, [className])}
-    >
+    <div data-testid="articleViewSelector.test" className={classNames(cls.articleViewSelector, mods, [className])}>
       {viewTypes.map((viewType) => (
         <Button
           key={viewType.view}

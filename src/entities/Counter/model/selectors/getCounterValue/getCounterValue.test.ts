@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-
 import { getCounterValue } from './getCounterValue'
+
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getCounterValue Selector Test', () => {
   test('Default Test', () => {

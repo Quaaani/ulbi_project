@@ -1,6 +1,6 @@
-import { CounterSchema } from '../types/counterSchema'
-
 import { counterActions, counterReducer } from './counterSlice'
+
+import type { CounterSchema } from '../types/counterSchema'
 
 describe('counterSlice Slice Test', () => {
   test('Default Empty State Test', () => {

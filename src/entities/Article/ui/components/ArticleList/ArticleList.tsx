@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { Text, TextSize, TextType } from 'shared/ui'
 
-import { Article, ArticleView } from '../../../../model/types/articleSchema'
-import { ArticleListItem } from '../../ArticleListItem'
-import { ArticleListItemSkeleton } from '../../ArticleListItem/ui/ArticleListItemSkeleton'
+import { Article, ArticleView } from '../../../model/types/articleSchema'
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 
 import cls from './ArticleList.module.scss'
 
@@ -24,7 +24,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const { className, isLoading, view = ArticleView.TILE, articles, target } = props
   const { t } = useTranslation('articlesPage')
 
-  const renderArticle = (article: Article) => <ArticleListItem key={article.id} className={cls.card} view={view} article={article} target={target}/>
+  const renderArticle = (article: Article) => <ArticleListItem key={article.id} className={cls.card} view={view} article={article} target={target} />
 
   if (!isLoading && !articles.length) {
     return <Text title={t('articles-was-not-found')} size={TextSize.LARGE} type={TextType.ERROR} />

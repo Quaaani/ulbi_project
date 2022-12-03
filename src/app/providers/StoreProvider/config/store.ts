@@ -1,23 +1,16 @@
-import {
-  CombinedState,
-  configureStore,
-  Reducer,
-  ReducersMapObject
-} from '@reduxjs/toolkit'
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { scrollRestorationReducer } from 'features/ScrollRestoration'
 import { $api, rtkApi } from 'shared/api'
 
 import { createReducerManager } from './reducerManager'
-import { StateSchema, ThunkExtraArg } from './StateSchema'
+
+import type { StateSchema, ThunkExtraArg } from './StateSchema'
 
 // Отдельная функция для создания Store
 // С помощью нее мы можем переиспользовать Store для Storybook или Jest
-export const createReduxStore = (
-  initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
-) => {
+export const createReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
   // Корневой reducer хранит только те reducers, которые являются обязательными
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,

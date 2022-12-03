@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-
 import { getLoginPassword } from './getLoginPassword'
+
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 describe('getLoginPassword Selector Test', () => {
   test('Default Test', () => {

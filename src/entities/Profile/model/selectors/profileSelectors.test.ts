@@ -1,4 +1,3 @@
-import { StateSchema } from 'app/providers/StoreProvider'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 
@@ -14,6 +13,8 @@ import {
   getProfileFormFieldError,
   getProfileFormFieldErrorCodes,
 } from './ProfileSelectors'
+
+import type { StateSchema } from 'app/providers/StoreProvider'
 
 const mockData = {
   id: '2a8337d8-8b44-48be-8518-abe45e18df9d',
@@ -31,9 +32,7 @@ describe('getProfileError Selector Test', () => {
         error: ProfileError.FORBIDDEN,
       },
     }
-    expect(getProfileError(state as StateSchema)).toEqual(
-      ProfileError.FORBIDDEN,
-    )
+    expect(getProfileError(state as StateSchema)).toEqual(ProfileError.FORBIDDEN)
   })
   test('Error Test', () => {
     const state: DeepPartial<StateSchema> = {}
@@ -127,14 +126,10 @@ describe('getProfileFormFieldErrorCodes Selector Test', () => {
         formFieldErrorCodes: [ProfileFormFieldErrorCode.NO_USER_DATA],
       },
     }
-    expect(getProfileFormFieldErrorCodes(state as StateSchema)).toEqual([
-      ProfileFormFieldErrorCode.NO_USER_DATA,
-    ])
+    expect(getProfileFormFieldErrorCodes(state as StateSchema)).toEqual([ProfileFormFieldErrorCode.NO_USER_DATA])
   })
   test('Error Test', () => {
     const state: DeepPartial<StateSchema> = {}
-    expect(getProfileFormFieldErrorCodes(state as StateSchema)).toEqual(
-      undefined,
-    )
+    expect(getProfileFormFieldErrorCodes(state as StateSchema)).toEqual(undefined)
   })
 })

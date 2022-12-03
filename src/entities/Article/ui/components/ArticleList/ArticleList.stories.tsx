@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { Article } from '../../../../model/types/articleSchema'
+import { Article } from '../../../model/types/articleSchema'
 
 import { ArticleList, ArticleListProps } from './ArticleList'
 
@@ -11,11 +11,9 @@ const mockData = {
   user: {
     id: 'e6882431-311d-4f41-b0dd-38c03ef71af7',
     username: 'Antonbek',
-    avatar:
-      'https://ih1.redbubble.net/image.1382109690.8812/st,small,507x507-pad,600x600,f8f8f8.jpg',
+    avatar: 'https://ih1.redbubble.net/image.1382109690.8812/st,small,507x507-pad,600x600,f8f8f8.jpg',
   },
-  title:
-    'JavaScript News JavaScript News JavaScript News JavaScript News JavaScript News',
+  title: 'JavaScript News JavaScript News JavaScript News JavaScript News JavaScript News',
   subtitle: 'Latest new features in JS 2022',
   img: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
   views: 1042,
@@ -108,9 +106,7 @@ export default {
   },
 } as ComponentMeta<typeof ArticleList>
 
-const Template: ComponentStory<typeof ArticleList> = (
-  args: ArticleListProps,
-) => (
+const Template: ComponentStory<typeof ArticleList> = (args: ArticleListProps) => (
   <div
     style={{
       display: 'flex',

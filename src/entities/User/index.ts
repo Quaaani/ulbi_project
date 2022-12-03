@@ -1,4 +1,6 @@
-export { User, UserSchema, UserRole } from './model/types/userSchema'
+export { UserRole } from './model/consts/consts'
+
+export type { User, UserSchema } from './model/types/userSchema'
 
 export { userActions, userReducer } from './model/slice/userSlice'
 
