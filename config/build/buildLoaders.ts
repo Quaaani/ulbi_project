@@ -12,8 +12,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   // SVG Лоудер
   const svgLoader = buildSvgLoader()
 
-  // Babel Лоудер
-  const babelLoader = buildBabelLoader(isDev)
+  // Babel Лоудер для js/ts
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false })
+
+  // Babel Лоудер для jsx/tsx
+  const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true })
 
   // Files Лоудер
   // Можно добавить расширения для шрифтов (woff2|woff)
@@ -27,11 +30,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   }
 
   // TS Лоудер
-  const typeScriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  }
+  // const typeScriptLoader = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // }
 
-  return [fileLoader, svgLoader, babelLoader, typeScriptLoader, cssLoader]
+  return [fileLoader, svgLoader, codeBabelLoader, tsxCodeBabelLoader, cssLoader]
 }

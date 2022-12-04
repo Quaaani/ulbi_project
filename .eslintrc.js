@@ -4,13 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:i18next/recommended',
-    'prettier',
-    'plugin:storybook/recommended',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'prettier', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -133,6 +127,9 @@ module.exports = {
 
     // Запрещает использовать index в качестве key
     'react/no-array-index-key': 'off',
+
+    // Не разрешает анонимные функции
+    // 'func-names': 'off',
 
     // Перенос на новую строку всех аргументов
     // 'function-call-argument-newline': ["error", "always"],
