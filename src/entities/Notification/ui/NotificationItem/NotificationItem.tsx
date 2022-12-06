@@ -32,7 +32,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
   )
 
   return item.href ? (
-    <AppLink to={item.href} target="_blank">
+    <AppLink to={item.href} target="_blank" className={cls.notificationItem}>
       {content}
     </AppLink>
   ) : (
