@@ -1,4 +1,38 @@
 {
+  "notifications": [
+    {
+      "id": "3ad29a6c-fe80-441d-b1f5-934df40870ea",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7"
+    },
+    {
+      "id": "e862c984-3dfc-4187-8560-b824e6e55002",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "ec6a10ce-8f24-496e-b735-23cc49fd4b7a",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "fd1cf575-3529-4e77-a8e4-f68c405e953e",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "018614d4-0cdc-4efe-918d-2dd8c46ad2b2",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "63b24a0c-f3b6-4928-a73f-d7f959084bfd"
+    },
+    {
+      "id": "a3420ef5-181d-406e-ba39-34326db45ac5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
+      "userId": "63b24a0c-f3b6-4928-a73f-d7f959084bfd"
+    }
+  ],
   "posts": [
     {
       "id": "1",

@@ -2,37 +2,40 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Theme } from 'app/providers/ThemeProvider'
 
-import { Button } from '../../Button'
-
-import { Dropdown, DropdownProps } from './Dropdown'
+import { ListBox, ListBoxProps } from './ListBox'
 
 export default {
-  title: 'shared/Dropdown',
-  component: Dropdown,
+  title: 'shared/Popups/ListBox',
+  component: ListBox,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
   args: {
-    trigger: <Button title="Trigger" />,
+    value: 'Value 1',
     items: [
       {
+        value: 'Value 1',
         content: 'Value 1',
       },
       {
+        value: 'Value 2',
         content: 'Value 2',
       },
       {
+        value: 'Value 3',
         content: 'Value 3',
         disabled: true,
       },
       {
+        value: 'Value 4',
         content: 'Value 4',
       },
     ],
+    defaultValue: 'Storybook',
   },
-} as ComponentMeta<typeof Dropdown>
+} as ComponentMeta<typeof ListBox>
 
-const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => (
+const Template: ComponentStory<typeof ListBox> = (args: ListBoxProps) => (
   <div
     style={{
       display: 'flex',
@@ -42,7 +45,7 @@ const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => (
       height: '100vh',
     }}
   >
-    <Dropdown {...args} />
+    <ListBox {...args} />
   </div>
 )
 
@@ -56,23 +59,3 @@ DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
 export const DefaultGreen = Template.bind({})
 DefaultGreen.args = {}
 DefaultGreen.decorators = [ThemeDecorator(Theme.GREEN)]
-
-export const BottomLeft = Template.bind({})
-BottomLeft.args = {
-  direction: 'bottom-left',
-}
-
-export const BottomRight = Template.bind({})
-BottomRight.args = {
-  direction: 'bottom-right',
-}
-
-export const TopLeft = Template.bind({})
-TopLeft.args = {
-  direction: 'top-left',
-}
-
-export const TopRight = Template.bind({})
-TopRight.args = {
-  direction: 'top-right',
-}

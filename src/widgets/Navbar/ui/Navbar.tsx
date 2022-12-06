@@ -1,8 +1,9 @@
+import { NotificationButton } from 'features/NotificationButton'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/helpers'
-import { Text, TextColor, TextSize } from 'shared/ui/Text'
 import { HStack } from 'shared/ui/Stack'
+import { Text, TextColor, TextSize } from 'shared/ui/Text'
 import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
 import { Login } from 'widgets/Login'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
@@ -25,6 +26,7 @@ export const Navbar = memo((props: NavbarProps) => {
       <HStack>
         <ThemeSwitcher />
         <LanguageSwitcher />
+        <NotificationButton />
         <Login />
       </HStack>
     </HStack>

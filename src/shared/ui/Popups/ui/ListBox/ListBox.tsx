@@ -3,13 +3,14 @@ import { Fragment, memo, ReactNode } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { DropdownDirection } from 'shared/types'
 
-import { Text, TextSize } from '../../Text'
-import { HStack } from '../../Stack'
-import { Icon } from '../../Icon'
-import ChevronDownIcon from '../../../assets/icons/chevron-down.svg'
-import ChevronUpIcon from '../../../assets/icons/chevron-up.svg'
-import NotAllowedIcon from '../../../assets/icons/not-allowed.svg'
-import OkCircleIcon from '../../../assets/icons/ok-circle.svg'
+import { Text, TextSize } from '../../../Text'
+import { HStack } from '../../../Stack'
+import { Icon } from '../../../Icon'
+import ChevronDownIcon from '../../../../assets/icons/chevron-down.svg'
+import ChevronUpIcon from '../../../../assets/icons/chevron-up.svg'
+import NotAllowedIcon from '../../../../assets/icons/not-allowed.svg'
+import OkCircleIcon from '../../../../assets/icons/ok-circle.svg'
+import popupCls from '../../styles/Popup.module.scss'
 
 import cls from './ListBox.module.scss'
 
@@ -36,25 +37,25 @@ export const ListBox = memo((props: ListBoxProps) => {
   const DropdownIcon = direction.includes('bottom') ? ChevronDownIcon : ChevronUpIcon
 
   const mods: Mods = {
-    [cls.readonly]: readonly,
+    [popupCls.readonly]: readonly,
   }
   return (
     <HStack gap="16">
       {label ? <Text title={label} size={TextSize.LARGE} /> : null}
-      <HListBox as="div" disabled={readonly} className={classNames(cls.listBox, mods, [className])} value={value} onChange={onChange}>
+      <HListBox as="div" disabled={readonly} className={classNames(popupCls.popup, mods, [className])} value={value} onChange={onChange}>
         <HListBox.Button disabled={readonly} className={cls.trigger}>
           <HStack justify="between" gap="32">
             <Text title={value ?? defaultValue} size={TextSize.LARGE} />
             <Icon icon={DropdownIcon} />
           </HStack>
         </HListBox.Button>
-        <HListBox.Options className={classNames(cls.options, {}, [cls[direction]])}>
+        <HListBox.Options className={classNames(cls.options, {}, [popupCls[direction]])}>
           {items.map((item) => (
             <HListBox.Option key={item.value} as={Fragment} value={item.value} disabled={item.disabled}>
               {({ active, selected }) => (
                 <HStack
                   role="listitem"
-                  className={classNames(cls.listitem, { [cls.active]: active, [cls.disabled]: item.disabled })}
+                  className={classNames(cls.listitem, { [popupCls.active]: active, [popupCls.disabled]: item.disabled })}
                   justify="between"
                   gap="32"
                 >
