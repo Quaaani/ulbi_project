@@ -4,9 +4,9 @@ import { profileReducer } from 'entities/Profile'
 import { addCommentFormReducer } from 'features/AddCommentForm'
 import { loginReducer } from 'features/AuthByUsername'
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage'
-import { ReducersList } from 'shared/lib/components'
 import { StoreProvider } from 'app/providers/StoreProvider'
 
+import type { ReducersList } from 'shared/lib/components'
 import type { StateSchema } from 'app/providers/StoreProvider'
 
 const defaultAsyncReducers: ReducersList = {

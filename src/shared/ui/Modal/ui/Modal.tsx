@@ -1,4 +1,4 @@
-import { FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { FC, MouseEvent, ReactNode } from 'react'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { useModal } from 'shared/lib/hooks'
 

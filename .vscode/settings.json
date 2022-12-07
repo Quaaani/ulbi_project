@@ -8,9 +8,7 @@
   "stylelint.enable": true,
   "stylelint.validate": ["css", "scss"],
   "folderTemplates.fileTemplates": {
-    "Create Public API": [
-      "export { <FTName> } from './ui/<FTName>'"
-    ],
+    "Create Public API": ["export { <FTName> } from './ui/<FTName>'"],
     "Create React FC + memo": [
       "// TODO: Delete disable",
       "/* eslint-disable i18next/no-literal-string */",
@@ -38,14 +36,9 @@
       "    </div>",
       "  )",
       "})",
-      "",
+      ""
     ],
-    "Create React Module SCSS": [
-      ".<FTName | camelcase> {",
-      "  // <FTName | camelcase>",
-      "}",
-      "",
-    ],
+    "Create React Module SCSS": [".<FTName | camelcase> {", "  // <FTName | camelcase>", "}", ""],
     "Create Storybook": [
       "import { ComponentStory, ComponentMeta } from '@storybook/react'",
       "import { ThemeDecorator, StoreDecorator } from 'shared/config/storybook'",
@@ -86,7 +79,7 @@
       "export const DefaultGreen = Template.bind({})",
       "DefaultGreen.args = {}",
       "DefaultGreen.decorators = [ThemeDecorator(Theme.GREEN)]",
-      "",
+      ""
     ],
     "Create Component Jest Test": [
       "import { screen } from '@testing-library/react'",
@@ -103,9 +96,7 @@
       "})",
       ""
     ],
-    "Create Public API (page)": [
-      "export { <FTName>Async as <FTName> } from './ui/<FTName>/<FTName>.async'"
-    ],
+    "Create Public API (page)": ["export { <FTName>Async as <FTName> } from './ui/<FTName>/<FTName>.async'"],
     "Create React FC + memo (page)": [
       "// TODO: Delete disable",
       "/* eslint-disable i18next/no-literal-string */",
@@ -132,7 +123,7 @@
       "}",
       "",
       "export default memo(<FTName>)",
-      "",
+      ""
     ],
     "Create Storybook (page)": [
       "import { ComponentStory, ComponentMeta } from '@storybook/react'",
@@ -164,20 +155,15 @@
       "export const DefaultGreen = Template.bind({})",
       "DefaultGreen.args = {}",
       "DefaultGreen.decorators = [ThemeDecorator(Theme.GREEN)]",
-      "",
+      ""
     ],
-    "Create Async Page": [
-    "  import { lazy } from 'react'",
-    "",
-    "  export const <FTName>Async = lazy(() => import('./<FTName>'))",
-    "",
-    ],
+    "Create Async Page": ["  import { lazy } from 'react'", "", "  export const <FTName>Async = lazy(() => import('./<FTName>'))", ""],
     "Create Redux Selector": [
       "import type { StateSchema } from 'app/providers/StoreProvider'",
       "",
       "export const get<EntityName | pascalcase> = (state: StateSchema) => state?.",
       ""
-      ],
+    ],
     "Create Redux Slice": [
       "import { createSlice, PayloadAction } from '@reduxjs/toolkit'",
       "",
@@ -224,14 +210,12 @@
   "folderTemplates.structures": [
     {
       "name": "Create Default Component Structure",
-      "customVariables": [
-        "SliceName", "TranslationName"
-      ],
+      "customVariables": ["SliceName", "TranslationName"],
       "omitParentDirectory": true,
       "structure": [
         {
           "fileName": "<FTName>/index.ts",
-          "template": "Create Public API",
+          "template": "Create Public API"
         },
         {
           "fileName": "<FTName>/ui/<FTName>.tsx",
@@ -243,12 +227,12 @@
         },
         {
           "fileName": "<FTName>/ui/<FTName>.stories.tsx",
-          "template": "Create Storybook",
+          "template": "Create Storybook"
         },
         {
           "fileName": "<FTName>/ui/<FTName>.test.tsx",
-          "template": "Create Component Jest Test",
-        },
+          "template": "Create Component Jest Test"
+        }
       ]
     },
     {
@@ -258,7 +242,7 @@
       "structure": [
         {
           "fileName": "<FTName>/index.ts",
-          "template": "Create Public API (page)",
+          "template": "Create Public API (page)"
         },
         {
           "fileName": "<FTName>/ui/<FTName>/<FTName>.tsx",
@@ -266,7 +250,7 @@
         },
         {
           "fileName": "<FTName>/ui/<FTName>/<FTName>.async.tsx",
-          "template": "Create Async Page",
+          "template": "Create Async Page"
         },
         {
           "fileName": "<FTName>/ui/<FTName>/<FTName>.module.scss",
@@ -274,15 +258,13 @@
         },
         {
           "fileName": "<FTName>/ui/<FTName>/<FTName>.stories.tsx",
-          "template": "Create Storybook (page)",
-        },
+          "template": "Create Storybook (page)"
+        }
       ]
     },
     {
       "name": "Create Only Component Files",
-      "customVariables": [
-        "SliceName", "TranslationName"
-      ],
+      "customVariables": ["SliceName", "TranslationName"],
       "omitParentDirectory": true,
       "structure": [
         {
@@ -295,27 +277,25 @@
         },
         {
           "fileName": "<FTName>/<FTName>.stories.tsx",
-          "template": "Create Storybook",
+          "template": "Create Storybook"
         },
         {
           "fileName": "<FTName>/<FTName>.test.tsx",
-          "template": "Create Component Jest Test",
-        },
+          "template": "Create Component Jest Test"
+        }
       ]
     },
     {
       "name": "Create Model Folder Template",
       "omitParentDirectory": true,
-      "customVariables": [
-        "EntityName"
-      ],
+      "customVariables": ["EntityName"],
       "structure": [
         {
           "fileName": "<FTName>/selectors/<EntityName>Selectors.ts",
           "template": "Create Redux Selector"
         },
         {
-          "fileName": "<FTName>/services/index.ts",
+          "fileName": "<FTName>/services/index.ts"
         },
         {
           "fileName": "<FTName>/slice/<EntityName>Slice.ts",
@@ -324,8 +304,8 @@
         {
           "fileName": "<FTName>/types/<EntityName>Schema.ts",
           "template": "Create Redux Type"
-        },
+        }
       ]
-    },
+    }
   ]
 }

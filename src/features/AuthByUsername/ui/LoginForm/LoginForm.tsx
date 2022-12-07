@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames, Mods } from 'shared/lib/helpers'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
+import { DynamicModuleLoader } from 'shared/lib/components'
 import { useAppDispatch } from 'shared/lib/hooks'
 import { Text, TextSize } from 'shared/ui/Text'
 import { Input } from 'shared/ui/Input'
@@ -13,6 +13,8 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 import { getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername } from '../../model/selectors/authByUsernameSelectors'
 
 import cls from './LoginForm.module.scss'
+
+import type { ReducersList } from 'shared/lib/components'
 
 export interface LoginFormProps {
   className?: string

@@ -14,12 +14,14 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { onlyNumbersRegExp } from 'shared/const'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
+import { DynamicModuleLoader } from 'shared/lib/components'
 import { Mods } from 'shared/lib/helpers'
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
 import { Page } from 'widgets/Page'
 
 import { ProfileForm } from '../../components'
+
+import type { ReducersList } from 'shared/lib/components'
 
 const reducers: ReducersList = {
   profile: profileReducer,

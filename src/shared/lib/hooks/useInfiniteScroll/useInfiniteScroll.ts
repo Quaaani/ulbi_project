@@ -1,6 +1,6 @@
-import { MutableRefObject, useEffect, useRef } from 'react'
+import { MutableRefObject, useEffect } from 'react'
 
-export interface UseInfiniteScrollOptions {
+interface UseInfiniteScrollOptions {
   callback?: () => void
   triggerRef: MutableRefObject<HTMLElement>
   wrapperRef: MutableRefObject<HTMLElement>

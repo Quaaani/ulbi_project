@@ -1,9 +1,15 @@
-export * from './useAppDispatch/useAppDispatch'
-export * from './useUserAuthData/useUserAuthData'
-export * from './useInitialEffect/useInitialEffect'
-export * from './useHover/useHover'
-export * from './useInfiniteScroll/useInfiniteScroll'
-export * from './useThrottle/useThrottle'
-export * from './useDebounce/useDebounce'
+export { useAppDispatch } from './useAppDispatch/useAppDispatch'
 
-export {useModal} from './useModal/useModal'
+export { useUserAuthData } from './useUserAuthData/useUserAuthData'
+
+export { useInitialEffect } from './useInitialEffect/useInitialEffect'
+
+export { useHover } from './useHover/useHover'
+
+export { useInfiniteScroll } from './useInfiniteScroll/useInfiniteScroll'
+
+export { useThrottle } from './useThrottle/useThrottle'
+
+export { useDebounce } from './useDebounce/useDebounce'
+
+export { useModal } from './useModal/useModal'

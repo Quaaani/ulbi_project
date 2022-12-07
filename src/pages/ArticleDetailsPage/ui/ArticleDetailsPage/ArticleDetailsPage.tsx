@@ -3,7 +3,7 @@ import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components'
+import { DynamicModuleLoader } from 'shared/lib/components'
 import { classNames, Mods } from 'shared/lib/helpers'
 import { VStack } from 'shared/ui/Stack'
 import { Text, TextSize, TextType } from 'shared/ui/Text'
@@ -14,6 +14,8 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader'
 
 import cls from './ArticleDetailsPage.module.scss'
+
+import type { ReducersList } from 'shared/lib/components'
 
 export interface ArticleDetailsProps {}
 
