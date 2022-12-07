@@ -5,3 +5,5 @@ export * from './useHover/useHover'
 export * from './useInfiniteScroll/useInfiniteScroll'
 export * from './useThrottle/useThrottle'
 export * from './useDebounce/useDebounce'
+
+export {useModal} from './useModal/useModal'
