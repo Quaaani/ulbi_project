@@ -1,13 +1,12 @@
 import { memo, ReactNode, useCallback, useEffect } from 'react'
 
-
 import { classNames } from '../../../lib/helpers'
 import { Overlay } from '../../Overlay'
 import { Portal } from '../../Portal'
 
 import cls from './Drawer.module.scss'
 
-import { useAnimationLibs } from '@/shared/lib/components'
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components'
 import { useTheme } from '@/app/providers/ThemeProvider'
 
 export interface DrawerProps {
@@ -87,7 +86,7 @@ const DrawerContent = memo((props: DrawerProps) => {
 })
 
 // Вспомогательный компонент, который проксирует аргументы и ждем загрузки библиотек для их использования в основном компоненте
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = memo((props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs()
 
   if (!isLoaded) {
@@ -96,3 +95,10 @@ export const Drawer = memo((props: DrawerProps) => {
 
   return <DrawerContent {...props} />
 })
+
+// Еще одна обертка для использования AnimationProvider
+export const Drawer = (props: DrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+)
