@@ -1,6 +1,15 @@
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-import { fetchProfileData, profileActions, ProfileFormFieldErrorCode, profileReducer, updateProfileData } from 'entities/Profile'
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+
+import { ProfileForm } from '../../components'
+
+import type { ReducersList } from '@/shared/lib/components'
+
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { fetchProfileData, profileActions, ProfileFormFieldErrorCode, profileReducer, updateProfileData } from '@/entities/Profile'
 import {
   getProfileError,
   getProfileFormData,
@@ -8,20 +17,14 @@ import {
   getProfileFormFieldErrorCodes,
   getProfileIsLoading,
   getProfileReadonly,
-} from 'entities/Profile/model/selectors/ProfileSelectors'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
-import { onlyNumbersRegExp } from 'shared/const'
-import { DynamicModuleLoader } from 'shared/lib/components'
-import { Mods } from 'shared/lib/helpers'
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { Page } from 'widgets/Page'
+} from '@/entities/Profile/model/selectors/ProfileSelectors'
+import { onlyNumbersRegExp } from '@/shared/const'
+import { DynamicModuleLoader } from '@/shared/lib/components'
+import { Mods } from '@/shared/lib/helpers'
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
+import { Page } from '@/widgets/Page'
 
-import { ProfileForm } from '../../components'
 
-import type { ReducersList } from 'shared/lib/components'
 
 const reducers: ReducersList = {
   profile: profileReducer,

@@ -1,13 +1,15 @@
 import { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
-import { Text, TextSize } from 'shared/ui/Text'
-import { Button } from 'shared/ui/Button'
+
 
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
 import { counterActions } from '../model/slice/counterSlice'
 
 import cls from './Counter.module.scss'
+
+import { Button } from '@/shared/ui/Button'
+import { Text, TextSize } from '@/shared/ui/Text'
 
 interface CounterProps {}
 

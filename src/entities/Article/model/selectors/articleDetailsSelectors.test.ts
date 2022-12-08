@@ -2,7 +2,7 @@ import { Article, ArticleBlockType, ArticleType } from '../types/articleSchema'
 
 import { getArticleDetailsError, getArticleDetailsIsLoading, getArticleDetailsData } from './articleDetailsSelectors'
 
-import type { StateSchema } from 'app/providers/StoreProvider'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 
 const mockData: Article = {
   id: 'b515cfc8-e9a8-4f30-9a38-786deeb7cd47',

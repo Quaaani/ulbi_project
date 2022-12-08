@@ -1,13 +1,15 @@
 import { memo, useCallback, useMemo, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { HStack, VStack } from 'shared/ui/Stack'
+
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems'
 import { CollapseBtn } from '../CollapseBtn/CollapseBtn'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 import cls from './Sidebar.module.scss'
+
+import { HStack, VStack } from '@/shared/ui/Stack'
+import { classNames, Mods } from '@/shared/lib/helpers'
 
 interface SidebarProps {
   className?: string

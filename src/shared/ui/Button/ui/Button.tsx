@@ -1,9 +1,11 @@
 import { ButtonHTMLAttributes, FC, memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
+
 
 import { Text, TextSize } from '../../Text'
 
 import cls from './Button.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
 
 export enum ButtonTheme {
   CLEAR = 'clear',

@@ -1,12 +1,15 @@
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { counterReducer } from 'entities/Counter'
-import { userReducer } from 'entities/User'
-import { scrollRestorationReducer } from 'features/ScrollRestoration'
-import { $api, rtkApi } from 'shared/api'
 
 import { createReducerManager } from './reducerManager'
 
 import type { StateSchema, ThunkExtraArg } from './StateSchema'
+
+import { counterReducer } from '@/entities/Counter'
+import { userReducer } from '@/entities/User'
+import { scrollRestorationReducer } from '@/features/ScrollRestoration'
+import { $api, rtkApi } from '@/shared/api'
+
+
 
 // Отдельная функция для создания Store
 // С помощью нее мы можем переиспользовать Store для Storybook или Jest

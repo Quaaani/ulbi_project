@@ -1,16 +1,20 @@
-import { CountrySelect, Country } from 'entities/Country'
-import { CurrencySelect, Currency } from 'entities/Currency'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { Input } from 'shared/ui/Input'
-import { VStack } from 'shared/ui/Stack'
 
 import { ProfileFormFieldErrorCode } from '../../model/consts/consts'
 
 import cls from './ProfileCard.module.scss'
 
 import type { Profile, ProfileFormFieldErrors } from '../../model/types/profileSchema'
+
+import { CountrySelect, Country } from '@/entities/Country'
+import { CurrencySelect, Currency } from '@/entities/Currency'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { Input } from '@/shared/ui/Input'
+import { VStack } from '@/shared/ui/Stack'
+
+
+
 
 export interface ProfileCardProps {
   className?: string

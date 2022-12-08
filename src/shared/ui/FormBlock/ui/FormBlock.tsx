@@ -1,7 +1,9 @@
 import { ReactNode } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './FormBlock.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 export interface FormBlockProps {
   children?: ReactNode

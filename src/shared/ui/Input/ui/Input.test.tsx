@@ -1,7 +1,9 @@
 import { screen } from '@testing-library/react'
-import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'
 
 import { Input } from './Input'
+
+import { ComponentRender } from '@/shared/lib/helpers/tests/ComponentRender'
+
 
 describe('Input Element Test', () => {
   test('Default Test', () => {

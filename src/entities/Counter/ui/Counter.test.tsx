@@ -1,8 +1,9 @@
 import { screen } from '@testing-library/react'
-import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'
 import { userEvent } from '@storybook/testing-library'
 
 import { Counter } from './Counter'
+
+import { ComponentRender } from '@/shared/lib/helpers/tests/ComponentRender'
 
 describe('Counter Element Test', () => {
   test('Default Test', () => {

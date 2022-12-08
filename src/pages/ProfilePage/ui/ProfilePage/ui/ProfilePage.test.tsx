@@ -1,12 +1,14 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-import { Profile, profileReducer } from 'entities/Profile'
-import { $api } from 'shared/api'
-import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'
 
 import ProfilePage from './ProfilePage'
+
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { Profile, profileReducer } from '@/entities/Profile'
+import { $api } from '@/shared/api'
+import { ComponentRender } from '@/shared/lib/helpers/tests/ComponentRender'
+
 
 const mockData: Profile = {
   id: 'fd570033-85d0-4665-addd-faa795740410',

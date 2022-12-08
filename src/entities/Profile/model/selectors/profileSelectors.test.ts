@@ -1,5 +1,3 @@
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
 
 import { ProfileError } from '../services/fetchProfileData/fetchProfileData'
 import { ProfileFormFieldErrorCode } from '../consts/consts'
@@ -14,7 +12,10 @@ import {
   getProfileFormFieldErrorCodes,
 } from './ProfileSelectors'
 
-import type { StateSchema } from 'app/providers/StoreProvider'
+import type { StateSchema } from '@/app/providers/StoreProvider'
+
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
 
 const mockData = {
   id: '2a8337d8-8b44-48be-8518-abe45e18df9d',

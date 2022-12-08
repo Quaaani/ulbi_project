@@ -1,8 +1,9 @@
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-
 import { ProfileFormFieldErrorCode } from '../consts/consts'
 import { ProfileError } from '../services/fetchProfileData/fetchProfileData'
+
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+
 
 export interface Profile {
   id?: string

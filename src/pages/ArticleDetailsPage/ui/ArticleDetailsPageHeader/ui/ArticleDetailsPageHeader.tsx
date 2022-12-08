@@ -1,18 +1,21 @@
-import { getArticleDetailsData } from 'entities/Article'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { generatePath, useNavigate } from 'react-router-dom'
-import BackIcon from 'shared/assets/icons/back.svg'
-import EditIcon from 'shared/assets/icons/edit.svg'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { RoutePath } from 'shared/router'
-import { Button } from 'shared/ui/Button'
-import { VStack } from 'shared/ui/Stack'
 
 import { getCanEditArticle } from '../../../model/selectors/articleSelector'
 
 import cls from './ArticleDetailsPageHeader.module.scss'
+
+import { getArticleDetailsData } from '@/entities/Article'
+import BackIcon from '@/shared/assets/icons/back.svg'
+import EditIcon from '@/shared/assets/icons/edit.svg'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { RoutePath } from '@/shared/router'
+import { Button } from '@/shared/ui/Button'
+import { VStack } from '@/shared/ui/Stack'
+
+
 
 export interface ArticleDetailsPageHeaderProps {
   className?: string

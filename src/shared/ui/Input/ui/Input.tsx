@@ -1,10 +1,12 @@
 import { InputHTMLAttributes, memo, ChangeEvent, useState, useEffect, useRef } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
+
 
 import EyeIcon from '../../../assets/icons/eye.svg'
 import EyeClosedIcon from '../../../assets/icons/eye-closed.svg'
 
 import cls from './Input.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
 
 // Omit забирает из указанного типа все пропсы, но исключает те, которые мы укажем 2 аргументом
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly' | 'max'>

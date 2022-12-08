@@ -1,8 +1,9 @@
-import { TestAsyncThunk } from 'shared/lib/helpers/tests/testAsyncThunk'
 
 import { Article, ArticleBlockType, ArticleType } from '../../types/articleSchema'
 
 import { fetchArticleById } from './fetchArticleById'
+
+import { TestAsyncThunk } from '@/shared/lib/helpers/tests/testAsyncThunk'
 
 describe('fetchArticleById Async Test', () => {
   const mockData: Article = {

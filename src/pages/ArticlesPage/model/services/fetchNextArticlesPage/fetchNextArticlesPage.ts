@@ -4,7 +4,7 @@ import { getArticlesPageHasMore, getArticlesPageIsLoading, getArticlesPageNumber
 import { articlesPageActions } from '../../slice/articlesPageSlice'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 
-import type { ThunkConfig } from 'app/providers/StoreProvider'
+import type { ThunkConfig } from '@/app/providers/StoreProvider'
 
 export const fetchNextArticlesPage = createAsyncThunk<void, void, ThunkConfig<string>>('articlesPage/fetchNextArticlesPage', async (_, thunkAPI) => {
   const { dispatch, getState } = thunkAPI

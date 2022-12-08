@@ -1,19 +1,23 @@
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { Avatar, AvatarSize } from 'shared/ui/Avatar'
-import { FormBlock } from 'shared/ui/FormBlock'
-import { Spinner } from 'shared/ui/Spinner'
-import { Text, TextSize, TextType } from 'shared/ui/Text'
-import { ProfileCard, ProfileError, ProfileFormFieldErrorCode } from 'entities/Profile'
 
 import { ProfileFormHeader } from '../../ProfileFormHeader'
 
 import cls from './ProfileForm.module.scss'
 
-import type { Profile, ProfileFormFieldErrors } from 'entities/Profile'
+import type { Profile, ProfileFormFieldErrors } from '@/entities/Profile'
+
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { Avatar, AvatarSize } from '@/shared/ui/Avatar'
+import { FormBlock } from '@/shared/ui/FormBlock'
+import { Spinner } from '@/shared/ui/Spinner'
+import { Text, TextSize, TextType } from '@/shared/ui/Text'
+import { ProfileCard, ProfileError, ProfileFormFieldErrorCode } from '@/entities/Profile'
+
+
+
 
 export interface ProfileFormProps {
   className?: string

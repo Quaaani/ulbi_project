@@ -1,16 +1,19 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { generatePath } from 'react-router-dom'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { RoutePath } from 'shared/router'
-import { Text, TextSize } from 'shared/ui/Text'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink'
-import { Avatar } from 'shared/ui/Avatar'
-import { Skeleton } from 'shared/ui/Skeleton'
 
 import { Comment } from '../../../model/types/commentSchema'
 
 import cls from './CommentCard.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { RoutePath } from '@/shared/router'
+import { Text, TextSize } from '@/shared/ui/Text'
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Skeleton } from '@/shared/ui/Skeleton'
+
+
 
 export interface CommentCardProps {
   className?: string

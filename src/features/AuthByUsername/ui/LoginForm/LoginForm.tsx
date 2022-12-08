@@ -1,12 +1,6 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { DynamicModuleLoader } from 'shared/lib/components'
-import { useAppDispatch } from 'shared/lib/hooks'
-import { Text, TextSize } from 'shared/ui/Text'
-import { Input } from 'shared/ui/Input'
-import { Button } from 'shared/ui/Button'
 
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername'
@@ -14,7 +8,17 @@ import { getLoginError, getLoginIsLoading, getLoginPassword, getLoginUsername } 
 
 import cls from './LoginForm.module.scss'
 
-import type { ReducersList } from 'shared/lib/components'
+import type { ReducersList } from '@/shared/lib/components'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { DynamicModuleLoader } from '@/shared/lib/components'
+import { useAppDispatch } from '@/shared/lib/hooks'
+import { Text, TextSize } from '@/shared/ui/Text'
+import { Input } from '@/shared/ui/Input'
+import { Button } from '@/shared/ui/Button'
+
+
+
 
 export interface LoginFormProps {
   className?: string

@@ -1,14 +1,16 @@
-import { NotificationButton } from 'features/NotificationButton'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/helpers'
-import { HStack } from 'shared/ui/Stack'
-import { Text, TextColor, TextSize } from 'shared/ui/Text'
-import { LanguageSwitcher } from 'widgets/LanguageSwitcher'
-import { Login } from 'widgets/Login'
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 
 import cls from './Navbar.module.scss'
+
+import { NotificationButton } from '@/features/NotificationButton'
+import { classNames } from '@/shared/lib/helpers'
+import { HStack } from '@/shared/ui/Stack'
+import { Text, TextColor, TextSize } from '@/shared/ui/Text'
+import { LanguageSwitcher } from '@/widgets/LanguageSwitcher'
+import { Login } from '@/widgets/Login'
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
+
 
 interface NavbarProps {
   className?: string

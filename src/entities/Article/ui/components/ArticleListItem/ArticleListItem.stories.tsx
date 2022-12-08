@@ -1,10 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ThemeDecorator } from 'shared/config/storybook'
-import { Theme } from 'app/providers/ThemeProvider'
 
 import { Article, ArticleView } from '../../../model/types/articleSchema'
 
 import { ArticleListItem, ArticleListItemProps } from './ArticleListItem'
+
+import { ThemeDecorator } from '@/shared/config/storybook'
+import { Theme } from '@/app/providers/ThemeProvider'
+
+
 
 const mockData = {
   id: 'b515cfc8-e9a8-4f30-9a38-786deeb7cd47',

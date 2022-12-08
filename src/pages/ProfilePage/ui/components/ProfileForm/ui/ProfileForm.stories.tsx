@@ -1,12 +1,14 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
-import { Theme } from 'app/providers/ThemeProvider'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-import { ProfileError } from 'entities/Profile'
-import MockAvatar from 'shared/assets/tests/mockAvatar.jpeg'
 
 import { ProfileForm, ProfileFormProps } from './ProfileForm'
+
+import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { ProfileError } from '@/entities/Profile'
+import MockAvatar from '@/shared/assets/tests/mockAvatar.jpeg'
+
 
 export default {
   title: 'pages/ProfileForm',

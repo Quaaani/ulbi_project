@@ -1,10 +1,12 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ThemeDecorator } from 'shared/config/storybook'
-import { Theme } from 'app/providers/ThemeProvider'
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
 
 import { ProfileCard, ProfileCardProps } from './ProfileCard'
+
+import { ThemeDecorator } from '@/shared/config/storybook'
+import { Theme } from '@/app/providers/ThemeProvider'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+
 
 export default {
   title: 'entities/ProfileCard',

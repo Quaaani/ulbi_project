@@ -1,12 +1,14 @@
 import { memo, SVGProps, VFC } from 'react'
-import { Theme, useTheme } from 'app/providers/ThemeProvider'
-import { Button, ButtonTheme } from 'shared/ui/Button'
-import { classNames } from 'shared/lib/helpers'
-import LightThemeIcon from 'shared/assets/icons/light-theme.svg'
-import DarkThemeIcon from 'shared/assets/icons/dark-theme.svg'
-import GreenThemeIcon from 'shared/assets/icons/green-theme.svg'
 
 import cls from './ThemeSwitcher.module.scss'
+
+import { Theme, useTheme } from '@/app/providers/ThemeProvider'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { classNames } from '@/shared/lib/helpers'
+import LightThemeIcon from '@/shared/assets/icons/light-theme.svg'
+import DarkThemeIcon from '@/shared/assets/icons/dark-theme.svg'
+import GreenThemeIcon from '@/shared/assets/icons/green-theme.svg'
+
 
 interface ThemeSwitcherProps {
   className?: string

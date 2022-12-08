@@ -1,10 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ThemeDecorator } from 'shared/config/storybook'
-import { Theme } from 'app/providers/ThemeProvider'
 
 import ProfileIcon from '../../../assets/icons/profile.svg'
 
 import { Icon, IconColor, IconProps } from './Icon'
+
+import { ThemeDecorator } from '@/shared/config/storybook'
+import { Theme } from '@/app/providers/ThemeProvider'
+
+
 
 export default {
   title: 'shared/Icon',

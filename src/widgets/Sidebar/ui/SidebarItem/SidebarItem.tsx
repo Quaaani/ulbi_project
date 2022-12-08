@@ -1,11 +1,14 @@
 import { memo } from 'react'
-import { useUserAuthData } from 'shared/lib/hooks'
-import { AppLink } from 'shared/ui/AppLink'
-import { Icon, IconColor } from 'shared/ui/Icon'
 
 import { SidebarItemType } from '../../model/types/sidebarSchema'
 
 import cls from './SidebarItem.module.scss'
+
+import { useUserAuthData } from '@/shared/lib/hooks'
+import { AppLink } from '@/shared/ui/AppLink'
+import { Icon, IconColor } from '@/shared/ui/Icon'
+
+
 
 interface SidebarItemProps {
   item: SidebarItemType

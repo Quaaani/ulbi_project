@@ -1,13 +1,14 @@
-import { ArticleList } from 'entities/Article'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { useAppDispatch } from 'shared/lib/hooks'
-import { Text, TextType } from 'shared/ui/Text'
 
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../../model/selectors/articlesPageSelectors'
 import { getArticles } from '../../../model/slice/articlesPageSlice'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { useAppDispatch } from '@/shared/lib/hooks'
+import { Text, TextType } from '@/shared/ui/Text'
+import { ArticleList } from '@/entities/Article'
 
 export interface ArticleInfiniteListProps {
   className?: string

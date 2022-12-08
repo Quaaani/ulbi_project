@@ -5,7 +5,7 @@ import { validateProfileData } from '../validateProfileData/validateProfileData'
 import { ProfileFormFieldErrorCode } from '../../consts/consts'
 
 import type { Profile } from '../../types/profileSchema'
-import type { ThunkConfig } from 'app/providers/StoreProvider'
+import type { ThunkConfig } from '@/app/providers/StoreProvider'
 
 export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ProfileFormFieldErrorCode[]>>(
   'profile/updateProfileData',

@@ -1,13 +1,15 @@
-import { LoginModal } from 'features/AuthByUsername'
-import { AvatarDropdown } from 'features/AvatarDropdown'
 import { memo, useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import LoginIcon from 'shared/assets/icons/login.svg'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { useUserAuthData } from 'shared/lib/hooks'
-import { Button, ButtonTheme } from 'shared/ui/Button'
 
 import cls from './Login.module.scss'
+
+import { LoginModal } from '@/features/AuthByUsername'
+import { AvatarDropdown } from '@/features/AvatarDropdown'
+import LoginIcon from '@/shared/assets/icons/login.svg'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { useUserAuthData } from '@/shared/lib/hooks'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+
 
 interface LoginProps {
   className?: string

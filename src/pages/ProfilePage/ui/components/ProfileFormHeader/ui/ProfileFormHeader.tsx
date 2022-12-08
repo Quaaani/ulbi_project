@@ -1,18 +1,21 @@
-import { getProfileData } from 'entities/Profile/model/selectors/ProfileSelectors'
-import { getUserAuthData } from 'entities/User'
 import { memo, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import CancelIcon from 'shared/assets/icons/cancel.svg'
-import EditIcon from 'shared/assets/icons/edit.svg'
-import SaveIcon from 'shared/assets/icons/save.svg'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { Button, ButtonTheme } from 'shared/ui/Button'
-import { Text, TextSize } from 'shared/ui/Text'
 
 import cls from './ProfileFormHeader.module.scss'
 
-import type { ProfileFormFieldErrors } from 'entities/Profile'
+import type { ProfileFormFieldErrors } from '@/entities/Profile'
+
+import { getProfileData } from '@/entities/Profile/model/selectors/ProfileSelectors'
+import { getUserAuthData } from '@/entities/User'
+import CancelIcon from '@/shared/assets/icons/cancel.svg'
+import EditIcon from '@/shared/assets/icons/edit.svg'
+import SaveIcon from '@/shared/assets/icons/save.svg'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { Text, TextSize } from '@/shared/ui/Text'
+
+
 
 export interface ProfileFormHeaderProps {
   className?: string

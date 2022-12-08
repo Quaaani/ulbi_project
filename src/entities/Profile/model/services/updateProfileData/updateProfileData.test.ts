@@ -1,10 +1,12 @@
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-import { TestAsyncThunk } from 'shared/lib/helpers/tests/testAsyncThunk'
-
 import { ProfileFormFieldErrorCode } from '../../consts/consts'
 
 import { updateProfileData } from './updateProfileData'
+
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { TestAsyncThunk } from '@/shared/lib/helpers/tests/testAsyncThunk'
+
+
 
 describe('updateProfileData Async Test', () => {
   const mockData = {

@@ -1,7 +1,9 @@
 import { screen } from '@testing-library/react'
-import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'
 
 import { Code } from './Code'
+
+import { ComponentRender } from '@/shared/lib/helpers/tests/ComponentRender'
+
 
 describe('Code Component Test', () => {
   test('Default Test', () => {

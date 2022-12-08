@@ -1,7 +1,6 @@
 import { Listbox as HListBox } from '@headlessui/react'
 import { Fragment, memo, ReactNode } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { DropdownDirection } from 'shared/types'
+
 
 import { Text, TextSize } from '../../../Text'
 import { HStack } from '../../../Stack'
@@ -13,6 +12,9 @@ import OkCircleIcon from '../../../../assets/icons/ok-circle.svg'
 import popupCls from '../../styles/Popup.module.scss'
 
 import cls from './ListBox.module.scss'
+
+import { DropdownDirection } from '@/shared/types'
+import { classNames, Mods } from '@/shared/lib/helpers'
 
 interface ListBoxItem {
   value: string

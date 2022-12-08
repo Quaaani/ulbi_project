@@ -1,8 +1,10 @@
 import { Component, DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Flex.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 type FlexJustify = 'start' | 'center' | 'end' | 'between'
 

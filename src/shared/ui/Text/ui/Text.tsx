@@ -1,7 +1,9 @@
 import { memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Text.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 export enum TextSize {
   SMALL = 'small',

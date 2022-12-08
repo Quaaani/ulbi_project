@@ -1,13 +1,15 @@
 import { Menu } from '@headlessui/react'
 import { Fragment, memo, ReactNode } from 'react'
-import { classNames } from 'shared/lib/helpers'
-import { DropdownDirection } from 'shared/types'
+
 
 import { Text, TextSize } from '../../../Text'
 import { AppLink } from '../../../AppLink'
 import popupCls from '../../styles/Popup.module.scss'
 
 import cls from './Dropdown.module.scss'
+
+import { DropdownDirection } from '@/shared/types'
+import { classNames } from '@/shared/lib/helpers'
 
 interface DropdownItem {
   content: string

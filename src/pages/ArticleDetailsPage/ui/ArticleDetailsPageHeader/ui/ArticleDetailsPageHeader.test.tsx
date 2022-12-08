@@ -1,7 +1,9 @@
 import { screen } from '@testing-library/react'
-import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'
 
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader'
+
+import { ComponentRender } from '@/shared/lib/helpers/tests/ComponentRender'
+
 
 describe('ArticleDetailsPageHeader Component Test', () => {
   test('Default Test', () => {

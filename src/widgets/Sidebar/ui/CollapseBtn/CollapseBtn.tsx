@@ -1,10 +1,12 @@
 import { memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { Button, ButtonTheme } from 'shared/ui/Button'
-import ArrowRightIcon from 'shared/assets/icons/arrow-right.svg'
-import ArrowLeftIcon from 'shared/assets/icons/arrow-left.svg'
 
 import cls from './CollapseBtn.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import ArrowRightIcon from '@/shared/assets/icons/arrow-right.svg'
+import ArrowLeftIcon from '@/shared/assets/icons/arrow-left.svg'
+
 
 interface CollapseBtnProps {
   className?: string

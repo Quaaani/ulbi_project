@@ -1,7 +1,8 @@
-import { userActions } from 'entities/User'
-import { TestAsyncThunk } from 'shared/lib/helpers/tests/testAsyncThunk'
-
 import { loginByUsername, LoginErrors } from './loginByUsername'
+
+import { userActions } from '@/entities/User'
+import { TestAsyncThunk } from '@/shared/lib/helpers/tests/testAsyncThunk'
+
 
 describe('loginByUsername Async Test', () => {
   test('Default Test', async () => {

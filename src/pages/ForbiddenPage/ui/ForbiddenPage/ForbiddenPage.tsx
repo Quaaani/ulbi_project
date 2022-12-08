@@ -2,10 +2,12 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Page } from 'widgets/Page'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './ForbiddenPage.module.scss'
+
+import { Page } from '@/widgets/Page'
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 export interface ForbiddenPageProps {}
 

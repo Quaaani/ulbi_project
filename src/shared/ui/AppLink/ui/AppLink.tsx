@@ -1,8 +1,10 @@
 import { memo, ReactNode } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
-import { classNames } from 'shared/lib/helpers'
 
 import cls from './AppLink.module.scss'
+
+import { classNames } from '@/shared/lib/helpers'
+
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',

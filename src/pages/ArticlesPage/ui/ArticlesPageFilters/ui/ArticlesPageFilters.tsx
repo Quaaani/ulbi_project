@@ -1,12 +1,7 @@
-import { ArticleSortField, ArticleType, ArticleView, ArticleViewSelector } from 'entities/Article'
-import { ArticleSortSelector, ArticleTypeTabs } from 'entities/Article/ui/components'
 import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { useAppDispatch, useDebounce } from 'shared/lib/hooks'
-import { SortOrder } from 'shared/types'
-import { Input } from 'shared/ui/Input'
+
 
 import {
   getArticlesPageOrder,
@@ -20,7 +15,14 @@ import { fetchArticlesList } from '../../../model/services/fetchArticlesList/fet
 
 import cls from './ArticlesPageFilters.module.scss'
 
-import type { TabItem } from 'shared/ui/Tabs'
+import type { TabItem } from '@/shared/ui/Tabs'
+
+import { Input } from '@/shared/ui/Input'
+import { SortOrder } from '@/shared/types'
+import { useAppDispatch, useDebounce } from '@/shared/lib/hooks'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { ArticleSortSelector, ArticleTypeTabs } from '@/entities/Article/ui/components'
+import { ArticleSortField, ArticleType, ArticleView, ArticleViewSelector } from '@/entities/Article'
 
 export interface ArticlesPageFiltersProps {
   className?: string

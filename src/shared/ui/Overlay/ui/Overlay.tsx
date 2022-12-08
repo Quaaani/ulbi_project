@@ -1,7 +1,9 @@
 import { memo, ReactNode } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Overlay.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 export interface OverlayProps {
   className?: string

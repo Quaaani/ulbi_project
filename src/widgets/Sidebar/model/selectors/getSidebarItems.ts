@@ -1,14 +1,16 @@
 import { createSelector } from '@reduxjs/toolkit'
-import { getUserAuthData } from 'entities/User'
-import { RoutePath } from 'shared/router'
-import MainIcon from 'shared/assets/icons/main.svg'
-import AboutIcon from 'shared/assets/icons/info.svg'
-import ProfileIcon from 'shared/assets/icons/profile.svg'
-import ArticleIcon from 'shared/assets/icons/article.svg'
-import FeatherIcon from 'shared/assets/icons/feather.svg'
 import { generatePath } from 'react-router-dom'
 
 import { SidebarItemType } from '../types/sidebarSchema'
+
+import { getUserAuthData } from '@/entities/User'
+import { RoutePath } from '@/shared/router'
+import MainIcon from '@/shared/assets/icons/main.svg'
+import AboutIcon from '@/shared/assets/icons/info.svg'
+import ProfileIcon from '@/shared/assets/icons/profile.svg'
+import ArticleIcon from '@/shared/assets/icons/article.svg'
+import FeatherIcon from '@/shared/assets/icons/feather.svg'
+
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   const sidebarItemsList: SidebarItemType[] = [

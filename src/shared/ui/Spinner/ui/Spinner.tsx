@@ -1,5 +1,6 @@
 import { FC } from 'react'
-import { classNames } from 'shared/lib/helpers'
+
+import { classNames } from '@/shared/lib/helpers'
 import './Spinner.scss'
 
 interface SpinnerProps {

@@ -1,7 +1,9 @@
 import { CSSProperties, memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Skeleton.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 export interface SkeletonProps {
   className?: string

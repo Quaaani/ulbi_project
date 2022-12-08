@@ -1,13 +1,6 @@
-import { ArticleDetails } from 'entities/Article'
-import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-import { DynamicModuleLoader } from 'shared/lib/components'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { VStack } from 'shared/ui/Stack'
-import { Text, TextSize, TextType } from 'shared/ui/Text'
-import { Page } from 'widgets/Page'
 
 import { articleDetailsPageReducer } from '../../model/slice'
 import { ArticleDetailsComments } from '../ArticleDetailsComments'
@@ -15,7 +8,15 @@ import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader'
 
 import cls from './ArticleDetailsPage.module.scss'
 
-import type { ReducersList } from 'shared/lib/components'
+import type { ReducersList } from '@/shared/lib/components'
+
+import { DynamicModuleLoader } from '@/shared/lib/components'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { VStack } from '@/shared/ui/Stack'
+import { Text, TextSize, TextType } from '@/shared/ui/Text'
+import { Page } from '@/widgets/Page'
+import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
+import { ArticleDetails } from '@/entities/Article'
 
 export interface ArticleDetailsProps {}
 

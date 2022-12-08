@@ -1,16 +1,18 @@
-import { CommentList } from 'entities/Comment'
-import { AddCommentForm } from 'features/AddCommentForm'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { Text, TextSize } from 'shared/ui/Text'
-import { VStack } from 'shared/ui/Stack'
 
 import { getArticleDetailsComments } from '../../../model/slice/articleDetailsCommentsSlice'
 import { addCommentForArticle, fetchCommentsByArticleId } from '../../../model/services'
 import { getArticleDetailsCommentsIsLoading } from '../../../model/selectors'
+
+import { CommentList } from '@/entities/Comment'
+import { AddCommentForm } from '@/features/AddCommentForm'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
+import { Text, TextSize } from '@/shared/ui/Text'
+import { VStack } from '@/shared/ui/Stack'
+
 
 export interface ArticleDetailsCommentsProps {
   className?: string

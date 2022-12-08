@@ -1,11 +1,14 @@
 import { memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { Skeleton } from 'shared/ui/Skeleton'
-import { Card } from 'shared/ui/Card'
 
 import { ArticleView } from '../../../model/types/articleSchema'
 
 import cls from './ArticleListItem.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Card } from '@/shared/ui/Card'
+
+
 
 interface ArticleListItemSkeletonProps {
   className?: string

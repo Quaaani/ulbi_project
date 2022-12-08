@@ -1,7 +1,9 @@
 import { screen } from '@testing-library/react'
-import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'
 
 import { Card } from './Card'
+
+import { ComponentRender } from '@/shared/lib/helpers/tests/ComponentRender'
+
 
 describe('Card Component Test', () => {
   test('Default Test', () => {

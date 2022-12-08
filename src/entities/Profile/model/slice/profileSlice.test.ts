@@ -1,6 +1,3 @@
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
-import { profileFormFieldErrorMessages } from 'shared/const'
 
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
 import { ProfileFormFieldErrorCode } from '../consts/consts'
@@ -8,6 +5,10 @@ import { ProfileFormFieldErrorCode } from '../consts/consts'
 import { profileActions, profileReducer } from './profileSlice'
 
 import type { ProfileSchema } from '../types/profileSchema'
+
+import { profileFormFieldErrorMessages } from '@/shared/const'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
 
 describe('profileSlice Reducers Test', () => {
   const mockData = {

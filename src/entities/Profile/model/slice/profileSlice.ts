@@ -1,10 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { profileFormFieldErrorMessages } from 'shared/const'
+
 
 import { fetchProfileData, ProfileError } from '../services/fetchProfileData/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
 
 import type { Profile, ProfileSchema } from '../types/profileSchema'
+
+import { profileFormFieldErrorMessages } from '@/shared/const'
 
 const initialState: ProfileSchema = {
   data: undefined,

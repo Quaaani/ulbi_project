@@ -1,11 +1,13 @@
 import { FC, MouseEvent, ReactNode } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { useModal } from 'shared/lib/hooks'
+
 
 import { Overlay } from '../../Overlay'
 import { Portal } from '../../Portal'
 
 import cls from './Modal.module.scss'
+
+import { useModal } from '@/shared/lib/hooks'
+import { classNames, Mods } from '@/shared/lib/helpers'
 
 export interface ModalProps {
   className?: string

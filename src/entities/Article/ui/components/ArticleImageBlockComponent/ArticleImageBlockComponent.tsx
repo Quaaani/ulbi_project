@@ -1,10 +1,13 @@
 import { memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { Text } from 'shared/ui/Text'
 
 import { ArticleImageBlock } from '../../../model/types/articleSchema'
 
 import cls from './ArticleImageBlockComponent.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { Text } from '@/shared/ui/Text'
+
+
 
 interface ArticleImageBlockComponentProps {
   className?: string

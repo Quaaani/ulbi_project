@@ -1,7 +1,9 @@
 import { FC, memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Icon.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 export enum IconColor {
   PRIMARY = 'primary',

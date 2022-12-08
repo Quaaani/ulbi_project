@@ -1,13 +1,16 @@
 import { memo } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { AppLink } from 'shared/ui/AppLink'
-import { Card } from 'shared/ui/Card'
-import { VStack } from 'shared/ui/Stack'
-import { Text, TextSize } from 'shared/ui/Text'
 
 import { Notification } from '../../model/types/notificationSchema'
 
 import cls from './NotificationItem.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { AppLink } from '@/shared/ui/AppLink'
+import { Card } from '@/shared/ui/Card'
+import { VStack } from '@/shared/ui/Stack'
+import { Text, TextSize } from '@/shared/ui/Text'
+
+
 
 export interface NotificationItemProps {
   className?: string

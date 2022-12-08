@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 
 import { Profile } from '../../types/profileSchema'
 
-import type { ThunkConfig } from 'app/providers/StoreProvider'
+import type { ThunkConfig } from '@/app/providers/StoreProvider'
 
 export enum ProfileError {
   FORBIDDEN = 'You don`t have permission to access',

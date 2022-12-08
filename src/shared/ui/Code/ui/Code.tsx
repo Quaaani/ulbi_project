@@ -1,10 +1,12 @@
 import { memo, useCallback } from 'react'
-import { classNames, Mods } from 'shared/lib/helpers'
+
 
 import { Button, ButtonTheme } from '../../Button'
 import CopyIcon from '../../../assets/icons/copy.svg'
 
 import cls from './Code.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
 
 export interface CodeProps {
   className?: string

@@ -1,8 +1,10 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames, Mods } from 'shared/lib/helpers'
 
 import cls from './Avatar.module.scss'
+
+import { classNames, Mods } from '@/shared/lib/helpers'
+
 
 export enum AvatarSize {
   SMALL = 'small',

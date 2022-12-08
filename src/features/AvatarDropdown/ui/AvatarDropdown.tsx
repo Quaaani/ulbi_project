@@ -1,15 +1,17 @@
-import { isUserAdmin, isUserManager, userActions } from 'entities/User'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { generatePath } from 'react-router-dom'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { useAppDispatch, useUserAuthData } from 'shared/lib/hooks'
-import { RoutePath } from 'shared/router'
-import { Avatar } from 'shared/ui/Avatar'
-import { Dropdown } from 'shared/ui/Popups'
 
 import cls from './AvatarDropdown.module.scss'
+
+import { isUserAdmin, isUserManager, userActions } from '@/entities/User'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { useAppDispatch, useUserAuthData } from '@/shared/lib/hooks'
+import { RoutePath } from '@/shared/router'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Dropdown } from '@/shared/ui/Popups'
+
 
 export interface AvatarDropdownProps {
   className?: string

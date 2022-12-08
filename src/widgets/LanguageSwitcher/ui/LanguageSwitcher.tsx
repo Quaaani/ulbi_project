@@ -1,10 +1,12 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/helpers'
-import { Button, ButtonTheme } from 'shared/ui/Button'
-import TranslationIcon from 'shared/assets/icons/translation.svg'
 
 import cls from './LanguageSwitcher.module.scss'
+
+import { classNames } from '@/shared/lib/helpers'
+import { Button, ButtonTheme } from '@/shared/ui/Button'
+import TranslationIcon from '@/shared/assets/icons/translation.svg'
+
 
 interface LanguageSwitcherProps {
   className?: string

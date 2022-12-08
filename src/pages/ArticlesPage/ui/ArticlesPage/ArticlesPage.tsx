@@ -1,11 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router-dom'
-import { DynamicModuleLoader } from 'shared/lib/components'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
-import { VStack } from 'shared/ui/Stack'
-import { Page } from 'widgets/Page'
+
 
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
@@ -15,7 +11,13 @@ import { ArticlesPageFilters } from '../ArticlesPageFilters'
 
 import cls from './ArticlesPage.module.scss'
 
-import type { ReducersList } from 'shared/lib/components'
+import type { ReducersList } from '@/shared/lib/components'
+
+import { Page } from '@/widgets/Page'
+import { VStack } from '@/shared/ui/Stack'
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { DynamicModuleLoader } from '@/shared/lib/components'
 
 export interface ArticlesProps {}
 

@@ -1,9 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Theme } from 'app/providers/ThemeProvider'
-import { ThemeDecorator } from 'shared/config/storybook'
-import SaveIcon from 'shared/assets/icons/save.svg'
 
 import { Button, ButtonProps, ButtonTheme } from './Button'
+
+import { Theme } from '@/app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/storybook'
+import SaveIcon from '@/shared/assets/icons/save.svg'
+
 
 export default {
   title: 'shared/Button',

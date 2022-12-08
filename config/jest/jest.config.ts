@@ -40,6 +40,14 @@ export default {
 
     // Поддержка SVG
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+
+    // Поддержка Aliases
+    '^@/shared(.*)$': '<rootDir>/src/shared$1',
+    '^@/entities(.*)$': '<rootDir>/src/entities$1',
+    '^@/features(.*)$': '<rootDir>/src/features$1',
+    '^@/widgets(.*)$': '<rootDir>/src/widgets$1',
+    '^@/pages(.*)$': '<rootDir>/src/pages$1',
+    '^@/app(.*)$': '<rootDir>/src/app$1',
   },
 
   // The glob patterns Jest uses to detect test files

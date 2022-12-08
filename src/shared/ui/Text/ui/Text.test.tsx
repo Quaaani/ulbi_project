@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react'
-import { ComponentRender } from 'shared/lib/helpers/tests/ComponentRender'
 
 import { Text } from './Text'
+
+import { ComponentRender } from '@/shared/lib/helpers/tests/ComponentRender'
 
 describe('Text Element Test', () => {
   test('Default Test', () => {

@@ -1,11 +1,13 @@
-import { ArticleList } from 'entities/Article'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames, Mods } from 'shared/lib/helpers'
-import { VStack } from 'shared/ui/Stack'
-import { Text, TextSize } from 'shared/ui/Text'
 
 import { useArticleRecommendationsList } from '../api/articleRecommendationsApi'
+
+import { ArticleList } from '@/entities/Article'
+import { classNames, Mods } from '@/shared/lib/helpers'
+import { VStack } from '@/shared/ui/Stack'
+import { Text, TextSize } from '@/shared/ui/Text'
+
 
 export interface ArticleRecommendationsListProps {
   className?: string
