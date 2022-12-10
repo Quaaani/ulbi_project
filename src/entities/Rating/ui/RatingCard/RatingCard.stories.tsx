@@ -1,21 +1,19 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-
-import { StarRating, StarRatingProps } from './StarRating'
-
 import { ThemeDecorator, StoreDecorator } from '@/shared/config/storybook'
 import { Theme } from '@/app/providers/ThemeProvider'
 
+import { RatingCard, RatingCardProps } from './RatingCard'
 
 export default {
-  title: 'shared/StarRating',
-  component: StarRating,
+  title: 'entities/RatingCard',
+  component: RatingCard,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof StarRating>
+} as ComponentMeta<typeof RatingCard>
 
-const Template: ComponentStory<typeof StarRating> = (args: StarRatingProps) => (
+const Template: ComponentStory<typeof RatingCard> = (args: RatingCardProps) => (
   <div
     style={{
       display: 'flex',
@@ -25,7 +23,7 @@ const Template: ComponentStory<typeof StarRating> = (args: StarRatingProps) => (
       height: '100vh',
     }}
   >
-    <StarRating {...args} />
+    <RatingCard {...args} />
   </div>
 )
 

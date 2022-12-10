@@ -25,5 +25,7 @@
   "create-new-article": "Create new Article",
   "exit": "Exit",
   "profile": "Profile",
-  "admin-panel": "Admin panel"
+  "admin-panel": "Admin panel",
+  "your-message": "Your message",
+  "close": "Close"
 }
