@@ -1,21 +1,20 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { RatingCard, RatingCardProps } from './RatingCard'
+import ArticleRating, { ArticleRatingProps } from './ArticleRating'
 
 import { ThemeDecorator, StoreDecorator } from '@/shared/config/storybook'
 import { Theme } from '@/app/providers/ThemeProvider'
 
-
 export default {
-  title: 'entities/RatingCard',
-  component: RatingCard,
+  title: 'features/ArticleRating',
+  component: ArticleRating,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof RatingCard>
+} as ComponentMeta<typeof ArticleRating>
 
-const Template: ComponentStory<typeof RatingCard> = (args: RatingCardProps) => (
+const Template: ComponentStory<typeof ArticleRating> = (args: ArticleRatingProps) => (
   <div
     style={{
       display: 'flex',
@@ -25,7 +24,7 @@ const Template: ComponentStory<typeof RatingCard> = (args: RatingCardProps) => (
       height: '100vh',
     }}
   >
-    <RatingCard {...args} />
+    <ArticleRating {...args} />
   </div>
 )
 

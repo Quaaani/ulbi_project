@@ -19,15 +19,16 @@ export interface RatingCardProps {
   title?: string
   feedbackTitle?: string
   hasFeedback?: boolean
+  rate?: number
   onAccept?: (starsCount: number, feedback?: string) => void
   onCancel?: (starsCount: number) => void
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
-  const { className, title, feedbackTitle, hasFeedback, onAccept, onCancel } = props
+  const { className, title, feedbackTitle, hasFeedback, rate = 0, onAccept, onCancel } = props
   const { t } = useTranslation()
   const [modalIsOpen, setModalIsOpen] = useState(false)
-  const [starsCount, setStarsCount] = useState(0)
+  const [starsCount, setStarsCount] = useState(rate)
   const [feedback, setFeedback] = useState('')
 
   const onSelectStars = useCallback(
@@ -53,12 +54,14 @@ export const RatingCard = memo((props: RatingCardProps) => {
     onCancel?.(starsCount)
   }, [onCancel, starsCount])
 
+  const titleMessage = starsCount ? t('thanks-for-rate') : title
+
   const mods: Mods = {}
 
   const modalContent = (
     <VStack max gap="32">
       <Text title={feedbackTitle} />
-      <Input placeholder={t('your-message')} />
+      <Input placeholder={t('your-message')} onChange={setFeedback} />
       <HStack max gap="16" justify="end">
         <Button title={t('send')} onClick={onAcceptHandler} />
         <Button title={t('close')} theme={ButtonTheme.INVERTED} onClick={onCancelHandler} />
@@ -70,9 +73,9 @@ export const RatingCard = memo((props: RatingCardProps) => {
     <Card
       className={classNames(cls.ratingCard, mods, [className])}
       renderContent={() => (
-        <VStack gap="8">
-          <Text title={title} />
-          <StarRating onSelect={onSelectStars} />
+        <VStack gap="8" align="center">
+          <Text title={titleMessage} />
+          <StarRating selectedStars={rate} onSelect={onSelectStars} />
           <BrowserView>
             <Modal lazy isOpen={modalIsOpen} onClose={onCancelHandler}>
               {modalContent}

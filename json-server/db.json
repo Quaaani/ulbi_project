@@ -1797,6 +1797,50 @@
       "avatar": "https://global.discourse-cdn.com/business5/uploads/vrchat/optimized/2X/8/8b69c99796e45ade46980016a1a8bbb877e6b8ba_2_666x500.jpeg"
     }
   ],
+  "article-ratings": [
+    {
+      "id": "bcdbd4a6-365b-449a-9979-43e2b4866bde",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "e6882431-311d-4f41-b0dd-38c03ef71af7",
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47"
+    },
+    {
+      "id": "d7b3e003-7cd0-4ece-930e-d6e28e3de711",
+      "rate": 2,
+      "feedback": "Плохая статья",
+      "userId": "63b24a0c-f3b6-4928-a73f-d7f959084bfd",
+      "articleId": "9a2aaea1-7597-4cf3-9938-60e3f60a9b49"
+    },
+    {
+      "userId": "63b24a0c-f3b6-4928-a73f-d7f959084bfd",
+      "articleId": "b515cfc8-e9a8-4f30-9a38-786deeb7cd47",
+      "rate": 4,
+      "feedback": "",
+      "id": "NYJGSg9"
+    },
+    {
+      "userId": "63b24a0c-f3b6-4928-a73f-d7f959084bfd",
+      "articleId": "eb3db136-f209-4d19-af70-392dac091049",
+      "rate": 2,
+      "feedback": "",
+      "id": "1iDXmNv"
+    },
+    {
+      "userId": "63b24a0c-f3b6-4928-a73f-d7f959084bfd",
+      "articleId": "1ab56634-83af-4d7f-88c7-b725043d53c9",
+      "rate": 3,
+      "feedback": "нет бля стоп",
+      "id": "4xeFknC"
+    },
+    {
+      "userId": "63b24a0c-f3b6-4928-a73f-d7f959084bfd",
+      "articleId": "60effc45-c538-40a5-8c96-ffd910780f5e",
+      "rate": 5,
+      "feedback": "Шедевр",
+      "id": "XvKLR3c"
+    }
+  ],
   "countries": {
     "KG": "Kyrgyzstan",
     "KZ": "Kazakhstan",

@@ -17,6 +17,7 @@ import { Text, TextSize, TextType } from '@/shared/ui/Text'
 import { Page } from '@/widgets/Page'
 import { ArticleRecommendationsList } from '@/features/ArticleRecommendationsList'
 import { ArticleDetails } from '@/entities/Article'
+import { ArticleRating } from '@/features/ArticleRating'
 
 export interface ArticleDetailsProps {}
 
@@ -40,6 +41,7 @@ export const ArticleDetailsPage = (props: ArticleDetailsProps) => {
         <VStack max gap="16">
           <ArticleDetailsPageHeader />
           <ArticleDetails articleId={articleId} />
+          <ArticleRating articleId={articleId} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments articleId={articleId} />
         </VStack>
