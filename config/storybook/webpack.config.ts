@@ -26,7 +26,7 @@ export default ({ config }: { config: Configuration }) => {
   config.resolve!.extensions!.push('.ts', '.tsx')
 
   // Добавляем alias
-  config.resolve!.alias = {'@': path.resolve(__dirname, '..', '..', 'src')}
+  config.resolve!.alias = { ...config.resolve!.alias, '@': path.resolve(__dirname, '..', '..', 'src') }
 
   // Определение CSS/SCSS Modules
   config.module!.rules!.push(buildCssLoader(true))
